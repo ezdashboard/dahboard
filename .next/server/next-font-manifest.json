@@ -1,0 +1,24 @@
+{
+  "pages": {
+    "/_app": [],
+    "/components/About": [],
+    "/components/Home": [],
+    "/components/PortfolioPageSlider": [],
+    "/components/Portfolio": [],
+    "/components/PortfolioSlider": [],
+    "/components/Pricing": [],
+    "/projectList": [],
+    "/reseller-benefits": [],
+    "/thankyou": [],
+    "/blog/[blogdetail]": [],
+    "/blogs": [],
+    "/[blogdetail]": [],
+    "/about": [],
+    "/portfolio": [],
+    "/services": [],
+    "/pricing": []
+  },
+  "app": {},
+  "appUsingSizeAdjust": false,
+  "pagesUsingSizeAdjust": false
+}

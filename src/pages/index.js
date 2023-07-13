@@ -69,7 +69,7 @@ import Router from 'next/router'
       setFormStatus("Password can not be blank.")
       setCloseIcon(true);  
     }else{
-      axios.post(`http://122.160.48.132/dev/vikas/react-backend/login.php`,inputData,{
+      axios.post(`https://smca.ezrankings.in/dashboard/login.php`,inputData,{
         headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -128,7 +128,6 @@ import Router from 'next/router'
         <meta name="keywords" content="" />
         <meta name="author" content="" />
         <title>Reseller Dashboard</title>
-        <link rel="stylesheet" href="http://122.160.48.132/dev/html/reseller-dashboard/css/app.css" />
         <link rel="dns-prefetch" href="//developers.google.com" />
         <link rel="dns-prefetch" href="//maps.googleapis.com" />
         <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet" />
@@ -137,10 +136,10 @@ import Router from 'next/router'
         <div className="block xl:grid grid-cols-2 gap-4">
             <div className="hidden xl:flex flex-col min-h-screen">
                 <a href="" className="-intro-x flex items-center pt-5">
-                   <img alt="" src="http://122.160.48.132/dev/html/reseller-dashboard/images/logo.png" />
+                   <img alt="" src="https://smca.ezrankings.in/dashboard/images/logo.png" />
                 </a>
                 <div className="my-auto">
-                    <img alt="" className="-intro-x w-1/2 -mt-16" src="http://122.160.48.132/dev/html/reseller-dashboard/images/Frame.png" />
+                    <img alt="" className="-intro-x w-1/2 -mt-16" src="https://smca.ezrankings.in/dashboard/images/Frame.png" />
                     <div className="-intro-x text-white font-medium text-4xl leading-tight mt-10">A few more clicks to <br /> sign in to your account.</div>
                     <div className="-intro-x mt-5 text-lg text-white text-opacity-70 dark:text-slate-400">Manage all your e-commerce accounts in one place</div>
                 </div>

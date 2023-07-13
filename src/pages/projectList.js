@@ -55,8 +55,9 @@ import { Search  } from 'lucide-react';
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
         <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
         <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-        <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+      <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
       </Head>
       <div className="flex mt-[4.7rem] md:mt-0">
         <SideBar/>
@@ -202,6 +203,7 @@ import { Search  } from 'lucide-react';
           <NewsLetter />
          </div>
       </div>
+
     </>
   )
 }

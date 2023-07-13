@@ -17922,3 +17922,6 @@ p.page404 {
   text-transform: capitalize;
   color: #1e40af;
 }
+.news01{
+  transform: translate3d(-20%, 0px, 0px); transition-duration: 0s;
+}

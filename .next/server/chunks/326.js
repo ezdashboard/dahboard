@@ -41,9 +41,9 @@ const NewsLetter = ()=>{
                                 viewBox: "0 0 24 24",
                                 fill: "none",
                                 stroke: "currentColor",
-                                strokeWidth: "2",
-                                strokeLinecap: "round",
-                                strokeLinejoin: "round",
+                                "stroke-width": "2",
+                                "stroke-linecap": "round",
+                                "stroke-linejoin": "round",
                                 "icon-name": "chevron-left",
                                 "data-lucide": "chevron-left",
                                 className: "lucide lucide-chevron-left w-4 h-4",
@@ -63,9 +63,9 @@ const NewsLetter = ()=>{
                                 viewBox: "0 0 24 24",
                                 fill: "none",
                                 stroke: "currentColor",
-                                strokeWidth: "2",
-                                strokeLinecap: "round",
-                                strokeLinejoin: "round",
+                                "stroke-width": "2",
+                                "stroke-linecap": "round",
+                                "stroke-linejoin": "round",
                                 "icon-name": "chevron-right",
                                 "data-lucide": "chevron-right",
                                 className: "lucide lucide-chevron-right w-4 h-4",
@@ -121,14 +121,14 @@ const NewsLetter = ()=>{
                                         id: "important-notes-iw",
                                         bis_skin_checked: "1",
                                         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                            className: "tiny-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal projectTran",
+                                            className: "tiny-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal news01",
                                             id: "important-notes",
                                             bis_skin_checked: "1",
                                             children: [
                                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                                     className: "p-5 tns-item tns-slide-cloned",
                                                     "aria-hidden": "true",
-                                                    tabIndex: "-1",
+                                                    tabindex: "-1",
                                                     bis_skin_checked: "1",
                                                     children: [
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
@@ -207,7 +207,7 @@ const NewsLetter = ()=>{
                                                     id: "important-notes-item1",
                                                     bis_skin_checked: "1",
                                                     "aria-hidden": "true",
-                                                    tabIndex: "-1",
+                                                    tabindex: "-1",
                                                     children: [
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                             className: "text-base font-medium truncate",
@@ -247,7 +247,7 @@ const NewsLetter = ()=>{
                                                     id: "important-notes-item2",
                                                     bis_skin_checked: "1",
                                                     "aria-hidden": "true",
-                                                    tabIndex: "-1",
+                                                    tabindex: "-1",
                                                     children: [
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                             className: "text-base font-medium truncate",
@@ -286,7 +286,7 @@ const NewsLetter = ()=>{
                                                     className: "p-5 tns-item tns-slide-cloned",
                                                     bis_skin_checked: "1",
                                                     "aria-hidden": "true",
-                                                    tabIndex: "-1",
+                                                    tabindex: "-1",
                                                     children: [
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                             className: "text-base font-medium truncate",

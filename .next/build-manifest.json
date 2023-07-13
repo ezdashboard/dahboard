@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/srxRDLTF7aSF63pWzkm3V/_buildManifest.js",
-    "static/srxRDLTF7aSF63pWzkm3V/_ssgManifest.js"
+    "static/aNoGwnkICxbkIo809oIdr/_buildManifest.js",
+    "static/aNoGwnkICxbkIo809oIdr/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -29,7 +29,7 @@
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
-      "static/css/aea3eb6c73de96cf.css",
+      "static/css/50cbd2ec75f616a0.css",
       "static/chunks/pages/_app-b696f73a88f062d2.js"
     ],
     "/_error": [
@@ -50,7 +50,7 @@
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
-      "static/chunks/326-254543d655eb9ab4.js",
+      "static/chunks/326-6c424b706d245f9d.js",
       "static/chunks/pages/components/AdminDasbboard-ef1ba3b1fff7e428.js"
     ],
     "/components/AdminDash": [
@@ -71,7 +71,7 @@
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
-      "static/chunks/326-254543d655eb9ab4.js",
+      "static/chunks/326-6c424b706d245f9d.js",
       "static/chunks/pages/components/NewsLetter-8107dc680b2e876e.js"
     ],
     "/components/ProfileContent": [
@@ -114,7 +114,7 @@
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
-      "static/chunks/326-254543d655eb9ab4.js",
+      "static/chunks/326-6c424b706d245f9d.js",
       "static/chunks/148-f8b0bf833e2fa2bc.js",
       "static/chunks/pages/dashboard-89dab390db3a2b3c.js"
     ],
@@ -139,7 +139,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/45-babd413c88fee3b0.js",
-      "static/chunks/326-254543d655eb9ab4.js",
+      "static/chunks/326-6c424b706d245f9d.js",
       "static/chunks/pages/newsletter-47b246a98a10a486.js"
     ],
     "/profile": [
@@ -155,7 +155,7 @@
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
-      "static/chunks/326-254543d655eb9ab4.js",
+      "static/chunks/326-6c424b706d245f9d.js",
       "static/chunks/pages/projectList-f7a0b25f11e619c4.js"
     ],
     "/reseller-benefits": [
@@ -163,7 +163,7 @@
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
-      "static/chunks/326-254543d655eb9ab4.js",
+      "static/chunks/326-6c424b706d245f9d.js",
       "static/chunks/pages/reseller-benefits-3cedec13b25efb64.js"
     ],
     "/update-profile": [
@@ -180,7 +180,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/45-babd413c88fee3b0.js",
-      "static/chunks/326-254543d655eb9ab4.js",
+      "static/chunks/326-6c424b706d245f9d.js",
       "static/chunks/pages/users-2ceaac656c876509.js"
     ],
     "/users/[edituser]": [

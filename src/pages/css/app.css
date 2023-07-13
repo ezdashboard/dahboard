@@ -17894,3 +17894,8 @@ div#__next .h-screen.xl\:h-auto.flex.py-5.xl\:py-0.my-10.xl\:my-0 {
 .login-dash{
   padding: 0px !important;
 }
+
+.page404{
+  text-align: center;
+  font-size: 26px;;
+}

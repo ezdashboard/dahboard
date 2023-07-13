@@ -1,82 +1,44 @@
 import Head from 'next/head'
+import React,{useEffect, useState} from 'react'
+import SideBar from './components/SideBar'
+import TopHeader from './components/TopHeade'
 import Link from 'next/link';
-import Navbar from './components/Navbar'
  const NotFound = ()=> { 
   return (
     <>
       <Head>
-      <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
        <title>404</title>
-       <link rel="canonical" href="https://www.socialmediacreativeagency.com/about/" />
-       <meta property="og:locale" content="en_US" />
-       <meta property="og:type" content="article" />
-       <meta property="og:title" content="About - Creative Agency" />
-       <meta property="og:url" content="https://www.socialmediacreativeagency.com/about/" />
-       <meta property="og:site_name" content="Creative Agency" />
-       <meta property="article:modified_time" content="2023-02-21T11:51:16+00:00" />
-       <meta name="twitter:card" content="summary_large_image" />
-       <link rel="stylesheet" type="text/css" href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css"></link>
-       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&display=swap"></link>
-       <script async
-        src="https://www.googletagmanager.com/gtag/js?id=G-4T85M437M3"
+        <meta charSet="utf-8" />
+        <link href="#" rel="shortcut icon" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="author" content=""/>
+        <link rel="dns-prefetch" href="//developers.google.com" />
+        <link rel="dns-prefetch" href="//maps.googleapis.com" />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>
+        <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
+        <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
         
-      />
-      <script
-        dangerouslySetInnerHTML={{ __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){
-          dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+        </Head>
+        <div className="flex mt-[4.7rem] md:mt-0">
+       <SideBar />
+              <div className="content">
+            <TopHeader />
+                  <div className="intro-y flex flex-col sm:flex-row items-center mt-8">
+                      <h2 className="text-lg font-medium mr-auto">
+                          404 
+                      </h2>
 
-        gtag('config', 'G-4T85M437M3');
-      ` }}
-      />
-      <meta name="google-site-verification" content="muKy4GDWt7CbVzZo5Gly_Z6UieYyZ65RlQsB4ts9uKY" />
-      </Head>
-      <Navbar />
-      <section className="exp-branding-sec">
-           <div className="contianer">
-              <div className="title-header">
-                 <h2>Oops, Page you're looking for doesn't exist.</h2>
+                  </div>
+                  
+                        <p className='page404'>page is not found.</p>
+                        <Link className='page404' href= "/dashboard">Go to Dashboard</Link>
+                     
               </div>
-              <div className="content-wrap">
-                <div className='row'>
-                <div className='col-md-2 offset-5'>
-                <Link href="/" className="btn btn-danger" style={{marginLeft:'4rem;'}}>Home Page</Link>
-                </div>
-                </div>
-              </div>
-           </div>
-        </section>    
-        <footer>
-            <div className="container">
-                <div className="row">
-                <div className="col-md-3">
-                    <div className="footer-item">
-                        <ul>
-                            <li><a href="" target="_blank">info@socialmediacreativeagency.com</a></li>
-                            <li>Phone: <a href="tel:+91-9599389388">+91-9599389388</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="col-md-3 ms-auto">
-                    <div className="footer-item">
-                        <ul className="social-icon">
-                            <li><a href="https://www.instagram.com/socialmediacreativeagency/" target="_blank"><i className="fab fa-instagram"></i></a></li>
-                            <li><a href="https://www.facebook.com/socialmediacreativeagency" target="_blank"><i className="fab fa-facebook-square"></i></a></li>
-                            <li><a href="" target="_blank"><i className="fab fa-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="col-md-12">
-                    <div className="copyright">
-                    <p>Copyright © 2023 <a href="https://www.socialmediacreativeagency.com">Social Media Creative Agency</a> All Rights Reserved.</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </footer>
+          </div>
     </>
   )
 }

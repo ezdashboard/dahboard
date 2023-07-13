@@ -82,7 +82,7 @@ const settings = {
                 </div>
             <div className="grid grid-cols-12 gap-6 mt-5">
                 <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                        <a href="free-website-analysis.php">
+                        <a href="#">
                         <div className="report-box zoom-in">
                             <div className="box p-5">
                                 <div className="flex">
@@ -95,7 +95,7 @@ const settings = {
                         </a>
                 </div>
                 <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                   <a href="keyword-analysis.php">
+                   <a href="#">
                          <div className="report-box zoom-in">
                         <div className="box p-5">
                             <div className="flex">
@@ -108,7 +108,7 @@ const settings = {
                     </a>
                 </div>
                 <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                    <a href="free-festive-images.php">
+                    <a href="#">
                         <div className="report-box zoom-in">
                         <div className="box p-5">
                             <div className="flex">
@@ -121,7 +121,7 @@ const settings = {
                     </a>
                 </div>
                 <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                    <a href="free-gmb-keywords.php">
+                    <a href="#">
                         <div className="report-box zoom-in">
                         <div className="box p-5">
                             <div className="flex">

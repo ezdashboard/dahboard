@@ -1,7 +1,7 @@
 (() => {
 var exports = {};
 exports.id = 2968;
-exports.ids = [2968,241,6385,2482,5911,450,8219,3383,457,5448,8572,1055];
+exports.ids = [2968,6385,241,2482,450,457,8219,8572,3383,5911,1055,5448];
 exports.modules = {
 
 /***/ 674:
@@ -28,7 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_FooterForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1698);
 /* harmony import */ var slick_carousel_slick_slick_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8278);
 /* harmony import */ var slick_carousel_slick_slick_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick_css__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var slick_carousel_slick_slick_theme_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(782);
+/* harmony import */ var slick_carousel_slick_slick_theme_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1598);
 /* harmony import */ var slick_carousel_slick_slick_theme_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick_theme_css__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_9__);
@@ -379,7 +379,7 @@ __webpack_async_result__();
 
 /***/ }),
 
-/***/ 782:
+/***/ 1598:
 /***/ (() => {
 
 

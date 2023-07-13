@@ -85,14 +85,14 @@ const SideBar =(props)=>{
                         <div className="side-menu__title">Users</div>
                     </Link>
                     </li>}
-                    {   sideBarAccess.users &&  <li>
+                    {/* {   sideBarAccess.users &&  <li>
                     <Link href="/newsletter" className={router.pathname == "/newsletter" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
                    
                     <Newspaper  size={16}/>
                     </div>
                         <div className="side-menu__title">NewsLetter</div>
                     </Link>
-                    </li>}                   
+                    </li>}                    */}
                     <li>
                     <Link href="#" onClick={onLogOut} className="side-menu"><div className="side-menu__icon">
                     {/* <i className="far fa-sign-out"></i> */}

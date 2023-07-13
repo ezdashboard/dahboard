@@ -67,7 +67,7 @@ const UserDashboard=()=>{
             </div>
             <div className="grid grid-cols-12 gap-6 mt-5">
                 <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                    <Link href="free-website-analysis.php">
+                    <Link href="#">
                         <div className="report-box zoom-in">
                             <div className="box p-5">
                                 <div className="flex">
@@ -81,7 +81,7 @@ const UserDashboard=()=>{
                     </Link>
                 </div>
                 <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                    <Link href="keyword-analysis.php">
+                    <Link href="#">
                         <div className="report-box zoom-in">
                             <div className="box p-5">
                                 <div className="flex">
@@ -95,7 +95,7 @@ const UserDashboard=()=>{
                     </Link>
                 </div>
                 <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                    <Link href="free-festive-images.php">
+                    <Link href="#">
                         <div className="report-box zoom-in">
                             <div className="box p-5">
                                 <div className="flex">
@@ -109,7 +109,7 @@ const UserDashboard=()=>{
                     </Link>
                 </div>
                 <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                    <Link href="free-gmb-keywords.php">
+                    <Link href="#">
                         <div className="report-box zoom-in">
                             <div className="box p-5">
                                 <div className="flex">

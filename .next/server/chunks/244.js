@@ -25,7 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 const ProfileContent = (props)=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: "col-span-12 lg:col-span-4 2xl:col-span-3 flex lg:block flex-col-reverse",
+            className: "col-span-12 lg:col-span-4 xxl:col-span-3 flex lg:block flex-col-reverse",
             children: [
                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                     className: "intro-y box mt-5 lg:mt-0",

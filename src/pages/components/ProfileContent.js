@@ -6,7 +6,7 @@ const ProfileContent = (props) =>{
 
     return(
         <>
-                <div className="col-span-12 lg:col-span-4 2xl:col-span-3 flex lg:block flex-col-reverse">
+                <div className="col-span-12 lg:col-span-4 xxl:col-span-3 flex lg:block flex-col-reverse">
                     <div className="intro-y box mt-5 lg:mt-0">
                         <div className="relative items-center p-5">
                             <div className="avatar-upload">

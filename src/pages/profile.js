@@ -169,9 +169,9 @@ useEffect(() => {
             </div>
             <div className="grid grid-cols-12 gap-6 mt-5">
             <ProfileContent profile={profileData} />
-            <div className="col-span-12 lg:col-span-8 2xl:col-span-9">
+            <div className="col-span-12 lg:col-span-8 xxl:col-span-9">
                 <div className="grid grid-cols-12 gap-6 aaa">
-                    <div className="intro-y box col-span-12 2xl:col-span-6">
+                    <div className="intro-y box col-span-12 xxl:col-span-6">
                         <div className="flex items-center px-5 py-5 sm:py-3 border-b border-slate-200/60 dark:border-darkmode-400">
                             <h2 className="font-medium text-base mr-auto">About Us</h2>
                         </div>

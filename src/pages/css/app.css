@@ -4922,7 +4922,7 @@ img.rounded-full.pro-img {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-.text-2xl {
+.text-xxl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
@@ -17018,7 +17018,7 @@ html body {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-  .sm\:text-2xl {
+  .sm\:text-xxl {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -17512,171 +17512,171 @@ html body {
   }
 }
 @media (min-width: 1536px) {
-  .2xl\:z-10 {
+  .xxl\:z-10 {
     z-index: 10;
   }
-  .2xl\:col-span-9 {
+  .xxl\:col-span-9 {
     grid-column: span 9 / span 9;
   }
-  .2xl\:col-span-3 {
+  .xxl\:col-span-3 {
     grid-column: span 3 / span 3;
   }
-  .2xl\:col-span-12 {
+  .xxl\:col-span-12 {
     grid-column: span 12 / span 12;
   }
-  .2xl\:col-span-2 {
+  .xxl\:col-span-2 {
     grid-column: span 2 / span 2;
   }
-  .2xl\:col-span-10 {
+  .xxl\:col-span-10 {
     grid-column: span 10 / span 10;
   }
-  .2xl\:col-span-5 {
+  .xxl\:col-span-5 {
     grid-column: span 5 / span 5;
   }
-  .2xl\:col-span-6 {
+  .xxl\:col-span-6 {
     grid-column: span 6 / span 6;
   }
-  .2xl\:col-span-8 {
+  .xxl\:col-span-8 {
     grid-column: span 8 / span 8;
   }
-  .2xl\:col-span-4 {
+  .xxl\:col-span-4 {
     grid-column: span 4 / span 4;
   }
-  .2xl\:col-start-auto {
+  .xxl\:col-start-auto {
     grid-column-start: auto;
   }
-  .2xl\:row-start-auto {
+  .xxl\:row-start-auto {
     grid-row-start: auto;
   }
-  .2xl\:mt-8 {
+  .xxl\:mt-8 {
     margin-top: 2rem;
   }
-  .2xl\:mt-6 {
+  .xxl\:mt-6 {
     margin-top: 1.5rem;
   }
-  .2xl\:mt-24 {
+  .xxl\:mt-24 {
     margin-top: 6rem;
   }
-  .2xl\:mt-0 {
+  .xxl\:mt-0 {
     margin-top: 0;
   }
-  .2xl\:ml-16 {
+  .xxl\:ml-16 {
     margin-left: 4rem;
   }
-  .2xl\:-ml-20 {
+  .xxl\:-ml-20 {
     margin-left: -5rem;
   }
-  .2xl\:mb-0 {
+  .xxl\:mb-0 {
     margin-bottom: 0;
   }
-  .2xl\:-mt-1\.5 {
+  .xxl\:-mt-1\.5 {
     margin-top: -0.375rem;
   }
-  .2xl\:-mt-1 {
+  .xxl\:-mt-1 {
     margin-top: -0.25rem;
   }
-  .2xl\:mr-auto {
+  .xxl\:mr-auto {
     margin-right: auto;
   }
-  .2xl\:-mt-8 {
+  .xxl\:-mt-8 {
     margin-top: -2rem;
   }
-  .2xl\:block {
+  .xxl\:block {
     display: block;
   }
-  .2xl\:flex {
+  .xxl\:flex {
     display: flex;
   }
-  .2xl\:h-56 {
+  .xxl\:h-56 {
     height: 14rem;
   }
-  .2xl\:w-14 {
+  .xxl\:w-14 {
     width: 3.5rem;
   }
-  .2xl\:w-52 {
+  .xxl\:w-52 {
     width: 13rem;
   }
-  .2xl\:w-4\/6 {
+  .xxl\:w-4\/6 {
     width: 66.666667%;
   }
-  .2xl\:w-2\/3 {
+  .xxl\:w-2\/3 {
     width: 66.666667%;
   }
-  .2xl\:w-full {
+  .xxl\:w-full {
     width: 100%;
   }
-  .2xl\:flex-none {
+  .xxl\:flex-none {
     flex: none;
   }
-  .2xl\:grid-cols-7 {
+  .xxl\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
   }
-  .2xl\:justify-center {
+  .xxl\:justify-center {
     justify-content: center;
   }
-  .2xl\:gap-x-0 {
+  .xxl\:gap-x-0 {
     -moz-column-gap: 0;
     column-gap: 0;
   }
-  .2xl\:overflow-visible {
+  .xxl\:overflow-visible {
     overflow: visible;
   }
-  .2xl\:border-l {
+  .xxl\:border-l {
     border-left-width: 1px;
   }
-  .2xl\:bg-transparent {
+  .xxl\:bg-transparent {
     background-color: transparent;
   }
-  .2xl\:p-0 {
+  .xxl\:p-0 {
     padding: 0;
   }
-  .2xl\:px-6 {
+  .xxl\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  .2xl\:pl-6 {
+  .xxl\:pl-6 {
     padding-left: 1.5rem;
   }
-  .2xl\:pt-0 {
+  .xxl\:pt-0 {
     padding-top: 0;
   }
-  .2xl\:pl-4 {
+  .xxl\:pl-4 {
     padding-left: 1rem;
   }
-  .2xl\:pl-2\.5 {
+  .xxl\:pl-2\.5 {
     padding-left: 0.625rem;
   }
-  .2xl\:pl-2 {
+  .xxl\:pl-2 {
     padding-left: 0.5rem;
   }
-  .2xl\:text-base {
+  .xxl\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-  .2xl\:text-lg {
+  .xxl\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
-  .2xl\:text-3xl {
+  .xxl\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
-  .2xl\:text-2xl {
+  .xxl\:text-xxl {
     font-size: 1.5rem;
     line-height: 2rem;
   }
-  .2xl\:text-sm {
+  .xxl\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-  .2xl\:text-xl {
+  .xxl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-  .2xl\:leading-5 {
+  .xxl\:leading-5 {
     line-height: 1.25rem;
   }
-  .2xl\:text-success {
+  .xxl\:text-success {
     --tw-text-opacity: 1;
     color: rgb(var(--color-success) / var(--tw-text-opacity));
   }

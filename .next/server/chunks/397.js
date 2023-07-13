@@ -28,7 +28,7 @@ const UserDashboard = ()=>{
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: "grid grid-cols-12 gap-6",
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: "col-span-12 2xl:col-span-9",
+                    className: "col-span-12 xxl:col-span-9",
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: "grid grid-cols-12 gap-6",
                         children: [

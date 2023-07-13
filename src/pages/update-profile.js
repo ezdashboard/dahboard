@@ -268,7 +268,7 @@ import axios from 'axios';
             <div className="intro-y flex items-center mt-8">
             </div>
             <div className="grid grid-cols-12 gap-6 mt-5">
-                <div className="col-span-12 lg:col-span-4 2xl:col-span-3 flex lg:block flex-col-reverse">
+                <div className="col-span-12 lg:col-span-4 xxl:col-span-3 flex lg:block flex-col-reverse">
                     <div className="intro-y box mt-5 lg:mt-0">
                         <div className="relative items-center p-5">
                             <div className="avatar-upload">
@@ -307,7 +307,7 @@ import axios from 'axios';
                         </div>
                     </div>
                 </div>
-                <div className="col-span-12 lg:col-span-8 2xl:col-span-9">
+                <div className="col-span-12 lg:col-span-8 xxl:col-span-9">
                 <div className="intro-y box lg:mt-5" bis_skin_checked="1">
                         <div className="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400" bis_skin_checked="1">
                             <h2 className="font-medium text-base mr-auto">Display Information</h2>
@@ -321,32 +321,32 @@ import axios from 'axios';
                                 <form onSubmit={onSubmit}>
                                     <div className="flex-1 mt-6 xl:mt-0" bis_skin_checked="1">
                                         <div className="grid grid-cols-12 gap-x-5" bis_skin_checked="1">
-                                            <div className="col-span-12 2xl:col-span-6" bis_skin_checked="1">
+                                            <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
                                                 <div bis_skin_checked="1">
                                                     <label htmlFor="update-profile-form-1" className="form-label">Display Name</label>
                                                 <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} name="name" value={inputData.name} />
                                                 </div>
                                             </div>
-                                            <div className="col-span-12 2xl:col-span-6" bis_skin_checked="1">
+                                            <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
                                                 <div bis_skin_checked="1">
                                                     <label htmlFor="update-profile-form-1" className="form-label">Title</label>
                                                 <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.title} name="title"/>
                                                 </div>
                                             </div>
-                                            <div className="col-span-12 2xl:col-span-6" bis_skin_checked="1">
+                                            <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
                                                 <div className="mt-3" bis_skin_checked="1">
                                                     <label htmlFor="update-profile-form-4" className="form-label">Phone Number</label>
                                                     <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.contactno} name="contactno" />
                                                 </div>
                                             </div>
-                                            <div className="col-span-12 2xl:col-span-6" bis_skin_checked="1">
+                                            <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
                                                 <div className="mt-3" bis_skin_checked="1">
                                                     <label htmlFor="update-profile-form-4" className="form-label">Mail</label>
                                                     <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.email} name="email" readOnly/>
                                                 </div>
                                             </div>
                                             
-                                            <div className="col-span-12 2xl:col-span-6" bis_skin_checked="1">
+                                            <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
                                                 <div className="mt-3" bis_skin_checked="1">
                                                     <label htmlFor="update-profile-form-4" className="form-label">Company Name</label>
                                                     <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.companyname} name="companyname"/>

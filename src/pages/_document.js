@@ -3,7 +3,7 @@ import React,{useState} from 'react';
 // import { useRouter } from 'next/navigation';
 
 export default function Document() {
-  const [bodyCsss, setBodyClass] = useState('');
+  const [bodyCsss, setBodyClass] = useState('login-dash');
   // const router = useRouter();
   <script
   dangerouslySetInnerHTML={{ __html: `

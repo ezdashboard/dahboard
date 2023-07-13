@@ -17891,3 +17891,6 @@ img.rounded-full.pro-img.comp-logo {
 div#__next .h-screen.xl\:h-auto.flex.py-5.xl\:py-0.my-10.xl\:my-0 {
   padding: 150px 0px;
 }
+.login-dash{
+  padding: 0px !important;
+}

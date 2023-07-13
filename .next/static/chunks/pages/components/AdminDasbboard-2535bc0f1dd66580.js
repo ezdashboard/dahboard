@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[6385],{6671:function(n,t,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/AdminDasbboard",function(){return u(4738)}])},4738:function(n,t,u){"use strict";u.r(t);var _=u(5893);u(7294);let e=()=>(0,_.jsx)(_.Fragment,{});t.default=e}},function(n){n.O(0,[9774,2888,179],function(){return n(n.s=6671)}),_N_E=n.O()}]);

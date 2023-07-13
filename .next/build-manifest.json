@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/_fzI5t2SR5OmFHDGFBL4G/_buildManifest.js",
-    "static/_fzI5t2SR5OmFHDGFBL4G/_ssgManifest.js"
+    "static/Y0KbHqIONnBJM71qa-gN6/_buildManifest.js",
+    "static/Y0KbHqIONnBJM71qa-gN6/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -41,7 +41,7 @@
       "static/chunks/webpack-d5bbb0b8d9193a3e.js",
       "static/chunks/framework-3671d8951bf44e4e.js",
       "static/chunks/main-754f456e4536651e.js",
-      "static/css/73cc488997236377.css",
+      "static/css/68f53cd275b8d285.css",
       "static/chunks/pages/_app-a30435b5f183d098.js"
     ],
     "/_error": [
@@ -90,7 +90,8 @@
       "static/chunks/webpack-d5bbb0b8d9193a3e.js",
       "static/chunks/framework-3671d8951bf44e4e.js",
       "static/chunks/main-754f456e4536651e.js",
-      "static/chunks/pages/components/AdminDasbboard-2535bc0f1dd66580.js"
+      "static/chunks/8326-d1ab4630b8503fe5.js",
+      "static/chunks/pages/components/AdminDasbboard-cd34fb289482a984.js"
     ],
     "/components/AdminDash": [
       "static/chunks/webpack-d5bbb0b8d9193a3e.js",
@@ -258,8 +259,9 @@
       "static/chunks/framework-3671d8951bf44e4e.js",
       "static/chunks/main-754f456e4536651e.js",
       "static/chunks/1664-606bb6b52f9d8cfd.js",
+      "static/chunks/8326-d1ab4630b8503fe5.js",
       "static/chunks/5148-eec25c8d544789b6.js",
-      "static/chunks/pages/dashboard-9e1592af4560a8ac.js"
+      "static/chunks/pages/dashboard-73c58142e56c5ca6.js"
     ],
     "/learning-resources": [
       "static/chunks/webpack-d5bbb0b8d9193a3e.js",

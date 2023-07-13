@@ -1,15 +1,6 @@
 {
   "pages": {
-    "/_app": [],
-    "/components/About": [],
-    "/components/Home": [],
-    "/components/Portfolio": [],
-    "/components/PortfolioPageSlider": [],
-    "/components/PortfolioSlider": [],
-    "/components/Pricing": [],
-    "/projectList": [],
-    "/blog/[blogdetail]": [],
-    "/[blogdetail]": []
+    "/_app": []
   },
   "app": {},
   "appUsingSizeAdjust": false,

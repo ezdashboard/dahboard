@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 660;
-exports.ids = [660,6385,241,457,8572,5448];
+exports.ids = [660,385,572];
 exports.modules = {
 
 /***/ 894:
@@ -119,7 +119,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [6859], () => (__webpack_exec__(894)));
+var __webpack_exports__ = __webpack_require__.X(0, [859], () => (__webpack_exec__(894)));
 module.exports = __webpack_exports__;
 
 })();

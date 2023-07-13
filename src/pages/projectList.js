@@ -1,12 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Head from 'next/head'
-import Home from './components/Home';
-import Navbar from './components/Navbar'
-import Footer from './components/Footer';
-import Slider from "react-slick"
-import FooterForm from './components/FooterForm';
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
 // import routes from './routes';
 import Link from 'next/link';
 import SideBar from './components/SideBar';

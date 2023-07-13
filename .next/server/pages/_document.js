@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 660;
-exports.ids = [660,457,241,8572,5448];
+exports.ids = [660,241,457,8572,5448];
 exports.modules = {
 
 /***/ 894:
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // import { useRouter } from 'next/navigation';
 function Document() {
-    const [bodyCsss, setBodyClass] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)("py-5");
+    const [bodyCsss, setBodyClass] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)("");
     // const router = useRouter();
     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
         dangerouslySetInnerHTML: {

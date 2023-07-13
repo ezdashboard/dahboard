@@ -3,7 +3,7 @@ import React,{useState} from 'react';
 // import { useRouter } from 'next/navigation';
 
 export default function Document() {
-  const [bodyCsss, setBodyClass] = useState('py-5');
+  const [bodyCsss, setBodyClass] = useState('');
   // const router = useRouter();
   <script
   dangerouslySetInnerHTML={{ __html: `

@@ -3,13 +3,13 @@
     "/_app": [],
     "/components/About": [],
     "/components/Home": [],
-    "/components/Portfolio": [],
     "/components/PortfolioPageSlider": [],
+    "/components/Portfolio": [],
     "/components/PortfolioSlider": [],
     "/components/Pricing": [],
     "/projectList": [],
-    "/[blogdetail]": [],
-    "/blog/[blogdetail]": []
+    "/blog/[blogdetail]": [],
+    "/[blogdetail]": []
   },
   "app": {},
   "appUsingSizeAdjust": false,

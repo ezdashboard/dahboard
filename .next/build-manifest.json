@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/LFE8-yp3i15iu5a9TmDJz/_buildManifest.js",
-    "static/LFE8-yp3i15iu5a9TmDJz/_ssgManifest.js"
+    "static/I8LwLQpAk_ttYxpUhUos7/_buildManifest.js",
+    "static/I8LwLQpAk_ttYxpUhUos7/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -41,7 +41,7 @@
       "static/chunks/webpack-d5bbb0b8d9193a3e.js",
       "static/chunks/framework-3671d8951bf44e4e.js",
       "static/chunks/main-754f456e4536651e.js",
-      "static/css/62e643daf1ab2310.css",
+      "static/css/1c170c79676926ed.css",
       "static/chunks/pages/_app-a30435b5f183d098.js"
     ],
     "/_error": [
@@ -90,7 +90,14 @@
       "static/chunks/webpack-d5bbb0b8d9193a3e.js",
       "static/chunks/framework-3671d8951bf44e4e.js",
       "static/chunks/main-754f456e4536651e.js",
-      "static/chunks/pages/components/AdminDasbboard-4a093cf844271ec3.js"
+      "static/chunks/pages/components/AdminDasbboard-2535bc0f1dd66580.js"
+    ],
+    "/components/AdminDash": [
+      "static/chunks/webpack-d5bbb0b8d9193a3e.js",
+      "static/chunks/framework-3671d8951bf44e4e.js",
+      "static/chunks/main-754f456e4536651e.js",
+      "static/chunks/1664-606bb6b52f9d8cfd.js",
+      "static/chunks/pages/components/AdminDash-1c830d77da3bd87b.js"
     ],
     "/components/ConfirmationModal": [
       "static/chunks/webpack-d5bbb0b8d9193a3e.js",
@@ -252,7 +259,7 @@
       "static/chunks/main-754f456e4536651e.js",
       "static/chunks/1664-606bb6b52f9d8cfd.js",
       "static/chunks/5148-eec25c8d544789b6.js",
-      "static/chunks/pages/dashboard-169aa1f4fb245bfb.js"
+      "static/chunks/pages/dashboard-9e1592af4560a8ac.js"
     ],
     "/learning-resources": [
       "static/chunks/webpack-d5bbb0b8d9193a3e.js",

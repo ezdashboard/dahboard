@@ -17906,8 +17906,19 @@ a.page404 {
   background: blue;
   padding: 10px 25px;
   width: 20%;
-  margin: 150px auto;
+  margin: 100px auto;
   color: #fff;
   font-size: 16px;
   border-radius: 6px;
+}
+.img404 img {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+p.page404 {
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #1e40af;
 }

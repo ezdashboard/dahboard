@@ -3,10 +3,10 @@
     "/_app": [],
     "/components/About": [],
     "/components/Home": [],
-    "/components/PortfolioPageSlider": [],
     "/components/Portfolio": [],
-    "/components/PortfolioSlider": [],
     "/components/Pricing": [],
+    "/components/PortfolioPageSlider": [],
+    "/components/PortfolioSlider": [],
     "/projectList": [],
     "/blog/[blogdetail]": [],
     "/[blogdetail]": []

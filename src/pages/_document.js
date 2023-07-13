@@ -24,7 +24,7 @@ export default function Document() {
 
        </Head>
       {/* <body class={router.pathname =='/login' ? 'login' : 'py-5' }> */}
-      <body class={bodyCsss}>
+      <body className={bodyCsss}>
 
         <Main />
         <NextScript />

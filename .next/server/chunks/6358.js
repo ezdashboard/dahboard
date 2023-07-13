@@ -57,7 +57,7 @@ const SideBar = (props)=>{
                     className: "intro-x flex items-center pl-5 pt-4",
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                         alt: "",
-                        src: props.logo ? props.logo : "http://122.160.48.132/dev/html/reseller-dashboard/images/logo.png"
+                        src: props.logo ? props.logo : "https://smca.ezrankings.in/dashboard/images/logo.png"
                     })
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {

@@ -121,7 +121,7 @@ import Router from 'next/router'
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <link href="#" rel="shortcut icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
@@ -130,7 +130,6 @@ import Router from 'next/router'
         <title>Reseller Dashboard</title>
         <link rel="dns-prefetch" href="//developers.google.com" />
         <link rel="dns-prefetch" href="//maps.googleapis.com" />
-        <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet" />
       </Head>      
       <div className="container sm:px-10 login" >
         <div className="block xl:grid grid-cols-2 gap-4">

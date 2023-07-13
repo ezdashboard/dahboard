@@ -29,7 +29,7 @@ const SideBar =(props)=>{
     return (
         <>
           <nav className="side-nav">
-            <Link href="#" className="intro-x flex items-center pl-5 pt-4"><img alt="" src={props.logo ? props.logo : 'http://122.160.48.132/dev/html/reseller-dashboard/images/logo.png'} /></Link>
+            <Link href="#" className="intro-x flex items-center pl-5 pt-4"><img alt="" src={props.logo ? props.logo : 'https://smca.ezrankings.in/dashboard/images/logo.png'} /></Link>
                 <div className="side-nav__devider my-6"></div>
                 <ul>
                     <li>

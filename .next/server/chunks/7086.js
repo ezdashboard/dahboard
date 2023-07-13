@@ -63,7 +63,7 @@ const TopHeader = (props)=>{
                         className: "dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in",
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                             alt: "",
-                            src: props.img ? props.img : "http://122.160.48.132/dev/html/reseller-dashboard/images/profile-3.jpg"
+                            src: props.img ? props.img : "https://smca.ezrankings.in/dashboard/images/profile-3.jpg"
                         })
                     })
                 })

@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 660;
-exports.ids = [660,241,457,8572,5448];
+exports.ids = [660,457,241,8572,5448];
 exports.modules = {
 
 /***/ 894:
@@ -43,7 +43,7 @@ function Document() {
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_document__WEBPACK_IMPORTED_MODULE_1__.Head, {}),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("body", {
-                class: bodyCsss,
+                className: bodyCsss,
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_document__WEBPACK_IMPORTED_MODULE_1__.Main, {}),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_document__WEBPACK_IMPORTED_MODULE_1__.NextScript, {})

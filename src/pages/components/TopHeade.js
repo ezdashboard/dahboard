@@ -26,7 +26,7 @@ const TopHeader =(props)=>{
             </div>
             <div className="intro-x dropdown w-8 h-8">
                 <div className="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in">
-                    <img alt="" src={props.img ? props.img :'http://122.160.48.132/dev/html/reseller-dashboard/images/profile-3.jpg'} />
+                    <img alt="" src={props.img ? props.img :'https://smca.ezrankings.in/dashboard/images/profile-3.jpg'} />
                 </div>
             </div>
         </div>

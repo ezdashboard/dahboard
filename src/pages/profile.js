@@ -84,7 +84,7 @@ const onSubmit = (e) => {
     setCloseIcon(true);    
   }else{
     inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-    axios.post(`http://122.160.48.132/dev/vikas/react-backend/updatePass.php`,inputData,{
+    axios.post(`https://smca.ezrankings.in/dashboard/updatePass.php`,inputData,{
       headers: {
       'Content-Type': 'multipart/form-data'
     }
@@ -140,7 +140,7 @@ useEffect(() => {
   return (
     <>
   <Head>
-    <meta charset="utf-8" />
+    <meta charSet="utf-8" />
     <link href="#" rel="shortcut icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content=""/>
@@ -149,17 +149,15 @@ useEffect(() => {
     <title>Reseller Dashboard</title>
     <link rel="dns-prefetch" href="//developers.google.com"/>
     <link rel="dns-prefetch" href="//maps.googleapis.com"/>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&amp;display=swap" rel="stylesheet" crossOrigin="anonymous"/>
-    <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet" crossOrigin="anonymous"/>
     <script
     // you might need to get a newer version
     src="https://kit.fontawesome.com/fbadad80a0.js"
     crossOrigin="anonymous"
   ></script>
-    <script src="http://122.160.48.132/dev/html/reseller-dashboard/js/markerclusterer.js"></script>
+    <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-    <script src="http://122.160.48.132/dev/html/reseller-dashboard/js/app.js"></script>
-    <script src="http://122.160.48.132/dev/html/reseller-dashboard/js/map.js"></script>
+    <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
+    <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
   </Head>

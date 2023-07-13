@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 4897;
-exports.ids = [4897,241,398,2482,457,450,5911,8572,5557,5448,5461,8667,7976];
+exports.ids = [4897,457,241,450,2482,5911,8572,5448,8667,5461,7976,5557];
 exports.modules = {
 
 /***/ 1007:
@@ -144,7 +144,7 @@ function Index({ userDetail  }) {
         //     setCloseIcon(true);                                  
         } else {
             // inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-            axios__WEBPACK_IMPORTED_MODULE_7__["default"].post(`http://122.160.48.132/dev/vikas/react-backend/updateUser.php`, inputData, {
+            axios__WEBPACK_IMPORTED_MODULE_7__["default"].post(`https://smca.ezrankings.in/dashboard/updateUser.php`, inputData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }
@@ -172,7 +172,7 @@ function Index({ userDetail  }) {
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_2___default()), {
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        charset: "utf-8"
+                        charSet: "utf-8"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
                         href: "#",
@@ -198,10 +198,6 @@ function Index({ userDetail  }) {
                         children: "Reseller Dashboard"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        rel: "stylesheet",
-                        href: "http://122.160.48.132/dev/html/reseller-dashboard/css/app.css"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
                         rel: "dns-prefetch",
                         href: "//developers.google.com"
                     }),
@@ -209,21 +205,17 @@ function Index({ userDetail  }) {
                         rel: "dns-prefetch",
                         href: "//maps.googleapis.com"
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        href: "https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css",
-                        rel: "stylesheet"
-                    }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
-                        src: "http://122.160.48.132/dev/html/reseller-dashboard/js/markerclusterer.js"
+                        src: "https://smca.ezrankings.in/dashboard/js/markerclusterer.js"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
                         src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&libraries=places"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
-                        src: "http://122.160.48.132/dev/html/reseller-dashboard/js/app.js"
+                        src: "https://smca.ezrankings.in/dashboard/js/app.js"
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
-                        src: "http://122.160.48.132/dev/html/reseller-dashboard/js/map.js"
+                        src: "https://smca.ezrankings.in/dashboard/js/map.js"
                     })
                 ]
             }),
@@ -433,7 +425,7 @@ function Index({ userDetail  }) {
 // This function gets called at build time
 async function getStaticPaths() {
     // Call an external API endpoint to get posts
-    const res = await fetch("http://122.160.48.132/dev/vikas/react-backend/usersD.php?page=1");
+    const res = await fetch("https://smca.ezrankings.in/dashboard/usersD.php?page=1");
     const posts = await res.json();
     // Get the paths we want to pre-render based on posts
     const paths = posts.map((post)=>({
@@ -452,7 +444,7 @@ async function getStaticPaths() {
 async function getStaticProps({ params  }) {
     // params contains the post `id`.
     // If the route is like /posts/1, then params.id is 1
-    const res = await fetch(`http://122.160.48.132/dev/vikas/react-backend/getuser.php?userid=${params.edituser}`);
+    const res = await fetch(`https://smca.ezrankings.in/dashboard/getuser.php?userid=${params.edituser}`);
     const userDetail = await res.json();
     // Pass post data to the page via props
     return {

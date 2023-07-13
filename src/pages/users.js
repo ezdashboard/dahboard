@@ -64,7 +64,7 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
   // }
   const userDeleted = async (userId) => {
 
-    axios.get(`http://122.160.48.132/dev/vikas/react-backend/userDelete.php?userid=${userId}`)
+    axios.get(`https://smca.ezrankings.in/dashboard/userDelete.php?userid=${userId}`)
     .then(res => {
         if(res && res.data && res.data.status){
           const updatedUserStoreData = userStoreData.filter((user) => user.id !== userId);
@@ -78,7 +78,7 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
   
   const fetchData = async (page) => {
 
-    axios.get(`http://122.160.48.132/dev/vikas/react-backend/users.php?page=${page}`)
+    axios.get(`https://smca.ezrankings.in/dashboard/users.php?page=${page}`)
       .then(res => {
           const data = res.data.userData.map((item) => {
             return {
@@ -167,7 +167,7 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
       setCloseIcon(true);                                  
     }else{
       inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-      axios.post(`http://122.160.48.132/dev/vikas/react-backend/adduser.php`,inputData,{
+      axios.post(`https://smca.ezrankings.in/dashboard/adduser.php`,inputData,{
         headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -205,21 +205,19 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <link href="#" rel="shortcut icon"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="author" content=""/>
         <title>Reseller Dashboard</title>
-        {/* <link rel="stylesheet" href="http://122.160.48.132/dev/html/reseller-dashboard/css/app.css"/> */}
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
-        <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet"/>
-        <script src="http://122.160.48.132/dev/html/reseller-dashboard/js/markerclusterer.js"></script>
+        <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-        <script src="http://122.160.48.132/dev/html/reseller-dashboard/js/app.js"></script>
-        <script src="http://122.160.48.132/dev/html/reseller-dashboard/js/map.js"></script>
+        <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
+        <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
       </Head>
       <div className="flex mt-[4.7rem] md:mt-0">
         <SideBar logo={profileData.logo}/>

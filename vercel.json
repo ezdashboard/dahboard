@@ -1,0 +1,14 @@
+{
+    "headers": [
+      {
+        "source": "/src/pages/fonts/(.*)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      }
+    ]
+  }
+  

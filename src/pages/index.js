@@ -167,7 +167,7 @@ import Router from 'next/router'
                         
                       </div>
                       <div className="intro-x mt-10 xl:mt-24 text-slate-600 dark:text-slate-500 text-center xl:text-left">
-                          By signin up, you agree to our <a className="text-primary dark:text-slate-200" href="#">Terms and Conditions</a> & <a className="text-primary dark:text-slate-200" href="">Privacy Policy</a>
+                          By signin up, yoou agree to our <a className="text-primary dark:text-slate-200" href="#">Terms and Conditions</a> & <a className="text-primary dark:text-slate-200" href="">Privacy Policy</a>
                       </div>
                   </div>
               </form>

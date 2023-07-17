@@ -1,14 +1,12 @@
-{
-    "headers": [
+
+
+  {
+    "rewrites": [
       {
         "source": "/src/pages/fonts/(.*)",
-        "headers": [
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          }
-        ]
+        "destination": "/_next/static/media/$1"
       }
     ]
   }
+  
   

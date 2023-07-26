@@ -16,7 +16,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
 
-const NewsLetter = ()=>{
+const NewsLetter = (props)=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: "col-span-12 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 xxl:col-start-auto xxl:row-start-auto mt-3",
@@ -202,124 +202,49 @@ const NewsLetter = ()=>{
                                                         })
                                                     ]
                                                 }),
-                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                    className: "p-5 tns-item",
-                                                    id: "important-notes-item1",
-                                                    bis_skin_checked: "1",
-                                                    "aria-hidden": "true",
-                                                    tabIndex: "-1",
-                                                    children: [
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: "text-base font-medium truncate",
+                                                props && props.news && props.news.length > 0 && props.news.map((nn, n)=>{
+                                                    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                                                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                            className: "p-5 tns-item",
+                                                            id: "important-notes-item1",
                                                             bis_skin_checked: "1",
-                                                            children: "Lorem Ipsum is simply dummy text"
-                                                        }),
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: "text-slate-400 mt-1",
-                                                            bis_skin_checked: "1",
-                                                            children: "20 Hours ago"
-                                                        }),
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: "text-slate-500 text-justify mt-1",
-                                                            bis_skin_checked: "1",
-                                                            children: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-                                                        }),
-                                                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                            className: "font-medium flex mt-5",
-                                                            bis_skin_checked: "1",
+                                                            "aria-hidden": "true",
+                                                            tabIndex: "-1",
                                                             children: [
-                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                    type: "button",
-                                                                    className: "btn btn-secondary py-1 px-2",
-                                                                    children: "View Notes"
+                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                                                    className: "text-base font-medium truncate",
+                                                                    bis_skin_checked: "1",
+                                                                    children: nn.content
                                                                 }),
-                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                    type: "button",
-                                                                    className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
-                                                                    children: "Dismiss"
+                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                                                    className: "text-slate-400 mt-1",
+                                                                    bis_skin_checked: "1",
+                                                                    children: "20 Hours ago"
+                                                                }),
+                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                                                    className: "text-slate-500 text-justify mt-1",
+                                                                    bis_skin_checked: "1",
+                                                                    children: nn.content
+                                                                }),
+                                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                                    className: "font-medium flex mt-5",
+                                                                    bis_skin_checked: "1",
+                                                                    children: [
+                                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                                                            type: "button",
+                                                                            className: "btn btn-secondary py-1 px-2",
+                                                                            children: "View Notes"
+                                                                        }),
+                                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                                                            type: "button",
+                                                                            className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
+                                                                            children: "Dismiss"
+                                                                        })
+                                                                    ]
                                                                 })
                                                             ]
-                                                        })
-                                                    ]
-                                                }),
-                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                    className: "p-5 tns-item",
-                                                    id: "important-notes-item2",
-                                                    bis_skin_checked: "1",
-                                                    "aria-hidden": "true",
-                                                    tabIndex: "-1",
-                                                    children: [
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: "text-base font-medium truncate",
-                                                            bis_skin_checked: "1",
-                                                            children: "Lorem Ipsum is simply dummy text"
-                                                        }),
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: "text-slate-400 mt-1",
-                                                            bis_skin_checked: "1",
-                                                            children: "20 Hours ago"
-                                                        }),
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: "text-slate-500 text-justify mt-1",
-                                                            bis_skin_checked: "1",
-                                                            children: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-                                                        }),
-                                                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                            className: "font-medium flex mt-5",
-                                                            bis_skin_checked: "1",
-                                                            children: [
-                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                    type: "button",
-                                                                    className: "btn btn-secondary py-1 px-2",
-                                                                    children: "View Notes"
-                                                                }),
-                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                    type: "button",
-                                                                    className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
-                                                                    children: "Dismiss"
-                                                                })
-                                                            ]
-                                                        })
-                                                    ]
-                                                }),
-                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                    className: "p-5 tns-item tns-slide-cloned",
-                                                    bis_skin_checked: "1",
-                                                    "aria-hidden": "true",
-                                                    tabIndex: "-1",
-                                                    children: [
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: "text-base font-medium truncate",
-                                                            bis_skin_checked: "1",
-                                                            children: "Lorem Ipsum is simply dummy text"
-                                                        }),
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: "text-slate-400 mt-1",
-                                                            bis_skin_checked: "1",
-                                                            children: "20 Hours ago"
-                                                        }),
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: "text-slate-500 text-justify mt-1",
-                                                            bis_skin_checked: "1",
-                                                            children: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-                                                        }),
-                                                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                            className: "font-medium flex mt-5",
-                                                            bis_skin_checked: "1",
-                                                            children: [
-                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                    type: "button",
-                                                                    className: "btn btn-secondary py-1 px-2",
-                                                                    children: "View Notes"
-                                                                }),
-                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                    type: "button",
-                                                                    className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
-                                                                    children: "Dismiss"
-                                                                })
-                                                            ]
-                                                        })
-                                                    ]
+                                                        }, n)
+                                                    });
                                                 })
                                             ]
                                         })

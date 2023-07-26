@@ -50,7 +50,7 @@ const Learning = ()=>{
                   
                   <div className="intro-y grid grid-cols-12 gap-6 mt-5">
                       <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                          <div className="xxl:h-56 image-fit">
+                          <div className="2xl:h-56 image-fit">
                                   <img alt="" src="https://smca.ezrankings.in/dashboard/images/web-develop.jpg" />
                               </div>
                           <div className="learning-box">
@@ -62,7 +62,7 @@ const Learning = ()=>{
                           </div>
                       </div>
                       <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                          <div className="xxl:h-56 image-fit">
+                          <div className="2xl:h-56 image-fit">
                                   <img alt="" src="https://smca.ezrankings.in/dashboard/images/seo.jpg" />
                               </div>
                           <div className="learning-box">
@@ -74,7 +74,7 @@ const Learning = ()=>{
                           </div>
                       </div>
                       <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                         <div className="xxl:h-56 image-fit">
+                         <div className="2xl:h-56 image-fit">
                                   <img alt="" src="https://smca.ezrankings.in/dashboard/images/smo.jpg" />
                               </div>
                               <div className="learning-box">
@@ -90,7 +90,7 @@ const Learning = ()=>{
                   
                     <div className="intro-y grid grid-cols-12 gap-6 mt-5">
                       <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                          <div className="xxl:h-56 image-fit">
+                          <div className="2xl:h-56 image-fit">
                                   <img alt="" src="https://smca.ezrankings.in/dashboard/images/web-develop.jpg" />
                               </div>
                           <div className="learning-box">
@@ -102,7 +102,7 @@ const Learning = ()=>{
                           </div>
                       </div>
                       <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                          <div className="xxl:h-56 image-fit">
+                          <div className="2xl:h-56 image-fit">
                                   <img alt="" src="https://smca.ezrankings.in/dashboard/images/seo.jpg" />
                               </div>
                           <div className="learning-box">
@@ -114,7 +114,7 @@ const Learning = ()=>{
                           </div>
                       </div>
                       <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                         <div className="xxl:h-56 image-fit">
+                         <div className="2xl:h-56 image-fit">
                                   <img alt="" src="https://smca.ezrankings.in/dashboard/images/smo.jpg" />
                               </div>
                               <div className="learning-box">

@@ -8,7 +8,6 @@ import axios from 'axios';
 import { Lock, Pencil, X  } from 'lucide-react';
 import ProfileContent from './components/ProfileContent';
 
-
 const Profile = ()=> {
 const [bodyCsss, setBodyCss] = useState('py-5');
 const [profileData, setProfileData] = useState({
@@ -76,12 +75,12 @@ const onSubmit = (e) => {
   }else if(!inputData.new_password){
     setFormStatus("New password can not be blank.")
     setCloseIcon(true);
-}else if(!inputData.confirm_password){
-    setFormStatus("Confirm Password can not be blank.")
-    setCloseIcon(true);  
-}else if(inputData.new_password != inputData.confirm_password){
-    setFormStatus("New Password and confirm password not same.")
-    setCloseIcon(true);    
+  }else if(!inputData.confirm_password){
+      setFormStatus("Confirm Password can not be blank.")
+      setCloseIcon(true);  
+  }else if(inputData.new_password != inputData.confirm_password){
+      setFormStatus("New Password and confirm password not same.")
+      setCloseIcon(true);    
   }else{
     inputData.userid = profileData && profileData.userid ? profileData.userid : '';
     axios.post(`https://smca.ezrankings.in/dashboard/updatePass.php`,inputData,{

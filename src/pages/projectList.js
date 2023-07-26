@@ -5,11 +5,13 @@ import Link from 'next/link';
 import SideBar from './components/SideBar';
 import TopHeader from './components/TopHeade';
 import NewsLetter from './components/NewsLetter';
-
+import axios from 'axios';
+import { CheckSquare, Trash2, XCircle } from 'lucide-react';
 import { Search  } from 'lucide-react';
 
  const ProjectList = ()=> {
   const [faqData, setFaqData] = useState([]);
+  const [newsData, setNewsData] = useState([]);
   const [readMore, setReadMore] = useState(false);
   const [readMoreClass, setReadMoreClass] = useState('hide');
   const updateContent=()=>{
@@ -32,13 +34,34 @@ import { Search  } from 'lucide-react';
     }
   };
   const [addBtn, setAddBtn] = useState(false);
+
+  const NewsList = async (page) => {
+
+    axios.get(`https://smca.ezrankings.in/dashboard/newsList.php`)
+      .then(res => {
+          const data = res.data.newsData.map((item) => {
+            return {
+              id: item.id,
+              content: item.content,
+              time: item.time,
+              user: item.user,
+            }
+        }
+      )
+      setNewsData(data);
+    })
+    .catch(err => {
+     })
+ }
   useEffect(() => {
     if(!localStorage.userid){
         Router.push('/login');
     }else{
     if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type=="admin"){
       setAddBtn(true);
+      NewsList();
     }
+
     }
     }, []);
   return (
@@ -94,7 +117,9 @@ import { Search  } from 'lucide-react';
                                 <th className="text-center whitespace-nowrap">Start Date</th>
                                 <th className="text-center whitespace-nowrap">Reporting Date</th>
                                 <th className="text-center whitespace-nowrap">Payment Status</th>
-                                <th className="text-center whitespace-nowrap">View</th>
+                                {addBtn &&  <th className="text-center whitespace-nowrap">Edit</th>
+                                }<th className="text-center whitespace-nowrap">View</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -126,7 +151,10 @@ import { Search  } from 'lucide-react';
                             <td className="text-center">
                               <a href="" className="pay-done">Paid</a>
                             </td>
-                            <td>
+                            {addBtn && <td>
+                              <a href="" className="pay-done">Edit</a>
+                            </td>                             
+                            }<td>
                               <a href="" className="font-medium whitespace-nowrap report">Download Report</a>
                             </td>
                           </tr>
@@ -158,10 +186,14 @@ import { Search  } from 'lucide-react';
                               <td className="text-center">
                                     <a href="" className="pay-done">Paid</a>
                                   </td>
-                                  <td>
+                                  {addBtn &&  <td>
+                              <a href="" className="pay-done">Edit</a>
+                            </td>                                   
+                                 } <td>
                                     <a href="" className="font-medium whitespace-nowrap report">Download Report</a>
                                     
                                 </td>
+                                      
                           </tr>
                           <tr className="intro-x">
                                     <td>
@@ -191,16 +223,20 @@ import { Search  } from 'lucide-react';
                               <td className="text-center">
                                       <a href="" className="pay-due">Due</a>
                                     </td>
-                                    <td>
+                                    {addBtn &&  <td>
+                              <a href="" className="pay-done">Edit</a>
+                            </td>                                     
+                                    }<td>
                                       <a href="" className="font-medium whitespace-nowrap report">Download Report</a>
                                       
                                   </td>
+                                                                   
                           </tr>
                         </tbody>
                     </table>
                 </div>
               </div>       
-          <NewsLetter />
+          <NewsLetter news={newsData}/>
          </div>
       </div>
 

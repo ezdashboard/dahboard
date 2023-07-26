@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Head from 'next/head'
-
-// import routes from './routes';
 import Link from 'next/link';
 import SideBar from './components/SideBar';
 import TopHeader from './components/TopHeade';

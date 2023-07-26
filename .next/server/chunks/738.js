@@ -4,21 +4,114 @@ exports.ids = [738];
 exports.modules = {
 
 /***/ 4738:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _NewsLetter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8326);
+/* harmony import */ var _NewsLetter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8326);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9648);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2423);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lucide_react__WEBPACK_IMPORTED_MODULE_4__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_3__]);
+axios__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
 
 
 
 const AdminDasbboard = ()=>{
+    const [profileData, setProfileData] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
+        companyname: "",
+        title: "",
+        name: "",
+        email: "",
+        contactno: "",
+        about: "",
+        location: "",
+        image: "",
+        logo: "",
+        userid: ""
+    });
+    const [closeIcon, setCloseIcon] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+    const [msg, setFormStatus] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)("");
+    const [inputData, setInputData] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
+        content: "",
+        userid: profileData && profileData.userid ? profileData.userid : ""
+    });
+    const [submitBtn, setSubmitBtn] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({});
+    const inputChangeData = (event)=>{
+        const { name , value  } = event.target;
+        setInputData((valuePre)=>{
+            return {
+                ...valuePre,
+                [name]: value
+            };
+        });
+    };
+    const submitCloseIcon = ()=>{
+        setCloseIcon(false);
+    };
+    const onSubmit = (e)=>{
+        e.preventDefault();
+        if (!inputData.content) {
+            setSubmitBtn({
+                padding: "1rem 0rem",
+                display: "block",
+                color: "red"
+            });
+            setFormStatus("Content can not be blank.");
+            setCloseIcon(true);
+        } else {
+            inputData.userid = profileData && profileData.userid ? profileData.userid : "";
+            axios__WEBPACK_IMPORTED_MODULE_3__["default"].post(`https://smca.ezrankings.in/dashboard/addNews.php`, inputData, {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
+            }).then((res)=>{
+                const data = res.data;
+                if (res && res.data && res.data.error && res.data.error.length > 0) {
+                    setFormStatus(res.data.error);
+                    setCloseIcon(true);
+                } else if (res && res.data && res.data.msg && res.data.msg.length > 0) {
+                    setInputData({
+                        content: "",
+                        userid: profileData && profileData.userid ? profileData.userid : ""
+                    });
+                    //Router.push('/thankyou')
+                    setFormStatus("Submit Successfully.");
+                    setCloseIcon(true);
+                    setSubmitBtn({
+                        padding: "1rem 0rem",
+                        display: "block",
+                        color: "#46c737"
+                    });
+                }
+            }).catch((err)=>{});
+        }
+    };
+    (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(()=>{
+        if (localStorage.title && localStorage.email && localStorage.logo && localStorage.companyname && localStorage.userid && localStorage.name) {
+            setProfileData({
+                companyname: localStorage.companyname,
+                title: localStorage.title,
+                name: localStorage.name,
+                email: localStorage.email,
+                contactno: localStorage.contactno ? localStorage.contactno : "",
+                about: localStorage.about ? localStorage.about : "",
+                location: localStorage.location ? localStorage.location : "",
+                image: localStorage.image ? localStorage.image : "",
+                logo: localStorage.logo,
+                userid: localStorage.userid
+            });
+        }
+    }, []);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -146,37 +239,58 @@ const AdminDasbboard = ()=>{
                                 children: "Add New"
                             })
                         }),
-                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: "p-5",
-                            bis_skin_checked: "1",
+                        closeIcon ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+                            style: submitBtn,
                             children: [
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: "mt-3",
-                                    bis_skin_checked: "1",
-                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("textarea", {
-                                        id: "change-password-form-3",
-                                        rows: "5",
-                                        type: "password",
-                                        className: "form-control",
-                                        placeholder: "Write Something Here...."
+                                msg,
+                                "  ",
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                    onClick: submitCloseIcon,
+                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_4__.X, {
+                                        size: "16",
+                                        color: "#999"
                                     })
-                                }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                    type: "button",
-                                    className: "btn btn-primary mt-4",
-                                    children: "Save"
                                 })
                             ]
+                        }) : "",
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            className: "p-5",
+                            bis_skin_checked: "1",
+                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("form", {
+                                onSubmit: onSubmit,
+                                children: [
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        className: "mt-3",
+                                        bis_skin_checked: "1",
+                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("textarea", {
+                                            id: "change-password-form-3",
+                                            rows: "5",
+                                            name: "content",
+                                            onChange: inputChangeData,
+                                            className: "form-control",
+                                            placeholder: "Write Something Here....",
+                                            value: inputData.content
+                                        })
+                                    }),
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                        type: "submit",
+                                        className: "btn btn-primary mt-4",
+                                        children: "Save"
+                                    })
+                                ]
+                            })
                         })
                     ]
                 })
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_NewsLetter__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_NewsLetter__WEBPACK_IMPORTED_MODULE_1__["default"], {})
         ]
     });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AdminDasbboard);
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ })
 

@@ -194,7 +194,7 @@ import Router from 'next/router'
                             </td>
                             <td>
                                 <a href={report.projectUrl} target="_blank" className="font-medium whitespace-nowrap">{report.projectUrl}</a>
-                                <div className= {report.projectUrl=='Active' ? 'text-slate-500 text-xs whitespace-nowrap mt-0.5 text-success' : 'text-slate-500 text-xs whitespace-nowrap mt-0.5 text-danger'}bis_skin_checked="1">{report.projectUrl}</div>
+                                <div className= {report.projectStatus=='Active' ? 'text-slate-500 text-xs whitespace-nowrap mt-0.5 text-success' : 'text-slate-500 text-xs whitespace-nowrap mt-0.5 text-danger'}bis_skin_checked="1">{report.projectStatus}</div>
                             </td>
                             <td className="text-center">{report.planOpted}</td>
                             <td className="w-40">

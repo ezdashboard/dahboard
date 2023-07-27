@@ -8,10 +8,13 @@ import NewsLetter from './components/NewsLetter';
 import axios from 'axios';
 import { CheckSquare, Trash2, XCircle } from 'lucide-react';
 import { Search  } from 'lucide-react';
+import Router from 'next/router'
 
  const ProjectList = ()=> {
+
   const [faqData, setFaqData] = useState([]);
   const [newsData, setNewsData] = useState([]);
+  const [reportData, setReportData] = useState([]);
   const [readMore, setReadMore] = useState(false);
   const [readMoreClass, setReadMoreClass] = useState('hide');
   const updateContent=()=>{
@@ -34,7 +37,9 @@ import { Search  } from 'lucide-react';
     }
   };
   const [addBtn, setAddBtn] = useState(false);
-
+  const navigation = ()=>{
+    Router.push("/add-report")
+  }
   const NewsList = async (page) => {
 
     axios.get(`https://smca.ezrankings.in/dashboard/newsList.php`)
@@ -53,6 +58,31 @@ import { Search  } from 'lucide-react';
     .catch(err => {
      })
  }
+ const getReportData = async () => {
+
+  axios.get(`https://smca.ezrankings.in/dashboard/reports.php`)
+    .then(res => {
+        const data = res.data.reportsData.map((item) => {
+          return {
+            id: item.id,
+            serviceName: item.serviceName,
+            dwlUrl: item.dwlUrl,
+            projectUrl: item.projectUrl,
+            planOpted: item.planOpted,
+            billingAmt: item.billingAmt,
+            startDate: item.startDate,
+            reportingDate: item.reportingDate,
+            paymentStatus: item.paymentStatus,
+            projectStatus: item.projectStatus,
+            userAssign: item.userAssign,            
+          }
+      }
+    )
+    setReportData(data);
+  })
+  .catch(err => {
+   })
+}
   useEffect(() => {
     if(!localStorage.userid){
         Router.push('/login');
@@ -63,6 +93,8 @@ import { Search  } from 'lucide-react';
     }
 
     }
+    getReportData();
+
     }, []);
   return (
     <>
@@ -88,10 +120,39 @@ import { Search  } from 'lucide-react';
           <TopHeader />
               <div className="col-span-12 mt-6" bis_skin_checked="1">
                 <div className="col-span-12 mt-8">
+                <div className="col-span-12 mt-8">
+            <div className="intro-y flex items-center h-10">
+                <h2 className="text-lg font-medium truncate mr-5">General Report</h2>
+                <div className="w-full sm:w-auto relative mr-auto mt-3 sm:mt-0 flex gap-20">
+                    <div className="fil-box">
+                        <select id="input-wizard-6" className="form-select">
+                            <option>Select Services</option>
+                            <option>SEO</option>
+                            <option>SEO</option>
+                            <option>SEO</option>
+                            <option>SEO</option>
+                            <option>SEO</option>
+                            <option>SEO</option>
+                        </select>
+                    </div>
+                    <div className="fil-box">
+                        <select id="input-wizard-6" className="form-select">
+                                <option>Status</option>
+                                <option>Active</option>
+                                <option>Pause</option>
+                        </select>
+                    </div>
+                            <button className="btn btn-primary w-32 ml-2">Search</button>
+                </div>
+                <a href className="ml-auto flex items-center text-primary">
+                    Show More
+                </a>
+            </div>
+        </div>
                 </div>
                 <div className="col-md-12">
                     <div className="flex flex-wrap items-center col-span-12 mt-2 intro-y sm:flex-nowrap" bis_skin_checked="1">
-{addBtn &&                        <button className="transition duration-200 border inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&amp;:hover:not(:disabled)]:bg-opacity-90 [&amp;:hover:not(:disabled)]:border-opacity-90 [&amp;:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary mr-2 shadow-md">Add New Report</button>}
+{addBtn &&                        <button className="btn btn-primary" onClick={navigation}>Add New Report</button>}
                         <div className="hidden mx-auto md:block text-slate-500" bis_skin_checked="1">Showing 1 to 10 of 150 entries
                         </div>
                         <div className="w-full mt-3 sm:w-auto sm:mt-0 sm:ml-auto md:ml-0" bis_skin_checked="1">
@@ -123,115 +184,49 @@ import { Search  } from 'lucide-react';
                             </tr>
                         </thead>
                         <tbody>
-                          <tr className="intro-x">
+               {reportData && reportData.length > 0 && reportData.map((report, r)=>{
+                return(
+                  <>
+                          <tr className="intro-x" key={r}>
                             <td>
-                              <a href="" className="font-medium whitespace-nowrap">Service 1</a>
-                              <div className="text-slate-500 text-xs whitespace-nowrap mt-0.5" bis_skin_checked="1">Digital Makreting</div>
+                              <a href="#" className="font-medium whitespace-nowrap">{report.serviceName}</a>
+                              
                             </td>
                             <td>
-                                <a href="" className="font-medium whitespace-nowrap">www.google.com</a>
-                                <div className="text-slate-500 text-xs whitespace-nowrap mt-0.5 text-success" bis_skin_checked="1">Active</div>
+                                <a href={report.projectUrl} target="_blank" className="font-medium whitespace-nowrap">{report.projectUrl}</a>
+                                <div className= {report.projectUrl=='Active' ? 'text-slate-500 text-xs whitespace-nowrap mt-0.5 text-success' : 'text-slate-500 text-xs whitespace-nowrap mt-0.5 text-danger'}bis_skin_checked="1">{report.projectUrl}</div>
                             </td>
-                            <td className="text-center">50</td>
+                            <td className="text-center">{report.planOpted}</td>
                             <td className="w-40">
                                 <div className="flex items-center justify-center" bis_skin_checked="1">
-                                    $50
+                                    ${report.billingAmt}
                                 </div>
                             </td>
                             <td className="w-40">
                                 <div className="flex items-center justify-center" bis_skin_checked="1">
-                                  23/05/2023
+                                  {report.startDate}
                                 </div>
                             </td>
                             <td className="w-40">
                                 <div className="flex items-center justify-center" bis_skin_checked="1">
-                                    23/05/2023
+                                    {report.reportingDate}
                                 </div>
                             </td>
                             <td className="text-center">
-                              <a href="" className="pay-done">Paid</a>
+                              <a href="#" className={report.paymentStatus=='Paid' ? 'pay-done': 'pay-due'}>{report.paymentStatus}</a>
                             </td>
                             {addBtn && <td>
-                              <a href="" className="pay-done">Edit</a>
+                              <a href="#" className="pay-done">Edit</a>
                             </td>                             
                             }<td>
-                              <a href="" className="font-medium whitespace-nowrap report">Download Report</a>
+                              <a target="_blank" href={report.dwlUrl} className="font-medium whitespace-nowrap report">Download Report</a>
                             </td>
-                          </tr>
-                          <tr className="intro-x">
-                                  <td>
-                                    <a href="" className="font-medium whitespace-nowrap">Service 1</a>
-                                    <div className="text-slate-500 text-xs whitespace-nowrap mt-0.5" bis_skin_checked="1">Digital Makreting</div>
-                                </td>
-                                <td>
-                                    <a href="" className="font-medium whitespace-nowrap">www.google.com</a>
-                                    <div className="text-slate-500 text-xs whitespace-nowrap mt-0.5 text-success" bis_skin_checked="1">Active</div>
-                                </td>
-                                <td className="text-center">50</td>
-                                <td className="w-40">
-                                    <div className="flex items-center justify-center" bis_skin_checked="1">
-                                        $50
-                                    </div>
-                                </td>
-                                <td className="w-40">
-                                    <div className="flex items-center justify-center" bis_skin_checked="1">
-                                      23/05/2023
-                                    </div>
-                                </td>
-                                <td className="w-40">
-                                    <div className="flex items-center justify-center" bis_skin_checked="1">
-                                        23/05/2023
-                                    </div>
-                                </td>
-                              <td className="text-center">
-                                    <a href="" className="pay-done">Paid</a>
-                                  </td>
-                                  {addBtn &&  <td>
-                              <a href="" className="pay-done">Edit</a>
-                            </td>                                   
-                                 } <td>
-                                    <a href="" className="font-medium whitespace-nowrap report">Download Report</a>
-                                    
-                                </td>
-                                      
-                          </tr>
-                          <tr className="intro-x">
-                                    <td>
-                                      <a href="" className="font-medium whitespace-nowrap">Service 1</a>
-                                      <div className="text-slate-500 text-xs whitespace-nowrap mt-0.5" bis_skin_checked="1">Digital Makreting</div>
-                                  </td>
-                                  <td>
-                                      <a href="" className="font-medium whitespace-nowrap">www.google.com</a>
-                                      <div className="text-slate-500 text-xs whitespace-nowrap mt-0.5 text-danger" bis_skin_checked="1">Paused</div>
-                                  </td>
-                                  <td className="text-center">50</td>
-                                  <td className="w-40">
-                                      <div className="flex items-center justify-center" bis_skin_checked="1">
-                                          $50
-                                      </div>
-                                  </td>
-                                  <td className="w-40">
-                                      <div className="flex items-center justify-center" bis_skin_checked="1">
-                                        23/05/2023
-                                      </div>
-                                  </td>
-                                  <td className="w-40">
-                                      <div className="flex items-center justify-center" bis_skin_checked="1">
-                                          23/05/2023
-                                      </div>
-                                  </td>
-                              <td className="text-center">
-                                      <a href="" className="pay-due">Due</a>
-                                    </td>
-                                    {addBtn &&  <td>
-                              <a href="" className="pay-done">Edit</a>
-                            </td>                                     
-                                    }<td>
-                                      <a href="" className="font-medium whitespace-nowrap report">Download Report</a>
-                                      
-                                  </td>
-                                                                   
-                          </tr>
+                          </tr>                  
+                  </>
+                )
+               })}           
+
+
                         </tbody>
                     </table>
                 </div>

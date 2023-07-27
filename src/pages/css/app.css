@@ -17781,7 +17781,6 @@ i.far.fa-camera {
 }
 */
 .avatar-upload .avatar-preview {
-
   width: 150px;
   height: 150px;
   position: relative;
@@ -17897,4 +17896,8 @@ canvas#myChart {
 }
 textarea{
   resize: none;
+}
+
+.gap-20{
+  gap: 20px;
 }

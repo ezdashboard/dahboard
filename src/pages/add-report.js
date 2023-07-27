@@ -11,6 +11,7 @@ const AddReport = ()=>{
     });
     const [inputData, setInputData] = useState({
         serviceName : '',
+        dwlUrl:'',
         projectUrl : '',
         planOption : '',
         billingAmt : '',
@@ -23,6 +24,7 @@ const AddReport = ()=>{
     });
     const [msg, setFormStatus] = useState('')
     const [userStoreData, setUserStoreData] = useState([]);
+    const [serviceStoreData, setServiceStoreData] = useState([]);
     const [closeIcon, setCloseIcon] = useState(false)
     const [submitBtn, setSubmitBtn] = useState({})
     const inputChangeData =(event)=> {
@@ -45,18 +47,21 @@ const AddReport = ()=>{
         display: 'block',
         color: 'red'
       });
-      if(!inputData.serviceName){
-        setFormStatus("Service name can not be blank.")
-        setCloseIcon(true);    
-      }else if(!inputData.projectUrl){
+      if(!inputData.projectUrl){
         setFormStatus("Project url can not be blank.")
         setCloseIcon(true);
-      }else if(!inputData.planOption){  
-        setFormStatus("Plan can not be blank.")
-        setCloseIcon(true); 
+      }else if(!inputData.dwlUrl){
+        setFormStatus("Download url can not be blank.")
+        setCloseIcon(true);    
+      }else if(!inputData.serviceName){
+        setFormStatus("Please select Service name.")
+        setCloseIcon(true);   
       }else if(!inputData.userAssign){
-        setFormStatus("please select user.")
-        setCloseIcon(true);       
+        setFormStatus("Please select user.")
+        setCloseIcon(true);                   
+      }else if(!inputData.planOption){  
+        setFormStatus("Plan opted can not be blank.")
+        setCloseIcon(true); 
       }else if(!inputData.billingAmt){
         setFormStatus("Billing amount can not be blank.")
         setCloseIcon(true);  
@@ -67,11 +72,11 @@ const AddReport = ()=>{
         setFormStatus("Report date can not be blank.")
         setCloseIcon(true);  
       }else if(!inputData.paymentStatus){
-        setFormStatus("Payment status can not be blank.")
+        setFormStatus("Please select payment status.")
         setCloseIcon(true);  
-    //   }else if(!inputData.projectStatus){
-    //     setFormStatus("Project status can not be blank.")
-    //     setCloseIcon(true);                                          
+      }else if(!inputData.projectStatus){
+        setFormStatus("Please select project status.")
+        setCloseIcon(true);                                          
       }else{
         inputData.userid = localStorage && localStorage.userid ? localStorage.userid : '';
         axios.post(`https://smca.ezrankings.in/dashboard/add-report.php`,inputData,{
@@ -86,15 +91,19 @@ const AddReport = ()=>{
                   setCloseIcon(true);
               }else if(res &&  res.data && res.data.msg && res.data.msg.length > 0){
                       //Router.push('/thankyou')
-                      setFormStatus("User added successfully.");
+                      setFormStatus("Report added successfully.");
                       //localStorage.clear();
                       setInputData({
-                        companyname : '',
-                        name : '',
-                        email : '',
-                        contactno : '',
-                        type:'',
-                        password : ''
+                        serviceName : '',
+                        dwlUrl:'',
+                        projectUrl : '',
+                        planOption : '',
+                        billingAmt : '',
+                        startDate : '',
+                        reportingDate : '',
+                        paymentStatus : '',
+                        projectStatus : '',
+                        userAssign: ''
                     });
 
                       setCloseIcon(true);
@@ -110,7 +119,7 @@ const AddReport = ()=>{
          })
       }
     }
-    const fetchData = async () => {
+    const getUserData = async () => {
 
         axios.get(`https://smca.ezrankings.in/dashboard/users.php?page=`)
           .then(res => {
@@ -133,14 +142,32 @@ const AddReport = ()=>{
         })
         .catch(err => {
          })
-     }        
+     }  
+    const getServiceData = async () => {
+
+        axios.get(`https://smca.ezrankings.in/dashboard/services.php`)
+          .then(res => {
+              const data = res.data.serviceData.map((item) => {
+                return {
+                  id: item.id,
+                  name: item.service_name,
+                  status: item.status
+                }
+            }
+          )
+          setServiceStoreData(data);
+        })
+        .catch(err => {
+         })
+     }            
     useEffect(() => {
         if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type=="admin"){
             setSideBarAccess({
                 users : true
             })
         }
-        fetchData();
+        getUserData();
+        getServiceData();
         }, []);
     return(
         <>
@@ -172,35 +199,30 @@ const AddReport = ()=>{
                         <form onSubmit={onSubmit}>
                         <div className="grid grid-cols-12 gap-4 gap-y-5 mt-5">
                             <div className="intro-y col-span-12 sm:col-span-6">
+                                    <label htmlFor="input-wizard-2" className="form-label">Project URL</label>
+                                    <input type="text" className="form-control" placeholder="www.abc.com" onChange={inputChangeData} name="projectUrl" value={inputData.projectUrl}/>
+                            </div>  
+                            <div className="intro-y col-span-12 sm:col-span-6">
+                                    <label htmlFor="input-wizard-2" className="form-label">Download Link URL</label>
+                                    <input type="text" className="form-control" placeholder="www.abc.com" onChange={inputChangeData} name="dwlUrl" value={inputData.dwlUrl}/>
+                            </div>                                                      
+                            <div className="intro-y col-span-12 sm:col-span-6">
                                 <label htmlFor="input-wizard-1" className="form-label">Service Name</label>
-                                <input type="text" className="form-control" placeholder="abc" onChange={inputChangeData} name="serviceName" value={inputData.serviceName}/>
-                            </div>
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                <label htmlFor="input-wizard-2" className="form-label">Project URL / Status</label>
-                                <input type="text" className="form-control" placeholder="www.abc.com" onChange={inputChangeData} name="projectUrl" value={inputData.projectUrl}/>
-                            </div>
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                <label htmlFor="input-wizard-3" className="form-label">Plan Opted</label>
-                                <select className="form-select" onChange={inputChangeData} name="planOption">
-                                    <option value ="1" >1</option>
-                                    <option value ="2" >2</option>
-                                    <option value ="3" >3</option>
-                                    <option value ="4" >4</option>
-                                    <option value ="5" >5</option>
-                                    <option value ="6" >6</option>
-                                    <option value ="7" >7</option>
-                                    <option value ="8" >8</option>
-                                    <option value ="9" >9</option>
-                                    <option value ="10" >10</option>
-                                    <option value ="11" >11</option>
-                                    <option value ="12" >12</option>
-                                    <option value ="13" >13</option>
-                                    <option value ="14" >14</option>
-                                </select>
+                                <select className="form-select" onChange={inputChangeData} name="serviceName">
+                                <option value="" select="selected">Select</option>
+                                    {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{
+                                        return(
+                                            <>
+                                            <option value ={service.id} key={s}>{service.name}</option>
+                                            </>
+                                        )
+                                    })}
+                                </select>                                
                             </div>
                             <div className="intro-y col-span-12 sm:col-span-6">
                                 <label htmlFor="input-wizard-3" className="form-label">User List</label>
                                     <select className="form-select" onChange={inputChangeData} name="userAssign">
+                                    <option value="" select="selected">Select</option>
                                     {userStoreData && userStoreData.length > 0 && userStoreData.map((usecr, u)=>{
                                         return(
                                             <>
@@ -209,7 +231,12 @@ const AddReport = ()=>{
                                         )
                                     })}
                                 </select>
-                            </div>                            
+                            </div>                                            
+                            <div className="intro-y col-span-12 sm:col-span-6">
+                                <label htmlFor="input-wizard-3" className="form-label">Plan Opted</label>
+                                <input type="text" className="form-control" placeholder="123" onChange={inputChangeData} name="planOption" value={inputData.planOption}/>
+                            </div>
+                            
                             <div className="intro-y col-span-12 sm:col-span-6">
                                 <label htmlFor="input-wizard-3" className="form-label">Billing Amount</label>
                                 <input type="text" className="form-control" placeholder="$ " onChange={inputChangeData} name="billingAmt" value={inputData.billingAmt}/>
@@ -225,18 +252,21 @@ const AddReport = ()=>{
                             <div className="intro-y col-span-12 sm:col-span-6">
                                 <label htmlFor="input-wizard-4" className="form-label">Payment Status</label>
                                 <select className="form-select" onChange={inputChangeData} name="paymentStatus">
+                                    <option value="" select="selected">Select</option>
                                     <option value="Paid">Paid</option>
                                     <option value="Due">Due</option>
                                 </select>
                             </div>
                             <div className="intro-y col-span-12 sm:col-span-6">
                                 <label htmlFor="input-wizard-4" className="form-label">Project Status</label>
-                                <div className="mt-2">
-                                    <div className="form-check form-switch" >
-                                        <input className="form-check-input" type="checkbox"  onChange={inputChangeData} name="projectStatus" value={inputData.projectStatus}/>
+                                    <div className="form-check" >
+                                        <select className="form-select" onChange={inputChangeData} name="projectStatus">
+                                            <option value="" select="selected">Select</option>
+                                            <option value="Active">Active</option>
+                                            <option value="Paused">Paused</option>        
+                                        </select>                                    
                                     </div>
-                                </div>
-                            </div>
+                            </div>                            
                         </div>
                         <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
                             <button className="btn btn-primary w-24 ml-2" type="submit">Submit</button>

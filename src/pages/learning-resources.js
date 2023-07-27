@@ -61,69 +61,7 @@ const Learning = ()=>{
                               <Link href="#" className="ml-auto flex items-center text-primary">Read More</Link>
                           </div>
                       </div>
-                      <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                          <div className="2xl:h-56 image-fit">
-                                  <img alt="" src="https://smca.ezrankings.in/dashboard/images/seo.jpg" />
-                              </div>
-                          <div className="learning-box">
-                              
-                              <Link href="#" className="block font-medium text-base">Web Designing &amp; Development</Link> 
-                                <div className="flex text-slate-500 truncate text-xs mt-0.5"> <Link className="text-primary inline-block truncate" href="">Admin </Link> <span className="mx-1">•</span> 21 seconds ago </div>
-                              <div className="text-slate-600 dark:text-slate-500 mt-2"><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classNameical Latin literature from 45 BC, making it over 20</p></div>
-                              <Link href="#"className="ml-auto flex items-center text-primary">Read More</Link>
-                          </div>
-                      </div>
-                      <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                         <div className="2xl:h-56 image-fit">
-                                  <img alt="" src="https://smca.ezrankings.in/dashboard/images/smo.jpg" />
-                              </div>
-                              <div className="learning-box">
-                              
-                              <Link href="#" className="block font-medium text-base">Web Designing &amp; Development</Link> 
-                                <div className="flex text-slate-500 truncate text-xs mt-0.5"> <a className="text-primary inline-block truncate" href="">Admin </a> <span className="mx-1">•</span> 21 seconds ago </div>
-                              <div className="text-slate-600 dark:text-slate-500 mt-2"><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classNameical Latin literature from 45 BC, making it over 20</p></div>
-                              <Link href="#" className="ml-auto flex items-center text-primary">Read More</Link>
-                          </div>
-                      </div>
-                      
-                  </div>
-                  
-                    <div className="intro-y grid grid-cols-12 gap-6 mt-5">
-                      <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                          <div className="2xl:h-56 image-fit">
-                                  <img alt="" src="https://smca.ezrankings.in/dashboard/images/web-develop.jpg" />
-                              </div>
-                          <div className="learning-box">
-                              
-                              <Link href="#" className="block font-medium text-base">Web Designing &amp; Development</Link> 
-                                <div className="flex text-slate-500 truncate text-xs mt-0.5"> <a className="text-primary inline-block truncate" href="">Admin </a> <span className="mx-1">•</span> 21 seconds ago </div>
-                              <div className="text-slate-600 dark:text-slate-500 mt-2"><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classNameical Latin literature from 45 BC, making it over 20</p></div>
-                              <Link href="#" className="ml-auto flex items-center text-primary">Read More</Link>
-                          </div>
-                      </div>
-                      <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                          <div className="2xl:h-56 image-fit">
-                                  <img alt="" src="https://smca.ezrankings.in/dashboard/images/seo.jpg" />
-                              </div>
-                          <div className="learning-box">
-                              
-                              <Link href="#" className="block font-medium text-base">Web Designing &amp; Development</Link> 
-                                <div className="flex text-slate-500 truncate text-xs mt-0.5"> <a className="text-primary inline-block truncate" href="">Admin </a> <span className="mx-1">•</span> 21 seconds ago </div>
-                              <div className="text-slate-600 dark:text-slate-500 mt-2"><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classNameical Latin literature from 45 BC, making it over 20</p></div>
-                              <Link href="#" className="ml-auto flex items-center text-primary">Read More</Link>
-                          </div>
-                      </div>
-                      <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res">
-                         <div className="2xl:h-56 image-fit">
-                                  <img alt="" src="https://smca.ezrankings.in/dashboard/images/smo.jpg" />
-                              </div>
-                              <div className="learning-box">
-                              <Link href="#" className="block font-medium text-base">Web Designing &amp; Development</Link> 
-                                <div className="flex text-slate-500 truncate text-xs mt-0.5"> <a className="text-primary inline-block truncate" href="">Admin </a> <span className="mx-1">•</span> 21 seconds ago </div>
-                              <div className="text-slate-600 dark:text-slate-500 mt-2"><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classNameical Latin literature from 45 BC, making it over 20</p></div>
-                              <Link href="#" className="ml-auto flex items-center text-primary">Read More</Link>
-                          </div>
-                      </div>
+
                   </div>
                   
                       {/* <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">

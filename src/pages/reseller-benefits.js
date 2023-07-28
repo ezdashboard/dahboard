@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Head from 'next/head'
-// import routes from './routes';
 import Link from 'next/link';
 import SideBar from './components/SideBar';
 import TopHeader from './components/TopHeade';
@@ -8,49 +7,8 @@ import NewsLetter from './components/NewsLetter';
 
 
  const ResellerBenefits = ()=> {
-
-    // useEffect(() => {
-
-    //   }, []);
-  const [faqData, setFaqData] = useState([]);
-  const [readMore, setReadMore] = useState(false);
-  const [readMoreClass, setReadMoreClass] = useState('hide');
-  const updateContent=()=>{
-   if(!readMore){
-      setReadMore(true);
-   }else{
-      setReadMore(false);
-   }
-  }
-
-  const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
-
-
-const settings = {
-  centerMode: true,
-  autoplay: false,
-  autoplaySpeed: 1000,
-  slidesToShow: 4,
-  dots: true,
-  arrows: true,
-  swipe: true,
-  infinite: true,
-  swipeToSlide: true, responsive: [{
-    breakpoint: 768,
-    settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1
-    }
-  }
-]
-  };
-  const toggleHiddenTitle = (index) => {
-    if (hiddenTitleIndex === index) {
-      setHiddenTitleIndex(null);
-    } else {
-      setHiddenTitleIndex(index);
-    }
-  };
+    useEffect(() => {
+      }, []);
   return (
     <>
     <Head>
@@ -60,7 +18,7 @@ const settings = {
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="author" content=""/>
-        <title>Reseller Dashboard</title>
+        <title>Reseller Benefits</title>
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
         <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>

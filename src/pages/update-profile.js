@@ -387,10 +387,9 @@ import axios from 'axios';
                                             <img className="rounded-md" alt="#" src={profileData.logo}/>
                                             <input type="file" className="w-full h-full top-0 left-0 absolute opacity-0" onChange={handleFileChange} />
                                         </div>
-                                        
+
                                         <div className="mx-auto cursor-pointer relative mt-5" bis_skin_checked="1">
                                         <button type="submit" className="btn btn-primary w-full">Change Logo</button>
-                                       
                                         </div>
                                         </form>
                                     </div>
@@ -405,6 +404,4 @@ import axios from 'axios';
     </>
   )
 }
-
-
 export default UpdateProfile;

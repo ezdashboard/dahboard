@@ -130,6 +130,10 @@ import Router from 'next/router'
         <title>Reseller Dashboard</title>
         <link rel="dns-prefetch" href="//developers.google.com" />
         <link rel="dns-prefetch" href="//maps.googleapis.com" />
+        <style>
+
+
+        </style>
       </Head>      
       <div className="container sm:px-10 login" >
         <div className="block xl:grid grid-cols-2 gap-4">

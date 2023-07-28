@@ -1,6 +1,6 @@
 import React from "react";
 
-const NewsLetter = (props)=>{
+const NewsLetter = ()=>{
     return (
         <>
         <div className="col-span-12 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 xxl:col-start-auto xxl:row-start-auto mt-3" bis_skin_checked="1">
@@ -19,12 +19,11 @@ const NewsLetter = (props)=>{
                             <div className="text-base font-medium truncate" bis_skin_checked="1">Lorem Ipsum is simply dummy text</div>
                             <div className="text-slate-400 mt-1" bis_skin_checked="1">20 Hours ago</div>
                             <div className="text-slate-500 text-justify mt-1" bis_skin_checked="1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</div>
-                                <div className="font-medium flex mt-5" bis_skin_checked="1">
-                                    <button type="button" className="btn btn-secondary py-1 px-2">View Notes</button>
-                                    <button type="button" className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
-                                </div>
+                            <div className="font-medium flex mt-5" bis_skin_checked="1">
+                                <button type="button" className="btn btn-secondary py-1 px-2">View Notes</button>
+                                <button type="button" className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
+                            </div>
                         </div>
-
                         <div className="p-5 tns-item tns-slide-active" id="important-notes-item0" bis_skin_checked="1">
                             <div className="text-base font-medium truncate" bis_skin_checked="1">Lorem Ipsum is simply dummy text</div>
                             <div className="text-slate-400 mt-1" bis_skin_checked="1">20 Hours ago</div>
@@ -34,25 +33,33 @@ const NewsLetter = (props)=>{
                                 <button type="button" className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
                             </div>
                         </div>
-                        {props && props.news && props.news.length > 0 && props.news.map((nn, n)=>{
-                            return(
-                                <>
-                                    <div className="p-5 tns-item" id="important-notes-item1" bis_skin_checked="1" aria-hidden="true" tabIndex="-1" key={n}>
-                                        <div className="text-base font-medium truncate" bis_skin_checked="1">{nn.content}</div>
-                                        <div className="text-slate-400 mt-1" bis_skin_checked="1">20 Hours ago</div>
-                                        <div className="text-slate-500 text-justify mt-1" bis_skin_checked="1">{nn.content}</div>
-                                        <div className="font-medium flex mt-5" bis_skin_checked="1">
-                                            <button type="button" className="btn btn-secondary py-1 px-2">View Notes</button>
-                                            <button type="button" className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
-                                        </div>
-                                    </div>                                
-                                </>
-                            )
-                        })}                        
+                        <div className="p-5 tns-item" id="important-notes-item1" bis_skin_checked="1" aria-hidden="true" tabIndex="-1">
+                            <div className="text-base font-medium truncate" bis_skin_checked="1">Lorem Ipsum is simply dummy text</div>
+                            <div className="text-slate-400 mt-1" bis_skin_checked="1">20 Hours ago</div>
+                            <div className="text-slate-500 text-justify mt-1" bis_skin_checked="1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</div>
+                            <div className="font-medium flex mt-5" bis_skin_checked="1">
+                                <button type="button" className="btn btn-secondary py-1 px-2">View Notes</button>
+                                <button type="button" className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
+                            </div>
                         </div>
+                        <div className="p-5 tns-item" id="important-notes-item2" bis_skin_checked="1" aria-hidden="true" tabIndex="-1">
+                            <div className="text-base font-medium truncate" bis_skin_checked="1">Lorem Ipsum is simply dummy text</div>
+                            <div className="text-slate-400 mt-1" bis_skin_checked="1">20 Hours ago</div>
+                            <div className="text-slate-500 text-justify mt-1" bis_skin_checked="1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</div>
+                            <div className="font-medium flex mt-5" bis_skin_checked="1">
+                                <button type="button" className="btn btn-secondary py-1 px-2">View Notes</button>
+                                <button type="button" className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
+                            </div>
                         </div>
-                        </div>
-                        </div>
+                    <div className="p-5 tns-item tns-slide-cloned" bis_skin_checked="1" aria-hidden="true" tabIndex="-1">
+                            <div className="text-base font-medium truncate" bis_skin_checked="1">Lorem Ipsum is simply dummy text</div>
+                            <div className="text-slate-400 mt-1" bis_skin_checked="1">20 Hours ago</div>
+                            <div className="text-slate-500 text-justify mt-1" bis_skin_checked="1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</div>
+                            <div className="font-medium flex mt-5" bis_skin_checked="1">
+                                <button type="button" className="btn btn-secondary py-1 px-2">View Notes</button>
+                                <button type="button" className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
+                            </div>
+                        </div></div></div></div></div>
                 </div>
             </div>
         </div>

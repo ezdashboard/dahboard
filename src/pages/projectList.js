@@ -24,11 +24,7 @@ import Router from 'next/router'
       setReadMore(false);
    }
   }
-
   const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
-
-
-
   const toggleHiddenTitle = (index) => {
     if (hiddenTitleIndex === index) {
       setHiddenTitleIndex(null);
@@ -89,10 +85,10 @@ import Router from 'next/router'
     }else{
     if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type=="admin"){
       setAddBtn(true);
-      NewsList();
     }
 
     }
+    NewsList();
     getReportData();
 
     }, []);
@@ -120,35 +116,32 @@ import Router from 'next/router'
           <TopHeader />
               <div className="col-span-12 mt-6" bis_skin_checked="1">
                 <div className="col-span-12 mt-8">
-                <div className="col-span-12 mt-8">
-            <div className="intro-y flex items-center h-10">
-                <h2 className="text-lg font-medium truncate mr-5">General Report</h2>
-                <div className="w-full sm:w-auto relative mr-auto mt-3 sm:mt-0 flex gap-20">
-                    <div className="fil-box">
-                        <select id="input-wizard-6" className="form-select">
-                            <option>Select Services</option>
-                            <option>SEO</option>
-                            <option>SEO</option>
-                            <option>SEO</option>
-                            <option>SEO</option>
-                            <option>SEO</option>
-                            <option>SEO</option>
-                        </select>
-                    </div>
-                    <div className="fil-box">
-                        <select id="input-wizard-6" className="form-select">
-                                <option>Status</option>
-                                <option>Active</option>
-                                <option>Pause</option>
-                        </select>
-                    </div>
+                  <div className="col-span-12 mt-8">
+                    <div className="intro-y flex items-center h-10">
+                        <h2 className="text-lg font-medium truncate mr-5">General Report</h2>
+                        <div className="w-full sm:w-auto relative mr-auto mt-3 sm:mt-0 flex gap-20">
+                            <div className="fil-box">
+                                <select id="input-wizard-6" className="form-select">
+                                    <option>Select Services</option>
+                                    <option>SEO</option>
+                                    <option>SEO</option>
+                                    <option>SEO</option>
+                                    <option>SEO</option>
+                                    <option>SEO</option>
+                                    <option>SEO</option>
+                                </select>
+                            </div>
+                            <div className="fil-box">
+                                <select id="input-wizard-6" className="form-select">
+                                  <option>Status</option>
+                                  <option>Active</option>
+                                  <option>Pause</option>
+                                </select>
+                            </div>
                             <button className="btn btn-primary w-32 ml-2">Search</button>
-                </div>
-                <a href className="ml-auto flex items-center text-primary">
-                    Show More
-                </a>
-            </div>
-        </div>
+                        </div>
+                    </div>
+                  </div>
                 </div>
                 <div className="col-md-12">
                     <div className="flex flex-wrap items-center col-span-12 mt-2 intro-y sm:flex-nowrap" bis_skin_checked="1">

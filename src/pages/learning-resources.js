@@ -25,7 +25,7 @@ const Learning = ()=>{
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="author" content=""/>
-        <title>Learning Dashboard</title>
+        <title>Learning Resources</title>
         <link rel="dns-prefetch" href="//developers.google.com" />
         <link rel="dns-prefetch" href="//maps.googleapis.com" />
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>
@@ -43,9 +43,11 @@ const Learning = ()=>{
                       <h2 className="text-lg font-medium mr-auto">
                           Resources
                       </h2>
-{sideBarAccess.users &&  <div className="w-full sm:w-auto flex mt-4 sm:mt-0">
-                          <button className="btn btn-primary shadow-md mr-2">Add New</button>
-                      </div>}
+                    {sideBarAccess.users &&  
+                      <div className="w-full sm:w-auto flex mt-4 sm:mt-0">
+                          <Link href="/add-resource" className="btn btn-primary shadow-md mr-2">Add New</Link>
+                      </div>
+                    }
                   </div>
                   
                   <div className="intro-y grid grid-cols-12 gap-6 mt-5">
@@ -61,7 +63,6 @@ const Learning = ()=>{
                               <Link href="#" className="ml-auto flex items-center text-primary">Read More</Link>
                           </div>
                       </div>
-
                   </div>
                   
                       {/* <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">

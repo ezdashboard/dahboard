@@ -17827,8 +17827,9 @@ i.fas.fa-pencil-alt {
     border-radius: 4px;
 }
 img.rounded-full.pro-img.comp-logo{
-    height: 80px;
-    width: 80px;
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
 }
 a.logo-ipload {
     display: flex;
@@ -17902,13 +17903,13 @@ textarea{
   gap: 20px;
 }
 
-        .login {
-    position : relative;
-    overflow: hidden;
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+.login {
+  position : relative;
+  overflow: hidden;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }

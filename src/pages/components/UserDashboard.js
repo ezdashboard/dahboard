@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from 'next/link';
 import { CreditCard, Monitor, RefreshCw, ShoppingCart, User   } from 'lucide-react';
 
-const UserDashboard=()=>{
+const UserDashboard=(props)=>{
     return (
         <>
             <div className="grid grid-cols-12 gap-6">
@@ -20,15 +20,15 @@ const UserDashboard=()=>{
                         <div className="w-52 sm:w-auto mx-auto">
                         <div className="flex items-center">
                             <div className="w-2 h-2 bg-primary rounded-full mr-3 blue"></div>
-                            <span className="truncate">Billing - $1000</span>
+                            <span className="truncate">Billing - ${props && props.data && props.data.total_price ? props.data.total_price : 0}</span>
                         </div>
                         <div className="flex items-center mt-4">
                             <div className="w-2 h-2 bg-pending rounded-full mr-3 green"></div>
-                            <span className="truncate">Keywords - 300</span>
+                            <span className="truncate">Keywords - {props && props.data && props.data.total_keywords ? props.data.total_keywords : 0}</span>
                         </div>
                         <div className="flex items-center mt-4">
                             <div className="w-2 h-2 bg-warning rounded-full mr-3 red"></div>
-                            <span className="truncate">Projects - 100</span>
+                            <span className="truncate">Projects - {props && props.data && props.data.total_project ? props.data.total_project : 0}</span>
                         </div>
                         </div>
                     </div>

@@ -108,6 +108,9 @@ import Router from 'next/router'
                             localStorage.setItem("contactno", data.userData[0]['contactno']);
                             localStorage.setItem("about", data.userData[0]['about']);  
                             localStorage.setItem("location", data.userData[0]['location']);
+                            localStorage.setItem("price", data.userData[0]['price']);
+                            localStorage.setItem("project", data.userData[0]['project']);
+                            localStorage.setItem("keyword", data.userData[0]['keyword']);                             
                             Router.push('/profile')
                     }
                   }

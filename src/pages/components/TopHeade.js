@@ -23,14 +23,14 @@ useEffect(() => {
                     <Search  className="search__icon dark:text-slate-500"/>
                 </Link>
             </div>
-            <div className="intro-x dropdown mr-auto sm:mr-6">
+            {/* <div className="intro-x dropdown mr-auto sm:mr-6">
                 <div className="dropdown-toggle notification notification--bullet cursor-pointer">
                     <Bell className="notification__icon dark:text-slate-500 far fa-bell"/>
                 </div>
-            </div>
+            </div> */}
             <div className="intro-x dropdown w-8 h-8">
                 <div className="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in">
-                    <img alt="" src={img} />
+                    <Link href="/profile"><img alt="" src={img} /></Link>
                 </div>
             </div>
         </div>

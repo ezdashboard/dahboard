@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const UserDashboard = ()=>{
+const UserDashboard = (props)=>{
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
@@ -63,9 +63,12 @@ const UserDashboard = ()=>{
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                             className: "w-2 h-2 bg-primary rounded-full mr-3 blue"
                                                         }),
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
                                                             className: "truncate",
-                                                            children: "Billing - $1000"
+                                                            children: [
+                                                                "Billing - $",
+                                                                props && props.data && props.data.total_price ? props.data.total_price : 0
+                                                            ]
                                                         })
                                                     ]
                                                 }),
@@ -75,9 +78,12 @@ const UserDashboard = ()=>{
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                             className: "w-2 h-2 bg-pending rounded-full mr-3 green"
                                                         }),
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
                                                             className: "truncate",
-                                                            children: "Keywords - 300"
+                                                            children: [
+                                                                "Keywords - ",
+                                                                props && props.data && props.data.total_keywords ? props.data.total_keywords : 0
+                                                            ]
                                                         })
                                                     ]
                                                 }),
@@ -87,9 +93,12 @@ const UserDashboard = ()=>{
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                             className: "w-2 h-2 bg-warning rounded-full mr-3 red"
                                                         }),
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
                                                             className: "truncate",
-                                                            children: "Projects - 100"
+                                                            children: [
+                                                                "Projects - ",
+                                                                props && props.data && props.data.total_project ? props.data.total_project : 0
+                                                            ]
                                                         })
                                                     ]
                                                 })

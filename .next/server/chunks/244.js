@@ -62,9 +62,8 @@ const ProfileContent = (props)=>{
                                                     href: "/update-profile",
                                                     children: [
                                                         "Edit ",
-                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Pencil, {
-                                                            size: "16",
-                                                            color: "#999"
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("i", {
+                                                            className: "fas fa-pencil-alt"
                                                         })
                                                     ]
                                                 })
@@ -151,9 +150,8 @@ const ProfileContent = (props)=>{
                                                 href: "/update-profile",
                                                 children: [
                                                     "Edit ",
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Pencil, {
-                                                        size: "16",
-                                                        color: "#999"
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("i", {
+                                                        className: "fas fa-pencil-alt"
                                                     })
                                                 ]
                                             })

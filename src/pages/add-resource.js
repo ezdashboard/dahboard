@@ -106,7 +106,57 @@ const AddResource = ()=>{
         formData.append('description', inputData.description);
         formData.append('image', selectedFile);
         formData.append('userid', localStorage && localStorage.userid ? localStorage.userid : '');
-        
+        axios.post(`https://smca.ezrankings.in/dashboard/add-learning.php`,formData,{
+        //   headers: {
+        //   'Content-Type': 'multipart/form-data',
+        //   method: 'POST',
+        //   body: formData,
+        // }
+      })
+          .then(res => {
+              const data = res.data;
+              if(res &&  res.data && res.data.error && res.data.error.length > 0){
+                  setFormStatus(res.data.error);
+                  setCloseIcon(true);
+              }else if(res &&  res.data && res.data.status && res.data.msg.length > 0){
+                      //Router.push('/thankyou')
+                      setInputData({
+                        serviceName : '',
+                        title:'',
+                        image : '',
+                        description : ''
+                        
+                      });
+                      setFormStatus("Submit Successfully.");
+                      //localStorage.clear();
+                    //   localStorage.setItem('name', inputData.name);
+                    //   localStorage.setItem('title', inputData.title);
+                    //   localStorage.setItem('companyname', inputData.companyname);
+                    //   localStorage.setItem('contactno', inputData.contactno);
+                    //   localStorage.setItem('about', inputData.about);
+                    //   localStorage.setItem('location', inputData.location);
+                    //   setProfileData({
+                    //     companyname : inputData.companyname,
+                    //     title : inputData.title,
+                    //     name : inputData.name,     
+                    //     contactno : inputData.contactno ? inputData.contactno : '',
+                    //     about : inputData.about ? inputData.about : '',
+                    //     location : inputData.location ? inputData.location : '',
+
+                    // });
+
+                      setCloseIcon(true);
+                      setSubmitBtn({
+                        padding: '1rem 0rem',
+                        display: 'block',
+                        color: '#46c737'
+                      })
+                    }
+              
+    
+        })
+        .catch(err => {
+         })        
         // inputData.userid = localStorage && localStorage.userid ? localStorage.userid : '';
       //   axios.post(`https://smca.ezrankings.in/dashboard/add-report.php`,{
       //     method: 'POST',
@@ -145,34 +195,34 @@ const AddResource = ()=>{
       //   })
       //   .catch(err => {
       //    })
-      try {
-        console.log('Imageccc uploaded successfully.',formData);
+      // try {
+      //   console.log('Imageccc uploaded successfully.',formData);
 
-        const response =  fetch('https://smca.ezrankings.in/dashboard/add-learning.php', {
-          method: 'POST',
-          body: formData,
-        })
-        //  .then(res => {
-            if (response.ok) {
-                const getData =  response.json();
-                //setResponseMessage(data.filename);
-                console.log('Image uploaded successfully.');
-                console.log('Image uploaded successfully.',getData);
-                localStorage.setItem('logo', getData.filename);
-                setProfileData({
-                  logo : getData.filename,
-                  image : localStorage.image ? localStorage.image : ''
-                })
+      //   const response =  fetch('https://smca.ezrankings.in/dashboard/add-learning.php', {
+      //     method: 'POST',
+      //     body: formData,
+      //   })
+      //   //  .then(res => {
+      //       if (response.ok) {
+      //           const getData =  response.json();
+      //           //setResponseMessage(data.filename);
+      //           console.log('Image uploaded successfully.');
+      //           console.log('Image uploaded successfully.',getData);
+      //           localStorage.setItem('logo', getData.filename);
+      //           setProfileData({
+      //             logo : getData.filename,
+      //             image : localStorage.image ? localStorage.image : ''
+      //           })
   
-              } else {
-                console.log('Image upload failed.');
-              }
-        // });
+      //         } else {
+      //           console.log('Image upload failed.');
+      //         }
+      //   // });
 
 
-      } catch (error) {
-        console.error('Error uploading image:', error);
-      }      
+      // } catch (error) {
+      //   console.error('Error uploading image:', error);
+      // }      
       }
     }
  
@@ -234,7 +284,7 @@ const AddResource = ()=>{
                                 <input type="text" className="form-control" placeholder="abc" onChange={inputChangeData} name="title" value={inputData.title}/>
                             </div>
                             <div className="intro-y col-span-12 sm:col-span-6">
-                              <label htmlFor="input-wizard-4" className="form-label">Project Status</label>
+                              <label htmlFor="input-wizard-4" className="form-label">Service Name</label>
                               <select className="form-select" onChange={inputChangeData} name="serviceName">
                         <option value="" select="selected">Select</option>
                             {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{

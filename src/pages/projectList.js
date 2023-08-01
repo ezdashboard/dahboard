@@ -9,14 +9,26 @@ import axios from 'axios';
 import { CheckSquare, Trash2, XCircle } from 'lucide-react';
 import { Search  } from 'lucide-react';
 import Router from 'next/router'
+import { ChevronLeft, ChevronsLeft, ChevronsRight, ChevronRight } from 'lucide-react';
 
  const ProjectList = ()=> {
 
-  const [faqData, setFaqData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [newsData, setNewsData] = useState([]);
   const [reportData, setReportData] = useState([]);
+  const [serviceStoreData, setServiceStoreData] = useState([]);
   const [readMore, setReadMore] = useState(false);
-  const [readMoreClass, setReadMoreClass] = useState('hide');
+  const [totalPages, setPageCount] = useState(1);
+  const [pageList, setPageList] = useState([1,2,3]);
+  const [pageLimitList, setPageLimitList] = useState([5,10,15]);
+  const [limitp, setlimitp] =useState(5);
+  const [readMoreclassName, setReadMoreclassName] = useState('hide');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const [inputData, setInputData] = useState({
+    serviceName : '',
+    service_Status:''
+});
   const updateContent=()=>{
    if(!readMore){
       setReadMore(true);
@@ -54,9 +66,28 @@ import Router from 'next/router'
     .catch(err => {
      })
  }
- const getReportData = async () => {
+ const inputChangeData =(event)=> {
+  const {name, value} = event.target;
+    setInputData((valuePre)=>{
+   return{
+     ...valuePre,
+     [name]:value
+   }
+  });
+  
+  }
+const searchFilterData = () =>{
+  getReportData(currentPage);
+}
+ const getReportData = async (currentPage) => {
+    let search = "";
+    search = `${search}?currentPage=${currentPage}&`;
+    if(localStorage.userid && localStorage.userid > 1){
+      search = search+ "user="+localStorage.userid + "&";
+    }
+    search = search + `ser=${inputData.serviceName}&status=${inputData.service_Status}&limit=${limitp}`;
 
-  axios.get(`https://smca.ezrankings.in/dashboard/reports.php`)
+  axios.get(`https://smca.ezrankings.in/dashboard/reports.php${search}`)
     .then(res => {
         const data = res.data.reportsData.map((item) => {
           return {
@@ -74,7 +105,45 @@ import Router from 'next/router'
           }
       }
     )
+    if(res.data.total){
+      setPageCount(res.data.total);
+    }
     setReportData(data);
+    setLoading(true);
+  })
+  .catch(err => {
+   })
+}
+const getNextPageData =()=>{
+  //alert();
+  setCurrentPage(currentPage+1);
+  // getReportData(currentPage);
+}
+const getPageData =(pageno)=>{
+  if(currentPage != pageno){
+    setCurrentPage(pageno);
+    // getReportData(pageno);
+  }
+}
+const getPreviousPageData =()=>{
+  //alert();
+  if(currentPage > 1){
+    setCurrentPage(currentPage-1);
+    // getReportData(currentPage);
+  }
+}
+const getServiceData = async () => {
+  axios.get(`https://smca.ezrankings.in/dashboard/services.php`)
+    .then(res => {
+        const data = res.data.serviceData.map((item) => {
+          return {
+            id: item.id,
+            name: item.service_name,
+            status: item.status
+          }
+      }
+    )
+    setServiceStoreData(data);
   })
   .catch(err => {
    })
@@ -89,9 +158,10 @@ import Router from 'next/router'
 
     }
     NewsList();
-    getReportData();
+    getReportData(currentPage);
+    getServiceData();
 
-    }, []);
+    }, [currentPage]);
   return (
     <>
       <Head>
@@ -101,7 +171,7 @@ import Router from 'next/router'
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="author" content=""/>
-        <title>Reseller Dashboard</title>
+        <title>Reseller Projects && Reports</title>
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
         <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
@@ -114,53 +184,58 @@ import Router from 'next/router'
         <SideBar/>
          <div className="content">
           <TopHeader />
-              <div className="col-span-12 mt-6" bis_skin_checked="1">
-                <div className="col-span-12 mt-8">
+              <div className="col-span-12 mt-6">
+             
+{ loading &&               <div className="col-span-12 mt-8">
                   <div className="col-span-12 mt-8">
                     <div className="intro-y flex items-center h-10">
                         <h2 className="text-lg font-medium truncate mr-5">General Report</h2>
                         <div className="w-full sm:w-auto relative mr-auto mt-3 sm:mt-0 flex gap-20">
                             <div className="fil-box">
-                                <select id="input-wizard-6" className="form-select">
-                                    <option>Select Services</option>
-                                    <option>SEO</option>
-                                    <option>SEO</option>
-                                    <option>SEO</option>
-                                    <option>SEO</option>
-                                    <option>SEO</option>
-                                    <option>SEO</option>
-                                </select>
+                            <select className="form-select" onChange={inputChangeData} name="serviceName">
+                                <option value="" select="selected">Service</option>
+                                    {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{
+                                        return(
+                                            <>
+                                            <option value ={service.id} key={s}>{service.name}</option>
+                                            </>
+                                        )
+                                    })}
+                            </select>
                             </div>
                             <div className="fil-box">
-                                <select id="input-wizard-6" className="form-select">
-                                  <option>Status</option>
-                                  <option>Active</option>
-                                  <option>Pause</option>
+                                <select id="input-wizard-6" className="form-select" name="service_Status" onChange={inputChangeData}>
+                                  <option value="">Project Status</option>
+                                  <option value="Active">Active</option>
+                                  <option value="Paused">Pause</option>
                                 </select>
                             </div>
-                            <button className="btn btn-primary w-32 ml-2">Search</button>
+                            <button type="button" onClick={searchFilterData}className="btn btn-primary w-32 ml-2">Search</button>
                         </div>
+                        {addBtn &&                        <button className="btn btn-primary" onClick={navigation}>Add New Report</button>}
                     </div>
                   </div>
-                </div>
-                <div className="col-md-12">
-                    <div className="flex flex-wrap items-center col-span-12 mt-2 intro-y sm:flex-nowrap" bis_skin_checked="1">
-{addBtn &&                        <button className="btn btn-primary" onClick={navigation}>Add New Report</button>}
-                        <div className="hidden mx-auto md:block text-slate-500" bis_skin_checked="1">Showing 1 to 10 of 150 entries
-                        </div>
-                        <div className="w-full mt-3 sm:w-auto sm:mt-0 sm:ml-auto md:ml-0" bis_skin_checked="1">
+                </div>}
+                
+                {/* <div className="col-md-12">
+                    <div className="flex flex-wrap items-center col-span-12 mt-2 intro-y sm:flex-nowrap" bis_skin_checked="1"> */}
+
+                        {/* <div className="hidden mx-auto md:block text-slate-500" bis_skin_checked="1">Showing 1 to 10 of {paging.total} entries
+                        </div> */}
+                        {/* <div className="w-full mt-3 sm:w-auto sm:mt-0 sm:ml-auto md:ml-0" bis_skin_checked="1">
                           <div className="relative w-56 text-slate-500" bis_skin_checked="1">
+                             */}
                               {/* <input type="text" className="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 w-56 pr-10 !box" placeholder="Search..." /> */}
-                                              <div className="search hidden sm:block">
+                                              {/* <div className="search hidden sm:block">
                     <input type="text" className="search__input form-control border-transparent" placeholder="Search..." />
                     <Search  className="search__icon dark:text-slate-500"/>
-                </div>
+                </div> */}
                               {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="stroke-1.5 absolute inset-y-0 right-0 w-4 h-4 my-auto mr-3"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> */}
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="intro-y overflow-auto lg:overflow-visible mt-8 sm:mt-0" bis_skin_checked="1">
+                          {/* </div>
+                        </div> */}
+                    {/* </div>
+                </div> */}
+ { loading &&              <div className="intro-y overflow-auto lg:overflow-visible mt-8 sm:mt-0" bis_skin_checked="1">
                     <table className="table table-report sm:mt-2">
                         <thead>
                             <tr className="project-heading">
@@ -183,7 +258,6 @@ import Router from 'next/router'
                           <tr className="intro-x" key={r}>
                             <td>
                               <a href="#" className="font-medium whitespace-nowrap">{report.serviceName}</a>
-                              
                             </td>
                             <td>
                                 <a href={report.projectUrl} target="_blank" className="font-medium whitespace-nowrap">{report.projectUrl}</a>
@@ -222,9 +296,54 @@ import Router from 'next/router'
 
                         </tbody>
                     </table>
-                </div>
-              </div>       
-          <NewsLetter news={newsData}/>
+                </div>}
+              </div> 
+{loading &&              <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+                        <nav className="w-full sm:w-auto sm:mr-auto">
+                            <ul className="pagination">
+                                <li className="page-item" onClick={()=>{
+                                  getPageData(1)
+                                }}>
+                                    <a className="page-link" href="#"> <ChevronsLeft  className="w-4 h-4" /> </a>
+                                </li>
+                                <li className="page-item" onClick={getPreviousPageData}>
+                                    <a className="page-link" href="#"> <ChevronLeft  className="w-4 h-4" /> </a>
+                                </li>
+                                <li className="page-item"> <a className="page-link" href="#">...</a> </li>
+
+                                  {pageList.map((data, i)=>{
+
+                                  return(
+                                   <li key={i} onClick={()=>{
+                                  setCurrentPage(data)}} className={currentPage == data ? 'page-item active' : 'page-item'}><a href="#" className={currentPage == data ? 'page-link' : 'page-link'}>{data}</a></li>
+                                              )
+                                          })}
+                                <li className="page-item"> <a className="page-link" href="#">...</a> </li>
+                                <li className="page-item" onClick={getNextPageData }>
+                                    <a className="page-link" href="#"> <ChevronRight  className="w-4 h-4" /></a>
+                                </li>
+                                <li className="page-item" onClick={()=>{
+                                  setCurrentPage(totalPages)}}>
+                                    <a className="page-link" href="#"><ChevronsRight  className="w-4 h-4" /> </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        {/* <select className="w-20 form-select box mt-3 sm:mt-0">
+                          {pageLimitList && pageLimitList.length > 0 && pageLimitList.map((limitp, lp)=>{
+                            return(
+                              <>
+                              <option key={lp} value={limitp}>{limitp}</option>
+                              </>
+                            )
+                          })}
+
+                        </select> */}
+              </div> } 
+              {!loading &&<div>
+         <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem"}}>Loading....</h1>   
+         </div>}  
+
+          {loading && <NewsLetter news={newsData}/>}
          </div>
       </div>
 

@@ -17913,3 +17913,11 @@ textarea{
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
+.WTlogo{
+  height: 100px;
+  width: 100px;
+}
+.news01{
+  transform: translate3d(-20%, 0px, 0px); transition-duration: 0s;
+}

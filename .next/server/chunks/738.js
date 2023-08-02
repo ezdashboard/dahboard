@@ -46,10 +46,12 @@ const AdminDasbboard = (props)=>{
         logo: "",
         userid: ""
     });
+    const [newsData, setNewsData] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]);
     const [closeIcon, setCloseIcon] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
     const [msg, setFormStatus] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)("");
     const [inputData, setInputData] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
         content: "",
+        title: "",
         userid: profileData && profileData.userid ? profileData.userid : ""
     });
     const [submitBtn, setSubmitBtn] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({});
@@ -65,9 +67,30 @@ const AdminDasbboard = (props)=>{
     const submitCloseIcon = ()=>{
         setCloseIcon(false);
     };
+    const NewsList = async (page)=>{
+        axios__WEBPACK_IMPORTED_MODULE_3__["default"].get(`https://smca.ezrankings.in/dashboard/newsList.php`).then((res)=>{
+            const data = res.data.newsData.map((item)=>{
+                return {
+                    id: item.id,
+                    content: item.content,
+                    time: item.time,
+                    user: item.user
+                };
+            });
+            setNewsData(data);
+        }).catch((err)=>{});
+    };
     const onSubmit = (e)=>{
         e.preventDefault();
-        if (!inputData.content) {
+        if (!inputData.title) {
+            setSubmitBtn({
+                padding: "1rem 0rem",
+                display: "block",
+                color: "red"
+            });
+            setFormStatus("Title can not be blank.");
+            setCloseIcon(true);
+        } else if (!inputData.content) {
             setSubmitBtn({
                 padding: "1rem 0rem",
                 display: "block",
@@ -89,6 +112,7 @@ const AdminDasbboard = (props)=>{
                 } else if (res && res.data && res.data.msg && res.data.msg.length > 0) {
                     setInputData({
                         content: "",
+                        title: "",
                         userid: profileData && profileData.userid ? profileData.userid : ""
                     });
                     //Router.push('/thankyou')
@@ -118,6 +142,7 @@ const AdminDasbboard = (props)=>{
                 userid: localStorage.userid
             });
         }
+        NewsList();
     }, []);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
@@ -294,8 +319,19 @@ const AdminDasbboard = (props)=>{
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: "mt-3",
                                         bis_skin_checked: "1",
+                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("input", {
+                                            type: "text",
+                                            name: "title",
+                                            onChange: inputChangeData,
+                                            className: "form-control",
+                                            placeholder: "Title",
+                                            value: inputData.title
+                                        })
+                                    }),
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        className: "mt-3",
+                                        bis_skin_checked: "1",
                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("textarea", {
-                                            id: "change-password-form-3",
                                             rows: "5",
                                             name: "content",
                                             onChange: inputChangeData,
@@ -314,8 +350,7 @@ const AdminDasbboard = (props)=>{
                         })
                     ]
                 })
-            }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_NewsLetter__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+            })
         ]
     });
 };

@@ -21,11 +21,12 @@ const [profileData, setProfileData] = useState({
     logo : '',
     userid : ''
 });
-
+const [newsData, setNewsData] = useState([]);
 const [closeIcon, setCloseIcon] = useState(false)
 const [msg, setFormStatus] = useState('')
 const [inputData, setInputData] = useState({
     content:"",
+    title:"",
     userid :profileData && profileData.userid ? profileData.userid : ''
 })
 const [submitBtn, setSubmitBtn] = useState({})
@@ -43,9 +44,35 @@ const inputChangeData =(event)=> {
 const submitCloseIcon = ()=>{
   setCloseIcon(false);
 }
+const NewsList = async (page) => {
+
+    axios.get(`https://smca.ezrankings.in/dashboard/newsList.php`)
+      .then(res => {
+          const data = res.data.newsData.map((item) => {
+            return {
+              id: item.id,
+              content: item.content,
+              time: item.time,
+              user: item.user,
+            }
+        }
+      )
+      setNewsData(data);
+    })
+    .catch(err => {
+     })
+ }
 const onSubmit = (e) => {
   e.preventDefault()
-  if(!inputData.content){
+  if(!inputData.title){
+    setSubmitBtn({
+        padding: '1rem 0rem',
+        display: 'block',
+        color: 'red'
+      })
+    setFormStatus("Title can not be blank.")
+    setCloseIcon(true);   
+  }else if(!inputData.content){
     setSubmitBtn({
         padding: '1rem 0rem',
         display: 'block',
@@ -53,7 +80,8 @@ const onSubmit = (e) => {
       })
     setFormStatus("Content can not be blank.")
     setCloseIcon(true);   
-  }else{
+  }
+  else{
     inputData.userid = profileData && profileData.userid ? profileData.userid : '';
     axios.post(`https://smca.ezrankings.in/dashboard/addNews.php`,inputData,{
       headers: {
@@ -69,6 +97,7 @@ const onSubmit = (e) => {
            
                   setInputData({
                     content:"",
+                    title:"",
                     userid : profileData && profileData.userid ? profileData.userid : ''
                   });
                   //Router.push('/thankyou')
@@ -102,6 +131,7 @@ useEffect(() => {
             userid : localStorage.userid
         });
     }
+    NewsList();
     }, []);
     return(
         <>
@@ -170,14 +200,17 @@ useEffect(() => {
             <div className="p-5" bis_skin_checked="1">
                 <form onSubmit={onSubmit}>
                 <div className="mt-3" bis_skin_checked="1">
-                    <textarea id="change-password-form-3" rows="5" name="content" onChange={inputChangeData}  className="form-control" placeholder="Write Something Here...." value={inputData.content}></textarea>
+                    <input type="text" name="title" onChange={inputChangeData}  className="form-control" placeholder="Title" value={inputData.title}/>
+                </div>                    
+                <div className="mt-3" bis_skin_checked="1">
+                    <textarea rows="5" name="content" onChange={inputChangeData}  className="form-control" placeholder="Write Something Here...." value={inputData.content}></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary mt-4">Save</button>
                 </form>
             </div>
         </div>
         </div>
-        <NewsLetter />                     
+        {/* <NewsLetter />                      */}
         </>
     )
 }

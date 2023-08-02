@@ -140,7 +140,7 @@ import Router from 'next/router'
         <div className="block xl:grid grid-cols-2 gap-4">
             <div className="hidden xl:flex flex-col min-h-screen">
                 <a href="" className="-intro-x flex items-center pt-5">
-                   <img alt="" src="https://smca.ezrankings.in/dashboard/images/login.png" />
+                   <img alt="" src="https://smca.ezrankings.in/dashboard/images/login.png" className="WTlogo"/>
                 </a>
                 <div className="my-auto">
                     <img alt="" className="-intro-x w-1/2 -mt-16" src="https://smca.ezrankings.in/dashboard/images/Frame.png" />

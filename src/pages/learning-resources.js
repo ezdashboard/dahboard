@@ -24,12 +24,16 @@ const Learning = ()=>{
         serviceName : '',
         service_Status:''
     });
-    const redirectDetail = (redir)=>{
+    const redirectDetail = (redir, toRedir)=>{
       setLoading(false);
         localStorage.removeItem("resourceId");
         if(!localStorage.resourceId){
             localStorage.setItem("resourceId", redir);
-            Router.push('/resource-detail');
+            if(toRedir == 'detail'){
+              Router.push('/resource-detail');
+            }else if(toRedir == 'edit'){
+              Router.push('/resource-edit-detail');
+            }
         }
         //localStorage.setItem("resourceId":redir)
     }
@@ -172,13 +176,16 @@ const Learning = ()=>{
                                 <div className="learning-box" >
                                     
                                     <a href="#" onClick={()=>{
-                                    redirectDetail(learn.id)
+                                    redirectDetail(learn.id, 'detail')
                                 }} className="block font-medium text-base">{learn.title}</a> 
                                         <div className="flex text-slate-500 truncate text-xs mt-0.5"> <a className="text-primary inline-block truncate" href="#">{learn.serviceName} </a> <span className="mx-1">•</span> {learn.create_at} ago </div>
                                     <div className="text-slate-600 dark:text-slate-500 mt-2">{learn.description.substr(0, 100)}</div>
                                     <a href="#" onClick={()=>{
-                                    redirectDetail(learn.id)
+                                    redirectDetail(learn.id,'detail')
                                 }} className="ml-auto flex items-center text-primary">Read More</a>
+                                <a href="#" onClick={()=>{
+                                    redirectDetail(learn.id,'edit')
+                                }} className="ml-auto flex items-center text-primary">Edit</a>
                                 </div>
                             </div>                            
                             </>

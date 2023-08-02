@@ -3,6 +3,7 @@ import Head from 'next/head'
 import axios from 'axios';
 // import routes from './routes';
 import SideBar from './components/SideBar';
+import NewsLetter from './components/NewsLetter';
 import TopHeader from './components/TopHeade';
 import UserDashboard from './components/UserDashboard'
 import AdminDasbboard from './components/AdminDasbboard'
@@ -263,6 +264,7 @@ import AdminDasbboard from './components/AdminDasbboard'
         <TopHeader />
         {dasbboardType && (dasbboardType == 'user' || dasbboardType == 'Manager') && <UserDashboard data={dashData} />}
         {dasbboardType && dasbboardType == 'admin' && <AdminDasbboard data={dashData} />}
+        <NewsLetter />     
         </div>  
       </div>
     </>

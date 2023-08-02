@@ -19,7 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 const NewsLetter = ()=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: "col-span-12 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 xxl:col-start-auto xxl:row-start-auto mt-3",
+            className: "col-span-12 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 2xl:col-start-auto 2xl:row-start-auto mt-3",
             bis_skin_checked: "1",
             children: [
                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -41,9 +41,9 @@ const NewsLetter = ()=>{
                                 viewBox: "0 0 24 24",
                                 fill: "none",
                                 stroke: "currentColor",
-                                strokeWidth: "2",
-                                strokeLinecap: "round",
-                                strokeLinejoin: "round",
+                                "stroke-width": "2",
+                                "stroke-linecap": "round",
+                                "stroke-linejoin": "round",
                                 "icon-name": "chevron-left",
                                 "data-lucide": "chevron-left",
                                 className: "lucide lucide-chevron-left w-4 h-4",
@@ -63,9 +63,9 @@ const NewsLetter = ()=>{
                                 viewBox: "0 0 24 24",
                                 fill: "none",
                                 stroke: "currentColor",
-                                strokeWidth: "2",
-                                strokeLinecap: "round",
-                                strokeLinejoin: "round",
+                                "stroke-width": "2",
+                                "stroke-linecap": "round",
+                                "stroke-linejoin": "round",
                                 "icon-name": "chevron-right",
                                 "data-lucide": "chevron-right",
                                 className: "lucide lucide-chevron-right w-4 h-4",
@@ -128,7 +128,7 @@ const NewsLetter = ()=>{
                                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                                     className: "p-5 tns-item tns-slide-cloned",
                                                     "aria-hidden": "true",
-                                                    tabIndex: "-1",
+                                                    tabindex: "-1",
                                                     bis_skin_checked: "1",
                                                     children: [
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
@@ -207,7 +207,7 @@ const NewsLetter = ()=>{
                                                     id: "important-notes-item1",
                                                     bis_skin_checked: "1",
                                                     "aria-hidden": "true",
-                                                    tabIndex: "-1",
+                                                    tabindex: "-1",
                                                     children: [
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                             className: "text-base font-medium truncate",
@@ -247,7 +247,7 @@ const NewsLetter = ()=>{
                                                     id: "important-notes-item2",
                                                     bis_skin_checked: "1",
                                                     "aria-hidden": "true",
-                                                    tabIndex: "-1",
+                                                    tabindex: "-1",
                                                     children: [
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                             className: "text-base font-medium truncate",
@@ -286,7 +286,7 @@ const NewsLetter = ()=>{
                                                     className: "p-5 tns-item tns-slide-cloned",
                                                     bis_skin_checked: "1",
                                                     "aria-hidden": "true",
-                                                    tabIndex: "-1",
+                                                    tabindex: "-1",
                                                     children: [
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                             className: "text-base font-medium truncate",

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Head from 'next/head'
+import { ChevronLeft, ChevronsLeft, ChevronsRight, ChevronRight } from 'lucide-react';
 
 // import routes from './routes';
 import Link from 'next/link';
@@ -12,7 +13,10 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
 
  const UserList = ()=> {
   const [selectedFile, setSelectedFile] = useState(null);
-
+  const [loading, setLoading] = useState(false);
+  const [totalPages, setPageCount] = useState(1);
+  const [limitp, setlimitp] =useState(5);
+  const [pageList, setPageList] = useState([1,2,3]);
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
@@ -51,17 +55,25 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
       setHiddenTitleIndex(index);
     }
   };
+  const getNextPageData =()=>{
+    if(totalPages > currentPage){
+      setCurrentPage(currentPage+1);
+    }
+  }
+  const getPageData =(pageno)=>{
+    if(currentPage != pageno){
+      setCurrentPage(pageno);
+    }
+  }
+  const getPreviousPageData =()=>{
+    if(currentPage > 1){
+      setCurrentPage(currentPage-1);
+    }
+  } 
   const [closeIcon, setCloseIcon] = useState(false)
   const [isValidEmail, setIsValidEmail] = useState(false)
   const [currentPage, setCurrentPage] = useState(1);
   const [userStoreData, setUserStoreData] = useState([]);
-
-  // const userDeleted =(index)=>{
-  //   alert(index);
-  //   const updatedList = [...userStoreData];
-  //   updatedList.splice(index, 1);
-  //   setUserStoreData(updatedList);
-  // }
   const userDeleted = async (userId) => {
 
     axios.get(`https://smca.ezrankings.in/dashboard/userDelete.php?userid=${userId}`)
@@ -75,10 +87,8 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
   .catch(err => {
    })
   };
-  
   const fetchData = async (page) => {
-
-    axios.get(`https://smca.ezrankings.in/dashboard/users.php?page=${page}`)
+    axios.get(`https://smca.ezrankings.in/dashboard/users.php?page=${page}&limit=${limitp}`)
       .then(res => {
           const data = res.data.userData.map((item) => {
             return {
@@ -96,6 +106,13 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
         }
       )
       setUserStoreData(data);
+      if(res.data.total){
+        setPageCount(res.data.total);
+        if(page > 15){
+          setPageList([page-3, page-2, page-1])
+        }
+      }
+      setLoading(true);
     })
     .catch(err => {
      })
@@ -119,10 +136,8 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
 
       }, [currentPage]);
   const [msg, setFormStatus] = useState('')
-
   const [submitBtn, setSubmitBtn] = useState({})
   const inputChangeData =(event)=> {
-  
     const {name, value} = event.target;
     setInputData((valuePre)=>{
    return{
@@ -130,7 +145,6 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
      [name]:value
    }
   });
-  
   }
   const submitCloseIcon = ()=>{
     setCloseIcon(false);
@@ -211,7 +225,7 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="author" content=""/>
-        <title>Reseller Dashboard</title>
+        <title>Reseller User List</title>
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
         <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
@@ -223,7 +237,6 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
         <SideBar logo={profileData.logo}/>
               <div className="content">
                   <TopHeader title={profileData.companyname} img={profileData.image}/>
-                  
                   <div className="intro-y flex flex-col sm:flex-row items-center mt-8">
                       <h2 className="text-lg font-medium mr-auto">
                           Users
@@ -294,36 +307,55 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
                               </tbody>
                           </table>
                       </div>
-                      
-                      {/* <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
-                          <nav className="w-full sm:w-auto sm:mr-auto">
-                              <ul className="pagination">
-                                  <li className="page-item">
-                                      <Link className="page-link" href="#"> <i className="w-4 h-4" data-lucide="chevrons-left"></i> </Link>
-                                  </li>
-                                  <li className="page-item">
-                                      <Link className="page-link" href="#"> <i className="w-4 h-4" data-lucide="chevron-left"></i> </Link>
-                                  </li>
-                                  <li className="page-item"> <Link className="page-link" href="#">...</Link> </li>
-                                  <li className="page-item"> <Link className="page-link" href="#">1</Link> </li>
-                                  <li className="page-item active"> <Link className="page-link" href="#">2</Link> </li>
-                                  <li className="page-item"> <Link className="page-link" href="#">3</Link> </li>
-                                  <li className="page-item"> <Link className="page-link" href="#">...</Link> </li>
-                                  <li className="page-item">
-                                      <Link className="page-link" href="#"> <i className="w-4 h-4" data-lucide="chevron-right"></i> </Link>
-                                  </li>
-                                  <li className="page-item">
-                                      <Link className="page-link" href="#"> <i className="w-4 h-4" data-lucide="chevrons-right"></i> </Link>
-                                  </li>
-                              </ul>
-                          </nav>
-                          <select className="w-20 form-select box mt-3 sm:mt-0">
-                              <option>10</option>
-                              <option>25</option>
-                              <option>35</option>
-                              <option>50</option>
-                          </select>
-                      </div> */}
+
+                  { loading && 
+                     <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+                        <nav className="w-full sm:w-auto sm:mr-auto">
+                            <ul className="pagination">
+                                <li className="page-item" onClick={()=>{
+                                  getPageData(1)
+                                }}>
+                                    <a className="page-link" href="#"> <ChevronsLeft  className="w-4 h-4" /> </a>
+                                </li>
+                                <li className="page-item" onClick={getPreviousPageData}>
+                                    <a className="page-link" href="#"> <ChevronLeft  className="w-4 h-4" /> </a>
+                                </li>
+                                <li className="page-item"> <a className="page-link" href="#">...</a> </li>
+
+                                  {pageList.map((data, i)=>{
+
+                                  return(
+                                   <li key={i} onClick={()=>{
+                                  setCurrentPage(data)}} className={currentPage == data ? 'page-item active' : 'page-item'}><a href="#" className={currentPage == data ? 'page-link' : 'page-link'}>{data}</a></li>
+                                              )
+                                          })}
+                                <li className="page-item"> <a className="page-link" href="#">...</a> </li>
+                                <li className="page-item" onClick={getNextPageData }>
+                                    <a className="page-link" href="#"> <ChevronRight  className="w-4 h-4" /></a>
+                                </li>
+                                <li className="page-item" onClick={()=>{
+                                  setCurrentPage(totalPages)}}>
+                                    <a className="page-link" href="#"><ChevronsRight  className="w-4 h-4" /> </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        {/* <select className="w-20 form-select box mt-3 sm:mt-0">
+                          {pageLimitList && pageLimitList.length > 0 && pageLimitList.map((limitp, lp)=>{
+                            return(
+                              <>
+                              <option key={lp} value={limitp}>{limitp}</option>
+                              </>
+                            )
+                          })}
+
+                        </select> */}
+                     </div>
+                  } 
+                  { !loading &&
+                  <div>
+                    <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem"}}>Loading....</h1>   
+                  </div>
+                  }
                   </div>
               </div>
           </div>

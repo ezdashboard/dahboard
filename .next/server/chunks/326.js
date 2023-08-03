@@ -187,21 +187,14 @@ const NewsLetter = ()=>{
                                                                     bis_skin_checked: "1",
                                                                     children: newsI.content
                                                                 }),
-                                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                                     className: "font-medium flex mt-5",
                                                                     bis_skin_checked: "1",
-                                                                    children: [
-                                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                            type: "button",
-                                                                            className: "btn btn-secondary py-1 px-2",
-                                                                            children: "View Notes"
-                                                                        }),
-                                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                            type: "button",
-                                                                            className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
-                                                                            children: "Dismiss"
-                                                                        })
-                                                                    ]
+                                                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                                                        type: "button",
+                                                                        className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
+                                                                        children: "Dismiss"
+                                                                    })
                                                                 })
                                                             ]
                                                         }, n)

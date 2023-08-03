@@ -9,6 +9,7 @@ import TopHeader from './components/TopHeade';
 import NewsLetter from './components/NewsLetter';
 import axios from 'axios';
 import { CheckSquare, Trash2, XCircle } from 'lucide-react';
+import Router from 'next/router'
 
 
  const UserList = ()=> {
@@ -20,7 +21,19 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
-
+  const redirectDetail = (redir, toRedir)=>{
+    setLoading(false);
+      localStorage.removeItem("UserUpId");
+      if(!localStorage.UserUpId){
+          localStorage.setItem("UserUpId", redir);
+          if(toRedir == 'cccdetail'){
+            Router.push('/resource-detail');
+          }else if(toRedir == 'edit'){
+            Router.push('/user-edit');
+          }
+      }
+      //localStorage.setItem("resourceId":redir)
+  }
   const [bodyCsss, setBodyCss] = useState('py-5');
   const [inputData, setInputData] = useState({
       companyname : '',
@@ -137,18 +150,7 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
       }, [currentPage]);
   const [msg, setFormStatus] = useState('')
   const [submitBtn, setSubmitBtn] = useState({})
-  const inputChangeData =(event)=> {
-    const {name, value} = event.target;
-    setInputData((valuePre)=>{
-   return{
-     ...valuePre,
-     [name]:value
-   }
-  });
-  }
-  const submitCloseIcon = ()=>{
-    setCloseIcon(false);
-  }
+
   const onSubmit = (e) => {
     e.preventDefault()
     setSubmitBtn({
@@ -277,7 +279,9 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
                                     </td>
                                     <td className="table-report__action w-56">
                                         <div className="flex justify-center items-center">
-                                            <Link className="flex items-center mr-3" href={'/users/'+users.id}><CheckSquare className="w-4 h-4 mr-1"/> Edit </Link>
+                                            <Link className="flex items-center mr-3" href="#" onClick={()=>{
+                                    redirectDetail(users.id, 'edit')
+                                }} ><CheckSquare className="w-4 h-4 mr-1"/> Edit </Link>
                                             <Link className="flex items-center text-danger" href="#" onClick={()=>userDeleted(users.id)}> <Trash2  className="w-4 h-4 mr-1" /> Delete </Link>
                                         </div>
                                         <div id={'delete-confirmation-modal'+u} className="modal" tabIndex="-1" aria-hidden="true">
@@ -353,7 +357,7 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
                   } 
                   { !loading &&
                   <div>
-                    <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem"}}>Loading....</h1>   
+                    <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem",marginLeft:"15rem"}}>Loading....</h1>   
                   </div>
                   }
                   </div>

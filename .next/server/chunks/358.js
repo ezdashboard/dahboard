@@ -28,6 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const SideBar = (props)=>{
     const [loginStatus, setLoginStatus] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true);
+    const [logoImg, setLogoImg] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
     const [sideBarAccess, setSideBarAccess] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
         users: false
     });
@@ -41,6 +42,9 @@ const SideBar = (props)=>{
         if (!localStorage.userid) {
             next_router__WEBPACK_IMPORTED_MODULE_3___default().push("/");
         } else {
+            if (localStorage && localStorage.logo) {
+                setLogoImg(localStorage.logo);
+            }
             if (localStorage && localStorage.length > 0 && localStorage.type && localStorage.type == "admin") {
                 setSideBarAccess({
                     users: true
@@ -57,7 +61,7 @@ const SideBar = (props)=>{
                     className: "intro-x flex items-center pl-5 pt-4",
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                         alt: "",
-                        src: props.logo ? props.logo : "https://smca.ezrankings.in/dashboard/images/avtar.png"
+                        src: logoImg
                     })
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {

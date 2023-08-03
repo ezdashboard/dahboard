@@ -65,7 +65,7 @@ const NewsList = async (page) => {
                                                     <div className="text-slate-400 mt-1" bis_skin_checked="1">{newsI.time} ago</div>
                                                     <div className="text-slate-500 text-justify mt-1" bis_skin_checked="1">{newsI.content}</div>
                                                     <div className="font-medium flex mt-5" bis_skin_checked="1">
-                                                        <button type="button" className="btn btn-secondary py-1 px-2">View Notes</button>
+                                                        {/* <button type="button" className="btn btn-secondary py-1 px-2">View Notes</button> */}
                                                         <button type="button" className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
                                                     </div>
                                                 </div>

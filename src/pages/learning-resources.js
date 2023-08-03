@@ -38,21 +38,16 @@ const Learning = ()=>{
         //localStorage.setItem("resourceId":redir)
     }
     const getNextPageData =()=>{
-        //alert();
         setCurrentPage(currentPage+1);
-        // getReportData(currentPage);
       }
-      const getPageData =(pageno)=>{
+    const getPageData =(pageno)=>{
         if(currentPage != pageno){
           setCurrentPage(pageno);
-          // getReportData(pageno);
         }
       }
-      const getPreviousPageData =()=>{
-        //alert();
+    const getPreviousPageData =()=>{
         if(currentPage > 1){
           setCurrentPage(currentPage-1);
-          // getReportData(currentPage);
         }
       }    
     const inputChangeData =(event)=> {
@@ -65,7 +60,7 @@ const Learning = ()=>{
         });
         
         }
-        const getData = async (currentPage) => {
+    const getData = async (currentPage) => {
             let search = "";
             search = `${search}?currentPage=${currentPage}&`;
             search = search + `ser=${inputData.serviceName}&limit=${limitp}`;
@@ -135,7 +130,7 @@ const Learning = ()=>{
             <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
         </Head>
         <div className="flex mt-[4.7rem] md:mt-0">
-       <SideBar />
+        <SideBar />
               <div className="content">
             <TopHeader />
             <div className="intro-y flex flex-col sm:flex-row items-center mt-8">
@@ -165,88 +160,91 @@ const Learning = ()=>{
                     <div className="w-full sm:w-auto flex mt-4 sm:mt-0">
                         <Link href="/add-resource" className="btn btn-primary shadow-md mr-2">Add New</Link>
                     </div>}
-                </div>            
-                 {  loading &&  
-                 <div className="intro-y grid grid-cols-12 gap-6 mt-5">
-                    {learningData && learningData.length > 0 && learningData.map((learn, l)=>{
-                        return(
+            </div>            
+            {  loading &&  
+            <div className="intro-y grid grid-cols-12 gap-6 mt-5">
+              {learningData && learningData.length > 0 && learningData.map((learn, l)=>{
+                  return(
+                      <>
+                      <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res" key={l}>
+                          <div className="2xl:h-56 image-fit">
+                                  <img alt="" src={learn.image} />
+                              </div>
+                          <div className="learning-box" >
+                              
+                              <a href="#"  className="block font-medium text-base">{learn.title}</a> 
+                                  <div className="flex text-slate-500 truncate text-xs mt-0.5"> <a className="text-primary inline-block truncate" href="#">{learn.serviceName} </a> <span className="mx-1">•</span> {learn.create_at} ago </div>
+                              <div className="text-slate-600 dark:text-slate-500 mt-2">{learn.description.substr(0, 100)}</div>
+                          <hr />
+                      <div className="d-flex">
+                          <a href="#" onClick={()=>{
+                              redirectDetail(learn.id, 'detail')
+                          }}>Read More</a>
+                        { sideBarAccess.users &&
+                        <a href="#" onClick={()=>{
+                        redirectDetail(learn.id,'edit')
+                    }}>Edit</a>}
+                      </div>
+                          </div>
+                      </div>                            
+                      </>
+                  )
+              })}
+            </div>
+            }
+          {loading &&  
+            <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+                      <nav className="w-full sm:w-auto sm:mr-auto">
+                          <ul className="pagination">
+                              <li className="page-item" onClick={()=>{
+                                getPageData(1)
+                              }}>
+                                  <a className="page-link" href="#"> <ChevronsLeft  className="w-4 h-4" /></a>
+                              </li>
+                              <li className="page-item" onClick={getPreviousPageData}>
+                                  <a className="page-link" href="#"> <ChevronLeft  className="w-4 h-4" /></a>
+                              </li>
+                              <li className="page-item"> <a className="page-link" href="#">...</a> </li>
+
+                                {pageList.map((data, i)=>{
+
+                                return(
+                                <li key={i} onClick={()=>{
+                                setCurrentPage(data)}} className={currentPage == data ? 'page-item active' : 'page-item'}><a href="#" className={currentPage == data ? 'page-link' : 'page-link'}>{data}</a></li>
+                                            )
+                                        })}
+                              <li className="page-item"> <a className="page-link" href="#">...</a> </li>
+                              <li className="page-item" onClick={getNextPageData }>
+                                  <a className="page-link" href="#"> <ChevronRight  className="w-4 h-4" /> </a>
+                              </li>
+                              <li className="page-item" onClick={()=>{
+                                setCurrentPage(totalPages)}}>
+                                  <a className="page-link" href="#"><ChevronsRight  className="w-4 h-4" /> </a>
+                              </li>
+                          </ul>
+                      </nav>
+                      {/* <select className="w-20 form-select box mt-3 sm:mt-0">
+                        {pageLimitList && pageLimitList.length > 0 && pageLimitList.map((limitp, lp)=>{
+                          return(
                             <>
-                            <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res" key={l}>
-                                <div className="2xl:h-56 image-fit">
-                                        <img alt="" src={learn.image} />
-                                    </div>
-                                <div className="learning-box" >
-                                    
-                                    <a href="#"  className="block font-medium text-base">{learn.title}</a> 
-                                        <div className="flex text-slate-500 truncate text-xs mt-0.5"> <a className="text-primary inline-block truncate" href="#">{learn.serviceName} </a> <span className="mx-1">•</span> {learn.create_at} ago </div>
-                                    <div className="text-slate-600 dark:text-slate-500 mt-2">{learn.description.substr(0, 100)}</div>
-                                <hr />
-                            <div className="d-flex">
-                                <a href="#" onClick={()=>{
-                                    redirectDetail(learn.id, 'detail')
-                                }}>Read More</a>
-                             { sideBarAccess.users &&
-                             <a href="#" onClick={()=>{
-                              redirectDetail(learn.id,'edit')
-                          }}>Edit</a>}
-                            </div>
-                                </div>
-                            </div>                            
+                            <option key={lp} value={limitp}>{limitp}</option>
                             </>
-                        )
-                    })}
-                  </div>}
-                
-              {loading &&  
-                <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
-                          <nav className="w-full sm:w-auto sm:mr-auto">
-                              <ul className="pagination">
-                                  <li className="page-item" onClick={()=>{
-                                    getPageData(1)
-                                  }}>
-                                      <a className="page-link" href="#"> <ChevronsLeft  className="w-4 h-4" /></a>
-                                  </li>
-                                  <li className="page-item" onClick={getPreviousPageData}>
-                                      <a className="page-link" href="#"> <ChevronLeft  className="w-4 h-4" /></a>
-                                  </li>
-                                  <li className="page-item"> <a className="page-link" href="#">...</a> </li>
+                          )
+                        })}
 
-                                    {pageList.map((data, i)=>{
-
-                                    return(
-                                    <li key={i} onClick={()=>{
-                                    setCurrentPage(data)}} className={currentPage == data ? 'page-item active' : 'page-item'}><a href="#" className={currentPage == data ? 'page-link' : 'page-link'}>{data}</a></li>
-                                                )
-                                            })}
-                                  <li className="page-item"> <a className="page-link" href="#">...</a> </li>
-                                  <li className="page-item" onClick={getNextPageData }>
-                                      <a className="page-link" href="#"> <ChevronRight  className="w-4 h-4" /> </a>
-                                  </li>
-                                  <li className="page-item" onClick={()=>{
-                                    setCurrentPage(totalPages)}}>
-                                      <a className="page-link" href="#"><ChevronsRight  className="w-4 h-4" /> </a>
-                                  </li>
-                              </ul>
-                          </nav>
-                          {/* <select className="w-20 form-select box mt-3 sm:mt-0">
-                            {pageLimitList && pageLimitList.length > 0 && pageLimitList.map((limitp, lp)=>{
-                              return(
-                                <>
-                                <option key={lp} value={limitp}>{limitp}</option>
-                                </>
-                              )
-                            })}
-
-                          </select> */}
-                </div>}
-                {!loading &&<div>
-         <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem"}}>Loading....</h1>   
-         </div>} 
+                      </select> */}
+            </div>
+            }
+          {!loading &&
+          <div>
+            <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem"}}>Loading....</h1>   
+          </div>
+          } 
 
               </div>
           
           
-          </div>
+        </div>
         </>
     )
 }

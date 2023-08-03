@@ -3,8 +3,11 @@ import Link from 'next/link';
 import Router from 'next/router'
 import { Users, LogOut, Newspaper, Lightbulb, BookMarked, Home, Sparkles, Image  } from 'lucide-react';
 import { useRouter } from "next/router";
+
 const SideBar =(props)=>{
     const [loginStatus, setLoginStatus] = useState(true);
+    const [logoImg, setLogoImg] = useState('');
+
     const [sideBarAccess, setSideBarAccess] = useState({
         users: false
     });
@@ -19,6 +22,9 @@ const SideBar =(props)=>{
         if(!localStorage.userid){
             Router.push('/');
         }else{
+            if(localStorage && localStorage.logo){
+                setLogoImg(localStorage.logo);
+            }
         if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type=="admin"){
             setSideBarAccess({
                 users : true
@@ -29,7 +35,7 @@ const SideBar =(props)=>{
     return (
         <>
           <nav className="side-nav">
-            <Link href="#" className="intro-x flex items-center pl-5 pt-4"><img alt="" src={props.logo ? props.logo : 'https://smca.ezrankings.in/dashboard/images/avtar.png'} /></Link>
+            <Link href="#" className="intro-x flex items-center pl-5 pt-4"><img alt="" src={logoImg} /></Link>
                 <div className="side-nav__devider my-6"></div>
                 <ul>
                     <li>

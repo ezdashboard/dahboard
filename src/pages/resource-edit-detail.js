@@ -3,6 +3,7 @@ import Head from 'next/head'
 import SideBar from './components/SideBar';
 import TopHeader from './components/TopHeade';
 import axios from 'axios';
+import Router from 'next/router'
 
 export default function ResourceDetail  (){
    const [bodyCsss, setBodyCss] = useState('py-5');
@@ -228,7 +229,28 @@ const onSubmit = (e) => {
    // }      
    }
  }
-
+const deleteData =()=>{
+  // localStorage.removeItem("resourceId");
+  // if(!localStorage.resourceId){
+  //     localStorage.setItem("resourceId", redir);
+  //     if(toRedir == 'detail'){
+  //       Router.push('/resource-detail');
+  //     }else if(toRedir == 'edit'){
+  //       Router.push('/resource-edit-detail');
+  //     }
+  // }
+  axios.get(`https://smca.ezrankings.in/dashboard/leariningDelte.php?dlt=${resourceId}`)
+  .then(res => {
+    if(res && res.data && res.data.status){
+        localStorage.removeItem("resourceId");
+        alert('delete Successfuuly.');
+        Router.push('/learning-resources');
+    }
+  // setServiceStoreData(data);
+})
+.catch(err => {
+ })
+}
  const getServiceData = async () => {
      axios.get(`https://smca.ezrankings.in/dashboard/services.php`)
        .then(res => {
@@ -314,7 +336,7 @@ useEffect(() => {
                             <div className="intro-y col-span-12 sm:col-span-6">
                               <label htmlFor="input-wizard-4" className="form-label">Service Name{}</label>
                               <select className="form-select" onChange={inputChangeData} name="serviceName">
-                               {inputData.serviceName == resourceData.serviceName && <option value={inputData.serviceId} select="selected">{inputData.serviceName}</option>}
+                               {inputData.serviceName == resourceData.serviceName && <option value={inputData.serviceName}>{inputData.serviceId}</option>}
                                  {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{
                                      return(
                                     <>
@@ -322,7 +344,7 @@ useEffect(() => {
                                     </>
                                 )
                             })}
-                              </select>
+                              </select> 
                             </div>
                             <div className="intro-y col-span-12 sm:col-span-12">
                                 <label htmlFor="input-wizard-2" className="form-label">Description</label>
@@ -335,7 +357,7 @@ useEffect(() => {
                             </div>                            
                             </div>
                             <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
-                                <button className="delete-btn">Delete</button>
+                                <button className="delete-btn" onClick={deleteData}>Delete</button>
                                 <button className="btn btn-primary w-24 ml-2">Update</button>
                             </div>
                             </form>

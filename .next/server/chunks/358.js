@@ -35,11 +35,11 @@ const SideBar = (props)=>{
     const onLogOut = ()=>{
         localStorage.clear();
         setLoginStatus(false);
-        next_router__WEBPACK_IMPORTED_MODULE_3___default().push("/login");
+        next_router__WEBPACK_IMPORTED_MODULE_3___default().push("/");
     };
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
         if (!localStorage.userid) {
-            next_router__WEBPACK_IMPORTED_MODULE_3___default().push("/login");
+            next_router__WEBPACK_IMPORTED_MODULE_3___default().push("/");
         } else {
             if (localStorage && localStorage.length > 0 && localStorage.type && localStorage.type == "admin") {
                 setSideBarAccess({

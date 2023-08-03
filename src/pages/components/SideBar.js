@@ -13,11 +13,11 @@ const SideBar =(props)=>{
     const onLogOut=()=>{
         localStorage.clear();
         setLoginStatus(false);
-        Router.push('/login');
+        Router.push('/');
     }
     useEffect(() => {
         if(!localStorage.userid){
-            Router.push('/login');
+            Router.push('/');
         }else{
         if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type=="admin"){
             setSideBarAccess({

@@ -11,7 +11,6 @@ import AdminDasbboard from './components/AdminDasbboard'
  const DashBoard = ()=> {
      const [dasbboardType, setDashboardType] = useState('');
      const [loading, setLoading] = useState(false);
-
      const [dashData, setDashData] = useState({
       total_price:0,
       total_project:0,
@@ -35,6 +34,9 @@ import AdminDasbboard from './components/AdminDasbboard'
               total_users: item.total_users,
               total_keywords: item.total_keywords,
               project: item.project,
+              graph2: item.graph2,
+              graph2_rem: item.graph2_rem,
+              color: item.color,              
               price: item.price,
               keyword: item.keyword              
             }
@@ -55,6 +57,9 @@ import AdminDasbboard from './components/AdminDasbboard'
       localStorage.setItem("price", getData[0].price);
       localStorage.setItem("project", getData[0].project);
       localStorage.setItem("keyword", getData[0].keyword); 
+      localStorage.setItem("graph2", getData[0].graph2);
+      localStorage.setItem("graph2_rem", getData[0].graph2_rem);
+      localStorage.setItem("color", getData[0].color);      
       setLoading(true);
 
       // console.log(dashData, 'ttt');
@@ -164,7 +169,7 @@ import AdminDasbboard from './components/AdminDasbboard'
        
       
         const timer = setTimeout(() => {
-        const ctx = document.getElementById('myChart');
+        let ctx = document.getElementById('myChart');
     
         if (ctx) {
           const myChart = new Chart(ctx, {
@@ -203,30 +208,47 @@ import AdminDasbboard from './components/AdminDasbboard'
         //}
 
 
+
+
         
         // group 2
-        var graph21 = applewatchgraph(document.querySelector('#group2 .graph1'), 70, {
-                color: '#ff180e',
-                autostart: false
-            });
-        var graph22 = applewatchgraph(document.querySelector('#group2 .graph2'), 55, {
-                color: '#9bfe07',
-                autostart: false
-            });
-        var graph23 = applewatchgraph(document.querySelector('#group2 .graph3'), 26, {
-                color: '#09daff',
-                autostart: false
-            });
+         ctx = document.getElementById("myChart");
+         ctx = ctx ? ctx.getContext('2d'):'';
+        var myChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: [],
+            datasets: [{
+              backgroundColor: [
+                localStorage.color,
+                "#f5f5f5",
+              ],
+              data: [localStorage.graph2, 100-localStorage.graph2]
+            }]
+          }
+        });
+        // var graph21 = applewatchgraph(document.querySelector('#group2 .graph1'), 70, {
+        //         color: '#ff180e',
+        //         autostart: false
+        //     });
+        // var graph22 = applewatchgraph(document.querySelector('#group2 .graph2'), 55, {
+        //         color: '#9bfe07',
+        //         autostart: false
+        //     });
+        // var graph23 = applewatchgraph(document.querySelector('#group2 .graph3'), 26, {
+        //         color: '#09daff',
+        //         autostart: false
+        //     });
             
-            if(graph21 && graph21.start){
-                setTimeout(graph21.start, 2000);
-            }
-            if(graph21 && graph22.start){
-                setTimeout(graph22.start, 2500);
-            }
-            if(graph23 && graph23.start){
-                setTimeout(graph23.start, 3000);
-            }
+        //     if(graph21 && graph21.start){
+        //         setTimeout(graph21.start, 2000);
+        //     }
+        //     if(graph21 && graph22.start){
+        //         setTimeout(graph22.start, 2500);
+        //     }
+        //     if(graph23 && graph23.start){
+        //         setTimeout(graph23.start, 3000);
+        //     }
 
         }, 2000);
         return () => clearTimeout(timer);
@@ -234,30 +256,27 @@ import AdminDasbboard from './components/AdminDasbboard'
 
   return (
     <>
-  <Head>
-    <meta charSet="utf-8" />
-    <link href="#" rel="shortcut icon"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta name="author" content=""/>
-    <title>Reseller Dashboard</title>
-    <link rel="dns-prefetch" href="//developers.google.com"/>
-    <link rel="dns-prefetch" href="//maps.googleapis.com"/>
-    <script
-    // you might need to get a newer version
-    src="https://kit.fontawesome.com/fbadad80a0.js"
-    crossOrigin="anonymous"
-    
-  ></script>    
-    <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-    
-    <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
-  </Head>
-      
+      <Head>
+        <meta charSet="utf-8" />
+        <link href="#" rel="shortcut icon"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="author" content=""/>
+        <title>Reseller Dashboard</title>
+        <link rel="dns-prefetch" href="//developers.google.com"/>
+        <link rel="dns-prefetch" href="//maps.googleapis.com"/>
+        <script
+        src="https://kit.fontawesome.com/fbadad80a0.js"
+        crossOrigin="anonymous"
+      ></script>    
+        <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
+        
+        <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+      </Head>
       <div className="flex mt-[4.7rem] md:mt-0">
         <SideBar />
         <div className="content">

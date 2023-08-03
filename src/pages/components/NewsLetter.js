@@ -39,12 +39,12 @@ const NewsList = async (page) => {
             <div className="intro-x flex items-center h-10" bis_skin_checked="1">
                 <h2 className="text-lg font-medium truncate mr-auto">Our Newsletter</h2>
                 <button data-carousel="important-notes" data-target="prev" className="tiny-slider-navigator btn px-2 border-slate-300 text-slate-600 dark:text-slate-300 mr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round" icon-name="chevron-left" data-lucide="chevron-left" className="lucide lucide-chevron-left w-4 h-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" icon-name="chevron-left" data-lucide="chevron-left" className="lucide lucide-chevron-left w-4 h-4">
                         <polyline points="15 18 9 12 15 6"></polyline>
                     </svg>
                 </button>
                 <button data-carousel="important-notes" data-target="next" className="tiny-slider-navigator btn px-2 border-slate-300 text-slate-600 dark:text-slate-300 mr-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round" icon-name="chevron-right" data-lucide="chevron-right" className="lucide lucide-chevron-right w-4 h-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" icon-name="chevron-right" data-lucide="chevron-right" className="lucide lucide-chevron-right w-4 h-4">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                 </button>

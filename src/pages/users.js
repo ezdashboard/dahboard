@@ -108,7 +108,7 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
       setUserStoreData(data);
       if(res.data.total){
         setPageCount(res.data.total);
-        if(page > 15){
+        if(page > 3){
           setPageList([page-3, page-2, page-1])
         }
       }

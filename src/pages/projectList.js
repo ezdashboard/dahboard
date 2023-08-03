@@ -14,17 +14,28 @@ import { ChevronLeft, ChevronsLeft, ChevronsRight, ChevronRight } from 'lucide-r
  const ProjectList = ()=> {
 
   const [loading, setLoading] = useState(false);
-  const [newsData, setNewsData] = useState([]);
   const [reportData, setReportData] = useState([]);
   const [serviceStoreData, setServiceStoreData] = useState([]);
   const [readMore, setReadMore] = useState(false);
   const [totalPages, setPageCount] = useState(1);
-  const [pageList, setPageList] = useState([1,2,3]);
+  const [pageList, setPageList] = useState([1]);
   const [pageLimitList, setPageLimitList] = useState([5,10,15]);
   const [limitp, setlimitp] =useState(5);
   const [readMoreclassName, setReadMoreclassName] = useState('hide');
   const [currentPage, setCurrentPage] = useState(1);
-
+  const redirectDetail = (redir, toRedir)=>{
+    setLoading(false);
+      localStorage.removeItem("projectId");
+      if(!localStorage.projectId){
+          localStorage.setItem("projectId", redir);
+          if(toRedir == 'cccdetail'){
+            Router.push('/resource-detail');
+          }else if(toRedir == 'edit'){
+            Router.push('/project-edit-detail');
+          }
+      }
+      //localStorage.setItem("resourceId":redir)
+  }
   const [inputData, setInputData] = useState({
     serviceName : '',
     service_Status:''
@@ -48,24 +59,7 @@ import { ChevronLeft, ChevronsLeft, ChevronsRight, ChevronRight } from 'lucide-r
   const navigation = ()=>{
     Router.push("/add-report")
   }
-  const NewsList = async (page) => {
 
-    axios.get(`https://smca.ezrankings.in/dashboard/newsList.php`)
-      .then(res => {
-          const data = res.data.newsData.map((item) => {
-            return {
-              id: item.id,
-              content: item.content,
-              time: item.time,
-              user: item.user,
-            }
-        }
-      )
-      setNewsData(data);
-    })
-    .catch(err => {
-     })
- }
  const inputChangeData =(event)=> {
   const {name, value} = event.target;
     setInputData((valuePre)=>{
@@ -108,6 +102,15 @@ const searchFilterData = () =>{
     if(res.data.total){
       setPageCount(res.data.total);
     }
+    if(currentPage > 3){
+      setPageList([currentPage-2, currentPage-1, currentPage])
+    }else if(currentPage == 3){
+      setPageList([currentPage-2, currentPage-1, currentPage])
+    }else if(currentPage == 2){
+      setPageList([ currentPage-1, currentPage])
+    }else if(currentPage == 1 && res.data.total > 1){
+      setPageList([currentPage, currentPage+1])
+    }
     setReportData(data);
     setLoading(true);
   })
@@ -116,8 +119,9 @@ const searchFilterData = () =>{
 }
 const getNextPageData =()=>{
   //alert();
-  setCurrentPage(currentPage+1);
-  // getReportData(currentPage);
+  if(totalPages > currentPage){
+    setCurrentPage(currentPage+1);
+  }  // getReportData(currentPage);
 }
 const getPageData =(pageno)=>{
   if(currentPage != pageno){
@@ -157,7 +161,6 @@ const getServiceData = async () => {
     }
 
     }
-    NewsList();
     getReportData(currentPage);
     getServiceData();
 
@@ -283,7 +286,9 @@ const getServiceData = async () => {
                               <a href="#" className={report.paymentStatus=='Paid' ? 'pay-done': 'pay-due'}>{report.paymentStatus}</a>
                             </td>
                             {addBtn && <td>
-                              <a href="#" className="pay-done">Edit</a>
+                              <a href="#" onClick={()=>{
+                                    redirectDetail(report.id, 'edit')
+                                }} className="pay-done">Edit</a>
                             </td>                             
                             }<td>
                               <a target="_blank" href={report.dwlUrl} className="font-medium whitespace-nowrap report">Download Report</a>
@@ -343,7 +348,7 @@ const getServiceData = async () => {
          <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem"}}>Loading....</h1>   
          </div>}  
 
-          {loading && <NewsLetter news={newsData}/>}
+          {loading && <NewsLetter />}
          </div>
       </div>
 

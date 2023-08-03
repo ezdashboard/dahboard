@@ -9,7 +9,8 @@ import axios from 'axios';
 
  const UpdateProfile = ()=> {
     const [selectedFile, setSelectedFile] = useState(null);
-
+    const [imgLoad, setImgLoad] = useState(false);
+    const [logoLoad, setLogoLoad] = useState(false);
     const handleFileChange = (event) => {
       setSelectedFile(event.target.files[0]);
     };
@@ -41,6 +42,7 @@ import axios from 'axios';
         userid : ''
     });
     const handleSubmit = async (event) => {
+      
         event.preventDefault();
         const logoData = {
           userid : localStorage.userid ? localStorage.userid : ''
@@ -50,6 +52,7 @@ import axios from 'axios';
             const formData = new FormData();
             formData.append('image', selectedFile);
             formData.append('userid', logoData.userid);
+            setLogoLoad(true);
             try {
               console.log('Imageccc uploaded successfully.',formData);
 
@@ -78,6 +81,7 @@ import axios from 'axios';
             } catch (error) {
               console.error('Error uploading image:', error);
             }
+            setLogoLoad(false);
           }
       }
       };
@@ -92,10 +96,10 @@ import axios from 'axios';
           const formData = new FormData();
           formData.append('image', selectedFile);
           formData.append('userid', imageData.userid);
-    
+          setImgLoad(true);
           try {
             console.log('Imageccc uploaded successfully.',formData);
-            const response = await fetch(`https://smca.ezrankings.in/dashboard/react-backend/image.php`, {
+            const response = await fetch(`https://smca.ezrankings.in/dashboard/image.php`, {
               method: 'POST',
               body: formData,
             })
@@ -110,7 +114,7 @@ import axios from 'axios';
                       image : getData.filename,
                       logo : localStorage.logo ? localStorage.logo : ''
                     })
-      
+                    //setImgLoad(false);
                   } else {
                     console.log('Image upload failed.');
                   }
@@ -120,6 +124,7 @@ import axios from 'axios';
           } catch (error) {
             console.error('Error uploading image:', error);
           }
+          setImgLoad(false);
         }
       }
       };  
@@ -252,7 +257,7 @@ import axios from 'axios';
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
     <meta name="author" content=""/>
-    <title>Reseller Dashboard</title>
+    <title>Reseller Profile update</title>
     <link rel="dns-prefetch" href="//developers.google.com"/>
     <link rel="dns-prefetch" href="//maps.googleapis.com"/>
     <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
@@ -272,7 +277,6 @@ import axios from 'axios';
                     <div className="intro-y box mt-5 lg:mt-0">
                         <div className="relative items-center p-5">
                             <div className="avatar-upload">
-
                                 <div className="avatar-preview">
                                     <img alt="" className="rounded-full pro-img" src={profileData.image} />
                                     </div>
@@ -284,7 +288,6 @@ import axios from 'axios';
                                 <div className="text-right">
                                     </div>
                                 </div>
-                            
                             <a className="flex items-center mt-5" href="">
                                 <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Name: {profileData.name}
                             </a>
@@ -377,7 +380,10 @@ import axios from 'axios';
                                             <input type="file" className="w-full h-full top-0 left-0 absolute opacity-0" onChange={handleFileChange} />
                                         </div>
                                         <div className="mx-auto cursor-pointer relative mt-5" bis_skin_checked="1">
-                                        <button type="submit" className="btn btn-primary w-full">Change Photo</button>
+                                        { !imgLoad &&
+                                          <button type="submit" className="btn btn-primary w-full">Change Photo</button>}
+                                        { imgLoad &&
+                                          <button type="button" className="btn btn-primary w-full">Uploading Photo...</button>}
                                         </div>
                                     </div>
                                     </form>
@@ -389,7 +395,9 @@ import axios from 'axios';
                                         </div>
 
                                         <div className="mx-auto cursor-pointer relative mt-5" bis_skin_checked="1">
-                                        <button type="submit" className="btn btn-primary w-full">Change Logo</button>
+                                        {!logoLoad && <button type="submit" className="btn btn-primary w-full">Change Logo</button>}
+                                        {logoLoad && <button type="button" className="btn btn-primary w-full">Uploading Logo...</button>}
+
                                         </div>
                                         </form>
                                     </div>

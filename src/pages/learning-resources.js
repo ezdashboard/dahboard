@@ -85,6 +85,7 @@ const Learning = ()=>{
                 }
               )
               setLearningData(data);
+              setLoading(true);
             })
             .catch(err => {
              })
@@ -114,7 +115,6 @@ const Learning = ()=>{
         }
         getServiceData();
         getData(currentPage);
-        setLoading(true);
         }, [currentPage]);
     return(
         <>
@@ -142,7 +142,8 @@ const Learning = ()=>{
                     <h2 className="text-lg font-medium mr-20">
                         Resources
                     </h2>
-                    <div className="w-full sm:w-auto relative mr-auto mt-3 sm:mt-0 flex gap-20">
+                      {loading &&          
+                     <div className="w-full sm:w-auto relative mr-auto mt-3 sm:mt-0 flex gap-20">
                             <div className="fil-box">
                             <select className="form-select" onChange={inputChangeData} name="serviceName">
                                 <option value="" select="selected">Select</option>
@@ -159,13 +160,14 @@ const Learning = ()=>{
                             <button className="btn btn-primary w-32 ml-2" onClick={()=>{
                                 getData(currentPage)
                             }}>Search</button>
-                            </div>
+                     </div>}
                             {sideBarAccess.users &&
                     <div className="w-full sm:w-auto flex mt-4 sm:mt-0">
                         <Link href="/add-resource" className="btn btn-primary shadow-md mr-2">Add New</Link>
                     </div>}
                 </div>            
-                 {  loading &&  <div className="intro-y grid grid-cols-12 gap-6 mt-5">
+                 {  loading &&  
+                 <div className="intro-y grid grid-cols-12 gap-6 mt-5">
                     {learningData && learningData.length > 0 && learningData.map((learn, l)=>{
                         return(
                             <>
@@ -175,17 +177,19 @@ const Learning = ()=>{
                                     </div>
                                 <div className="learning-box" >
                                     
-                                    <a href="#" onClick={()=>{
-                                    redirectDetail(learn.id, 'detail')
-                                }} className="block font-medium text-base">{learn.title}</a> 
+                                    <a href="#"  className="block font-medium text-base">{learn.title}</a> 
                                         <div className="flex text-slate-500 truncate text-xs mt-0.5"> <a className="text-primary inline-block truncate" href="#">{learn.serviceName} </a> <span className="mx-1">•</span> {learn.create_at} ago </div>
                                     <div className="text-slate-600 dark:text-slate-500 mt-2">{learn.description.substr(0, 100)}</div>
-                                    <a href="#" onClick={()=>{
-                                    redirectDetail(learn.id,'detail')
-                                }} className="ml-auto flex items-center text-primary">Read More</a>
+                                <hr />
+                            <div className="d-flex">
                                 <a href="#" onClick={()=>{
-                                    redirectDetail(learn.id,'edit')
-                                }} className="ml-auto flex items-center text-primary">Edit</a>
+                                    redirectDetail(learn.id, 'detail')
+                                }}>Read More</a>
+                             { sideBarAccess.users &&
+                             <a href="#" onClick={()=>{
+                              redirectDetail(learn.id,'edit')
+                          }}>Edit</a>}
+                            </div>
                                 </div>
                             </div>                            
                             </>
@@ -193,7 +197,8 @@ const Learning = ()=>{
                     })}
                   </div>}
                 
-{loading &&     <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+              {loading &&  
+                <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
                           <nav className="w-full sm:w-auto sm:mr-auto">
                               <ul className="pagination">
                                   <li className="page-item" onClick={()=>{

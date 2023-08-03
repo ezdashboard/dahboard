@@ -25,13 +25,13 @@ const [profileData, setProfileData] = useState({
 
 const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
 
-const toggleHiddenTitle = (index) => {
-  if (hiddenTitleIndex === index) {
-    setHiddenTitleIndex(null);
-  } else {
-    setHiddenTitleIndex(index);
-  }
-};
+// const toggleHiddenTitle = (index) => {
+//   if (hiddenTitleIndex === index) {
+//     setHiddenTitleIndex(null);
+//   } else {
+//     setHiddenTitleIndex(index);
+//   }
+// };
 const [closeIcon, setCloseIcon] = useState(false)
 const [isValidEmail, setIsValidEmail] = useState(false)
 
@@ -128,8 +128,8 @@ useEffect(() => {
             contactno : localStorage.contactno ? localStorage.contactno : '',
             about : localStorage.about ? localStorage.about : '',
             location : localStorage.location ? localStorage.location : '',
-            image : localStorage.image ? localStorage.image : '',
-            logo : localStorage.logo,
+            image : localStorage.image ? localStorage.image : 'https://smca.ezrankings.in/dashboard/images/avtar.png',
+            logo : localStorage.logo ? localStorage.logo :'https://smca.ezrankings.in/dashboard/images/avtar.png',
             userid : localStorage.userid
         });
     }

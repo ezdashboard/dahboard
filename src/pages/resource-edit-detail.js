@@ -326,7 +326,7 @@ useEffect(() => {
                             </div>
                             <div className="intro-y col-span-12 sm:col-span-12">
                                 <label htmlFor="input-wizard-2" className="form-label">Description</label>
-                                <textarea type="text" rows="5" className="form-control" placeholder="Write Something Here......"onChange={inputChangeData} name="description" value={inputData.description}></textarea>
+                                <textarea type="text" rows="12" className="form-control" placeholder="Write Something Here......"onChange={inputChangeData} name="description" value={inputData.description}></textarea>
                             </div>
                             <div className="intro-y col-span-12 sm:col-span-12">
                                 <label htmlFor="input-wizard-2" className="form-label">Featured Image</label>
@@ -335,6 +335,7 @@ useEffect(() => {
                             </div>                            
                             </div>
                             <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
+                                <button className="delete-btn">Delete</button>
                                 <button className="btn btn-primary w-24 ml-2">Update</button>
                             </div>
                             </form>

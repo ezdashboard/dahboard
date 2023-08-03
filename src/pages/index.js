@@ -183,9 +183,9 @@ import Router from 'next/router'
     <section>
         <div className="login-design">
             <div className="left">
-                <div className="logo-icon">
+                {/* <div className="logo-icon">
                     <img src="https://smca.ezrankings.in/dashboard/images/avtar.png" width="100px;" />
-                </div>
+                </div> */}
                 <div className="framepic">
                      <img src="https://smca.ezrankings.in/dashboard/images/Frame.png" width="60%" />
                     <h2>A few more clicks to sign in to your account.</h2>

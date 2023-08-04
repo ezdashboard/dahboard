@@ -3,6 +3,7 @@ import Head from 'next/head'
 import SideBar from './components/SideBar';
 import TopHeader from './components/TopHeade';
 import axios from 'axios';
+import MobileSideBar from './components/MobileSideBar';
 
 export default function EditReportDetail  () {
    const [bodyCsss, setBodyCss] = useState('py-5');
@@ -258,6 +259,7 @@ useEffect(() => {
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
      </Head>
+     <MobileSideBar />
      <div className="flex mt-[4.7rem] md:mt-0">
             <SideBar />
             <div className="content">

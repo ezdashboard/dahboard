@@ -4,6 +4,7 @@ import SideBar from './components/SideBar';
 import TopHeader from './components/TopHeade';
 import Link from 'next/link';
 import axios from 'axios';
+import MobileSideBar from './components/MobileSideBar';
 
 const Adduser=()=>{
     const [selectedFile, setSelectedFile] = useState(null);
@@ -67,18 +68,15 @@ const Adduser=()=>{
         }
         }, []);
     const [msg, setFormStatus] = useState('')
-
     const [submitBtn, setSubmitBtn] = useState({})
     const inputChangeData =(event)=> {
-    
-      const {name, value} = event.target;
-      setInputData((valuePre)=>{
-     return{
-       ...valuePre,
-       [name]:value
-     }
-    });
-    
+    const {name, value} = event.target;
+    setInputData((valuePre)=>{
+    return{
+      ...valuePre,
+      [name]:value
+    }
+  });
     }
     const submitCloseIcon = ()=>{
       setCloseIcon(false);
@@ -168,6 +166,7 @@ const Adduser=()=>{
           <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
           <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
         </Head>
+        <MobileSideBar />
         <div className="flex mt-[4.7rem] md:mt-0">
           <SideBar logo={profileData.logo}/>
           <div className="content">

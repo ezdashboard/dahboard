@@ -4,6 +4,7 @@ import Link from 'next/link';
 import SideBar from './components/SideBar';
 import TopHeader from './components/TopHeade';
 import NewsLetter from './components/NewsLetter';
+import MobileSideBar from './components/MobileSideBar';
 
 
  const ResellerBenefits = ()=> {
@@ -28,6 +29,7 @@ import NewsLetter from './components/NewsLetter';
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
     </Head>
+    <MobileSideBar />
     <div className="flex mt-[4.7rem] md:mt-0">
         <SideBar />
         <div className="content">    

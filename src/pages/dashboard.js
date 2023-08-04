@@ -7,6 +7,7 @@ import NewsLetter from './components/NewsLetter';
 import TopHeader from './components/TopHeade';
 import UserDashboard from './components/UserDashboard'
 import AdminDasbboard from './components/AdminDasbboard'
+import MobileSideBar from './components/MobileSideBar';
 
  const DashBoard = ()=> {
      const [dasbboardType, setDashboardType] = useState('');
@@ -278,6 +279,7 @@ import AdminDasbboard from './components/AdminDasbboard'
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
       </Head>
+      <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">
         <SideBar />
         <div className="content">

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import Router from 'next/router'
 import { ChevronLeft, ChevronsLeft, ChevronsRight, ChevronRight } from 'lucide-react';
+import MobileSideBar from './components/MobileSideBar';
 
 
 const Learning = ()=>{
@@ -129,6 +130,7 @@ const Learning = ()=>{
             <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
         </Head>
+        <MobileSideBar />
         <div className="flex mt-[4.7rem] md:mt-0">
         <SideBar />
               <div className="content">

@@ -4,6 +4,7 @@ import SideBar from './components/SideBar'
 import TopHeader from './components/TopHeade'
 import Link from 'next/link';
 import axios from 'axios';
+import MobileSideBar from './components/MobileSideBar';
 
 const AddResource = ()=>{
     const [sideBarAccess, setSideBarAccess] = useState({
@@ -264,6 +265,7 @@ const AddResource = ()=>{
             <link rel="dns-prefetch" href="//maps.googleapis.com"/>
             <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet"/>
         </Head>
+        <MobileSideBar />
         <div className="flex mt-[4.7rem] md:mt-0">
             <SideBar />
             <div className="content">

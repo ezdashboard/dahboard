@@ -178,8 +178,8 @@ import AdminDasbboard from './components/AdminDasbboard'
               labels: [],
               datasets: [
                 {
-                  backgroundColor: ['#3498db', '#f1c40f', '#e74c3c'],
-                  data: [50, 50, 50],
+                  backgroundColor: [localStorage.color, '#f5f5f5'],
+                  data: [localStorage.graph2, 100-localStorage.graph2],
                 },
               ],
             },

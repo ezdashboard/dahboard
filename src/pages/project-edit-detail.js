@@ -31,9 +31,9 @@ export default function EditReportDetail  () {
    const [userStoreData, setUserStoreData] = useState([]);
    const getUserData = async () => {
 
-    axios.get(`https://smca.ezrankings.in/dashboard/users.php?page=`)
+    axios.get(`https://smca.ezrankings.in/dashboard/usersD.php?page=`)
       .then(res => {
-          const data = res.data.userData.map((item) => {
+          const data = res.data.map((item) => {
             return {
               id: item.userid,
               name: item.name,

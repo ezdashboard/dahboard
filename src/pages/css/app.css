@@ -18044,7 +18044,7 @@ button.delete-btn {
 button.btn.btn-primary.new-repot {
   margin-top: 10px;
 }
-.sider-menu nav.side-nav img {
+.sider-menu .side-logo img {
   height: 120px;
   width: 120px;
   object-fit: cover;

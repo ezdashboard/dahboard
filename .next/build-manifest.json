@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/4mS7_5N5_DYJdR9vGz-0j/_buildManifest.js",
-    "static/4mS7_5N5_DYJdR9vGz-0j/_ssgManifest.js"
+    "static/iLXx3rTI_ZpOUSpgAPJHb/_buildManifest.js",
+    "static/iLXx3rTI_ZpOUSpgAPJHb/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -85,12 +85,19 @@
       "static/chunks/253-29dc2d3e9399a803.js",
       "static/chunks/pages/components/ConfirmationModal-9ba4537fd787bbb7.js"
     ],
+    "/components/MobileSideBar": [
+      "static/chunks/webpack-8fa1640cc84ba8fe.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-4dcb7f9b52833aba.js",
+      "static/chunks/664-8af8765c6fed5950.js",
+      "static/chunks/pages/components/MobileSideBar-0b22ca175984d3f1.js"
+    ],
     "/components/NewsLetter": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/components/NewsLetter-f268affbc5492885.js"
+      "static/chunks/pages/components/NewsLetter-78774b7908ed599b.js"
     ],
     "/components/ProfileContent": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -215,7 +222,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/update-profile-97fc8e098809b529.js"
+      "static/chunks/pages/update-profile-d90727cd9a25c489.js"
     ],
     "/user-edit": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

@@ -18044,6 +18044,12 @@ button.delete-btn {
 button.btn.btn-primary.new-repot {
   margin-top: 10px;
 }
+.sider-menu nav.side-nav img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 }
 
 .top-bar img {
@@ -18107,4 +18113,10 @@ border-radius: 50%;
 height: 100px;
 width: 100px;
 object-fit: cover;
+}
+nav.side-nav img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
 }

@@ -17993,3 +17993,40 @@ button.delete-btn {
   padding: 0.5rem 0.75rem;
   font-weight: 500;
 }
+
+@media only screen and (max-width: 600px) {
+.login-design {
+    display: unset;
+}
+    .login-design .left, .login-design .right {
+    padding: 20px;
+    position: relative;
+}
+    .framepic h2 {
+    font-size: 30px;
+    line-height: 40px;
+    width: 100%;
+    padding-top: 20px;
+}
+    .framepic p {
+    font-size: 16px;
+    padding-top: 10px;
+}
+    .login-form {
+    display: flex;
+    align-items: center;
+    height: unset;
+    flex-direction: column;
+    padding-top: 30px;
+}
+    .login-design .right {
+    position: relative;
+    height: 70vh;
+}
+}
+
+.top-bar img {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover;
+}

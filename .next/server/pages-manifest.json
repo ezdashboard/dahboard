@@ -1,5 +1,6 @@
 {
   "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html",
   "/add-report": "pages/add-report.html",
@@ -23,13 +24,12 @@
   "/newsletter": "pages/newsletter.html",
   "/profile": "pages/profile.html",
   "/project-edit-detail": "pages/project-edit-detail.html",
-  "/projectList": "pages/projectList.html",
   "/reseller-benefits": "pages/reseller-benefits.html",
   "/resource-detail": "pages/resource-detail.html",
-  "/update-profile": "pages/update-profile.html",
-  "/user-edit": "pages/user-edit.html",
   "/resource-edit-detail": "pages/resource-edit-detail.html",
-  "/users": "pages/users.html",
+  "/update-profile": "pages/update-profile.html",
   "/users/[edituser]": "pages/users/[edituser].js",
-  "/_error": "pages/_error.js"
+  "/user-edit": "pages/user-edit.html",
+  "/users": "pages/users.html",
+  "/projectList": "pages/projectList.html"
 }

@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/mgDjUz6Jw8UUisDl7kXXm/_buildManifest.js",
-    "static/mgDjUz6Jw8UUisDl7kXXm/_ssgManifest.js"
+    "static/JTGCSxi-h_VFZLZow3357/_buildManifest.js",
+    "static/JTGCSxi-h_VFZLZow3357/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -29,7 +29,7 @@
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
-      "static/css/9240cb1047581701.css",
+      "static/css/4746fc1bfa8922e1.css",
       "static/chunks/pages/_app-b696f73a88f062d2.js"
     ],
     "/_error": [
@@ -149,7 +149,8 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/learning-resources-9b0c5676ead17046.js"
+      "static/chunks/373-777310e22f5b97d1.js",
+      "static/chunks/pages/learning-resources-485eb118855429fd.js"
     ],
     "/login": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -165,8 +166,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/6-e990ac51dfda1993.js",
-      "static/chunks/pages/newsletter-df90a66fb1b65984.js"
+      "static/chunks/pages/newsletter-004adf1d5cd51df5.js"
     ],
     "/profile": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -190,7 +190,8 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/projectList-9d9c1e8c686268e4.js"
+      "static/chunks/373-777310e22f5b97d1.js",
+      "static/chunks/pages/projectList-4846909e7c8d19b2.js"
     ],
     "/reseller-benefits": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -238,8 +239,8 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/6-e990ac51dfda1993.js",
-      "static/chunks/pages/users-853b98d7247e21f0.js"
+      "static/chunks/373-777310e22f5b97d1.js",
+      "static/chunks/pages/users-ac3829ad1e511c0f.js"
     ],
     "/users/[edituser]": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

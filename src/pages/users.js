@@ -10,6 +10,7 @@ import NewsLetter from './components/NewsLetter';
 import axios from 'axios';
 import { CheckSquare, Trash2, XCircle } from 'lucide-react';
 import Router from 'next/router'
+import MobileSideBar from './components/MobileSideBar';
 
 
  const UserList = ()=> {
@@ -235,6 +236,7 @@ import Router from 'next/router'
         <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
         <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
       </Head>
+      <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">
         <SideBar logo={profileData.logo}/>
               <div className="content">

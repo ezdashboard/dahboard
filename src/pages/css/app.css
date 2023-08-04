@@ -18032,7 +18032,18 @@ button.delete-btn {
   flex-direction: column;
   gap: 30px;
 }
-
+.admin-dash.mt-5 {
+  display: unset;
+}
+.report-box.zoom-in.card {
+  margin-bottom: 20px;
+}
+.intro-y.flex.items-center.h-10 {
+  display: unset;
+}
+button.btn.btn-primary.new-repot {
+  margin-top: 10px;
+}
 }
 
 .top-bar img {

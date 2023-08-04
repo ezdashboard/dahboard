@@ -217,7 +217,7 @@ const getServiceData = async () => {
                             </div>
                             <button type="button" onClick={searchFilterData}className="btn btn-primary w-32 ml-2">Search</button>
                         </div>
-                        {addBtn &&                        <button className="btn btn-primary" onClick={navigation}>Add New Report</button>}
+                        {addBtn &&                        <button className="btn btn-primary new-repot" onClick={navigation}>Add New Report</button>}
                     </div>
                   </div>
                 </div>}

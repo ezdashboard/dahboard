@@ -169,21 +169,22 @@ import AdminDasbboard from './components/AdminDasbboard'
        
       
         const timer = setTimeout(() => {
-        let ctx = document.getElementById('myChart');
+        //   let ctx = document.getElementById("myChart").getContext('2d');
     
-        if (ctx) {
-          const myChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-              labels: [],
-              datasets: [
-                {
-                  backgroundColor: [localStorage.color, '#f5f5f5'],
-                  data: [localStorage.graph2, 100-localStorage.graph2],
-                },
-              ],
-            },
-          });
+        // if (ctx) {
+        //   const myChart = new Chart(ctx, {
+        //     type: 'pie',
+        //     data: {
+        //       labels: ["M","T"],
+        //       datasets: [
+        //         {
+        //           backgroundColor: [localStorage.color, '#f5f5f5'],
+        //           data: [localStorage.graph2, 100-localStorage.graph2],
+        //         },
+        //       ],
+        //     },
+        //   });
+        //   console.log(myChart, 'gwl21');
           applewatchgraph(document.querySelector('#group1 .graph1'), 'price', {
             color: '#ff180e',
             autostart: true
@@ -196,7 +197,7 @@ import AdminDasbboard from './components/AdminDasbboard'
           color: '#09daff',
           autostart: true
       });
-    }
+    //}
 
 
         
@@ -212,12 +213,12 @@ import AdminDasbboard from './components/AdminDasbboard'
 
         
         // group 2
-         ctx = document.getElementById("myChart");
+        let  ctx = document.getElementById("myChart");
          ctx = ctx ? ctx.getContext('2d'):'';
         var myChart = new Chart(ctx, {
           type: 'pie',
           data: {
-            labels: [],
+            labels: [localStorage.color,"gray"],
             datasets: [{
               backgroundColor: [
                 localStorage.color,

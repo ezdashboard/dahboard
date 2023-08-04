@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/b6UiRucaHhOjqM36Cgz1z/_buildManifest.js",
-    "static/b6UiRucaHhOjqM36Cgz1z/_ssgManifest.js"
+    "static/4mS7_5N5_DYJdR9vGz-0j/_buildManifest.js",
+    "static/4mS7_5N5_DYJdR9vGz-0j/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -134,7 +134,7 @@
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
       "static/chunks/738-8172a55741a17496.js",
-      "static/chunks/pages/dashboard-61809954b8d7c5c5.js"
+      "static/chunks/pages/dashboard-c4638080fcf16a79.js"
     ],
     "/learning-resources": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

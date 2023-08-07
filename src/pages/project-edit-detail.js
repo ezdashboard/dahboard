@@ -238,121 +238,121 @@ useEffect(() => {
  return(
     <>
      <Head>
-    <meta charSet="utf-8" />
-    <link href="#" rel="shortcut icon"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta name="author" content=""/>
-    <title>Edit Report Data</title>
-    <link rel="dns-prefetch" href="//developers.google.com"/>
-    <link rel="dns-prefetch" href="//maps.googleapis.com"/>
-    <script
-    // you might need to get a newer version
-    src="https://kit.fontawesome.com/fbadad80a0.js"
-    crossOrigin="anonymous"
-  ></script>
-    <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-    <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-    <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+      <meta charSet="utf-8" />
+      <link href="#" rel="shortcut icon"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta name="description" content=""/>
+      <meta name="keywords" content=""/>
+      <meta name="author" content=""/>
+      <title>Edit Report Data</title>
+      <link rel="dns-prefetch" href="//developers.google.com"/>
+      <link rel="dns-prefetch" href="//maps.googleapis.com"/>
+      <script
+      // you might need to get a newer version
+      src="https://kit.fontawesome.com/fbadad80a0.js"
+      crossOrigin="anonymous"
+    ></script>
+      <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
+      <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
+      <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
+      <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
      </Head>
      <MobileSideBar />
      <div className="flex mt-[4.7rem] md:mt-0">
-            <SideBar />
-            <div className="content">
-                <TopHeader />
-                <div className="flex items-center mt-8">
-                    <h2 className="intro-y text-lg font-medium mr-auto">
-                        Add New Report
-                    </h2>
-                </div>
-                <div className="intro-y box mt-5 add-new-report">
-                    <div className="border-slate-200/60 dark:border-darkmode-400">
-                        {/* <div className="font-medium text-base">Service List</div> */}
-                          {closeIcon  ?<span style={submitBtn}>{msg}  <span onClick={submitCloseIcon}><i className="fa fa-times" aria-hidden="true"></i></span></span>: ""}
-                        <form onSubmit={onSubmit}>
-                        <div className="grid grid-cols-12 gap-4 gap-y-5 mt-5">
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                    <label htmlFor="input-wizard-2" className="form-label">Project URL</label>
-                                    <input type="text" className="form-control" placeholder="www.abc.com" onChange={inputChangeData} name="projectUrl" value={inputData.projectUrl}/>
-                            </div>  
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                    <label htmlFor="input-wizard-2" className="form-label">Download Link URL</label>
-                                    <input type="text" className="form-control" placeholder="www.abc.com" onChange={inputChangeData} name="dwlUrl" value={inputData.dwlUrl}/>
-                            </div>                                                      
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                <label htmlFor="input-wizard-1" className="form-label">Service Name</label>
-                                <select className="form-select" onChange={inputChangeData} name="serviceName">
-                               {inputData.serviceName == ReportData.serviceName && <option value={inputData.serviceName}>{inputData.serviceId}</option>}
-                                 {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{
-                                     return(
+      <SideBar />
+      <div className="content">
+        <TopHeader />
+        <div className="flex items-center mt-8">
+            <h2 className="intro-y text-lg font-medium mr-auto">
+                Add New Report
+            </h2>
+        </div>
+        <div className="intro-y box mt-5 add-new-report">
+            <div className="border-slate-200/60 dark:border-darkmode-400">
+                {/* <div className="font-medium text-base">Service List</div> */}
+                  {closeIcon  ?<span style={submitBtn}>{msg}  <span onClick={submitCloseIcon}><i className="fa fa-times" aria-hidden="true"></i></span></span>: ""}
+                <form onSubmit={onSubmit}>
+                <div className="grid grid-cols-12 gap-4 gap-y-5 mt-5">
+                    <div className="intro-y col-span-12 sm:col-span-6">
+                            <label htmlFor="input-wizard-2" className="form-label">Project URL</label>
+                            <input type="text" className="form-control" placeholder="www.abc.com" onChange={inputChangeData} name="projectUrl" value={inputData.projectUrl}/>
+                    </div>  
+                    <div className="intro-y col-span-12 sm:col-span-6">
+                            <label htmlFor="input-wizard-2" className="form-label">Download Link URL</label>
+                            <input type="text" className="form-control" placeholder="www.abc.com" onChange={inputChangeData} name="dwlUrl" value={inputData.dwlUrl}/>
+                    </div>                                                      
+                    <div className="intro-y col-span-12 sm:col-span-6">
+                        <label htmlFor="input-wizard-1" className="form-label">Service Name</label>
+                        <select className="form-select" onChange={inputChangeData} name="serviceName">
+                        {inputData.serviceName == ReportData.serviceName && <option value={inputData.serviceName}>{inputData.serviceId}</option>}
+                          {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{
+                              return(
+                            <>
+                            <option key={s} value={service.id} >{service.name}</option>
+                            </>
+                        )
+                    })}
+                      </select>                                
+                    </div>
+                    <div className="intro-y col-span-12 sm:col-span-6">
+                        <label htmlFor="input-wizard-3" className="form-label">User List</label>
+                            <select className="form-select" onChange={inputChangeData} name="userAssign">
+                            {inputData.userName == ReportData.userName && <option value={inputData.userAssign} select="selected">{inputData.userName}</option>}
+                            {userStoreData && userStoreData.length > 0 && userStoreData.map((usecr, u)=>{
+                                return(
                                     <>
-                                    <option key={s} value={service.id} >{service.name}</option>
+                                    <option value ={usecr.id} key={u}>{usecr.name}</option>
                                     </>
                                 )
                             })}
-                              </select>                                
-                            </div>
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                <label htmlFor="input-wizard-3" className="form-label">User List</label>
-                                    <select className="form-select" onChange={inputChangeData} name="userAssign">
-                                    {inputData.userName == ReportData.userName && <option value={inputData.userAssign} select="selected">{inputData.userName}</option>}
-                                    {userStoreData && userStoreData.length > 0 && userStoreData.map((usecr, u)=>{
-                                        return(
-                                            <>
-                                            <option value ={usecr.id} key={u}>{usecr.name}</option>
-                                            </>
-                                        )
-                                    })}
-                                </select>
-                            </div>                                            
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                <label htmlFor="input-wizard-3" className="form-label">Plan Opted</label>
-                                <input type="text" className="form-control" placeholder="123" onChange={inputChangeData} name="planOption" value={inputData.planOption}/>
-                            </div>
-                            
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                <label htmlFor="input-wizard-3" className="form-label">Billing Amount</label>
-                                <input type="text" className="form-control" placeholder="$ " onChange={inputChangeData} name="billingAmt" value={inputData.billingAmt}/>
-                            </div>
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                <label htmlFor="input-wizard-4" className="form-label">Start Date</label>
-                                <input type="date" className="form-control" placeholder="********" onChange={inputChangeData} name="startDate" value={inputData.startDate}/>
-                            </div>
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                <label htmlFor="input-wizard-4" className="form-label">Reporting Date</label>
-                                <input type="date" className="form-control" placeholder="********" onChange={inputChangeData} name="reportingDate" value={inputData.reportingDate}/>
-                            </div>
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                <label htmlFor="input-wizard-4" className="form-label">Payment Status</label>
-                                <select className="form-select" onChange={inputChangeData} name="paymentStatus">
-                                    <option value={inputData.paymentStatus} select="selected">{inputData.paymentStatus}</option>
-                                    <option value="Paid">Paid</option>
-                                    <option value="Due">Due</option>
-                                </select>
-                            </div>
-                            <div className="intro-y col-span-12 sm:col-span-6">
-                                <label htmlFor="input-wizard-4" className="form-label">Project Status</label>
-                                    <div className="form-check" >
-                                        <select className="form-select" onChange={inputChangeData} name="projectStatus">
-                                            <option value={inputData.projectStatus} select="selected">{inputData.projectStatus}</option>
-                                            <option value="Active">Active</option>
-                                            <option value="Paused">Paused</option>        
-                                        </select>                                    
-                                    </div>
-                            </div>                            
-                        </div>
-                        <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
-                            <button className="btn btn-primary w-24 ml-2" type="submit">Update</button>
-                        </div>
-                        </form>
+                        </select>
+                    </div>                                            
+                    <div className="intro-y col-span-12 sm:col-span-6">
+                        <label htmlFor="input-wizard-3" className="form-label">Plan Opted</label>
+                        <input type="text" className="form-control" placeholder="123" onChange={inputChangeData} name="planOption" value={inputData.planOption}/>
                     </div>
+                    
+                    <div className="intro-y col-span-12 sm:col-span-6">
+                        <label htmlFor="input-wizard-3" className="form-label">Billing Amount</label>
+                        <input type="text" className="form-control" placeholder="$ " onChange={inputChangeData} name="billingAmt" value={inputData.billingAmt}/>
+                    </div>
+                    <div className="intro-y col-span-12 sm:col-span-6">
+                        <label htmlFor="input-wizard-4" className="form-label">Start Date</label>
+                        <input type="date" className="form-control" placeholder="********" onChange={inputChangeData} name="startDate" value={inputData.startDate}/>
+                    </div>
+                    <div className="intro-y col-span-12 sm:col-span-6">
+                        <label htmlFor="input-wizard-4" className="form-label">Reporting Date</label>
+                        <input type="date" className="form-control" placeholder="********" onChange={inputChangeData} name="reportingDate" value={inputData.reportingDate}/>
+                    </div>
+                    <div className="intro-y col-span-12 sm:col-span-6">
+                        <label htmlFor="input-wizard-4" className="form-label">Payment Status</label>
+                        <select className="form-select" onChange={inputChangeData} name="paymentStatus">
+                            <option value={inputData.paymentStatus} select="selected">{inputData.paymentStatus}</option>
+                            <option value="Paid">Paid</option>
+                            <option value="Due">Due</option>
+                        </select>
+                    </div>
+                    <div className="intro-y col-span-12 sm:col-span-6">
+                        <label htmlFor="input-wizard-4" className="form-label">Project Status</label>
+                            <div className="form-check" >
+                                <select className="form-select" onChange={inputChangeData} name="projectStatus">
+                                    <option value={inputData.projectStatus} select="selected">{inputData.projectStatus}</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Paused">Paused</option>        
+                                </select>                                    
+                            </div>
+                    </div>                            
                 </div>
+                <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
+                    <button className="btn btn-primary w-24 ml-2" type="submit">Update</button>
+                </div>
+                </form>
             </div>
         </div>
+      </div>
+     </div>
     </>
  )
 }

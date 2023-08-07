@@ -60,15 +60,6 @@ import MobileSideBar from './components/MobileSideBar';
       userid : ''
   });
 
-  const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
-  
-  const toggleHiddenTitle = (index) => {
-    if (hiddenTitleIndex === index) {
-      setHiddenTitleIndex(null);
-    } else {
-      setHiddenTitleIndex(index);
-    }
-  };
   const getNextPageData =()=>{
     if(totalPages > currentPage){
       setCurrentPage(currentPage+1);
@@ -364,7 +355,7 @@ import MobileSideBar from './components/MobileSideBar';
                   }
                   </div>
               </div>
-          </div>
+      </div>
     </>
   )
 }

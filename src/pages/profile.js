@@ -139,29 +139,29 @@ useEffect(() => {
 
   return (
     <>
-  <Head>
-    <meta charSet="utf-8" />
-    <link href="#" rel="shortcut icon"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta name="author" content=""/>
-    <title>Reseller Dashboard</title>
-    <link rel="dns-prefetch" href="//developers.google.com"/>
-    <link rel="dns-prefetch" href="//maps.googleapis.com"/>
-    <script
-    // you might need to get a newer version
-    src="https://kit.fontawesome.com/fbadad80a0.js"
-    crossOrigin="anonymous"
-  ></script>
-    <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-    <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-    <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
-  </Head>
-  <MobileSideBar />
+      <Head>
+        <meta charSet="utf-8" />
+        <link href="#" rel="shortcut icon"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <meta name="author" content=""/>
+        <title>Reseller Dashboard</title>
+        <link rel="dns-prefetch" href="//developers.google.com"/>
+        <link rel="dns-prefetch" href="//maps.googleapis.com"/>
+        <script
+        // you might need to get a newer version
+        src="https://kit.fontawesome.com/fbadad80a0.js"
+        crossOrigin="anonymous"
+      ></script>
+        <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
+        <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
+        <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
+        <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+      </Head>
+      <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">
         <SideBar logo={profileData.logo}/>
         <div className="content">

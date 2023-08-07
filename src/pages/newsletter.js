@@ -274,7 +274,7 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
                       </div>
                   </div>
               </div>
-          </div>
+      </div>
     </>
   )
 }

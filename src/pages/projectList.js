@@ -182,7 +182,7 @@ const getServiceData = async () => {
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
         <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-      <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+        <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
       </Head>
       <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">
@@ -190,8 +190,8 @@ const getServiceData = async () => {
          <div className="content">
           <TopHeader />
               <div className="col-span-12 mt-6">
-             
-{ loading &&               <div className="col-span-12 mt-8">
+{ loading &&  
+             <div className="col-span-12 mt-8">
                   <div className="col-span-12 mt-8">
                     <div className="intro-y flex items-center h-10">
                         <h2 className="text-lg font-medium truncate mr-5">General Report</h2>
@@ -345,7 +345,6 @@ const getServiceData = async () => {
           {loading && <NewsLetter />}
          </div>
       </div>
-
     </>
   )
 }

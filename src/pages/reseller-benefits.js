@@ -34,12 +34,12 @@ import MobileSideBar from './components/MobileSideBar';
         <SideBar />
         <div className="content">    
         <TopHeader />
-                <div className="intro-y flex items-center h-10 mt-8">
-                    <h2 className="text-lg font-medium truncate mr-5">Reseller Benefits</h2>
-                        <a href="#" className="ml-auto flex items-center text-primary">
-                        <i data-lucide="refresh-ccw" className="w-4 h-4 mr-3"></i> Reload
-                    </a>
-                </div>
+            <div className="intro-y flex items-center h-10 mt-8">
+                <h2 className="text-lg font-medium truncate mr-5">Reseller Benefits</h2>
+                    <a href="#" className="ml-auto flex items-center text-primary">
+                    <i data-lucide="refresh-ccw" className="w-4 h-4 mr-3"></i> Reload
+                </a>
+            </div>
             <div className="grid grid-cols-12 gap-6 mt-5">
                 <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
                         <a href="#">

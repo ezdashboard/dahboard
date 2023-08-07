@@ -175,7 +175,7 @@ const getServiceData = async () => {
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="author" content=""/>
-        <title>Reseller Projects && Reports</title>
+        <title>Reseller Projectss && Reports</title>
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
         <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
@@ -305,47 +305,39 @@ const getServiceData = async () => {
                     </table>
                 </div>}
               </div> 
-{loading &&              <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
-                        <nav className="w-full sm:w-auto sm:mr-auto">
-                            <ul className="pagination">
-                                <li className="page-item" onClick={()=>{
-                                  getPageData(1)
-                                }}>
-                                    <a className="page-link" href="#"> <ChevronsLeft  className="w-4 h-4" /> </a>
-                                </li>
-                                <li className="page-item" onClick={getPreviousPageData}>
-                                    <a className="page-link" href="#"> <ChevronLeft  className="w-4 h-4" /> </a>
-                                </li>
-                                <li className="page-item"> <a className="page-link" href="#">...</a> </li>
+            {loading && totalPages && totalPages > 1 &&
+             <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+                <nav className="w-full sm:w-auto sm:mr-auto">
+                    <ul className="pagination">
+                        <li className="page-item" onClick={()=>{
+                          getPageData(1)
+                        }}>
+                            <a className="page-link" href="#"> <ChevronsLeft  className="w-4 h-4" /> </a>
+                        </li>
+                        <li className="page-item" onClick={getPreviousPageData}>
+                            <a className="page-link" href="#"> <ChevronLeft  className="w-4 h-4" /> </a>
+                        </li>
+                        <li className="page-item"> <a className="page-link" href="#">...</a> </li>
 
-                                  {pageList.map((data, i)=>{
+                          {pageList.map((data, i)=>{
 
-                                  return(
-                                   <li key={i} onClick={()=>{
-                                  setCurrentPage(data)}} className={currentPage == data ? 'page-item active' : 'page-item'}><a href="#" className={currentPage == data ? 'page-link' : 'page-link'}>{data}</a></li>
-                                              )
-                                          })}
-                                <li className="page-item"> <a className="page-link" href="#">...</a> </li>
-                                <li className="page-item" onClick={getNextPageData }>
-                                    <a className="page-link" href="#"> <ChevronRight  className="w-4 h-4" /></a>
-                                </li>
-                                <li className="page-item" onClick={()=>{
-                                  setCurrentPage(totalPages)}}>
-                                    <a className="page-link" href="#"><ChevronsRight  className="w-4 h-4" /> </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        {/* <select className="w-20 form-select box mt-3 sm:mt-0">
-                          {pageLimitList && pageLimitList.length > 0 && pageLimitList.map((limitp, lp)=>{
-                            return(
-                              <>
-                              <option key={lp} value={limitp}>{limitp}</option>
-                              </>
-                            )
-                          })}
-
-                        </select> */}
-              </div> } 
+                          return(
+                            <li key={i} onClick={()=>{
+                          setCurrentPage(data)}} className={currentPage == data ? 'page-item active' : 'page-item'}><a href="#" className={currentPage == data ? 'page-link' : 'page-link'}>{data}</a></li>
+                                      )
+                                  })}
+                        <li className="page-item"> <a className="page-link" href="#">...</a> </li>
+                        <li className="page-item" onClick={getNextPageData }>
+                            <a className="page-link" href="#"> <ChevronRight  className="w-4 h-4" /></a>
+                        </li>
+                        <li className="page-item" onClick={()=>{
+                          setCurrentPage(totalPages)}}>
+                            <a className="page-link" href="#"><ChevronsRight  className="w-4 h-4" /> </a>
+                        </li>
+                    </ul>
+                </nav>
+             </div> 
+            } 
               {!loading &&<div>
          <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem"}}>Loading....</h1>   
          </div>}  

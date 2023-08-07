@@ -39,7 +39,9 @@ const Learning = ()=>{
         //localStorage.setItem("resourceId":redir)
     }
     const getNextPageData =()=>{
+      if(totalPages > currentPage){
         setCurrentPage(currentPage+1);
+      }
       }
     const getPageData =(pageno)=>{
         if(currentPage != pageno){
@@ -81,6 +83,18 @@ const Learning = ()=>{
                 }
               )
               setLearningData(data);
+              if(res.data.total){
+                setPageCount(res.data.total);
+              }
+              if(currentPage > 3){
+                setPageList([currentPage-2, currentPage-1, currentPage])
+              }else if(currentPage == 3){
+                setPageList([currentPage-2, currentPage-1, currentPage])
+              }else if(currentPage == 2){
+                setPageList([ currentPage-1, currentPage])
+              }else if(currentPage == 1 && res.data.total > 1){
+                setPageList([currentPage, currentPage+1])
+              }              
               setLoading(true);
             })
             .catch(err => {
@@ -194,7 +208,7 @@ const Learning = ()=>{
               })}
             </div>
             }
-          {loading &&  
+          {loading && totalPages && totalPages > 1 && 
             <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
                       <nav className="w-full sm:w-auto sm:mr-auto">
                           <ul className="pagination">

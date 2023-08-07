@@ -4,6 +4,11 @@ import Head from 'next/head';
 
 const NewsLetter = ()=>{
 const [newsData, setNewsData] = useState([]);
+
+const Dismiss=(newId)=>{
+    const updatedNewsStoreData = newsData.filter((news) => news.id !== newId);
+    setNewsData(updatedNewsStoreData);
+}
 const [loading, setLoading] = useState(false);
 const NewsList = async (page) => {
     axios.get(`https://smca.ezrankings.in/dashboard/newsList.php`)
@@ -66,7 +71,7 @@ const NewsList = async (page) => {
                                                     <div className="text-slate-500 text-justify mt-1" bis_skin_checked="1">{newsI.content}</div>
                                                     <div className="font-medium flex mt-5" bis_skin_checked="1">
                                                         {/* <button type="button" className="btn btn-secondary py-1 px-2">View Notes</button> */}
-                                                        <button type="button" className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
+                                                        <button type="button" onClick={()=>Dismiss(newsI.id)} className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
                                                     </div>
                                                 </div>
                                             </>

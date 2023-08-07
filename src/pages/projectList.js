@@ -175,7 +175,7 @@ const getServiceData = async () => {
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         <meta name="author" content=""/>
-        <title>Reseller Projectss && Reports</title>
+        <title>Reseller Projects && Reports</title>
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
         <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>

@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/jXD7Tr2ULYQ9at4ho9q0G/_buildManifest.js",
-    "static/jXD7Tr2ULYQ9at4ho9q0G/_ssgManifest.js"
+    "static/uoksyq44jnPmyik5zBEy1/_buildManifest.js",
+    "static/uoksyq44jnPmyik5zBEy1/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -29,7 +29,7 @@
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
-      "static/css/6a1e1a13f70067c4.css",
+      "static/css/ea4f52536497960f.css",
       "static/chunks/pages/_app-b696f73a88f062d2.js"
     ],
     "/_error": [
@@ -150,7 +150,7 @@
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
       "static/chunks/373-777310e22f5b97d1.js",
-      "static/chunks/pages/learning-resources-485eb118855429fd.js"
+      "static/chunks/pages/learning-resources-138e418aa5fdad33.js"
     ],
     "/login": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -191,7 +191,7 @@
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
       "static/chunks/373-777310e22f5b97d1.js",
-      "static/chunks/pages/projectList-4846909e7c8d19b2.js"
+      "static/chunks/pages/projectList-0453facdd313b619.js"
     ],
     "/reseller-benefits": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

@@ -18120,8 +18120,15 @@ object-fit: cover;
   object-fit: cover;
   border-radius: 50%;
 } */
+/* nav.side-nav img {
+  height: 120px;
+  width: 120px;
+  object-fit: contain;
+} */
+
 nav.side-nav img {
   height: 120px;
   width: 120px;
   object-fit: contain;
+  border-radius: 0px !important;
 }

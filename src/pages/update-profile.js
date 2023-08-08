@@ -7,15 +7,35 @@ import TopHeader from './components/TopHeade';
 import axios from 'axios';
 import MobileSideBar from './components/MobileSideBar';
 
+import Router from 'next/router'
+import { Users, LogOut, Newspaper,Search, Lightbulb, BookMarked, Home, Sparkles, Image  } from 'lucide-react';
+import { useRouter } from "next/router";
 
  const UpdateProfile = ()=> {
     const [selectedFile, setSelectedFile] = useState(null);
     const [imgLoad, setImgLoad] = useState(false);
     const [logoLoad, setLogoLoad] = useState(false);
     const handleFileChange = (event) => {
-      setSelectedFile(event.target.files[0]);
+      //console.log('vikasss', event.target.files[0]);
+      
+      if( event.target.files[0].size > 2024000){
+        alert('Please select less than 1 mb file upload');
+      }else{
+        setSelectedFile(event.target.files[0]);
+      }
     };
+    const [loginStatus, setLoginStatus] = useState(true);
 
+    const [sideBarAccess, setSideBarAccess] = useState({
+        users: false
+    });
+    const router = useRouter();
+
+    const onLogOut=()=>{
+        localStorage.clear();
+        setLoginStatus(false);
+        Router.push('/');
+    }
     const [bodyCsss, setBodyCss] = useState('py-5');
     const [inputData, setInputData] = useState({
         companyname : '',
@@ -30,7 +50,6 @@ import MobileSideBar from './components/MobileSideBar';
         userid :''
     })
     const [profileData, setProfileData] = useState({
-       
         companyname : '',
         title : '',
         name : '',
@@ -129,15 +148,7 @@ import MobileSideBar from './components/MobileSideBar';
         }
       }
       };  
-    const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
     
-    const toggleHiddenTitle = (index) => {
-      if (hiddenTitleIndex === index) {
-        setHiddenTitleIndex(null);
-      } else {
-        setHiddenTitleIndex(index);
-      }
-    };
     const [closeIcon, setCloseIcon] = useState(false)
     const [isValidEmail, setIsValidEmail] = useState(false)
     useEffect(() => {
@@ -272,9 +283,90 @@ import MobileSideBar from './components/MobileSideBar';
       </Head>
       <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">
-        <SideBar logo={profileData.logo}/>
+      <nav className="side-nav">
+            <Link href="#" className="intro-x flex items-center pl-5 pt-4"><img alt="" src={profileData.logo} /></Link>
+                <div className="side-nav__devider my-6"></div>
+                <ul>
+                    <li>
+                        <Link href="/dashboard" className={router.pathname == "/dashboard" ? "side-menu side-menu--active" : "side-menu"}>
+                            <div className="side-menu__icon">
+                           
+                            <Home size={16}/>
+                            </div>
+                            <div className="side-menu__title">Dashboard</div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/projectList" className={router.pathname == "/projectList" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                        
+                        <BookMarked size={16}/>
+                        </div>
+                            <div className="side-menu__title">Project details & Reports</div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/reseller-benefits" className={router.pathname == "/reseller-benefits" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                        
+                        <Sparkles  size={16}/>
+                        </div>
+                            <div className="side-menu__title">Reseller Benefits</div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/learning-resources" className={router.pathname == "/learning-resources" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                        
+                        <Lightbulb size={16}/>
+                        </div>
+                            <div className="side-menu__title">Learning Resources</div>
+                        </Link>
+                    </li>
+                    <li className="side-nav__devider my-6">
+                    </li>
+                </ul>
+                <ul className="bottom-list">
+                    <li>
+                    <Link href="/profile" className={router.pathname == "/profile" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                   
+                    <Image  size={16}/>
+                    </div>
+                        <div className="side-menu__title">Profile</div>
+                    </Link>
+                    </li>
+                    {   sideBarAccess.users &&  <li>
+                    <Link href="/users" className={router.pathname == "/users" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                   
+                    <Users size={16}/>
+                    </div>
+                        <div className="side-menu__title">Users</div>
+                    </Link>
+                    </li>}
+                    <li>
+                    <Link href="#" onClick={onLogOut} className="side-menu"><div className="side-menu__icon">
+                    <LogOut size={16}/>
+                    </div>
+                        <div className="side-menu__title">SignOut</div>
+                    </Link>
+                    </li>
+                </ul>
+      </nav>
         <div className="content">
-          <TopHeader title={profileData.companyname} img={profileData.image}/>
+        <div className="top-bar">
+            <nav className="-intro-x mr-auto hidden sm:flex">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item active">Welcome to {'Reseller dashboard.'}</li>
+                </ol>
+            </nav>
+            <div className="intro-x relative mr-3 sm:mr-6">
+                <Link className="notification sm:hidden" href="#">
+                    <Search  className="search__icon dark:text-slate-500"/>
+                </Link>
+            </div>
+            <div className="intro-x dropdown w-8 h-8">
+                <div className="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in">
+                    <Link href="/profile"><img alt="" src={profileData.image} /></Link>
+                </div>
+            </div>
+        </div>
             <div className="intro-y flex items-center mt-8">
             </div>
             <div className="grid grid-cols-12 gap-6 mt-5">

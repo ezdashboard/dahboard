@@ -18132,3 +18132,6 @@ nav.side-nav img {
   object-fit: contain;
   border-radius: 0px !important;
 }
+div#delete-confirmation-modal {
+    display: block !important;
+}

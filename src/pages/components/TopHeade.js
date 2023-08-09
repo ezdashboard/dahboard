@@ -28,8 +28,8 @@ useEffect(() => {
                     <Bell className="notification__icon dark:text-slate-500 far fa-bell"/>
                 </div>
             </div> */}
-            <div className="intro-x dropdown w-8 h-8">
-                <div className="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in">
+            <div className="intro-x dropdown">
+                <div className="dropdown-toggle rounded-full overflow-hidden shadow-lg image-fit zoom-in">
                     <Link href="/profile"><img alt="" src={img} /></Link>
                 </div>
             </div>

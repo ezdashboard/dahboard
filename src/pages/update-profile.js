@@ -361,8 +361,8 @@ import { useRouter } from "next/router";
                     <Search  className="search__icon dark:text-slate-500"/>
                 </Link>
             </div>
-            <div className="intro-x dropdown w-8 h-8">
-                <div className="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in">
+            <div className="intro-x dropdown">
+                <div className="dropdown-toggle rounded-full overflow-hidden shadow-lg image-fit zoom-in">
                     <Link href="/profile"><img alt="" src={profileData.image} /></Link>
                 </div>
             </div>

@@ -18061,16 +18061,27 @@ button.btn.btn-primary.new-repot {
   margin-top: 10px;
 }
 .sider-menu .side-logo img {
-  height: 120px;
-  width: 120px;
+  height: 80px;
+  width: 80px;
   object-fit: cover;
   border-radius: 50%;
+}
+.intro-x.flex.items-center.h-10 {
+  margin-top: 30px;
+}
+.grid.grid-cols-12.gap-6 {
+  margin-bottom: 20px;
+}
+.top-bar img {
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: cover;
 }
 }
 
 .top-bar img {
-  width: 80px !important;
-  height: 80px !important;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
 }
 

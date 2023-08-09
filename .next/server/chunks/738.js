@@ -68,7 +68,7 @@ const AdminDasbboard = (props)=>{
         setCloseIcon(false);
     };
     const NewsList = async (page)=>{
-        axios__WEBPACK_IMPORTED_MODULE_3__["default"].get(`https://smca.ezrankings.in/dashboard/newsList.php`).then((res)=>{
+        axios__WEBPACK_IMPORTED_MODULE_3__["default"].get(`https://reseller.ezrankings.in//dashboard/newsList.php`).then((res)=>{
             const data = res.data.newsData.map((item)=>{
                 return {
                     id: item.id,
@@ -100,7 +100,7 @@ const AdminDasbboard = (props)=>{
             setCloseIcon(true);
         } else {
             inputData.userid = profileData && profileData.userid ? profileData.userid : "";
-            axios__WEBPACK_IMPORTED_MODULE_3__["default"].post(`https://smca.ezrankings.in/dashboard/addNews.php`, inputData, {
+            axios__WEBPACK_IMPORTED_MODULE_3__["default"].post(`https://reseller.ezrankings.in//dashboard/addNews.php`, inputData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }

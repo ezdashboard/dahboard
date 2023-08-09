@@ -26,9 +26,13 @@ axios__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (awa
 
 const NewsLetter = ()=>{
     const [newsData, setNewsData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
+    const Dismiss = (newId)=>{
+        const updatedNewsStoreData = newsData.filter((news)=>news.id !== newId);
+        setNewsData(updatedNewsStoreData);
+    };
     const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
     const NewsList = async (page)=>{
-        axios__WEBPACK_IMPORTED_MODULE_2__["default"].get(`https://smca.ezrankings.in/dashboard/newsList.php`).then((res)=>{
+        axios__WEBPACK_IMPORTED_MODULE_2__["default"].get(`https://reseller.ezrankings.in//dashboard/newsList.php`).then((res)=>{
             const data = res.data.newsData.map((item)=>{
                 return {
                     id: item.id,
@@ -51,7 +55,7 @@ const NewsLetter = ()=>{
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_3___default()), {
                 children: loading && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
-                    src: "https://smca.ezrankings.in/dashboard/js/app.js"
+                    src: "https://reseller.ezrankings.in//dashboard/js/app.js"
                 })
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -192,6 +196,7 @@ const NewsLetter = ()=>{
                                                                     bis_skin_checked: "1",
                                                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
                                                                         type: "button",
+                                                                        onClick: ()=>Dismiss(newsI.id),
                                                                         className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
                                                                         children: "Dismiss"
                                                                     })

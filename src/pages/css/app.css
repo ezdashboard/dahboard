@@ -17992,6 +17992,21 @@ button.delete-btn {
 
 /***********************************4aug************************************/
 @media only screen and (max-width: 600px) {
+  .login, .top-bar {
+    justify-content: space-between;
+}
+img.rounded-full.pro-img.comp-logo {
+    height: 60px;
+    width: 60px;
+}
+.sider-menu .side-logo img {
+    height: 80px;
+    width: 80px;
+}
+.w-52 {
+  display: unset;
+}
+
 .login-design {
   display: unset;
 }

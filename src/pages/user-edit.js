@@ -32,7 +32,7 @@ export default function EditReportDetail  () {
    const [userStoreData, setUserStoreData] = useState([]);
    const getUserData = async () => {
 
-    axios.get(`https://smca.ezrankings.in/dashboard/users.php?page=`)
+    axios.get(`https://reseller.ezrankings.in//dashboard/users.php?page=`)
       .then(res => {
           const data = res.data.userData.map((item) => {
             return {
@@ -76,7 +76,7 @@ const inputChangeData =(event)=> {
   
 const getUser = (id)=>{
    if(id){
-      axios.get(`https://smca.ezrankings.in/dashboard/getuser.php?userid=${id}`)
+      axios.get(`https://reseller.ezrankings.in//dashboard/getuser.php?userid=${id}`)
       .then(res => {
       // setLearningData(data);
       setusersData({
@@ -148,7 +148,7 @@ const onSubmit = (e) => {
 //     setCloseIcon(true);                                  
   }else{
     // inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-    axios.post(`https://smca.ezrankings.in/dashboard/updateUser.php`,inputData,{
+    axios.post(`https://reseller.ezrankings.in//dashboard/updateUser.php`,inputData,{
       headers: {
       'Content-Type': 'multipart/form-data'
     }
@@ -216,10 +216,10 @@ useEffect(() => {
       src="https://kit.fontawesome.com/fbadad80a0.js"
       crossOrigin="anonymous"
     ></script>
-      <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+      <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-      <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-      <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+      <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
+      <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
       <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
      </Head>

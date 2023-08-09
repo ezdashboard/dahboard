@@ -25,7 +25,7 @@ import MobileSideBar from './components/MobileSideBar';
      const [projectPer, setProjectPer] = useState(0);
      const [keywordPer, setKeywordPer] = useState(0);
      const getDashBoardData = ()=>{
-      axios.get(`https://smca.ezrankings.in/dashboard/dashboard.php?user=${localStorage.userid}`)
+      axios.get(`https://reseller.ezrankings.in//dashboard/dashboard.php?user=${localStorage.userid}`)
       .then(res => {
           const getData = res.data && res.data.data && res.data.data.length > 0 && res.data.data.map((item) => {
             return {
@@ -272,10 +272,10 @@ import MobileSideBar from './components/MobileSideBar';
         src="https://kit.fontawesome.com/fbadad80a0.js"
         crossOrigin="anonymous"
       ></script>    
-        <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
         
-        <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
       </Head>

@@ -68,7 +68,7 @@ import Router from 'next/router'
       setFormStatus("Password can not be blank.")
       setCloseIcon(true);  
     }else{
-      axios.post(`https://smca.ezrankings.in/dashboard/login.php`,inputData,{
+      axios.post(`https://reseller.ezrankings.in/dashboard/login.php`,inputData,{
         headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -131,18 +131,15 @@ import Router from 'next/router'
         <link rel="dns-prefetch" href="//developers.google.com" />
         <link rel="dns-prefetch" href="//maps.googleapis.com" />
         <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet"/>
-        <link href="https://smca.ezrankings.in/dashboard/css/style.css" rel="stylesheet" />
+        <link href="https://reseller.ezrankings.in/dashboard/css/style.css" rel="stylesheet" />
       </Head>      
 
       <div className="login-page">
           <section>
               <div className="login-design">
                   <div className="left">
-                      {/* <div className="logo-icon">
-                          <img src="https://smca.ezrankings.in/dashboard/images/avtar.png" width="100px;" />
-                      </div> */}
                       <div className="framepic">
-                          <img src="https://smca.ezrankings.in/dashboard/images/Frame.png" width="60%" />
+                          <img src="https://reseller.ezrankings.in/dashboard/images/Frame.png" width="60%" />
                           <h2>A few more clicks to sign in to your account.</h2>
                           <p>Manage all your projects in one place</p>
                       </div>
@@ -163,7 +160,7 @@ import Router from 'next/router'
                               <div className="intro-x flex text-slate-600 dark:text-slate-500 text-xs sm:text-sm mt-4">
                                   <div className="flex items-center mr-auto">
                                       <input id="remember-me" type="checkbox" className="form-check-input border mr-2" />
-                                      <label className="cursor-pointer select-none" for="remember-me">Remember me</label>
+                                      <label className="cursor-pointer select-none" htmlFor="remember-me">Remember me</label>
                                   </div>
                                   <a href="">Forgot Password?</a>
                               </div>

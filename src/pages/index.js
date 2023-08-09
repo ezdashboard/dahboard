@@ -39,6 +39,7 @@ import Router from 'next/router'
   }
 
   useEffect(() => {
+    console
     if(localStorage.userid){
         Router.push('/profile');
 
@@ -69,7 +70,7 @@ import Router from 'next/router'
       setFormStatus("Password can not be blank.")
       setCloseIcon(true);  
     }else{
-      axios.post(`https://smca.ezrankings.in/dashboard/login.php`,inputData,{
+      axios.post(`https://reseller.ezrankings.in//dashboard/login.php`,inputData,{
         headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -132,17 +133,17 @@ import Router from 'next/router'
         <link rel="dns-prefetch" href="//developers.google.com" />
         <link rel="dns-prefetch" href="//maps.googleapis.com" />
         <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet"/>
-        <link href="https://smca.ezrankings.in/dashboard/css/style.css" rel="stylesheet" />
+        <link href="https://reseller.ezrankings.in//dashboard/css/style.css" rel="stylesheet" />
 
       </Head>      
       {/* <div className="container sm:px-10 login" >
         <div className="block xl:grid grid-cols-2 gap-4">
             <div className="hidden xl:flex flex-col min-h-screen">
                 <a href="" className="-intro-x flex items-center pt-5">
-                   <img alt="" src="https://smca.ezrankings.in/dashboard/images/login.png" className="WTlogo"/>
+                   <img alt="" src="https://reseller.ezrankings.in//dashboard/images/login.png" className="WTlogo"/>
                 </a>
                 <div className="my-auto">
-                    <img alt="" className="-intro-x w-1/2 -mt-16" src="https://smca.ezrankings.in/dashboard/images/Frame.png" />
+                    <img alt="" className="-intro-x w-1/2 -mt-16" src="https://reseller.ezrankings.in//dashboard/images/Frame.png" />
                     <div className="-intro-x text-white font-medium text-4xl leading-tight mt-10">A few more clicks to <br /> sign in to your account.</div>
                     <div className="-intro-x mt-5 text-lg text-white text-opacity-70 dark:text-slate-400">Manage all your e-commerce accounts in one place</div>
                 </div>
@@ -184,10 +185,10 @@ import Router from 'next/router'
         <div className="login-design">
             <div className="left">
                 {/* <div className="logo-icon">
-                    <img src="https://smca.ezrankings.in/dashboard/images/avtar.png" width="100px;" />
+                    <img src="https://reseller.ezrankings.in//dashboard/images/avtar.png" width="100px;" />
                 </div> */}
                 <div className="framepic">
-                     <img src="https://smca.ezrankings.in/dashboard/images/Frame.png" width="60%" />
+                     <img src="https://reseller.ezrankings.in//dashboard/images/Frame.png" width="60%" />
                     <h2>A few more clicks to sign in to your account.</h2>
                     <p>Manage all your projects in one place</p>
                 </div>
@@ -195,7 +196,7 @@ import Router from 'next/router'
             <div className="right">
                 <div className="login-form">
                     <div className="login-head">
-                        <h3 className="text-center">Sign In</h3>
+                        <h3 className="text-center">Sign In{}</h3>
                         <div className="col-md-12">
                         {closeIcon  ?<span style={submitBtn}>{msg}  <span onClick={submitCloseIcon}><i className="fa fa-times" aria-hidden="true"></i></span></span>: ""}
                       </div>

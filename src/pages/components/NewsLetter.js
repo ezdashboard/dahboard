@@ -11,7 +11,7 @@ const Dismiss=(newId)=>{
 }
 const [loading, setLoading] = useState(false);
 const NewsList = async (page) => {
-    axios.get(`https://smca.ezrankings.in/dashboard/newsList.php`)
+    axios.get(`https://reseller.ezrankings.in//dashboard/newsList.php`)
       .then(res => {
           const data = res.data.newsData.map((item) => {
             return {
@@ -38,7 +38,7 @@ const NewsList = async (page) => {
     return (
         <>
         <Head>
-        {loading && <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>}
+        {loading && <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>}
         </Head>
         <div className="col-span-12 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 2xl:col-start-auto 2xl:row-start-auto mt-3" bis_skin_checked="1">
             <div className="intro-x flex items-center h-10" bis_skin_checked="1">

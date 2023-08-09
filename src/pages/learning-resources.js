@@ -68,7 +68,7 @@ const Learning = ()=>{
             search = `${search}?currentPage=${currentPage}&`;
             search = search + `ser=${inputData.serviceName}&limit=${limitp}`;
         
-            axios.get(`https://smca.ezrankings.in/dashboard/learning.php${search}`)
+            axios.get(`https://reseller.ezrankings.in//dashboard/learning.php${search}`)
               .then(res => {
                   const data = res.data.learningData.map((item) => {
                     return {
@@ -102,7 +102,7 @@ const Learning = ()=>{
           }        
     const getServiceData = async () => {
 
-        axios.get(`https://smca.ezrankings.in/dashboard/services.php`)
+        axios.get(`https://reseller.ezrankings.in//dashboard/services.php`)
           .then(res => {
               const data = res.data.serviceData.map((item) => {
                 return {
@@ -139,9 +139,9 @@ const Learning = ()=>{
             <link rel="dns-prefetch" href="//developers.google.com" />
             <link rel="dns-prefetch" href="//maps.googleapis.com" />
             <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>
-            <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+            <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-            <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
+            <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
         </Head>
         <MobileSideBar />

@@ -11,7 +11,7 @@ const ProfileContent = (props) =>{
             <div className="relative items-center p-5">
                 <div className="avatar-upload">
                     <div className="avatar-preview">
-                        <img alt="" className="rounded-full pro-img" src={props && props.profile && props.profile.image? props.profile.image : 'https://smca.ezrankings.in/dashboard/images/avtar.png'} />
+                        <img alt="" className="rounded-full pro-img" src={props && props.profile && props.profile.image? props.profile.image : 'https://reseller.ezrankings.in//dashboard/images/avtar.png'} />
                     </div>
                 </div>
             </div>

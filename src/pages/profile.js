@@ -84,7 +84,7 @@ const onSubmit = (e) => {
       setCloseIcon(true);    
   }else{
     inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-    axios.post(`https://smca.ezrankings.in/dashboard/updatePass.php`,inputData,{
+    axios.post(`https://reseller.ezrankings.in//dashboard/updatePass.php`,inputData,{
       headers: {
       'Content-Type': 'multipart/form-data'
     }
@@ -129,8 +129,8 @@ useEffect(() => {
             contactno : localStorage.contactno ? localStorage.contactno : '',
             about : localStorage.about ? localStorage.about : '',
             location : localStorage.location ? localStorage.location : '',
-            image : localStorage.image ? localStorage.image : 'https://smca.ezrankings.in/dashboard/images/avtar.png',
-            logo : localStorage.logo ? localStorage.logo :'https://smca.ezrankings.in/dashboard/images/avtar.png',
+            image : localStorage.image ? localStorage.image : 'https://reseller.ezrankings.in//dashboard/images/avtar.png',
+            logo : localStorage.logo ? localStorage.logo :'https://reseller.ezrankings.in//dashboard/images/avtar.png',
             userid : localStorage.userid
         });
     }
@@ -154,10 +154,10 @@ useEffect(() => {
         src="https://kit.fontawesome.com/fbadad80a0.js"
         crossOrigin="anonymous"
       ></script>
-        <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-        <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-        <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
       </Head>

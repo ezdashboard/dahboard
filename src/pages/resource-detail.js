@@ -33,7 +33,7 @@ const [resourceId, setResourceId] = useState('');
 const [loading, setLoading] = useState(false);
 const getResourceData = (id)=>{
    if(id){
-      axios.get(`https://smca.ezrankings.in/dashboard/getlearning.php?url=${id}`)
+      axios.get(`https://reseller.ezrankings.in//dashboard/getlearning.php?url=${id}`)
       .then(res => {
          const data = res.data.map((item) => {
             return {
@@ -101,10 +101,10 @@ useEffect(() => {
          src="https://kit.fontawesome.com/fbadad80a0.js"
          crossOrigin="anonymous"
       ></script>
-         <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+         <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-         <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-         <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+         <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
+         <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
          <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
          <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
       </Head>

@@ -61,7 +61,7 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
   }
   const fetchData = async (page) => {
 
-    axios.get(`https://smca.ezrankings.in/dashboard/news.php?page=${page}`)
+    axios.get(`https://reseller.ezrankings.in//dashboard/news.php?page=${page}`)
       .then(res => {
           const data = res.data.userData.map((item) => {
             return {
@@ -144,7 +144,7 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
       setCloseIcon(true);                                  
     }else{
       inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-      axios.post(`https://smca.ezrankings.in/dashboard/adduser.php`,inputData,{
+      axios.post(`https://reseller.ezrankings.in//dashboard/adduser.php`,inputData,{
         headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -189,13 +189,13 @@ import { CheckSquare, Trash2, XCircle } from 'lucide-react';
         <meta name="keywords" content=""/>
         <meta name="author" content=""/>
         <title>Reseller Dashboard</title>
-        {/* <link rel="stylesheet" href="https://smca.ezrankings.in/dashboard/css/app.css"/> */}
+        {/* <link rel="stylesheet" href="https://reseller.ezrankings.in//dashboard/css/app.css"/> */}
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
-        <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-        <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-        <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
       </Head>
       <div className="flex mt-[4.7rem] md:mt-0">
         <SideBar logo={profileData.logo}/>

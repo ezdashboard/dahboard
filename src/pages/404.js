@@ -16,9 +16,9 @@ import Link from 'next/link';
         <meta name="author" content=""/>
         <link rel="dns-prefetch" href="//developers.google.com" />
         <link rel="dns-prefetch" href="//maps.googleapis.com" />
-        <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-        <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
         
         </Head>
@@ -35,7 +35,7 @@ import Link from 'next/link';
                   
                         <p className='page404'>page is not found.</p>
                         <div className="img404">
-                          <img src="https://smca.ezrankings.in/dashboard/images/404.png" />
+                          <img src="https://reseller.ezrankings.in//dashboard/images/404.png" />
                         </div>
                         <Link className='page404' href= "/dashboard">Go to Dashboard</Link>
                      

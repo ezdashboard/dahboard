@@ -32,7 +32,7 @@ export default function EditReportDetail  () {
    const [userStoreData, setUserStoreData] = useState([]);
    const getUserData = async () => {
 
-    axios.get(`https://smca.ezrankings.in/dashboard/usersD.php?page=`)
+    axios.get(`https://reseller.ezrankings.in//dashboard/usersD.php?page=`)
       .then(res => {
           const data = res.data.map((item) => {
             return {
@@ -74,7 +74,7 @@ const inputChangeData =(event)=> {
   
 const getReportData = (id)=>{
    if(id){
-      axios.get(`https://smca.ezrankings.in/dashboard/getreport.php?url=${id}`)
+      axios.get(`https://reseller.ezrankings.in//dashboard/getreport.php?url=${id}`)
       .then(res => {
       // setLearningData(data);
       setReportData({
@@ -167,7 +167,7 @@ const onSubmit = (e) => {
     //   formData.append('image', selectedFile);
     //  }
     //  formData.append('userid', localStorage && localStorage.userid ? localStorage.userid : '');
-     axios.post(`https://smca.ezrankings.in/dashboard/edit-report.php`,inputData,{
+     axios.post(`https://reseller.ezrankings.in//dashboard/edit-report.php`,inputData,{
      //   headers: {
      //   'Content-Type': 'multipart/form-data',
      //   method: 'POST',
@@ -196,7 +196,7 @@ const onSubmit = (e) => {
  }
 
  const getServiceData = async () => {
-     axios.get(`https://smca.ezrankings.in/dashboard/services.php`)
+     axios.get(`https://reseller.ezrankings.in//dashboard/services.php`)
        .then(res => {
            const data = res.data.serviceData.map((item) => {
              return {
@@ -252,10 +252,10 @@ useEffect(() => {
       src="https://kit.fontawesome.com/fbadad80a0.js"
       crossOrigin="anonymous"
     ></script>
-      <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+      <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-      <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-      <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+      <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
+      <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
       <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
      </Head>

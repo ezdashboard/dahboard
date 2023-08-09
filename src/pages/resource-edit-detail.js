@@ -66,7 +66,7 @@ const handleFileChange = (event) => {
     };   
 const getResourceData = (id)=>{
    if(id){
-      axios.get(`https://smca.ezrankings.in/dashboard/getlearning.php?url=${id}`)
+      axios.get(`https://reseller.ezrankings.in/dashboard/getlearning.php?url=${id}`)
       .then(res => {
          const data = res.data.map((item) => {
             return {
@@ -137,7 +137,7 @@ const onSubmit = (e) => {
       formData.append('image', selectedFile);
      }
      formData.append('userid', localStorage && localStorage.userid ? localStorage.userid : '');
-     axios.post(`https://smca.ezrankings.in/dashboard/edit-learning.php`,formData,{
+     axios.post(`https://reseller.ezrankings.in/dashboard/edit-learning.php`,formData,{
      //   headers: {
      //   'Content-Type': 'multipart/form-data',
      //   method: 'POST',
@@ -163,7 +163,7 @@ const onSubmit = (e) => {
      .catch(err => {
       })        
      // inputData.userid = localStorage && localStorage.userid ? localStorage.userid : '';
-   //   axios.post(`https://smca.ezrankings.in/dashboard/add-report.php`,{
+   //   axios.post(`https://reseller.ezrankings.in/dashboard/add-report.php`,{
    //     method: 'POST',
    //     body: formData,
    // })
@@ -203,7 +203,7 @@ const onSubmit = (e) => {
    // try {
    //   console.log('Imageccc uploaded successfully.',formData);
 
-   //   const response =  fetch('https://smca.ezrankings.in/dashboard/add-learning.php', {
+   //   const response =  fetch('https://reseller.ezrankings.in/dashboard/add-learning.php', {
    //     method: 'POST',
    //     body: formData,
    //   })
@@ -240,7 +240,7 @@ const deleteData =()=>{
   //       Router.push('/resource-edit-detail');
   //     }
   // }
-  axios.get(`https://smca.ezrankings.in/dashboard/leariningDelte.php?dlt=${resourceId}`)
+  axios.get(`https://reseller.ezrankings.in/dashboard/leariningDelte.php?dlt=${resourceId}`)
   .then(res => {
     if(res && res.data && res.data.status){
         localStorage.removeItem("resourceId");
@@ -253,7 +253,7 @@ const deleteData =()=>{
  })
 }
  const getServiceData = async () => {
-     axios.get(`https://smca.ezrankings.in/dashboard/services.php`)
+     axios.get(`https://reseller.ezrankings.in/dashboard/services.php`)
        .then(res => {
            const data = res.data.serviceData.map((item) => {
              return {
@@ -308,10 +308,10 @@ useEffect(() => {
       src="https://kit.fontawesome.com/fbadad80a0.js"
       crossOrigin="anonymous"
     ></script>
-      <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+      <script src="https://reseller.ezrankings.in/dashboard/js/markerclusterer.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-      <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-      <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+      <script src="https://reseller.ezrankings.in/dashboard/js/app.js"></script>
+      <script src="https://reseller.ezrankings.in/dashboard/js/map.js"></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
       <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
      </Head>

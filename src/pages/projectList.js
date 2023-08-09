@@ -82,7 +82,7 @@ const searchFilterData = () =>{
     }
     search = search + `ser=${inputData.serviceName}&status=${inputData.service_Status}&limit=${limitp}`;
 
-  axios.get(`https://smca.ezrankings.in/dashboard/reports.php${search}`)
+  axios.get(`https://reseller.ezrankings.in//dashboard/reports.php${search}`)
     .then(res => {
         const data = res.data.reportsData.map((item) => {
           return {
@@ -138,7 +138,7 @@ const getPreviousPageData =()=>{
   }
 }
 const getServiceData = async () => {
-  axios.get(`https://smca.ezrankings.in/dashboard/services.php`)
+  axios.get(`https://reseller.ezrankings.in//dashboard/services.php`)
     .then(res => {
         const data = res.data.serviceData.map((item) => {
           return {
@@ -178,11 +178,11 @@ const getServiceData = async () => {
         <title>Reseller Projects && Reports</title>
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
-        <script src="https://smca.ezrankings.in/dashboard/js/markerclusterer.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
-        <script src="https://smca.ezrankings.in/dashboard/js/app.js"></script>
-        <script src="https://smca.ezrankings.in/dashboard/js/map.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
+        <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
       </Head>
       <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">

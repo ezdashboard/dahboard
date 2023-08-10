@@ -70,7 +70,7 @@ import Router from 'next/router'
       setFormStatus("Password can not be blank.")
       setCloseIcon(true);  
     }else{
-      axios.post(`https://reseller.ezrankings.in//dashboard/login.php`,inputData,{
+      axios.post(`https://reseller.ezrankings.in/dashboard/login.php`,inputData,{
         headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -209,7 +209,7 @@ import Router from 'next/router'
                         <div className="intro-x flex text-slate-600 dark:text-slate-500 text-xs sm:text-sm mt-4">
                             <div className="flex items-center mr-auto">
                                 <input id="remember-me" type="checkbox" className="form-check-input border mr-2" />
-                                <label className="cursor-pointer select-none" for="remember-me">Remember me</label>
+                                <label className="cursor-pointer select-none" htmlFor="remember-me">Remember me</label>
                             </div>
                             <a href="">Forgot Password?</a>
                         </div>

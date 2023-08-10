@@ -132,8 +132,16 @@ import { useRouter } from "next/router";
                     localStorage.setItem('image', getData.filename);
                     setProfileData({
                       image : getData.filename,
-                      logo : localStorage.logo ? localStorage.logo : ''
-                    })
+                      logo : localStorage.logo ? localStorage.logo : '',
+                      companyname : localStorage.companyname,
+                      title : localStorage.title,
+                      name : localStorage.name,     
+                      contactno : localStorage.contactno ? localStorage.contactno : '',
+                      about : localStorage.about ? localStorage.about : '',
+                      location : localStorage.location ? localStorage.location : '',
+                      email : localStorage.email,
+                      userid : localStorage.userid
+                  });
                     //setImgLoad(false);
                   } else {
                     console.log('Image upload failed.');
@@ -284,226 +292,226 @@ import { useRouter } from "next/router";
       <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">
       <nav className="side-nav">
-            <Link href="#" className="intro-x flex items-center pl-5 pt-4"><img alt="" src={profileData.logo} /></Link>
-                <div className="side-nav__devider my-6"></div>
-                <ul>
-                    <li>
-                        <Link href="/dashboard" className={router.pathname == "/dashboard" ? "side-menu side-menu--active" : "side-menu"}>
-                            <div className="side-menu__icon">
-                           
-                            <Home size={16}/>
-                            </div>
-                            <div className="side-menu__title">Dashboard</div>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/projectList" className={router.pathname == "/projectList" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
-                        
-                        <BookMarked size={16}/>
-                        </div>
-                            <div className="side-menu__title">Project details & Reports</div>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/reseller-benefits" className={router.pathname == "/reseller-benefits" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
-                        
-                        <Sparkles  size={16}/>
-                        </div>
-                            <div className="side-menu__title">Reseller Benefits</div>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/learning-resources" className={router.pathname == "/learning-resources" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
-                        
-                        <Lightbulb size={16}/>
-                        </div>
-                            <div className="side-menu__title">Learning Resources</div>
-                        </Link>
-                    </li>
-                    <li className="side-nav__devider my-6">
-                    </li>
-                </ul>
-                <ul className="bottom-list">
-                    <li>
-                    <Link href="/profile" className={router.pathname == "/profile" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
-                   
-                    <Image  size={16}/>
+        <Link href="#" className="intro-x flex items-center pl-5 pt-4"><img alt="" src={profileData.logo} /></Link>
+        <div className="side-nav__devider my-6"></div>
+        <ul>
+            <li>
+                <Link href="/dashboard" className={router.pathname == "/dashboard" ? "side-menu side-menu--active" : "side-menu"}>
+                    <div className="side-menu__icon">
+                    
+                    <Home size={16}/>
                     </div>
-                        <div className="side-menu__title">Profile</div>
-                    </Link>
-                    </li>
-                    {   sideBarAccess.users &&  <li>
-                    <Link href="/users" className={router.pathname == "/users" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
-                   
-                    <Users size={16}/>
-                    </div>
-                        <div className="side-menu__title">Users</div>
-                    </Link>
-                    </li>}
-                    <li>
-                    <Link href="#" onClick={onLogOut} className="side-menu"><div className="side-menu__icon">
-                    <LogOut size={16}/>
-                    </div>
-                        <div className="side-menu__title">SignOut</div>
-                    </Link>
-                    </li>
-                </ul>
+                    <div className="side-menu__title">Dashboard</div>
+                </Link>
+            </li>
+            <li>
+                <Link href="/projectList" className={router.pathname == "/projectList" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                
+                <BookMarked size={16}/>
+                </div>
+                    <div className="side-menu__title">Project details & Reports</div>
+                </Link>
+            </li>
+            <li>
+                <Link href="/reseller-benefits" className={router.pathname == "/reseller-benefits" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                
+                <Sparkles  size={16}/>
+                </div>
+                    <div className="side-menu__title">Reseller Benefits</div>
+                </Link>
+            </li>
+            <li>
+                <Link href="/learning-resources" className={router.pathname == "/learning-resources" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                
+                <Lightbulb size={16}/>
+                </div>
+                    <div className="side-menu__title">Learning Resources</div>
+                </Link>
+            </li>
+            <li className="side-nav__devider my-6">
+            </li>
+        </ul>
+        <ul className="bottom-list">
+            <li>
+            <Link href="/profile" className={router.pathname == "/profile" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+            
+            <Image  size={16}/>
+            </div>
+                <div className="side-menu__title">Profile</div>
+            </Link>
+            </li>
+            {   sideBarAccess.users &&  <li>
+            <Link href="/users" className={router.pathname == "/users" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+            
+            <Users size={16}/>
+            </div>
+                <div className="side-menu__title">Users</div>
+            </Link>
+            </li>}
+            <li>
+            <Link href="#" onClick={onLogOut} className="side-menu"><div className="side-menu__icon">
+            <LogOut size={16}/>
+            </div>
+                <div className="side-menu__title">SignOut</div>
+            </Link>
+            </li>
+        </ul>
       </nav>
         <div className="content">
-        <div className="top-bar">
-            <nav className="-intro-x mr-auto hidden sm:flex">
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item active">Welcome to {'Reseller dashboard.'}</li>
-                </ol>
-            </nav>
-            <div className="intro-x relative mr-3 sm:mr-6">
-                <Link className="notification sm:hidden" href="#">
-                    <Search  className="search__icon dark:text-slate-500"/>
-                </Link>
-            </div>
-            <div className="intro-x dropdown">
-                <div className="dropdown-toggle rounded-full overflow-hidden shadow-lg image-fit zoom-in">
-                    <Link href="/profile"><img alt="" src={profileData.image} /></Link>
-                </div>
-            </div>
-        </div>
-            <div className="intro-y flex items-center mt-8">
-            </div>
-            <div className="grid grid-cols-12 gap-6 mt-5">
-                <div className="col-span-12 lg:col-span-4 xxl:col-span-3 flex lg:block flex-col-reverse">
-                    <div className="intro-y box mt-5 lg:mt-0">
-                        <div className="relative items-center p-5">
-                            <div className="avatar-upload">
-                                <div className="avatar-preview">
-                                    <img alt="" className="rounded-full pro-img" src={profileData.image} />
-                                    </div>
-                                </div>
-                            </div>
-                        <div className="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                                <div className="flex items-center px-5 py-5 sm:py-3 border-b border-slate-200/60 dark:border-darkmode-400">
-                                    <h2 className="font-medium text-base mr-auto">Profile</h2>
-                                <div className="text-right">
-                                    </div>
-                                </div>
-                            <a className="flex items-center mt-5" href="">
-                                <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Name: {profileData.name}
-                            </a>
-                            <a className="flex items-center mt-5" href="">
-                                <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Title: {profileData.title}
-                            </a>
-                                <a className="flex items-center mt-5" href="">
-                                <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Phone: {profileData.contactno}
-                            </a>
-                            <a className="flex items-center mt-5" href="">
-                                <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Mail: {profileData.email}
-                            </a>
-                                <a className="flex items-center mt-5" href="">
-                                <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Company Name: {profileData.companyname}
-                            </a>
-                            <a className="flex items-center mt-5" href="">
-                                <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Location: {profileData.location}
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div className="col-span-12 lg:col-span-8 xxl:col-span-9">
-                <div className="intro-y box lg:mt-5" bis_skin_checked="1">
-                        <div className="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400" bis_skin_checked="1">
-                            <h2 className="font-medium text-base mr-auto">Display Information</h2>
-                        </div>
-                        <div className="col-md-12">
-                            {closeIcon  ?<span style={submitBtn}>{msg}  <span onClick={submitCloseIcon}><i className="fa fa-times" aria-hidden="true"></i></span></span>: ""}
-                        </div>
-                    
-                        <div className="p-5" bis_skin_checked="1">
-                            <div className="flex flex-col-reverse xl:flex-row flex-col" bis_skin_checked="1">
-                                <form onSubmit={onSubmit}>
-                                    <div className="flex-1 mt-6 xl:mt-0" bis_skin_checked="1">
-                                        <div className="grid grid-cols-12 gap-x-5" bis_skin_checked="1">
-                                            <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
-                                                <div bis_skin_checked="1">
-                                                    <label htmlFor="update-profile-form-1" className="form-label">Display Name</label>
-                                                <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} name="name" value={inputData.name} />
-                                                </div>
-                                            </div>
-                                            <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
-                                                <div bis_skin_checked="1">
-                                                    <label htmlFor="update-profile-form-1" className="form-label">Title</label>
-                                                <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.title} name="title"/>
-                                                </div>
-                                            </div>
-                                            <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
-                                                <div className="mt-3" bis_skin_checked="1">
-                                                    <label htmlFor="update-profile-form-4" className="form-label">Phone Number</label>
-                                                    <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.contactno} name="contactno" />
-                                                </div>
-                                            </div>
-                                            <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
-                                                <div className="mt-3" bis_skin_checked="1">
-                                                    <label htmlFor="update-profile-form-4" className="form-label">Mail</label>
-                                                    <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.email} name="email" readOnly/>
-                                                </div>
-                                            </div>
-                                            
-                                            <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
-                                                <div className="mt-3" bis_skin_checked="1">
-                                                    <label htmlFor="update-profile-form-4" className="form-label">Company Name</label>
-                                                    <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.companyname} name="companyname"/>
-                                                </div>
-                                            </div>
-                                            
-                                            <div className="col-span-12" bis_skin_checked="1">
-                                                <div className="mt-3" bis_skin_checked="1">
-                                                    <label htmlFor="update-profile-form-5" className="form-label">Location</label>
-                                                    <textarea className="form-control" placeholder="Adress" onChange={inputChangeData}  name="location" defaultValue={inputData.location}></textarea>
-                                                </div>
-                                            </div>
-                                            <div className="col-span-12" bis_skin_checked="1">
-                                                <div className="mt-3" bis_skin_checked="1">
-                                                    <label htmlFor="update-profile-form-5" className="form-label">About</label>
-                                                    <textarea className="form-control" placeholder="Adress" onChange={inputChangeData}  name="about" defaultValue={inputData.about}></textarea>
-                                                </div>
-                                            </div>                           
-                                        </div>
-                                        <button type="submit" className="btn btn-primary w-20 mt-3">Save</button>
-                                    </div>
-                                </form>
-                                <div className="w-52 mx-auto xl:mr-0 xl:ml-6" bis_skin_checked="1">
-                                <form onSubmit={handleImageSubmit}>
-                                    <div className="border-2 border-dashed shadow-sm border-slate-200/60 dark:border-darkmode-400 rounded-md p-5" bis_skin_checked="1">
-                                        <div className="relative image-fit cursor-pointer zoom-in mx-auto" bis_skin_checked="1">
-                                            <img className="rounded-md" alt="#" src={profileData.image}/>
-                                            <input type="file" className="w-full h-full top-0 left-0 absolute opacity-0" onChange={handleFileChange} />
-                                        </div>
-                                        <div className="mx-auto cursor-pointer relative mt-5" bis_skin_checked="1">
-                                        { !imgLoad &&
-                                          <button type="submit" className="btn btn-primary w-full">Change Photo</button>}
-                                        { imgLoad &&
-                                          <button type="button" className="btn btn-primary w-full">Uploading Photo...</button>}
-                                        </div>
-                                    </div>
-                                    </form>
-                                    <div className="border-2 border-dashed shadow-sm border-slate-200/60 dark:border-darkmode-400 rounded-md p-5 mt-5" bis_skin_checked="1">
-                                    <form onSubmit={handleSubmit}>
-                                        <div className="relative image-fit cursor-pointer zoom-in mx-auto" bis_skin_checked="1">
-                                            <img className="rounded-md" alt="#" src={profileData.logo}/>
-                                            <input type="file" className="w-full h-full top-0 left-0 absolute opacity-0" onChange={handleFileChange} />
-                                        </div>
+          <div className="top-bar">
+              <nav className="-intro-x mr-auto hidden sm:flex">
+                  <ol className="breadcrumb">
+                      <li className="breadcrumb-item active">Welcome to {'Reseller dashboard.'}</li>
+                  </ol>
+              </nav>
+              <div className="intro-x relative mr-3 sm:mr-6">
+                  <Link className="notification sm:hidden" href="#">
+                      <Search  className="search__icon dark:text-slate-500"/>
+                  </Link>
+              </div>
+              <div className="intro-x dropdown">
+                  <div className="dropdown-toggle rounded-full overflow-hidden shadow-lg image-fit zoom-in">
+                      <Link href="/profile"><img alt="" src={profileData.image} /></Link>
+                  </div>
+              </div>
+          </div>
+          <div className="intro-y flex items-center mt-8">
+          </div>
+          <div className="grid grid-cols-12 gap-6 mt-5">
+              <div className="col-span-12 lg:col-span-4 xxl:col-span-3 flex lg:block flex-col-reverse">
+                  <div className="intro-y box mt-5 lg:mt-0">
+                      <div className="relative items-center p-5">
+                          <div className="avatar-upload">
+                              <div className="avatar-preview">
+                                  <img alt="" className="rounded-full pro-img" src={profileData.image} />
+                                  </div>
+                              </div>
+                          </div>
+                      <div className="p-5 border-t border-slate-200/60 dark:border-darkmode-400">
+                              <div className="flex items-center px-5 py-5 sm:py-3 border-b border-slate-200/60 dark:border-darkmode-400">
+                                  <h2 className="font-medium text-base mr-auto">Profile</h2>
+                              <div className="text-right">
+                                  </div>
+                              </div>
+                          <a className="flex items-center mt-5" href="">
+                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Name: {profileData.name}
+                          </a>
+                          <a className="flex items-center mt-5" href="">
+                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Title: {profileData.title}
+                          </a>
+                              <a className="flex items-center mt-5" href="">
+                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Phone: {profileData.contactno}
+                          </a>
+                          <a className="flex items-center mt-5" href="">
+                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Mail: {profileData.email}
+                          </a>
+                              <a className="flex items-center mt-5" href="">
+                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Company Name: {profileData.companyname}
+                          </a>
+                          <a className="flex items-center mt-5" href="">
+                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Location: {profileData.location}
+                          </a>
+                          
+                      </div>
+                  </div>
+              </div>
+              <div className="col-span-12 lg:col-span-8 xxl:col-span-9">
+              <div className="intro-y box lg:mt-5" bis_skin_checked="1">
+                      <div className="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400" bis_skin_checked="1">
+                          <h2 className="font-medium text-base mr-auto">Display Information</h2>
+                      </div>
+                      <div className="col-md-12">
+                          {closeIcon  ?<span style={submitBtn}>{msg}  <span onClick={submitCloseIcon}><i className="fa fa-times" aria-hidden="true"></i></span></span>: ""}
+                      </div>
+                  
+                      <div className="p-5" bis_skin_checked="1">
+                          <div className="flex flex-col-reverse xl:flex-row flex-col" bis_skin_checked="1">
+                              <form onSubmit={onSubmit}>
+                                  <div className="flex-1 mt-6 xl:mt-0" bis_skin_checked="1">
+                                      <div className="grid grid-cols-12 gap-x-5" bis_skin_checked="1">
+                                          <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
+                                              <div bis_skin_checked="1">
+                                                  <label htmlFor="update-profile-form-1" className="form-label">Display Name</label>
+                                              <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} name="name" value={inputData.name} />
+                                              </div>
+                                          </div>
+                                          <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
+                                              <div bis_skin_checked="1">
+                                                  <label htmlFor="update-profile-form-1" className="form-label">Title</label>
+                                              <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.title} name="title"/>
+                                              </div>
+                                          </div>
+                                          <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
+                                              <div className="mt-3" bis_skin_checked="1">
+                                                  <label htmlFor="update-profile-form-4" className="form-label">Phone Number</label>
+                                                  <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.contactno} name="contactno" />
+                                              </div>
+                                          </div>
+                                          <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
+                                              <div className="mt-3" bis_skin_checked="1">
+                                                  <label htmlFor="update-profile-form-4" className="form-label">Mail</label>
+                                                  <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.email} name="email" readOnly/>
+                                              </div>
+                                          </div>
+                                          
+                                          <div className="col-span-12 xxl:col-span-6" bis_skin_checked="1">
+                                              <div className="mt-3" bis_skin_checked="1">
+                                                  <label htmlFor="update-profile-form-4" className="form-label">Company Name</label>
+                                                  <input type="text" className="form-control" placeholder="Input text" onChange={inputChangeData} value={inputData.companyname} name="companyname"/>
+                                              </div>
+                                          </div>
+                                          
+                                          <div className="col-span-12" bis_skin_checked="1">
+                                              <div className="mt-3" bis_skin_checked="1">
+                                                  <label htmlFor="update-profile-form-5" className="form-label">Location</label>
+                                                  <textarea className="form-control" placeholder="Adress" onChange={inputChangeData}  name="location" defaultValue={inputData.location}></textarea>
+                                              </div>
+                                          </div>
+                                          <div className="col-span-12" bis_skin_checked="1">
+                                              <div className="mt-3" bis_skin_checked="1">
+                                                  <label htmlFor="update-profile-form-5" className="form-label">About</label>
+                                                  <textarea className="form-control" placeholder="Adress" onChange={inputChangeData}  name="about" defaultValue={inputData.about}></textarea>
+                                              </div>
+                                          </div>                           
+                                      </div>
+                                      <button type="submit" className="btn btn-primary w-20 mt-3">Save</button>
+                                  </div>
+                              </form>
+                              <div className="w-52 mx-auto xl:mr-0 xl:ml-6" bis_skin_checked="1">
+                              <form onSubmit={handleImageSubmit}>
+                                  <div className="border-2 border-dashed shadow-sm border-slate-200/60 dark:border-darkmode-400 rounded-md p-5" bis_skin_checked="1">
+                                      <div className="relative image-fit cursor-pointer zoom-in mx-auto" bis_skin_checked="1">
+                                          <img className="rounded-md" alt="#" src={profileData.image}/>
+                                          <input type="file" className="w-full h-full top-0 left-0 absolute opacity-0" onChange={handleFileChange} />
+                                      </div>
+                                      <div className="mx-auto cursor-pointer relative mt-5" bis_skin_checked="1">
+                                      { !imgLoad &&
+                                        <button type="submit" className="btn btn-primary w-full">Change Photo</button>}
+                                      { imgLoad &&
+                                        <button type="button" className="btn btn-primary w-full">Uploading Photo...</button>}
+                                      </div>
+                                  </div>
+                                  </form>
+                                  <div className="border-2 border-dashed shadow-sm border-slate-200/60 dark:border-darkmode-400 rounded-md p-5 mt-5" bis_skin_checked="1">
+                                  <form onSubmit={handleSubmit}>
+                                      <div className="relative image-fit cursor-pointer zoom-in mx-auto" bis_skin_checked="1">
+                                          <img className="rounded-md" alt="#" src={profileData.logo}/>
+                                          <input type="file" className="w-full h-full top-0 left-0 absolute opacity-0" onChange={handleFileChange} />
+                                      </div>
 
-                                        <div className="mx-auto cursor-pointer relative mt-5" bis_skin_checked="1">
-                                        {!logoLoad && <button type="submit" className="btn btn-primary w-full">Change Logo</button>}
-                                        {logoLoad && <button type="button" className="btn btn-primary w-full">Uploading Logo...</button>}
+                                      <div className="mx-auto cursor-pointer relative mt-5" bis_skin_checked="1">
+                                      {!logoLoad && <button type="submit" className="btn btn-primary w-full">Change Logo</button>}
+                                      {logoLoad && <button type="button" className="btn btn-primary w-full">Uploading Logo...</button>}
 
-                                        </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                      </div>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
         </div>
       </div>
     </>

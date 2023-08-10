@@ -227,7 +227,7 @@ import MobileSideBar from './components/MobileSideBar';
         <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
         <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
-        <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
+        {/* <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script> */}
       </Head>
       <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">
@@ -278,9 +278,11 @@ import MobileSideBar from './components/MobileSideBar';
                                       <Link className="flex items-center mr-3" href="#" onClick={()=>{
                                     redirectDetail(users.id, 'edit')
                                 }} ><CheckSquare className="w-4 h-4 mr-1"/> Edit </Link>
-                                      <a className="flex items-center text-danger" onClick={()=>{
+                                   <Link className="flex items-center text-danger" href="#" onClick={()=>userDeleted(users.id)}> <Trash2  className="w-4 h-4 mr-1" /> Delete </Link>
+
+                                      {/* <a className="flex items-center text-danger" onClick={()=>{
                                         setDeleteId(users.id)
-                                      }} href="javascript:;" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" className="w-4 h-4 mr-1"></i> Delete </a>
+                                      }} href="javascript:;" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" className="w-4 h-4 mr-1"></i> Delete </a> */}
                                   </div>
                               </td>                                    
                               {/* <td className="table-report__action w-56">

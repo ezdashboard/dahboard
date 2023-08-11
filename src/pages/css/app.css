@@ -18159,3 +18159,6 @@ nav.side-nav img {
   object-fit: contain;
   border-radius: 0px !important;
 }
+.deleteModal{
+  margin-top: 0px; margin-left: 0px; padding-left: 0px; z-index: 10000;
+}

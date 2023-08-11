@@ -15,6 +15,7 @@ import MobileSideBar from './components/MobileSideBar';
 
  const UserList = ()=> {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [styyyyy,setStyleCss] = useState('');
   const [loading, setLoading] = useState(false);
   const [delteId, setDeleteId] = useState(0);
   const [totalPages, setPageCount] = useState(1);
@@ -23,6 +24,17 @@ import MobileSideBar from './components/MobileSideBar';
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
+  const [modalCss, setModalCss] = useState('modal');
+  const setModalCssFun =(id)=>{
+    setModalCss('modal show overflow-y-auto modal-overlap deleteModal');
+    setDeleteId(id);
+    setStyleCss('');
+  }
+  const setModalCssCloseFun =()=>{
+    setStyleCss('none');
+    setModalCss('');
+    setDeleteId();
+  }
   const redirectDetail = (redir, toRedir)=>{
     setLoading(false);
       localStorage.removeItem("UserUpId");
@@ -82,6 +94,7 @@ import MobileSideBar from './components/MobileSideBar';
   const [currentPage, setCurrentPage] = useState(1);
   const [userStoreData, setUserStoreData] = useState([]);
   const userDeleted = async (userId) => {
+    setModalCssCloseFun();
 
     axios.get(`https://reseller.ezrankings.in//dashboard/userDelete.php?userid=${userId}`)
     .then(res => {
@@ -226,7 +239,7 @@ import MobileSideBar from './components/MobileSideBar';
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
         <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-        <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
+        {loading && <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>}
         {/* <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script> */}
       </Head>
       <MobileSideBar />
@@ -278,11 +291,9 @@ import MobileSideBar from './components/MobileSideBar';
                                       <Link className="flex items-center mr-3" href="#" onClick={()=>{
                                     redirectDetail(users.id, 'edit')
                                 }} ><CheckSquare className="w-4 h-4 mr-1"/> Edit </Link>
-                                   <Link className="flex items-center text-danger" href="#" onClick={()=>userDeleted(users.id)}> <Trash2  className="w-4 h-4 mr-1" /> Delete </Link>
-
-                                      {/* <a className="flex items-center text-danger" onClick={()=>{
-                                        setDeleteId(users.id)
-                                      }} href="javascript:;" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" className="w-4 h-4 mr-1"></i> Delete </a> */}
+                                      <a className="flex items-center text-danger" onClick={()=>{
+                                        setModalCssFun(users.id)
+                                      }} > <i data-lucide="trash-2" className="w-4 h-4 mr-1"></i> Delete </a>
                                   </div>
                               </td>                                    
                               {/* <td className="table-report__action w-56">
@@ -372,7 +383,7 @@ import MobileSideBar from './components/MobileSideBar';
             }
             </div>
         </div>
-        <div id="delete-confirmation-modal" className="modal" tabIndex="-1" aria-hidden="true">
+        <div id="delete-confirmation-modal" style={{display:styyyyy}}className={modalCss} tabIndex="-1" aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-body p-0">
@@ -386,7 +397,7 @@ import MobileSideBar from './components/MobileSideBar';
                             </div>
                         </div>
                         <div className="px-5 pb-8 text-center">
-                            <button type="button" data-tw-dismiss="modal" className="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                            <button type="button" onClick={setModalCssCloseFun} className="btn btn-outline-secondary w-24 mr-1">Cancel</button>
                             <a href="#" onClick={()=>userDeleted(delteId)} className="btn btn-danger w-24">Delete</a>
                         </div>
                     </div>

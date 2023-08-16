@@ -32,7 +32,7 @@ const NewsLetter = ()=>{
     };
     const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
     const NewsList = async (page)=>{
-        axios__WEBPACK_IMPORTED_MODULE_2__["default"].get(`https://reseller.ezrankings.in//dashboard/newsList.php`).then((res)=>{
+        axios__WEBPACK_IMPORTED_MODULE_2__["default"].get(`${"https://reseller.ezrankings.in/dashboard/"}newsList.php`).then((res)=>{
             const data = res.data.newsData.map((item)=>{
                 return {
                     id: item.id,

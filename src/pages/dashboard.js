@@ -25,7 +25,7 @@ import MobileSideBar from './components/MobileSideBar';
      const [projectPer, setProjectPer] = useState(0);
      const [keywordPer, setKeywordPer] = useState(0);
      const getDashBoardData = ()=>{
-      axios.get(`https://reseller.ezrankings.in//dashboard/dashboard.php?user=${localStorage.userid}`)
+      axios.get(`${process.env.API_BASE_URL}dashboard.php?user=${localStorage.userid}`)
       .then(res => {
           const getData = res.data && res.data.data && res.data.data.length > 0 && res.data.data.map((item) => {
             return {

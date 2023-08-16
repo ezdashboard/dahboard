@@ -66,7 +66,7 @@ const submitCloseIcon = ()=>{
 const userDeleted = async (userId) => {
   setModalCssCloseFun();
 
-  axios.get(`https://reseller.ezrankings.in//dashboard/userDelete.php?userid=${userId}`)
+  axios.get(`${process.env.API_BASE_URL}userDelete.php?userid=${userId}`)
   .then(res => {
       if(res && res.data && res.data.status){
         const updatedUserStoreData = userStoreData.filter((user) => user.id !== userId);
@@ -92,7 +92,7 @@ const handleFileChange = (event) => {
     };   
 const getResourceData = (id)=>{
    if(id){
-      axios.get(`https://reseller.ezrankings.in/dashboard/getlearning.php?url=${id}`)
+      axios.get(`${process.env.API_BASE_URL}getlearning.php?url=${id}`)
       .then(res => {
          const data = res.data.map((item) => {
             return {
@@ -163,7 +163,7 @@ const onSubmit = (e) => {
       formData.append('image', selectedFile);
      }
      formData.append('userid', localStorage && localStorage.userid ? localStorage.userid : '');
-     axios.post(`https://reseller.ezrankings.in/dashboard/edit-learning.php`,formData,{
+     axios.post(`${process.env.API_BASE_URL}edit-learning.php`,formData,{
      //   headers: {
      //   'Content-Type': 'multipart/form-data',
      //   method: 'POST',
@@ -267,7 +267,7 @@ const deleteData = async (userId)=>{
   //     }
   // }
   setModalCssCloseFun();
-  axios.get(`https://reseller.ezrankings.in/dashboard/leariningDelte.php?dlt=${resourceId}`)
+  axios.get(`${process.env.API_BASE_URL}leariningDelte.php?dlt=${resourceId}`)
   .then(res => {
     if(res && res.data && res.data.status){
         localStorage.removeItem("resourceId");
@@ -280,7 +280,7 @@ const deleteData = async (userId)=>{
  })
 }
  const getServiceData = async () => {
-     axios.get(`https://reseller.ezrankings.in/dashboard/services.php`)
+     axios.get(`${process.env.API_BASE_URL}services.php`)
        .then(res => {
            const data = res.data.serviceData.map((item) => {
              return {

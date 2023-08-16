@@ -11,7 +11,7 @@ const Dismiss=(newId)=>{
 }
 const [loading, setLoading] = useState(false);
 const NewsList = async (page) => {
-    axios.get(`https://reseller.ezrankings.in//dashboard/newsList.php`)
+    axios.get(`${process.env.API_BASE_URL}newsList.php`)
       .then(res => {
           const data = res.data.newsData.map((item) => {
             return {

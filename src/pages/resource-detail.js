@@ -33,7 +33,7 @@ const [resourceId, setResourceId] = useState('');
 const [loading, setLoading] = useState(false);
 const getResourceData = (id)=>{
    if(id){
-      axios.get(`https://reseller.ezrankings.in//dashboard/getlearning.php?url=${id}`)
+      axios.get(`${process.env.API_BASE_URL}getlearning.php?url=${id}`)
       .then(res => {
          const data = res.data.map((item) => {
             return {

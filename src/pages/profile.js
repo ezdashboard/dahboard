@@ -84,7 +84,7 @@ const onSubmit = (e) => {
       setCloseIcon(true);    
   }else{
     inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-    axios.post(`https://reseller.ezrankings.in//dashboard/updatePass.php`,inputData,{
+    axios.post(`${process.env.API_BASE_URL}updatePass.php`,inputData,{
       headers: {
       'Content-Type': 'multipart/form-data'
     }

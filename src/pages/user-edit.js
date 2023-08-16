@@ -32,7 +32,7 @@ export default function EditReportDetail  () {
    const [userStoreData, setUserStoreData] = useState([]);
    const getUserData = async () => {
 
-    axios.get(`https://reseller.ezrankings.in//dashboard/users.php?page=`)
+    axios.get(`${process.env.API_BASE_URL}users.php?page=`)
       .then(res => {
           const data = res.data.userData.map((item) => {
             return {
@@ -76,7 +76,7 @@ const inputChangeData =(event)=> {
   
 const getUser = (id)=>{
    if(id){
-      axios.get(`https://reseller.ezrankings.in//dashboard/getuser.php?userid=${id}`)
+      axios.get(`${process.env.API_BASE_URL}getuser.php?userid=${id}`)
       .then(res => {
       // setLearningData(data);
       setusersData({
@@ -148,7 +148,7 @@ const onSubmit = (e) => {
 //     setCloseIcon(true);                                  
   }else{
     // inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-    axios.post(`https://reseller.ezrankings.in//dashboard/updateUser.php`,inputData,{
+    axios.post(`${process.env.API_BASE_URL}updateUser.php`,inputData,{
       headers: {
       'Content-Type': 'multipart/form-data'
     }

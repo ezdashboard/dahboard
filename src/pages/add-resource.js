@@ -107,7 +107,7 @@ const AddResource = ()=>{
         formData.append('description', inputData.description);
         formData.append('image', selectedFile);
         formData.append('userid', localStorage && localStorage.userid ? localStorage.userid : '');
-        axios.post(`https://reseller.ezrankings.in//dashboard/add-learning.php`,formData,{
+        axios.post(`${process.env.API_BASE_URL}add-learning.php`,formData,{
         //   headers: {
         //   'Content-Type': 'multipart/form-data',
         //   method: 'POST',
@@ -228,7 +228,7 @@ const AddResource = ()=>{
     }
  
     const getServiceData = async () => {
-        axios.get(`https://reseller.ezrankings.in//dashboard/services.php`)
+        axios.get(`${process.env.API_BASE_URL}services.php`)
           .then(res => {
               const data = res.data.serviceData.map((item) => {
                 return {

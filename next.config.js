@@ -6,6 +6,9 @@ module.exports = {
   images:{
     domains:["https://reseller.ezrankings.in//"]
     // unoptimized:true
+  },
+  env: {
+    API_BASE_URL: 'https://reseller.ezrankings.in/dashboard/',
   }
 };
 

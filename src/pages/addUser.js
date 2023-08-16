@@ -113,7 +113,7 @@ const Adduser=()=>{
         setCloseIcon(true);                                  
       }else{
         inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-        axios.post(`https://reseller.ezrankings.in//dashboard/adduser.php`,inputData,{
+        axios.post(`${process.env.API_BASE_URL}adduser.php`,inputData,{
           headers: {
           'Content-Type': 'multipart/form-data'
         }

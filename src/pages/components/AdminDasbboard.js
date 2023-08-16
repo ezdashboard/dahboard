@@ -46,7 +46,7 @@ const submitCloseIcon = ()=>{
 }
 const NewsList = async (page) => {
 
-    axios.get(`https://reseller.ezrankings.in//dashboard/newsList.php`)
+    axios.get(`${process.env.API_BASE_URL}newsList.php`)
       .then(res => {
           const data = res.data.newsData.map((item) => {
             return {
@@ -83,7 +83,7 @@ const onSubmit = (e) => {
   }
   else{
     inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-    axios.post(`https://reseller.ezrankings.in//dashboard/addNews.php`,inputData,{
+    axios.post(`${process.env.API_BASE_URL}addNews.php`,inputData,{
       headers: {
       'Content-Type': 'multipart/form-data'
     }

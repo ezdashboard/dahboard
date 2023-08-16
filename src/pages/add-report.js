@@ -80,7 +80,7 @@ const AddReport = ()=>{
         setCloseIcon(true);                                          
       }else{
         inputData.userid = localStorage && localStorage.userid ? localStorage.userid : '';
-        axios.post(`https://reseller.ezrankings.in//dashboard/add-report.php`,inputData,{
+        axios.post(`${process.env.API_BASE_URL}add-report.php`,inputData,{
           headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -122,7 +122,7 @@ const AddReport = ()=>{
     }
     const getUserData = async () => {
 
-        axios.get(`https://reseller.ezrankings.in//dashboard/usersD.php?page=`)
+        axios.get(`${process.env.API_BASE_URL}usersD.php?page=`)
           .then(res => {
               const data = res.data.map((item) => {
                 return {
@@ -146,7 +146,7 @@ const AddReport = ()=>{
      }  
     const getServiceData = async () => {
 
-        axios.get(`https://reseller.ezrankings.in//dashboard/services.php`)
+        axios.get(`${process.env.API_BASE_URL}services.php`)
           .then(res => {
               const data = res.data.serviceData.map((item) => {
                 return {

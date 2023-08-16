@@ -70,7 +70,7 @@ import Router from 'next/router'
       setFormStatus("Password can not be blank.")
       setCloseIcon(true);  
     }else{
-      axios.post(`https://reseller.ezrankings.in/dashboard/login.php`,inputData,{
+      axios.post(`${process.env.API_BASE_URL}login.php`,inputData,{
         headers: {
         'Content-Type': 'multipart/form-data'
       }

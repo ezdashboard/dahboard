@@ -68,7 +68,7 @@ const Learning = ()=>{
             search = `${search}?currentPage=${currentPage}&`;
             search = search + `ser=${inputData.serviceName}&limit=${limitp}`;
         
-            axios.get(`https://reseller.ezrankings.in//dashboard/learning.php${search}`)
+            axios.get(`${process.env.API_BASE_URL}learning.php${search}`)
               .then(res => {
                   const data = res.data.learningData.map((item) => {
                     return {
@@ -101,8 +101,7 @@ const Learning = ()=>{
              })
           }        
     const getServiceData = async () => {
-
-        axios.get(`https://reseller.ezrankings.in//dashboard/services.php`)
+        axios.get(`${process.env.API_BASE_URL}services.php`)
           .then(res => {
               const data = res.data.serviceData.map((item) => {
                 return {
@@ -123,6 +122,7 @@ const Learning = ()=>{
                 users : true
             })
         }
+        //console.log('vv', process.env.customKey)
         getServiceData();
         getData(currentPage);
         }, [currentPage]);

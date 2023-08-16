@@ -76,7 +76,7 @@ import { useRouter } from "next/router";
             try {
               console.log('Imageccc uploaded successfully.',formData);
 
-              const response = await fetch('https://reseller.ezrankings.in//dashboard/upload.php', {
+              const response = await fetch(`${process.env.API_BASE_URL}upload.php`, {
                 method: 'POST',
                 body: formData,
               })
@@ -119,7 +119,7 @@ import { useRouter } from "next/router";
           setImgLoad(true);
           try {
             console.log('Imageccc uploaded successfully.',formData);
-            const response = await fetch(`https://reseller.ezrankings.in//dashboard/image.php`, {
+            const response = await fetch(`${process.env.API_BASE_URL}image.php`, {
               method: 'POST',
               body: formData,
             })
@@ -224,7 +224,7 @@ import { useRouter } from "next/router";
         setCloseIcon(true);   
       }else{
         inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-        axios.post(`https://reseller.ezrankings.in//dashboard/updateProfile.php`,inputData,{
+        axios.post(`${process.env.API_BASE_URL}updateProfile.php`,inputData,{
           headers: {
           'Content-Type': 'multipart/form-data'
         }

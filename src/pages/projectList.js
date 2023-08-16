@@ -82,7 +82,7 @@ const searchFilterData = () =>{
     }
     search = search + `ser=${inputData.serviceName}&status=${inputData.service_Status}&limit=${limitp}`;
 
-  axios.get(`https://reseller.ezrankings.in//dashboard/reports.php${search}`)
+  axios.get(`${process.env.API_BASE_URL}reports.php${search}`)
     .then(res => {
         const data = res.data.reportsData.map((item) => {
           return {
@@ -138,7 +138,7 @@ const getPreviousPageData =()=>{
   }
 }
 const getServiceData = async () => {
-  axios.get(`https://reseller.ezrankings.in//dashboard/services.php`)
+  axios.get(`${process.env.API_BASE_URL}services.php`)
     .then(res => {
         const data = res.data.serviceData.map((item) => {
           return {

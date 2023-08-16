@@ -32,7 +32,7 @@ export default function EditReportDetail  () {
    const [userStoreData, setUserStoreData] = useState([]);
    const getUserData = async () => {
 
-    axios.get(`https://reseller.ezrankings.in//dashboard/usersD.php?page=`)
+    axios.get(`${process.env.API_BASE_URL}usersD.php?page=`)
       .then(res => {
           const data = res.data.map((item) => {
             return {
@@ -74,7 +74,7 @@ const inputChangeData =(event)=> {
   
 const getReportData = (id)=>{
    if(id){
-      axios.get(`https://reseller.ezrankings.in//dashboard/getreport.php?url=${id}`)
+      axios.get(`${process.env.API_BASE_URL}getreport.php?url=${id}`)
       .then(res => {
       // setLearningData(data);
       setReportData({
@@ -167,7 +167,7 @@ const onSubmit = (e) => {
     //   formData.append('image', selectedFile);
     //  }
     //  formData.append('userid', localStorage && localStorage.userid ? localStorage.userid : '');
-     axios.post(`https://reseller.ezrankings.in//dashboard/edit-report.php`,inputData,{
+     axios.post(`${process.env.API_BASE_URL}edit-report.php`,inputData,{
      //   headers: {
      //   'Content-Type': 'multipart/form-data',
      //   method: 'POST',
@@ -196,7 +196,7 @@ const onSubmit = (e) => {
  }
 
  const getServiceData = async () => {
-     axios.get(`https://reseller.ezrankings.in//dashboard/services.php`)
+     axios.get(`${process.env.API_BASE_URL}services.php`)
        .then(res => {
            const data = res.data.serviceData.map((item) => {
              return {

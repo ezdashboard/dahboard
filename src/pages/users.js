@@ -96,7 +96,7 @@ import MobileSideBar from './components/MobileSideBar';
   const userDeleted = async (userId) => {
     setModalCssCloseFun();
 
-    axios.get(`https://reseller.ezrankings.in//dashboard/userDelete.php?userid=${userId}`)
+    axios.get(`${process.env.API_BASE_URL}userDelete.php?userid=${userId}`)
     .then(res => {
         if(res && res.data && res.data.status){
           const updatedUserStoreData = userStoreData.filter((user) => user.id !== userId);
@@ -108,7 +108,7 @@ import MobileSideBar from './components/MobileSideBar';
    })
   };
   const fetchData = async (page) => {
-    axios.get(`https://reseller.ezrankings.in//dashboard/users.php?page=${page}&limit=${limitp}`)
+    axios.get(`${process.env.API_BASE_URL}users.php?page=${page}&limit=${limitp}`)
       .then(res => {
           const data = res.data.userData.map((item) => {
             return {
@@ -190,7 +190,7 @@ import MobileSideBar from './components/MobileSideBar';
       setCloseIcon(true);                                  
     }else{
       inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-      axios.post(`https://reseller.ezrankings.in//dashboard/adduser.php`,inputData,{
+      axios.post(`${process.env.API_BASE_URL}adduser.php`,inputData,{
         headers: {
         'Content-Type': 'multipart/form-data'
       }

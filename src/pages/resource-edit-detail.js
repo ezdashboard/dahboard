@@ -12,7 +12,19 @@ export default function ResourceDetail  (){
    const [submitBtn, setSubmitBtn] = useState({})
    const [msg, setFormStatus] = useState('')
    const [selectedFile, setSelectedFile] = useState(null);
-
+   const [modalCss, setModalCss] = useState('modal');
+   const [styyyyy,setStyleCss] = useState('');
+   const [delteId, setDeleteId] = useState(0);
+   const setModalCssFun =(id)=>{
+     setModalCss('modal show overflow-y-auto modal-overlap deleteModal');
+     setDeleteId(id);
+     setStyleCss('');
+   }
+   const setModalCssCloseFun =()=>{
+     setStyleCss('none');
+     setModalCss('');
+     setDeleteId();
+   }
    const [serviceStoreData, setServiceStoreData] = useState([]);
 
    const [inputData, setInputData] = useState({
@@ -51,6 +63,20 @@ const [loading, setLoading] = useState(false);
 const submitCloseIcon = ()=>{
    setCloseIcon(false);
  }
+const userDeleted = async (userId) => {
+  setModalCssCloseFun();
+
+  axios.get(`https://reseller.ezrankings.in//dashboard/userDelete.php?userid=${userId}`)
+  .then(res => {
+      if(res && res.data && res.data.status){
+        const updatedUserStoreData = userStoreData.filter((user) => user.id !== userId);
+        setUserStoreData(updatedUserStoreData);
+        alert('Deleted successfully.');
+      }
+})
+.catch(err => {
+ })
+};
 const inputChangeData =(event)=> {
    const {name, value} = event.target;
      setInputData((valuePre)=>{
@@ -230,7 +256,7 @@ const onSubmit = (e) => {
    // }      
    }
  }
-const deleteData =()=>{
+const deleteData = async (userId)=>{
   // localStorage.removeItem("resourceId");
   // if(!localStorage.resourceId){
   //     localStorage.setItem("resourceId", redir);
@@ -240,6 +266,7 @@ const deleteData =()=>{
   //       Router.push('/resource-edit-detail');
   //     }
   // }
+  setModalCssCloseFun();
   axios.get(`https://reseller.ezrankings.in/dashboard/leariningDelte.php?dlt=${resourceId}`)
   .then(res => {
     if(res && res.data && res.data.status){
@@ -358,13 +385,37 @@ useEffect(() => {
                                 <input name="file" type="file" className="form-control" onChange={handleFileChange}/> 
                             </div>                            
                             </div>
+
                             <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end mt-5">
-                                <button className="delete-btn" onClick={deleteData}>Delete</button>
+                                <a className="delete-btn" onClick={()=>{
+                                        setModalCssFun(inputData.id)
+                                      }}>Delete</a>
                                 <button className="btn btn-primary w-24 ml-2">Update</button>
                             </div>
                             </form>
                      </div>
                 </div>
+                <div id="delete-confirmation-modal" style={{display:styyyyy}}className={modalCss} tabIndex="-1" aria-hidden="true">
+                  <div className="modal-dialog">
+                      <div className="modal-content">
+                          <div className="modal-body p-0">
+                              <div className="p-5 text-center">
+                                  <i data-lucide="x-circle" className="w-16 h-16 text-danger mx-auto mt-3"></i> 
+                                  <div className="text-3xl mt-5">Are you sure?</div>
+                                  <div className="text-slate-500 mt-2">
+                                      Do you really want to delete these records? 
+                                      <br />
+                                      This process cannot be undone.
+                                  </div>
+                              </div>
+                              <div className="px-5 pb-8 text-center">
+                                  <button type="button" onClick={setModalCssCloseFun} className="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                                  <a href="#" onClick={()=>deleteData(delteId)} className="btn btn-danger w-24">Delete</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div> 
             </div>
      </div>
     </>

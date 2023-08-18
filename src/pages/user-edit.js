@@ -260,9 +260,9 @@ useEffect(() => {
                           <div className="intro-y col-span-12 sm:col-span-6" bis_skin_checked="1">
                               <label htmlFor="input-wizard-6" className="form-label">Department</label>
                               <select className="form-select" onChange={inputChangeData} name="type">
-                                  <option value={inputData.type}>{inputData.type}</option>
-                                  <option value="user">User</option>
-                                  <option value="manager">Manager</option>
+                                  <option value={inputData.type}>{inputData.type ? inputData.type.toUpperCase() : ''}</option>
+                                  <option value="user">USER</option>
+                                  <option value="Manager">MANAGER</option>
                               </select>
                           </div>
                           <div className="intro-y col-span-12 sm:col-span-6">

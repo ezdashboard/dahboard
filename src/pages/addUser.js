@@ -205,7 +205,7 @@ const Adduser=()=>{
                                 <select className="form-select" onChange={inputChangeData} name="type">
                                     <option value="">Select</option>
                                     <option value="user">User</option>
-                                    <option value="manager">Manager</option>
+                                    <option value="Manager">Manager</option>
                                 </select>
                             </div>
                             <div className="intro-y col-span-12 sm:col-span-6">

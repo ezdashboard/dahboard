@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/yALXeDbCFcOq5XnMnUeKB/_buildManifest.js",
-    "static/yALXeDbCFcOq5XnMnUeKB/_ssgManifest.js"
+    "static/ZZrrdj7axqeekf1h2tFBR/_buildManifest.js",
+    "static/ZZrrdj7axqeekf1h2tFBR/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -16,7 +16,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/index-dfaca4622f7aef3d.js"
+      "static/chunks/pages/index-5fdf0cb010e4af33.js"
     ],
     "/404": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -60,7 +60,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/addUser-2e5c45d9a522770a.js"
+      "static/chunks/pages/addUser-115606f2586585ba.js"
     ],
     "/components/AdminDasbboard": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -231,7 +231,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/user-edit-335ee5df0a12995b.js"
+      "static/chunks/pages/user-edit-94543ed7c69db9f6.js"
     ],
     "/users": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Lock, Pencil, X  } from 'lucide-react';
+import { Lock, User,Pencil,Navigation,Mail, FileCheck ,Phone, Building,X  } from 'lucide-react';
 import Link from 'next/link';
 
 const ProfileContent = (props) =>{
@@ -25,19 +25,19 @@ const ProfileContent = (props) =>{
                     </div>
                 </div>
                 <Link className="flex items-center mt-5" href="#">
-                    <Lock className="w-4 h-4 mr-2"/>Name: {props && props.profile && props.profile.name? props.profile.name : ''}
+                    <User className="w-4 h-4 mr-2"/>Name: {props && props.profile && props.profile.name? props.profile.name : ''}
                 </Link>
                 <Link className="flex items-center mt-5" href="#">
-                    <Lock className="w-4 h-4 mr-2"/>Title: {props && props.profile && props.profile.title? props.profile.title : ''}
+                    <FileCheck  className="w-4 h-4 mr-2"/>Title: {props && props.profile && props.profile.title? props.profile.title : ''}
                 </Link>
                 <Link className="flex items-center mt-5" href="#">
-                    <Lock className="w-4 h-4 mr-2"/>Phone: {props && props.profile && props.profile.contactno? props.profile.contactno : ''}
+                    <Phone className="w-4 h-4 mr-2"/>Phone: {props && props.profile && props.profile.contactno? props.profile.contactno : ''}
                 </Link>
                 <Link className="flex items-center mt-5" href="#">
-                    <Lock className="w-4 h-4 mr-2"/>Mail: {props && props.profile && props.profile.email? props.profile.email : ''}
+                    <Mail className="w-4 h-4 mr-2"/>Mail: {props && props.profile && props.profile.email? props.profile.email : ''}
                 </Link>
                 <Link className="flex items-center mt-5" href="#">
-                    <Lock className="w-4 h-4 mr-2"/>Location: {props && props.profile && props.profile.location? props.profile.location : ''}
+                    <Navigation className="w-4 h-4 mr-2"/>Location: {props && props.profile && props.profile.location? props.profile.location : ''}
                 </Link>
             </div>
         </div>

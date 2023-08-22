@@ -1,14 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import Head from 'next/head'
-// import routes from './routes';
 import Link from 'next/link';
 import SideBar from './components/SideBar';
 import TopHeader from './components/TopHeade';
 import axios from 'axios';
 import MobileSideBar from './components/MobileSideBar';
-
 import Router from 'next/router'
-import { Users, LogOut, Newspaper,Search, Lightbulb, BookMarked, Home, Sparkles, Image  } from 'lucide-react';
+import { Users, User,Lock, Pencil,Navigation,Mail, FileCheck ,Phone, Building,X, LogOut, Newspaper,Search, Lightbulb, BookMarked, Home, Sparkles, Image  } from 'lucide-react';
 import { useRouter } from "next/router";
 
  const UpdateProfile = ()=> {
@@ -186,6 +184,11 @@ import { useRouter } from "next/router";
                 userid : localStorage.userid
             });
         }
+        if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type=="admin"){
+          setSideBarAccess({
+              users : true
+          })
+      }
         }, []);
     const [msg, setFormStatus] = useState('')
 
@@ -393,25 +396,24 @@ import { useRouter } from "next/router";
                               <div className="text-right">
                                   </div>
                               </div>
-                          <a className="flex items-center mt-5" href="">
-                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Name: {profileData.name}
-                          </a>
-                          <a className="flex items-center mt-5" href="">
-                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Title: {profileData.title}
-                          </a>
-                              <a className="flex items-center mt-5" href="">
-                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Phone: {profileData.contactno}
-                          </a>
-                          <a className="flex items-center mt-5" href="">
-                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Mail: {profileData.email}
-                          </a>
-                              <a className="flex items-center mt-5" href="">
-                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Company Name: {profileData.companyname}
-                          </a>
-                          <a className="flex items-center mt-5" href="">
-                              <i data-lucide="lock" className="w-4 h-4 mr-2"></i>Location: {profileData.location}
-                          </a>
-                          
+                          <Link className="flex items-center mt-5" href="#">
+                            <User className="w-4 h-4 mr-2"/>Name: {profileData.name}
+                          </Link>
+                          <Link className="flex items-center mt-5" href="#">
+                            <FileCheck  className="w-4 h-4 mr-2"/>Title: {profileData.title}
+                          </Link>
+                          <Link className="flex items-center mt-5" href="#">
+                            <Phone className="w-4 h-4 mr-2"/>Phone: {profileData.contactno}
+                          </Link>
+                          <Link className="flex items-center mt-5" href="#">
+                            <Mail className="w-4 h-4 mr-2"/>Mail: {profileData.email}
+                          </Link>
+                          <Link className="flex items-center mt-5" href="#">
+                            <Building className="w-4 h-4 mr-2"/>Company Name: {profileData.companyname}
+                          </Link>
+                          <Link className="flex items-center mt-5" href="#">
+                            <Navigation className="w-4 h-4 mr-2"/>Location: {profileData.location}
+                          </Link>
                       </div>
                   </div>
               </div>

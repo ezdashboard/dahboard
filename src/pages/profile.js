@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Head from 'next/head'
-// import routes from './routes';
-import Link from 'next/link';
 import SideBar from './components/SideBar';
 import TopHeader from './components/TopHeade';
 import axios from 'axios';
@@ -24,15 +22,6 @@ const [profileData, setProfileData] = useState({
     userid : ''
 });
 
-const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
-
-// const toggleHiddenTitle = (index) => {
-//   if (hiddenTitleIndex === index) {
-//     setHiddenTitleIndex(null);
-//   } else {
-//     setHiddenTitleIndex(index);
-//   }
-// };
 const [closeIcon, setCloseIcon] = useState(false)
 const [isValidEmail, setIsValidEmail] = useState(false)
 
@@ -102,7 +91,6 @@ const onSubmit = (e) => {
                     new_password:"",
                        userid : profileData && profileData.userid ? profileData.userid : ''
                   })
-                  //Router.push('/thankyou')
                   setFormStatus("Password changed Successfully.");
                   setCloseIcon(true);
                   setSubmitBtn({
@@ -111,8 +99,6 @@ const onSubmit = (e) => {
                     color: '#46c737'
                   })
                 }
-          
-
     })
     .catch(err => {
      })
@@ -143,14 +129,10 @@ useEffect(() => {
         <meta charSet="utf-8" />
         <link href="#" rel="shortcut icon"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="description" content=""/>
-        <meta name="keywords" content=""/>
-        <meta name="author" content=""/>
-        <title>Reseller Dashboard</title>
+        <title>Reseller Profile</title>
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
         <script
-        // you might need to get a newer version
         src="https://kit.fontawesome.com/fbadad80a0.js"
         crossOrigin="anonymous"
       ></script>
@@ -188,32 +170,31 @@ useEffect(() => {
                     </div>
                 </div>
                 <div className="intro-y box lg:mt-5" bis_skin_checked="1">
-                <div className="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400" bis_skin_checked="1">
-                    <h2 className="font-medium text-base mr-auto">Change Password</h2>
-                </div>
-                <div className="col-md-12">
-                {closeIcon  ?<span style={submitBtn}>{msg}  <span onClick={submitCloseIcon}><X  size="16" color="#999"/></span></span>: ""}
-                </div>
-                <form onSubmit={onSubmit}>
-                <div className="p-5" bis_skin_checked="1">
-                    <div bis_skin_checked="1">
-                        <label htmlFor="change-password-form-1" className="form-label">Old Password</label>
-                        <input id="change-password-form-1" type="password" className="form-control" name="password" placeholder="Input text"  onChange={inputChangeData} value={inputData.password}/>
+                  <div className="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400" bis_skin_checked="1">
+                      <h2 className="font-medium text-base mr-auto">Change Password</h2>
+                  </div>
+                  <div className="col-md-12">
+                    {closeIcon  ?<span style={submitBtn}>{msg}  <span onClick={submitCloseIcon}><X  size="16" color="#999"/></span></span>: ""}
+                  </div>
+                  <form onSubmit={onSubmit}>
+                    <div className="p-5" bis_skin_checked="1">
+                      <div bis_skin_checked="1">
+                          <label htmlFor="change-password-form-1" className="form-label">Old Password</label>
+                          <input id="change-password-form-1" type="password" className="form-control" name="password" placeholder="Input text"  onChange={inputChangeData} value={inputData.password}/>
+                      </div>
+                      <div className="mt-3" bis_skin_checked="1">
+                          <label htmlFor="change-password-form-2" className="form-label">New Password</label>
+                          <input id="change-password-form-2" type="password" className="form-control" name="new_password" placeholder="Input text" onChange={inputChangeData} value={inputData.new_password}/>
+                      </div>
+                      <div className="mt-3" bis_skin_checked="1">
+                          <label htmlFor="change-password-form-3" className="form-label">Confirm New Password</label>
+                          <input id="change-password-form-3" type="password" className="form-control" name="confirm_password" placeholder="Input text" onChange={inputChangeData} value={inputData.confirm_password}/>
+                      </div>
+                      <button type="submit" className="btn btn-primary mt-4">Change Password</button>
                     </div>
-                    <div className="mt-3" bis_skin_checked="1">
-                        <label htmlFor="change-password-form-2" className="form-label">New Password</label>
-                        <input id="change-password-form-2" type="password" className="form-control" name="new_password" placeholder="Input text" onChange={inputChangeData} value={inputData.new_password}/>
-                    </div>
-                    <div className="mt-3" bis_skin_checked="1">
-                        <label htmlFor="change-password-form-3" className="form-label">Confirm New Password</label>
-                        <input id="change-password-form-3" type="password" className="form-control" name="confirm_password" placeholder="Input text" onChange={inputChangeData} value={inputData.confirm_password}/>
-                    </div>
-                    <button type="submit" className="btn btn-primary mt-4">Change Password</button>
+                  </form>
                 </div>
-                </form>
-            </div>
              </div>
-            
             </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ module.exports = {
   reactStrictMode: true,
   // distDir: 'build',
   images:{
-    domains:["https://reseller.ezrankings.in//"]
+    domains:["https://reseller.ezrankings.in/"]
     // unoptimized:true
   },
   env: {

@@ -179,7 +179,7 @@ const AddReport = ()=>{
             <meta name="description" content=""/>
             <meta name="keywords" content=""/>
             <meta name="author" content=""/>
-            <projecturl>Reseller Dashboard</projecturl>
+            <title>Add New Report</title>
             <link rel="dns-prefetch" href="//developers.google.com"/>
             <link rel="dns-prefetch" href="//maps.googleapis.com"/>
             <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet"/>

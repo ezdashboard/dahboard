@@ -75,7 +75,7 @@ const ProfileContent = (props)=>{
                                     className: "flex items-center mt-5",
                                     href: "#",
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Lock, {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.User, {
                                             className: "w-4 h-4 mr-2"
                                         }),
                                         "Name: ",
@@ -86,7 +86,7 @@ const ProfileContent = (props)=>{
                                     className: "flex items-center mt-5",
                                     href: "#",
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Lock, {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.FileCheck, {
                                             className: "w-4 h-4 mr-2"
                                         }),
                                         "Title: ",
@@ -97,7 +97,7 @@ const ProfileContent = (props)=>{
                                     className: "flex items-center mt-5",
                                     href: "#",
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Lock, {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Phone, {
                                             className: "w-4 h-4 mr-2"
                                         }),
                                         "Phone: ",
@@ -108,7 +108,7 @@ const ProfileContent = (props)=>{
                                     className: "flex items-center mt-5",
                                     href: "#",
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Lock, {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Mail, {
                                             className: "w-4 h-4 mr-2"
                                         }),
                                         "Mail: ",
@@ -119,7 +119,7 @@ const ProfileContent = (props)=>{
                                     className: "flex items-center mt-5",
                                     href: "#",
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Lock, {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Navigation, {
                                             className: "w-4 h-4 mr-2"
                                         }),
                                         "Location: ",

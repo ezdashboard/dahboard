@@ -18162,3 +18162,9 @@ nav.side-nav img {
 .deleteModal{
   margin-top: 0px; margin-left: 0px; padding-left: 0px; z-index: 10000;
 }
+
+@media (min-width: 1024px) and (max-width: 1200px){
+.intro-y.overflow-auto.lg\:overflow-visible.mt-8.sm\:mt-0 {
+    overflow: scroll;
+}
+}

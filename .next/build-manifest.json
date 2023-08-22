@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/ZZrrdj7axqeekf1h2tFBR/_buildManifest.js",
-    "static/ZZrrdj7axqeekf1h2tFBR/_ssgManifest.js"
+    "static/xA7xzCnt9OCKOg2S2GrBu/_buildManifest.js",
+    "static/xA7xzCnt9OCKOg2S2GrBu/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -29,7 +29,7 @@
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
-      "static/css/df8969c2e21bf842.css",
+      "static/css/044dedb111873ae9.css",
       "static/chunks/pages/_app-b696f73a88f062d2.js"
     ],
     "/_error": [
@@ -44,7 +44,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/add-report-4ab21d29956f0c2c.js"
+      "static/chunks/pages/add-report-cfaed3e01fc2465a.js"
     ],
     "/add-resource": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -104,7 +104,7 @@
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
-      "static/chunks/pages/components/ProfileContent-5d61161c33d814c0.js"
+      "static/chunks/pages/components/ProfileContent-6ccb394a1429b218.js"
     ],
     "/components/ShowProfile": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -132,7 +132,7 @@
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
-      "static/chunks/pages/components/UserDashboard-9e7a86c179853a37.js"
+      "static/chunks/pages/components/UserDashboard-ae40ce224a8e826f.js"
     ],
     "/dashboard": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -141,7 +141,7 @@
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
       "static/chunks/738-5db5afce94aaf63c.js",
-      "static/chunks/pages/dashboard-3fc6b3c6e22044d6.js"
+      "static/chunks/pages/dashboard-169e9e4585c2991e.js"
     ],
     "/learning-resources": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -174,7 +174,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/profile-4abef153796d4393.js"
+      "static/chunks/pages/profile-cc6f2ad2b3a8ade7.js"
     ],
     "/project-edit-detail": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -223,7 +223,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/update-profile-04f8a025f649ca4d.js"
+      "static/chunks/pages/update-profile-d2d04b61fe37cf8a.js"
     ],
     "/user-edit": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

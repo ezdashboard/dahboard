@@ -18168,3 +18168,8 @@ nav.side-nav img {
     overflow: scroll;
 }
 }
+@media (min-width: 1200px) and (max-width: 1500px){
+  .intro-y.overflow-auto.lg\:overflow-visible.mt-8.sm\:mt-0 {
+      overflow: scroll;
+  }
+  }

@@ -203,7 +203,7 @@ const Adduser=()=>{
                             <div className="intro-y col-span-12 sm:col-span-6" bis_skin_checked="1">
                                 <label htmlFor="input-wizard-6" className="form-label">Department</label>
                                 <select className="form-select" onChange={inputChangeData} name="type">
-                                    <option value="">Select</option>
+                                    <option value={inputData.type}>Select</option>
                                     <option value="user">User</option>
                                     <option value="Manager">Manager</option>
                                 </select>

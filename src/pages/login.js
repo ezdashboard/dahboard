@@ -1,23 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import Head from 'next/head'
-import Link from 'next/link';
 import Router from 'next/router'
 
  const Login = ()=> {
 
-  const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
-  const [bodyCsss, setBodyCss] = useState('login');
-  const toggleHiddenTitle = (index) => {
-    if (hiddenTitleIndex === index) {
-      setHiddenTitleIndex(null);
-    } else {
-      setHiddenTitleIndex(index);
-    }
-  };
   const [closeIcon, setCloseIcon] = useState(false)
   const [isValidEmail, setIsValidEmail] = useState(false)
-
   const [msg, setFormStatus] = useState('')
   const [inputData, setInputData] = useState({
     email:"",
@@ -56,7 +45,6 @@ import Router from 'next/router'
     if(inputData && inputData.email){
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       setIsValidEmail(emailRegex.test(inputData.email));
-
     }
     if(!inputData.email){
       setFormStatus("Email can not be blank.")
@@ -72,8 +60,7 @@ import Router from 'next/router'
         headers: {
         'Content-Type': 'multipart/form-data'
       }
-    })
-        .then(res => {
+    }).then(res => {
             const data = res.data;
             if(res &&  res.data && res.data.error && res.data.error.length > 0){
                 setFormStatus( res.data.error);
@@ -84,7 +71,6 @@ import Router from 'next/router'
                       email:"",
                       password:""
                     })
-                    //Router.push('/thankyou')
                     setFormStatus("");
                     //setCloseIcon(true);
                     setSubmitBtn({
@@ -92,27 +78,23 @@ import Router from 'next/router'
                       display: 'block',
                       color: '#46c737'
                     })
-                    let arryStore;
                     if(data.userData){
-                        arryStore = data.userData[0];
                         localStorage.clear();
-                            localStorage.setItem("companyname", data.userData[0]['companyname']);
-                            localStorage.setItem("title", data.userData[0]['title']);
-                            localStorage.setItem("name", data.userData[0]['name']);
-                            localStorage.setItem("email", data.userData[0]['email']);
-                            localStorage.setItem("logo", data.userData[0]['logo']);
-                            localStorage.setItem("userid", data.userData[0]['userid']);
-                            localStorage.setItem("image", data.userData[0]['image']); 
-                            localStorage.setItem("type", data.userData[0]['type']); 
-                            localStorage.setItem("contactno", data.userData[0]['contactno']);
-                            localStorage.setItem("about", data.userData[0]['about']);  
-                            localStorage.setItem("location", data.userData[0]['location']);
-                            
-                            Router.push('/profile')
+                        localStorage.setItem("companyname", data.userData[0]['companyname']);
+                        localStorage.setItem("title", data.userData[0]['title']);
+                        localStorage.setItem("name", data.userData[0]['name']);
+                        localStorage.setItem("email", data.userData[0]['email']);
+                        localStorage.setItem("logo", data.userData[0]['logo']);
+                        localStorage.setItem("userid", data.userData[0]['userid']);
+                        localStorage.setItem("image", data.userData[0]['image']); 
+                        localStorage.setItem("type", data.userData[0]['type']); 
+                        localStorage.setItem("contactno", data.userData[0]['contactno']);
+                        localStorage.setItem("about", data.userData[0]['about']);  
+                        localStorage.setItem("location", data.userData[0]['location']);
+                        Router.push('/profile')
                     }
                   }
             }
-
       })
       .catch(err => {
        })
@@ -124,9 +106,6 @@ import Router from 'next/router'
         <meta charSet="utf-8" />
         <link href="#" rel="shortcut icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <meta name="author" content="" />
         <title>Reseller Login</title>
         <link rel="dns-prefetch" href="//developers.google.com" />
         <link rel="dns-prefetch" href="//maps.googleapis.com" />
@@ -177,10 +156,8 @@ import Router from 'next/router'
               </div>
           </section>
       </div>
-          
     </>
   )
 }
-
 
 export default Login;

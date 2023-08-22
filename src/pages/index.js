@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import Head from 'next/head'
-import Link from 'next/link';
 import Router from 'next/router'
-
 
  const Login = ()=> {
 
@@ -79,22 +77,20 @@ import Router from 'next/router'
                       display: 'block',
                       color: '#46c737'
                     })
-                    let arryStore;
                     if(data.userData){
-                        arryStore = data.userData[0];
                         localStorage.clear();
-                            localStorage.setItem("companyname", data.userData[0]['companyname']);
-                            localStorage.setItem("title", data.userData[0]['title']);
-                            localStorage.setItem("name", data.userData[0]['name']);
-                            localStorage.setItem("email", data.userData[0]['email']);
-                            localStorage.setItem("logo", data.userData[0]['logo']);
-                            localStorage.setItem("userid", data.userData[0]['userid']);
-                            localStorage.setItem("image", data.userData[0]['image']); 
-                            localStorage.setItem("type", data.userData[0]['type']); 
-                            localStorage.setItem("contactno", data.userData[0]['contactno']);
-                            localStorage.setItem("about", data.userData[0]['about']);  
-                            localStorage.setItem("location", data.userData[0]['location']);
-                            Router.push('/profile')
+                        localStorage.setItem("companyname", data.userData[0]['companyname']);
+                        localStorage.setItem("title", data.userData[0]['title']);
+                        localStorage.setItem("name", data.userData[0]['name']);
+                        localStorage.setItem("email", data.userData[0]['email']);
+                        localStorage.setItem("logo", data.userData[0]['logo']);
+                        localStorage.setItem("userid", data.userData[0]['userid']);
+                        localStorage.setItem("image", data.userData[0]['image']); 
+                        localStorage.setItem("type", data.userData[0]['type']); 
+                        localStorage.setItem("contactno", data.userData[0]['contactno']);
+                        localStorage.setItem("about", data.userData[0]['about']);  
+                        localStorage.setItem("location", data.userData[0]['location']);
+                        Router.push('/profile')
                     }
                   }
             }

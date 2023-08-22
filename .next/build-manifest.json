@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/4OVXaPYrYdRYuEvPybSrt/_buildManifest.js",
-    "static/4OVXaPYrYdRYuEvPybSrt/_ssgManifest.js"
+    "static/fOPoKYv_zHltXmm3C3WAw/_buildManifest.js",
+    "static/fOPoKYv_zHltXmm3C3WAw/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -14,9 +14,8 @@
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
-      "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/index-5fdf0cb010e4af33.js"
+      "static/chunks/pages/index-f62b36c0230ccac5.js"
     ],
     "/404": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -60,7 +59,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/addUser-115606f2586585ba.js"
+      "static/chunks/pages/addUser-94bf1702e92bb69a.js"
     ],
     "/components/AdminDasbboard": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -156,9 +155,8 @@
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
-      "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/login-8975b076d1f0b8cc.js"
+      "static/chunks/pages/login-22b81fbdf0a8280c.js"
     ],
     "/newsletter": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

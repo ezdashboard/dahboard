@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/uV3DWFlh9fGNaJwghBQfY/_buildManifest.js",
-    "static/uV3DWFlh9fGNaJwghBQfY/_ssgManifest.js"
+    "static/4OVXaPYrYdRYuEvPybSrt/_buildManifest.js",
+    "static/4OVXaPYrYdRYuEvPybSrt/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -191,7 +191,7 @@
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
       "static/chunks/130-121f72401ac076b8.js",
-      "static/chunks/pages/projectList-3139eb50845a3f92.js"
+      "static/chunks/pages/projectList-9e63b298453fe72c.js"
     ],
     "/reseller-benefits": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -240,7 +240,7 @@
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
       "static/chunks/130-121f72401ac076b8.js",
-      "static/chunks/pages/users-f1781991be58598b.js"
+      "static/chunks/pages/users-231305751fcc0cc5.js"
     ],
     "/users/[edituser]": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

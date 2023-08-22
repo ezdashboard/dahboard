@@ -17,12 +17,10 @@ import MobileSideBar from './components/MobileSideBar';
   const [loading, setLoading] = useState(false);
   const [reportData, setReportData] = useState([]);
   const [serviceStoreData, setServiceStoreData] = useState([]);
-  const [readMore, setReadMore] = useState(false);
   const [totalPages, setPageCount] = useState(1);
   const [pageList, setPageList] = useState([1]);
   const [pageLimitList, setPageLimitList] = useState([5,10,15]);
   const [limitp, setlimitp] =useState(5);
-  const [readMoreclassName, setReadMoreclassName] = useState('hide');
   const [currentPage, setCurrentPage] = useState(1);
   const redirectDetail = (redir, toRedir)=>{
     setLoading(false);
@@ -41,21 +39,7 @@ import MobileSideBar from './components/MobileSideBar';
     serviceName : '',
     service_Status:''
 });
-  const updateContent=()=>{
-   if(!readMore){
-      setReadMore(true);
-   }else{
-      setReadMore(false);
-   }
-  }
-  const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
-  const toggleHiddenTitle = (index) => {
-    if (hiddenTitleIndex === index) {
-      setHiddenTitleIndex(null);
-    } else {
-      setHiddenTitleIndex(index);
-    }
-  };
+
   const [addBtn, setAddBtn] = useState(false);
   const navigation = ()=>{
     Router.push("/add-report")
@@ -119,22 +103,18 @@ const searchFilterData = () =>{
    })
 }
 const getNextPageData =()=>{
-  //alert();
   if(totalPages > currentPage){
     setCurrentPage(currentPage+1);
-  }  // getReportData(currentPage);
+  }  
 }
 const getPageData =(pageno)=>{
   if(currentPage != pageno){
     setCurrentPage(pageno);
-    // getReportData(pageno);
   }
 }
 const getPreviousPageData =()=>{
-  //alert();
   if(currentPage > 1){
     setCurrentPage(currentPage-1);
-    // getReportData(currentPage);
   }
 }
 const getServiceData = async () => {
@@ -338,9 +318,10 @@ const getServiceData = async () => {
                 </nav>
              </div> 
             } 
-              {!loading &&<div>
-         <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem"}}>Loading....</h1>   
-         </div>}  
+              {!loading &&
+              <div>
+                <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem"}}>Loading....</h1>   
+              </div>}  
 
           {loading && <NewsLetter />}
          </div>

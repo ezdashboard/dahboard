@@ -128,6 +128,14 @@ import MobileSideBar from './components/MobileSideBar';
         setPageCount(res.data.total);
         if(page > 3){
           setPageList([page-3, page-2, page-1])
+        }else if(page == 1){
+          if(res.data.total > 2){
+            setPageList(["1","2","3"]);
+          }else if(res.data.total == 2){
+            setPageList(["1","2"])
+          }else if(res.data.total ==1){
+            setPageList(["1"])
+          }
         }
       }
       setLoading(true);
@@ -153,76 +161,7 @@ import MobileSideBar from './components/MobileSideBar';
       fetchData(currentPage);
 
       }, [currentPage]);
-  const [msg, setFormStatus] = useState('')
-  const [submitBtn, setSubmitBtn] = useState({})
 
-  const onSubmit = (e) => {
-    e.preventDefault()
-    setSubmitBtn({
-      padding: '1rem 0rem',
-      display: 'block',
-      color: 'red'
-    })
-    if(inputData && inputData.email){
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      setIsValidEmail(emailRegex.test(inputData.email));
-  
-    }
-    if(!inputData.name){
-      setFormStatus("Name can not be blank.")
-      setCloseIcon(true);
-    // }else if(!inputData.email){
-    //   setFormStatus("Email can not be blank.")
-    //   setCloseIcon(true);   
-    }else if(!inputData.email){
-      setFormStatus("Email can not be blank.")
-      setCloseIcon(true);  
-    }else if(!inputData.companyname){
-      setFormStatus("Company Name can not be blank.")
-      setCloseIcon(true);  
-    }else if(!inputData.contactno){
-      setFormStatus("Phone Number can not be blank.")
-      setCloseIcon(true);  
-    }else if(!inputData.password){
-      setFormStatus("Password can not be blank.")
-      setCloseIcon(true);                                  
-    }else{
-      inputData.userid = profileData && profileData.userid ? profileData.userid : '';
-      axios.post(`${process.env.API_BASE_URL}adduser.php`,inputData,{
-        headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-        .then(res => {
-            const data = res.data;
-            if(res &&  res.data && res.data.error && res.data.error.length > 0){
-                setFormStatus(res.data.error);
-                setCloseIcon(true);
-            }else if(res &&  res.data && res.data.msg && res.data.msg.length > 0){
-                    //Router.push('/thankyou')
-                    setFormStatus("User added successfully.");
-                    //localStorage.clear();
-                    setInputData({
-                      companyname : '',
-                      name : '',
-                      email : '',
-                      contactno : '',
-                      password : ''
-                  });
-
-                    setCloseIcon(true);
-                    setSubmitBtn({
-                      padding: '1rem 0rem',
-                      display: 'block',
-                      color: '#46c737'
-                    })
-                  }
-  
-      })
-      .catch(err => {
-       })
-    }
-  }
   return (
     <>
       <Head>
@@ -294,35 +233,6 @@ import MobileSideBar from './components/MobileSideBar';
                                       }} > <i data-lucide="trash-2" className="w-4 h-4 mr-1"></i> Delete </a>
                                   </div>
                               </td>                                    
-                              {/* <td className="table-report__action w-56">
-                                  <div className="flex justify-center items-center">
-                                      <Link className="flex items-center mr-3" href="#" onClick={()=>{
-                              redirectDetail(users.id, 'edit')
-                          }} ><CheckSquare className="w-4 h-4 mr-1"/> Edit </Link>
-                                      <Link className="flex items-center text-danger" href="#" onClick={()=>userDeleted(users.id)}> <Trash2  className="w-4 h-4 mr-1" /> Delete </Link>
-                                  </div>
-                                  <div id={'delete-confirmation-modal'+u} className="modal" tabIndex="-1" aria-hidden="true">
-                                    <div className="modal-dialog">
-                                        <div className="modal-content">
-                                            <div className="modal-body p-0">
-                                                <div className="p-5 text-center">
-                                                    <XCircle className="w-16 h-16 text-danger mx-auto mt-3" /> 
-                                                    <div className="text-3xl mt-5">Are you sure?</div>
-                                                    <div className="text-slate-500 mt-2">
-                                                        Do you really want to delete these records? 
-                                                        <br />
-                                                        This process cannot be undone.
-                                                    </div>
-                                                </div>
-                                                <div className="px-5 pb-8 text-center">
-                                                    <button type="button" data-tw-dismiss="modal" className="btn btn-outline-secondary w-24 mr-1">Cancel</button>
-                                                    <button type="button" onClick={() => userDeleted(u)} className="btn btn-danger w-24" >Delete</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                  </div>
-                              </td> */}
                             </tr>
                           ))}
                         </tbody>

@@ -174,7 +174,7 @@ const ProfileContent = (props)=>{
                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                             alt: "",
                                             className: "rounded-full pro-img comp-logo",
-                                            src: props && props.profile && props.profile.logo ? props.profile.logo : ""
+                                            src: props && props.profile && props.profile.logo ? props.profile.logo : "https://reseller.ezrankings.in//dashboard/images/avtar.png"
                                         })
                                     })
                                 ]

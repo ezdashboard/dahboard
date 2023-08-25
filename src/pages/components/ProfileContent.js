@@ -52,7 +52,7 @@ const ProfileContent = (props) =>{
             <Link className="logo-ipload" href="#">
                 <h5>Company Name: {props && props.profile && props.profile.companyname? props.profile.companyname : ''}</h5>
                 <div className="avatar-preview">
-                    <img alt="" className="rounded-full pro-img comp-logo" src={props && props.profile && props.profile.logo? props.profile.logo : ''} />
+                    <img alt="" className="rounded-full pro-img comp-logo" src={props && props.profile && props.profile.logo? props.profile.logo : 'https://reseller.ezrankings.in//dashboard/images/avtar.png'} />
                 </div>
             </Link>
         </div>

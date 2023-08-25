@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/8cSayhdMvaBFK-8utEdKh/_buildManifest.js",
-    "static/8cSayhdMvaBFK-8utEdKh/_ssgManifest.js"
+    "static/ukA9qISn_91UxASUTJzGX/_buildManifest.js",
+    "static/ukA9qISn_91UxASUTJzGX/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -43,7 +43,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/add-report-6c9120d336dd491c.js"
+      "static/chunks/pages/add-report-fc8ee614b18eccbb.js"
     ],
     "/add-resource": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -103,7 +103,7 @@
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
-      "static/chunks/pages/components/ProfileContent-6ccb394a1429b218.js"
+      "static/chunks/pages/components/ProfileContent-abc6d2028f9e20ee.js"
     ],
     "/components/ShowProfile": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -174,7 +174,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/profile-301f0ddd6018a377.js"
+      "static/chunks/pages/profile-b3781acbb1c16989.js"
     ],
     "/project-edit-detail": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -182,7 +182,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/project-edit-detail-6b51b6cfb57cc81b.js"
+      "static/chunks/pages/project-edit-detail-ca0333f2f1192ac7.js"
     ],
     "/projectList": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -191,7 +191,7 @@
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
       "static/chunks/130-121f72401ac076b8.js",
-      "static/chunks/pages/projectList-d2e69e519fb31adf.js"
+      "static/chunks/pages/projectList-af27819db4541d3d.js"
     ],
     "/reseller-benefits": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -223,7 +223,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/update-profile-d2d04b61fe37cf8a.js"
+      "static/chunks/pages/update-profile-1d4cfb10ccfff189.js"
     ],
     "/user-edit": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -240,7 +240,7 @@
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
       "static/chunks/130-121f72401ac076b8.js",
-      "static/chunks/pages/users-62e400200855f1af.js"
+      "static/chunks/pages/users-fb76fade9039be88.js"
     ],
     "/users/[edituser]": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

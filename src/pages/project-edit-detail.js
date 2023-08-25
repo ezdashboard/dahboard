@@ -30,9 +30,9 @@ export default function EditReportDetail  () {
       userid : ''
    });
    const [userStoreData, setUserStoreData] = useState([]);
-   const getUserData = async () => {
+   const getUserData = async (userid) => {
 
-    axios.get(`${process.env.API_BASE_URL}usersD.php?page=`)
+    axios.get(`${process.env.API_BASE_URL}usersD.php?page=${userid}`)
       .then(res => {
           const data = res.data.map((item) => {
             return {
@@ -72,9 +72,9 @@ const inputChangeData =(event)=> {
    
    }
   
-const getReportData = (id)=>{
+const getReportData = (id, userid)=>{
    if(id){
-      axios.get(`${process.env.API_BASE_URL}getreport.php?url=${id}`)
+      axios.get(`${process.env.API_BASE_URL}getreport.php?url=${id}&user=${userid}`)
       .then(res => {
       // setLearningData(data);
       setReportData({
@@ -230,9 +230,9 @@ useEffect(() => {
     if(localStorage.projectId){
       setprojectId(localStorage.projectId);
     }
-    getReportData(localStorage.projectId);
+    getReportData(localStorage.projectId, localStorage.userid);
     getServiceData();
-    getUserData();
+    getUserData(localStorage.userid);
     }, []);
 
  return(

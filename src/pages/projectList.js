@@ -186,9 +186,9 @@ const getServiceData = async () => {
                                 <option value="" select="selected">Service</option>
                                     {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{
                                         return(
-                                            <>
+                                            
                                             <option value ={service.id} key={s}>{service.name}</option>
-                                            </>
+                                            
                                         )
                                     })}
                             </select>
@@ -215,7 +215,7 @@ const getServiceData = async () => {
                             <tr className="project-heading">
                                 <th className="whitespace-nowrap">Services</th>
                                 <th className="whitespace-nowrap">Project URL / Status</th>
-                               {addBtn && <th className="whitespace-nowrap">User / Manager</th>}
+                               {addBtn && <th className="whitespace-nowrap">{dasbboardType && dasbboardType =='admin' ? 'User / Manager' : 'User'}</th>}
                                 <th className="text-center whitespace-nowrap">Plan Opted</th>
                                 <th className="text-center whitespace-nowrap">Billing Amount</th>
                                 <th className="text-center whitespace-nowrap">Start Date</th>
@@ -240,8 +240,11 @@ const getServiceData = async () => {
                             </td>
                             {addBtn &&
                             <td>
-                                <a href={'#'} className="font-medium whitespace-nowrap">{report.username}</a>
-                                <div className= {'font-medium whitespace-nowrap'}bis_skin_checked="1">{report.managerName}</div>
+                                <a href={'#'} className="font-medium whitespace-nowrap">{report.username} { dasbboardType && dasbboardType =='admin' ? '/': ''}</a>
+                                {
+                                  dasbboardType && dasbboardType =='admin' && 
+                                  <div className= {'font-medium whitespace-nowrap'}bis_skin_checked="1">  {report.managerName}</div>
+                                  }
                             </td>   
                             }                         
                             <td className="text-center">{report.planOpted}</td>

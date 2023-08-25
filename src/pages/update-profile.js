@@ -158,7 +158,7 @@ import { useRouter } from "next/router";
     const [closeIcon, setCloseIcon] = useState(false)
     const [isValidEmail, setIsValidEmail] = useState(false)
     useEffect(() => {
-        if(localStorage.title && localStorage.email && localStorage.logo && localStorage.companyname && localStorage.userid && localStorage.name){
+        if(localStorage.email && localStorage.userid && localStorage.name){
             setProfileData({
                 companyname : localStorage.companyname,
                 title : localStorage.title,

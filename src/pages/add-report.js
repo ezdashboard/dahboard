@@ -162,7 +162,7 @@ const AddReport = ()=>{
          })
      }            
     useEffect(() => {
-        if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type=="admin"){
+        if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type != "user"){
             setSideBarAccess({
                 users : true
             })

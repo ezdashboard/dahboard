@@ -106,7 +106,7 @@ const onSubmit = (e) => {
 }
 useEffect(() => {
     setBodyCss('py-5');
-    if(localStorage.title && localStorage.email && localStorage.logo && localStorage.companyname && localStorage.userid && localStorage.name){
+    if(localStorage.email && localStorage.userid && localStorage.name){
         setProfileData({
             companyname : localStorage.companyname,
             title : localStorage.title,

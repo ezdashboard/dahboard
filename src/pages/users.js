@@ -238,7 +238,7 @@ import MobileSideBar from './components/MobileSideBar';
                     </table>
                 </div>
 
-            { loading && 
+            { loading && totalPages && totalPages > 1 &&
                 <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
                   <nav className="w-full sm:w-auto sm:mr-auto">
                       <ul className="pagination">

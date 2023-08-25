@@ -233,7 +233,7 @@ import MobileSideBar from './components/MobileSideBar';
         <TopHeader />
         {dasbboardType && (dasbboardType == 'user') && <UserDashboard data={dashData} />}
         {dasbboardType && (dasbboardType == 'admin' || dasbboardType == 'Manager') && <AdminDasbboard data={dashData} type={dasbboardType}/>}
-        <NewsLetter />     
+        <NewsLetter userType={dasbboardType}/>     
         </div>  
       </div>
     </>

@@ -24,7 +24,7 @@ axios__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (awa
 
 
 
-const NewsLetter = ()=>{
+const NewsLetter = (props)=>{
     const [newsData, setNewsData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [styyyyy, setStyleCss] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
     const [delteId, setDeleteId] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
@@ -219,7 +219,7 @@ const NewsLetter = ()=>{
                                                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                                                     className: "font-medium btn-fle mt-5",
                                                                     children: [
-                                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                                                        props && props.userType && props.userType && props.userType == "admin" && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
                                                                             type: "button",
                                                                             className: "btn btn-secondary py-1 px-2",
                                                                             onClick: ()=>{

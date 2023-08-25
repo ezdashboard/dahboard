@@ -15,6 +15,7 @@ import MobileSideBar from './components/MobileSideBar';
  const ProjectList = ()=> {
 
   const [loading, setLoading] = useState(false);
+  const [dasbboardType, setDashboardType] = useState('');
   const [reportData, setReportData] = useState([]);
   const [serviceStoreData, setServiceStoreData] = useState([]);
   const [totalPages, setPageCount] = useState(1);
@@ -141,6 +142,8 @@ const getServiceData = async () => {
     }else{
     if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type !="user"){
       setAddBtn(true);
+      setDashboardType(localStorage.type);
+
     }
 
     }
@@ -212,7 +215,7 @@ const getServiceData = async () => {
                             <tr className="project-heading">
                                 <th className="whitespace-nowrap">Services</th>
                                 <th className="whitespace-nowrap">Project URL / Status</th>
-                                <th className="whitespace-nowrap">User / Manager</th>
+                               {addBtn && <th className="whitespace-nowrap">User / Manager</th>}
                                 <th className="text-center whitespace-nowrap">Plan Opted</th>
                                 <th className="text-center whitespace-nowrap">Billing Amount</th>
                                 <th className="text-center whitespace-nowrap">Start Date</th>
@@ -235,10 +238,12 @@ const getServiceData = async () => {
                                 <a href={report.projectUrl} target="_blank" className="font-medium whitespace-nowrap">{report.projectUrl}</a>
                                 <div className= {report.projectStatus=='Active' ? 'text-slate-500 text-xs whitespace-nowrap mt-0.5 text-success' : 'text-slate-500 text-xs whitespace-nowrap mt-0.5 text-danger'}bis_skin_checked="1">{report.projectStatus}</div>
                             </td>
+                            {addBtn &&
                             <td>
                                 <a href={'#'} className="font-medium whitespace-nowrap">{report.username}</a>
                                 <div className= {'font-medium whitespace-nowrap'}bis_skin_checked="1">{report.managerName}</div>
-                            </td>                            
+                            </td>   
+                            }                         
                             <td className="text-center">{report.planOpted}</td>
                             <td className="w-40">
                                 <div className="flex items-center justify-center" bis_skin_checked="1">
@@ -314,7 +319,7 @@ const getServiceData = async () => {
                 <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem"}}>Loading....</h1>   
               </div>}  
 
-          {loading && <NewsLetter />}
+          {loading && <NewsLetter userType={dasbboardType}/>}
          </div>
       </div>
     </>

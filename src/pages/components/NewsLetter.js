@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import Head from 'next/head';
 
-const NewsLetter = ()=>{
+const NewsLetter = (props)=>{
 const [newsData, setNewsData] = useState([]);
 const [styyyyy,setStyleCss] = useState('');
 const [delteId, setDeleteId] = useState(0);
@@ -99,9 +99,13 @@ const NewsList = async (page) => {
                                                     <div className="text-slate-400 mt-1" bis_skin_checked="1">{newsI.time} ago</div>
                                                     <div className="text-slate-500 text-justify mt-1" bis_skin_checked="1">{newsI.content}</div>
                                                     <div className="font-medium btn-fle mt-5">
+                                                        
+                                                    {
+                                                        props && props.userType && props.userType && props.userType == 'admin' &&
                                                         <button type="button" className="btn btn-secondary py-1 px-2"onClick={()=>{
-                                        setModalCssFun(newsI.id)
-                                      }}>Delete</button>
+                                                            setModalCssFun(newsI.id)
+                                                        }}>Delete</button>
+                                                    }
                                                         <button type="button" onClick={()=>Dismiss(newsI.id)} className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
                                                     </div>
                                                 </div>

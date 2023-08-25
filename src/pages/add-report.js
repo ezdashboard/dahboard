@@ -120,9 +120,9 @@ const AddReport = ()=>{
          })
       }
     }
-    const getUserData = async () => {
+    const getUserData = async (userid) => {
 
-        axios.get(`${process.env.API_BASE_URL}usersD.php?page=`)
+        axios.get(`${process.env.API_BASE_URL}usersD.php?userid=${userid}`)
           .then(res => {
               const data = res.data.map((item) => {
                 return {
@@ -166,9 +166,10 @@ const AddReport = ()=>{
             setSideBarAccess({
                 users : true
             })
+            getUserData(localStorage.userid);
+            getServiceData();
         }
-        getUserData();
-        getServiceData();
+
         }, []);
     return(
         <>

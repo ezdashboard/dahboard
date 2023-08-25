@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Head from 'next/head'
 import axios from 'axios';
-// import routes from './routes';
 import SideBar from './components/SideBar';
 import NewsLetter from './components/NewsLetter';
 import TopHeader from './components/TopHeade';
@@ -170,22 +169,7 @@ import MobileSideBar from './components/MobileSideBar';
        
       
         const timer = setTimeout(() => {
-        //   let ctx = document.getElementById("myChart").getContext('2d');
-    
-        // if (ctx) {
-        //   const myChart = new Chart(ctx, {
-        //     type: 'pie',
-        //     data: {
-        //       labels: ["M","T"],
-        //       datasets: [
-        //         {
-        //           backgroundColor: [localStorage.color, '#f5f5f5'],
-        //           data: [localStorage.graph2, 100-localStorage.graph2],
-        //         },
-        //       ],
-        //     },
-        //   });
-        //   console.log(myChart, 'gwl21');
+
           applewatchgraph(document.querySelector('#group1 .graph1'), 'price', {
             color: '#ff180e',
             autostart: true
@@ -198,21 +182,7 @@ import MobileSideBar from './components/MobileSideBar';
           color: '#09daff',
           autostart: true
       });
-    //}
-
-
-        
-        // group 1
-        // var callFun = false;
-        // setTimeout(true, 2500);
-        // if(callFun){
-
-        //}
-
-
-
-
-        
+    //} 
         // group 2
         let  ctx = document.getElementById("myChart");
          ctx = ctx ? ctx.getContext('2d'):'';
@@ -229,29 +199,6 @@ import MobileSideBar from './components/MobileSideBar';
             }]
           }
         });
-        // var graph21 = applewatchgraph(document.querySelector('#group2 .graph1'), 70, {
-        //         color: '#ff180e',
-        //         autostart: false
-        //     });
-        // var graph22 = applewatchgraph(document.querySelector('#group2 .graph2'), 55, {
-        //         color: '#9bfe07',
-        //         autostart: false
-        //     });
-        // var graph23 = applewatchgraph(document.querySelector('#group2 .graph3'), 26, {
-        //         color: '#09daff',
-        //         autostart: false
-        //     });
-            
-        //     if(graph21 && graph21.start){
-        //         setTimeout(graph21.start, 2000);
-        //     }
-        //     if(graph21 && graph22.start){
-        //         setTimeout(graph22.start, 2500);
-        //     }
-        //     if(graph23 && graph23.start){
-        //         setTimeout(graph23.start, 3000);
-        //     }
-
         }, 2000);
         return () => clearTimeout(timer);
       }, []);
@@ -284,8 +231,8 @@ import MobileSideBar from './components/MobileSideBar';
         <SideBar />
         <div className="content">
         <TopHeader />
-        {dasbboardType && (dasbboardType == 'user' || dasbboardType == 'Manager') && <UserDashboard data={dashData} />}
-        {dasbboardType && dasbboardType == 'admin' && <AdminDasbboard data={dashData} />}
+        {dasbboardType && (dasbboardType == 'user') && <UserDashboard data={dashData} />}
+        {dasbboardType && (dasbboardType == 'admin' || dasbboardType == 'Manager') && <AdminDasbboard data={dashData} type={dasbboardType}/>}
         <NewsLetter />     
         </div>  
       </div>

@@ -7,16 +7,19 @@ import MobileSideBar from './components/MobileSideBar';
 
 export default function EditReportDetail  () {
    const [bodyCsss, setBodyCss] = useState('py-5');
+   const [showManager, setShowManager] = useState(false)
    const [closeIcon, setCloseIcon] = useState(false)
    const [submitBtn, setSubmitBtn] = useState({})
    const [msg, setFormStatus] = useState('')
    const [selectedFile, setSelectedFile] = useState(null);
-
+   const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
+   const [usersData, setusersData]= useState({});
+   const [isValidEmail, setIsValidEmail] = useState(false)
+   const [managerStoreData, setManagerStoreData] = useState([]);
+   const [UserUpId, setUserUpId] = useState('');
+   const [loading, setLoading] = useState(false);
    const [serviceStoreData, setServiceStoreData] = useState([]);
-
-   const [inputData, setInputData] = useState({
-
-  });
+   const [inputData, setInputData] = useState({});
    const [profileData, setProfileData] = useState({
       companyname : '',
       title : '',
@@ -30,6 +33,7 @@ export default function EditReportDetail  () {
       userid : ''
    });
    const [userStoreData, setUserStoreData] = useState([]);
+   
    const getUserData = async () => {
 
     axios.get(`${process.env.API_BASE_URL}users.php?page=`)
@@ -54,17 +58,17 @@ export default function EditReportDetail  () {
     .catch(err => {
      })
  } 
-const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
-const [usersData, setusersData]= useState({});
-const [isValidEmail, setIsValidEmail] = useState(false)
 
-const [UserUpId, setUserUpId] = useState('');
-const [loading, setLoading] = useState(false);
 const submitCloseIcon = ()=>{
    setCloseIcon(false);
  }
 const inputChangeData =(event)=> {
    const {name, value} = event.target;
+   if(name && name=="type" && value && value =="user"){
+    setShowManager(true);
+  }else if(name && name=="type" && (!value || value !="user")){
+    setShowManager(false);
+  }
      setInputData((valuePre)=>{
     return{
       ...valuePre,
@@ -99,6 +103,8 @@ const getUser = (id)=>{
         userid : res.data[0]['userid'],
         logo : res.data[0]['logo'],
         email : res.data[0]['email'],
+        mangerName: res.data[0]['mangerName'],
+        mangerId: res.data[0]['mangerId'],
         name : res.data[0]['name'],
         title : res.data[0]['title'],
         type : res.data[0]['type'],
@@ -110,6 +116,9 @@ const getUser = (id)=>{
         password : '',
         //  userid : localStorage && localStorage.userid ? localStorage.userid : '' 
         })
+        if(res.data[0]['mangerId'] && res.data[0]['type']=='user'){
+          setShowManager(true)
+        }
       setLoading(true);
    })
    .catch(err => {
@@ -175,7 +184,30 @@ const onSubmit = (e) => {
      })
   }
 }
- 
+const getManagerData = async (userid) => {
+
+  axios.get(`${process.env.API_BASE_URL}managerList.php?userid=${userid}`)
+    .then(res => {
+        const data = res.data.map((item) => {
+          return {
+            id: item.userid,
+            name: item.name,
+            email: item.email,
+            contactno: item.contactno,
+            companyname: item.companyname,
+            title: item.title,
+            logo: item.logo,
+            type: item.type,
+            status: item.status == '1' ? 'Active' : 'Inactive',
+            image: item.image
+          }
+      }
+    )
+    setManagerStoreData(data);
+  })
+  .catch(err => {
+   })
+}  
 useEffect(() => {
     setBodyCss('py-5');
     if(localStorage.title && localStorage.email && localStorage.logo && localStorage.companyname && localStorage.userid && localStorage.name){
@@ -191,6 +223,7 @@ useEffect(() => {
             logo : localStorage.logo,
             userid : localStorage.userid
         });
+        getManagerData(localStorage.userid);
     }
     if(localStorage.UserUpId){
       setUserUpId(localStorage.UserUpId);
@@ -265,6 +298,23 @@ useEffect(() => {
                                   <option value="Manager">MANAGER</option>
                               </select>
                           </div>
+                          {
+                              showManager && 
+                            <div className="intro-y col-span-12 sm:col-span-6" bis_skin_checked="1">
+                            <label htmlFor="input-wizard-6" className="form-label">Assign Manager</label>
+                            <select className="form-select" onChange={inputChangeData} name="mangerId">
+                                <option value={inputData.mangerId}>{inputData.mangerName ? inputData.mangerName :'Select'}</option>
+                                {managerStoreData && managerStoreData.length > 0 && managerStoreData.map((mang, m)=>{
+                                  return(
+                                    <>
+                                   <option value={mang.id} key={m}>{mang.name}</option>
+
+                                    </>
+                                  )
+                                })}
+                            </select>
+                            </div> 
+                            }
                           <div className="intro-y col-span-12 sm:col-span-6">
                             <label htmlFor="input-wizard-3" className="form-label">Phone Number*</label>
                             <input type="number" className="form-control" placeholder="+91 " onChange={inputChangeData} name="contactno" value={inputData.contactno}/>

@@ -8,6 +8,8 @@ import MobileSideBar from './components/MobileSideBar';
 
 const Adduser=()=>{
     const [selectedFile, setSelectedFile] = useState(null);
+    const [showManager, setShowManager] = useState(false)
+    const [managerStoreData, setManagerStoreData] = useState([]);
 
     const handleFileChange = (event) => {
       setSelectedFile(event.target.files[0]);
@@ -19,6 +21,7 @@ const Adduser=()=>{
         title : '',
         name : '',
         email : '',
+        mangerId: '',
         contactno : '',
         about : '',
         location : '',
@@ -31,6 +34,7 @@ const Adduser=()=>{
         title : '',
         name : '',
         email : '',
+        mangerId: '',
         contactno : '',
         about : '',
         location : '',
@@ -40,15 +44,7 @@ const Adduser=()=>{
         userid : ''
     });
 
-    const [hiddenTitleIndex, setHiddenTitleIndex] = useState(0);
-    
-    const toggleHiddenTitle = (index) => {
-      if (hiddenTitleIndex === index) {
-        setHiddenTitleIndex(null);
-      } else {
-        setHiddenTitleIndex(index);
-      }
-    };
+
     const [closeIcon, setCloseIcon] = useState(false)
     const [isValidEmail, setIsValidEmail] = useState(false)
     useEffect(() => {
@@ -71,6 +67,12 @@ const Adduser=()=>{
     const [submitBtn, setSubmitBtn] = useState({})
     const inputChangeData =(event)=> {
     const {name, value} = event.target;
+    if(name && name=="type" && value && value =="user"){
+      setShowManager(true);
+    }else if(name && name=="type" && (!value || value !="user")){
+      setShowManager(false);
+
+    }
     setInputData((valuePre)=>{
     return{
       ...valuePre,
@@ -81,6 +83,30 @@ const Adduser=()=>{
     const submitCloseIcon = ()=>{
       setCloseIcon(false);
     }
+    const getManagerData = async (userid) => {
+
+      axios.get(`${process.env.API_BASE_URL}managerList.php?userid=${userid}`)
+        .then(res => {
+            const data = res.data.map((item) => {
+              return {
+                id: item.userid,
+                name: item.name,
+                email: item.email,
+                contactno: item.contactno,
+                companyname: item.companyname,
+                title: item.title,
+                logo: item.logo,
+                type: item.type,
+                status: item.status == '1' ? 'Active' : 'Inactive',
+                image: item.image
+              }
+          }
+        )
+        setManagerStoreData(data);
+      })
+      .catch(err => {
+       })
+   }  
     const onSubmit = (e) => {
       e.preventDefault()
       setSubmitBtn({
@@ -97,8 +123,11 @@ const Adduser=()=>{
         setFormStatus("Name can not be blank.")
         setCloseIcon(true);
       }else if(!inputData.type){
-        setFormStatus("User type can not be blank.")
+        setFormStatus("Please select user type.")
         setCloseIcon(true);   
+      }else if(inputData.type && inputData.type == 'user' && !inputData.mangerId){
+        setFormStatus("Please select manager.")
+        setCloseIcon(true);         
       }else if(!inputData.email){
         setFormStatus("Email can not be blank.")
         setCloseIcon(true);  
@@ -131,6 +160,7 @@ const Adduser=()=>{
                         companyname : '',
                         name : '',
                         email : '',
+                        mangerId:'',
                         contactno : '',
                         type:'',
                         password : ''
@@ -149,6 +179,11 @@ const Adduser=()=>{
          })
       }
     }
+    useEffect(() => {
+      if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type=="admin"){
+          getManagerData(localStorage.userid);
+      }
+      }, []);
     return (
         <> 
         <Head>
@@ -201,13 +236,30 @@ const Adduser=()=>{
                                 <input type="text" className="form-control" placeholder="XYZ" onChange={inputChangeData} name="companyname" value={inputData.companyname}/>
                             </div>
                             <div className="intro-y col-span-12 sm:col-span-6" bis_skin_checked="1">
-                                <label htmlFor="input-wizard-6" className="form-label">Department</label>
+                                <label htmlFor="input-wizard-6" className="form-label">Role</label>
                                 <select className="form-select" onChange={inputChangeData} name="type">
-                                    <option value={inputData.type}>Select</option>
+                                    <option value="">Select</option>
                                     <option value="user">User</option>
                                     <option value="Manager">Manager</option>
                                 </select>
                             </div>
+                            {
+                              showManager && 
+                            <div className="intro-y col-span-12 sm:col-span-6" bis_skin_checked="1">
+                            <label htmlFor="input-wizard-6" className="form-label">Assign Manager</label>
+                            <select className="form-select" onChange={inputChangeData} name="mangerId">
+                                <option value={inputData.mangerId}>Select</option>
+                                {managerStoreData && managerStoreData.length > 0 && managerStoreData.map((mang, m)=>{
+                                  return(
+                                    <>
+                                   <option value={mang.id} key={m}>{mang.name}</option>
+
+                                    </>
+                                  )
+                                })}
+                            </select>
+                            </div> 
+                            }
                             <div className="intro-y col-span-12 sm:col-span-6">
                               <label htmlFor="input-wizard-3" className="form-label">Phone Number*</label>
                               <input type="number" className="form-control" placeholder="+91 " onChange={inputChangeData} name="contactno" value={inputData.contactno}/>

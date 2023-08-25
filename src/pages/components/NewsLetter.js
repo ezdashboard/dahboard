@@ -4,11 +4,40 @@ import Head from 'next/head';
 
 const NewsLetter = ()=>{
 const [newsData, setNewsData] = useState([]);
+const [styyyyy,setStyleCss] = useState('');
+const [delteId, setDeleteId] = useState(0);
 
 const Dismiss=(newId)=>{
     const updatedNewsStoreData = newsData.filter((news) => news.id !== newId);
     setNewsData(updatedNewsStoreData);
 }
+const [modalCss, setModalCss] = useState('modal');
+const setModalCssFun =(id)=>{
+  setModalCss('modal show overflow-y-auto modal-overlap deleteModal');
+  setDeleteId(id);
+  setStyleCss('');
+}
+const setModalCssCloseFun =()=>{
+  setStyleCss('none');
+  setModalCss('');
+  setDeleteId();
+}
+const userDeleted = async (newId) => {
+    setModalCssCloseFun();
+
+    axios.get(`${process.env.API_BASE_URL}newsDelete.php?newsId=${newId}`)
+    .then(res => {
+        if(res && res.data && res.data.status){
+        //   const updatedUserStoreData = newsData.filter((user) => user.id !== userId);
+        //   setNewsData(updatedUserStoreData);
+          const updatedNewsStoreData = newsData.filter((news) => news.id !== newId);
+          setNewsData(updatedNewsStoreData);
+          alert('Deleted successfully.');
+        }
+  })
+  .catch(err => {
+   })
+  };
 const [loading, setLoading] = useState(false);
 const NewsList = async (page) => {
     axios.get(`${process.env.API_BASE_URL}newsList.php`)
@@ -69,8 +98,10 @@ const NewsList = async (page) => {
                                                     <div className="text-base font-medium truncate" bis_skin_checked="1">{newsI.title}</div>
                                                     <div className="text-slate-400 mt-1" bis_skin_checked="1">{newsI.time} ago</div>
                                                     <div className="text-slate-500 text-justify mt-1" bis_skin_checked="1">{newsI.content}</div>
-                                                    <div className="font-medium flex mt-5" bis_skin_checked="1">
-                                                        {/* <button type="button" className="btn btn-secondary py-1 px-2">View Notes</button> */}
+                                                    <div className="font-medium btn-fle mt-5">
+                                                        <button type="button" className="btn btn-secondary py-1 px-2"onClick={()=>{
+                                        setModalCssFun(newsI.id)
+                                      }}>Delete</button>
                                                         <button type="button" onClick={()=>Dismiss(newsI.id)} className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
                                                     </div>
                                                 </div>
@@ -84,6 +115,27 @@ const NewsList = async (page) => {
                 </div>
             </div>
         </div>  
+        <div id="delete-confirmation-modal" style={{display:styyyyy}}className={modalCss} tabIndex="-1" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-body p-0">
+                        <div className="p-5 text-center">
+                            <i data-lucide="x-circle" className="w-16 h-16 text-danger mx-auto mt-3"></i> 
+                            <div className="text-3xl mt-5">Are you sure?</div>
+                            <div className="text-slate-500 mt-2">
+                                Do you really want to delete these records? 
+                                <br />
+                                This process cannot be undone.
+                            </div>
+                        </div>
+                        <div className="px-5 pb-8 text-center">
+                            <button type="button" onClick={setModalCssCloseFun} className="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                            <a href="#" onClick={()=>userDeleted(delteId)} className="btn btn-danger w-24">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
         </>
     )
 }

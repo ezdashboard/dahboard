@@ -100,7 +100,6 @@ const onSubmit = (e) => {
                     title:"",
                     userid : profileData && profileData.userid ? profileData.userid : ''
                   });
-                  //Router.push('/thankyou')
                   setFormStatus("Submit Successfully.");
                   setCloseIcon(true);
                   setSubmitBtn({
@@ -139,11 +138,11 @@ useEffect(() => {
         <Link href="/projectList">
             <div className="#">
                 <div className="report-box zoom-in card" >
-                        <div className="box p-5" bis_skin_checked="1">
+                            <div className="box p-5" bis_skin_checked="1">
                                 <div className="flex" bis_skin_checked="1">
                                     <i className="far fa-tasks"></i>
                                 </div>
-                                <div className="text-3xl font-medium leading-8" bis_skin_checked="1"><b>{props && props.data && props.data.total_project ? props.data.total_project : '0'}+</b></div>
+                                <div className="text-3xl font-medium leading-8" bis_skin_checked="1"><b>{props && props.data && props.data.total_project ? props.data.total_project : '0'}</b></div>
                                 <div className="text-base text-slate-500 mt-1" bis_skin_checked="1">Total Projects</div>
                             </div>                       
                     </div>
@@ -156,7 +155,7 @@ useEffect(() => {
                             <div className="flex">
                                 <i className="far fa-users"></i>
                             </div>
-                            <div className="text-3xl font-medium leading-8"><b>{props && props.data && props.data.total_users ? props.data.total_users : '0'}+</b></div>
+                            <div className="text-3xl font-medium leading-8"><b>{props && props.data && props.data.total_users ? props.data.total_users : '0'}</b></div>
                             <div className="text-base text-slate-500 mt-1">Total Users</div>
                         </div>
                 </div>
@@ -182,20 +181,20 @@ useEffect(() => {
                         <div className="flex">
                             <i className="far fa-user-times"></i>
                         </div>
-                        <div className="text-3xl font-medium leading-8">50+</div>
+                        <div className="text-3xl font-medium leading-8">50</div>
                         <div className="text-base text-slate-500 mt-1">Pending Request</div>
                     </div>
                 </div>
             </div>
             </Link>
         </div>
+        {props && props.type && props.type=="admin" &&
         <div className="newsletter-box">
             <div className="intro-y box lg:mt-5" bis_skin_checked="1">
             <div className="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400" bis_skin_checked="1">
                 <h2 className="font-medium text-base mr-auto">Add New</h2>
             </div>
             
-            {closeIcon  ?<span style={submitBtn}>{msg}  <span onClick={submitCloseIcon}><X  size="16" color="#999"/></span></span>: ""}
             
             <div className="p-5" bis_skin_checked="1">
                 <form onSubmit={onSubmit}>
@@ -205,12 +204,15 @@ useEffect(() => {
                 <div className="mt-3" bis_skin_checked="1">
                     <textarea rows="5" name="content" onChange={inputChangeData}  className="form-control" placeholder="Write Something Here...." value={inputData.content}></textarea>
                 </div>
+
                 <button type="submit" className="btn btn-primary mt-4">Save</button>
+                {closeIcon  ?<span style={submitBtn} className="success"><p>{msg}</p>  <p onClick={submitCloseIcon}><p>X</p></p></span>: ""}
+
                 </form>
             </div>
         </div>
         </div>
-        {/* <NewsLetter />                      */}
+        }
         </>
     )
 }

@@ -76,6 +76,8 @@ const searchFilterData = () =>{
             projectUrl: item.projectUrl,
             planOpted: item.planOpted,
             billingAmt: item.billingAmt,
+            username: item.username ? item.username : 'User Deleted',
+            managerName : item.managerName ? item.managerName : 'Manager Deleted',
             startDate: item.startDate,
             reportingDate: item.reportingDate,
             paymentStatus: item.paymentStatus,
@@ -137,7 +139,7 @@ const getServiceData = async () => {
     if(!localStorage.userid){
         Router.push('/login');
     }else{
-    if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type=="admin"){
+    if(localStorage && localStorage.length > 0 && localStorage.type && localStorage.type !="user"){
       setAddBtn(true);
     }
 
@@ -170,7 +172,7 @@ const getServiceData = async () => {
          <div className="content">
           <TopHeader />
               <div className="col-span-12 mt-6">
-{ loading &&  
+          { loading &&  
              <div className="col-span-12 mt-8">
                   <div className="col-span-12 mt-8">
                     <div className="intro-y flex items-center h-10">
@@ -197,35 +199,20 @@ const getServiceData = async () => {
                             </div>
                             <button type="button" onClick={searchFilterData}className="btn btn-primary w-32 ml-2">Search</button>
                         </div>
-                        {addBtn &&                        <button className="btn btn-primary new-repot" onClick={navigation}>Add New Report</button>}
+                        {addBtn && 
+                         <button className="btn btn-primary new-repot" onClick={navigation}>Add New</button>}
                     </div>
                   </div>
                 </div>}
                 
-                {/* <div className="col-md-12">
-                    <div className="flex flex-wrap items-center col-span-12 mt-2 intro-y sm:flex-nowrap" bis_skin_checked="1"> */}
-
-                        {/* <div className="hidden mx-auto md:block text-slate-500" bis_skin_checked="1">Showing 1 to 10 of {paging.total} entries
-                        </div> */}
-                        {/* <div className="w-full mt-3 sm:w-auto sm:mt-0 sm:ml-auto md:ml-0" bis_skin_checked="1">
-                          <div className="relative w-56 text-slate-500" bis_skin_checked="1">
-                             */}
-                              {/* <input type="text" className="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 w-56 pr-10 !box" placeholder="Search..." /> */}
-                                              {/* <div className="search hidden sm:block">
-                    <input type="text" className="search__input form-control border-transparent" placeholder="Search..." />
-                    <Search  className="search__icon dark:text-slate-500"/>
-                </div> */}
-                              {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="stroke-1.5 absolute inset-y-0 right-0 w-4 h-4 my-auto mr-3"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> */}
-                          {/* </div>
-                        </div> */}
-                    {/* </div>
-                </div> */}
- { loading &&              <div className="intro-y overflow-auto lg:overflow-visible mt-8 sm:mt-0" bis_skin_checked="1">
+            { loading &&  
+             <div className="intro-y overflow-scroll table-scroll lg:overflow-visible mt-8 sm:mt-0" bis_skin_checked="1">
                     <table className="table table-report sm:mt-2">
                         <thead>
                             <tr className="project-heading">
                                 <th className="whitespace-nowrap">Services</th>
                                 <th className="whitespace-nowrap">Project URL / Status</th>
+                                <th className="whitespace-nowrap">User / Manager</th>
                                 <th className="text-center whitespace-nowrap">Plan Opted</th>
                                 <th className="text-center whitespace-nowrap">Billing Amount</th>
                                 <th className="text-center whitespace-nowrap">Start Date</th>
@@ -248,6 +235,10 @@ const getServiceData = async () => {
                                 <a href={report.projectUrl} target="_blank" className="font-medium whitespace-nowrap">{report.projectUrl}</a>
                                 <div className= {report.projectStatus=='Active' ? 'text-slate-500 text-xs whitespace-nowrap mt-0.5 text-success' : 'text-slate-500 text-xs whitespace-nowrap mt-0.5 text-danger'}bis_skin_checked="1">{report.projectStatus}</div>
                             </td>
+                            <td>
+                                <a href={'#'} className="font-medium whitespace-nowrap">{report.username}</a>
+                                <div className= {'font-medium whitespace-nowrap'}bis_skin_checked="1">{report.managerName}</div>
+                            </td>                            
                             <td className="text-center">{report.planOpted}</td>
                             <td className="w-40">
                                 <div className="flex items-center justify-center" bis_skin_checked="1">
@@ -273,7 +264,7 @@ const getServiceData = async () => {
                                 }} className="pay-done">Edit</a>
                             </td>                             
                             }<td>
-                              <a target="_blank" href={report.dwlUrl} className="font-medium whitespace-nowrap report">Download Report</a>
+                              <a target="_blank" href={report.dwlUrl ? report.dwlUrl.substring(0, 4) == 'http' ? report.dwlUrl : 'https://'+report.dwlUrl : ''} className="font-medium whitespace-nowrap report">Download Report</a>
                             </td>
                           </tr>                  
                   </>

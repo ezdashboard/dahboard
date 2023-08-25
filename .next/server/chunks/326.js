@@ -26,9 +26,34 @@ axios__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (awa
 
 const NewsLetter = ()=>{
     const [newsData, setNewsData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
+    const [styyyyy, setStyleCss] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
+    const [delteId, setDeleteId] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
     const Dismiss = (newId)=>{
         const updatedNewsStoreData = newsData.filter((news)=>news.id !== newId);
         setNewsData(updatedNewsStoreData);
+    };
+    const [modalCss, setModalCss] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("modal");
+    const setModalCssFun = (id)=>{
+        setModalCss("modal show overflow-y-auto modal-overlap deleteModal");
+        setDeleteId(id);
+        setStyleCss("");
+    };
+    const setModalCssCloseFun = ()=>{
+        setStyleCss("none");
+        setModalCss("");
+        setDeleteId();
+    };
+    const userDeleted = async (newId)=>{
+        setModalCssCloseFun();
+        axios__WEBPACK_IMPORTED_MODULE_2__["default"].get(`${"https://reseller.ezrankings.in/dashboard/"}newsDelete.php?newsId=${newId}`).then((res)=>{
+            if (res && res.data && res.data.status) {
+                //   const updatedUserStoreData = newsData.filter((user) => user.id !== userId);
+                //   setNewsData(updatedUserStoreData);
+                const updatedNewsStoreData = newsData.filter((news)=>news.id !== newId);
+                setNewsData(updatedNewsStoreData);
+                alert("Deleted successfully.");
+            }
+        }).catch((err)=>{});
     };
     const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
     const NewsList = async (page)=>{
@@ -191,15 +216,24 @@ const NewsLetter = ()=>{
                                                                     bis_skin_checked: "1",
                                                                     children: newsI.content
                                                                 }),
-                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                                    className: "font-medium flex mt-5",
-                                                                    bis_skin_checked: "1",
-                                                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                        type: "button",
-                                                                        onClick: ()=>Dismiss(newsI.id),
-                                                                        className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
-                                                                        children: "Dismiss"
-                                                                    })
+                                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                                    className: "font-medium btn-fle mt-5",
+                                                                    children: [
+                                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                                                            type: "button",
+                                                                            className: "btn btn-secondary py-1 px-2",
+                                                                            onClick: ()=>{
+                                                                                setModalCssFun(newsI.id);
+                                                                            },
+                                                                            children: "Delete"
+                                                                        }),
+                                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                                                            type: "button",
+                                                                            onClick: ()=>Dismiss(newsI.id),
+                                                                            className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
+                                                                            children: "Dismiss"
+                                                                        })
+                                                                    ]
                                                                 })
                                                             ]
                                                         }, n)
@@ -213,6 +247,64 @@ const NewsLetter = ()=>{
                         })
                     })
                 ]
+            }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                id: "delete-confirmation-modal",
+                style: {
+                    display: styyyyy
+                },
+                className: modalCss,
+                tabIndex: "-1",
+                "aria-hidden": "true",
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    className: "modal-dialog",
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                        className: "modal-content",
+                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                            className: "modal-body p-0",
+                            children: [
+                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                    className: "p-5 text-center",
+                                    children: [
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("i", {
+                                            "data-lucide": "x-circle",
+                                            className: "w-16 h-16 text-danger mx-auto mt-3"
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                            className: "text-3xl mt-5",
+                                            children: "Are you sure?"
+                                        }),
+                                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                            className: "text-slate-500 mt-2",
+                                            children: [
+                                                "Do you really want to delete these records?",
+                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
+                                                "This process cannot be undone."
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                    className: "px-5 pb-8 text-center",
+                                    children: [
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                            type: "button",
+                                            onClick: setModalCssCloseFun,
+                                            className: "btn btn-outline-secondary w-24 mr-1",
+                                            children: "Cancel"
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                                            href: "#",
+                                            onClick: ()=>userDeleted(delteId),
+                                            className: "btn btn-danger w-24",
+                                            children: "Delete"
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    })
+                })
             })
         ]
     });

@@ -115,7 +115,6 @@ const AdminDasbboard = (props)=>{
                         title: "",
                         userid: profileData && profileData.userid ? profileData.userid : ""
                     });
-                    //Router.push('/thankyou')
                     setFormStatus("Submit Successfully.");
                     setCloseIcon(true);
                     setSubmitBtn({
@@ -169,11 +168,8 @@ const AdminDasbboard = (props)=>{
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                             className: "text-3xl font-medium leading-8",
                                             bis_skin_checked: "1",
-                                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("b", {
-                                                children: [
-                                                    props && props.data && props.data.total_project ? props.data.total_project : "0",
-                                                    "+"
-                                                ]
+                                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("b", {
+                                                children: props && props.data && props.data.total_project ? props.data.total_project : "0"
                                             })
                                         }),
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
@@ -203,11 +199,8 @@ const AdminDasbboard = (props)=>{
                                         }),
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                             className: "text-3xl font-medium leading-8",
-                                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("b", {
-                                                children: [
-                                                    props && props.data && props.data.total_users ? props.data.total_users : "0",
-                                                    "+"
-                                                ]
+                                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("b", {
+                                                children: props && props.data && props.data.total_users ? props.data.total_users : "0"
                                             })
                                         }),
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
@@ -269,7 +262,7 @@ const AdminDasbboard = (props)=>{
                                         }),
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                             className: "text-3xl font-medium leading-8",
-                                            children: "50+"
+                                            children: "50"
                                         }),
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                             className: "text-base text-slate-500 mt-1",
@@ -282,7 +275,7 @@ const AdminDasbboard = (props)=>{
                     })
                 ]
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+            props && props.type && props.type == "admin" && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: "newsletter-box",
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                     className: "intro-y box lg:mt-5",
@@ -296,20 +289,6 @@ const AdminDasbboard = (props)=>{
                                 children: "Add New"
                             })
                         }),
-                        closeIcon ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
-                            style: submitBtn,
-                            children: [
-                                msg,
-                                "  ",
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                    onClick: submitCloseIcon,
-                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_6__.X, {
-                                        size: "16",
-                                        color: "#999"
-                                    })
-                                })
-                            ]
-                        }) : "",
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             className: "p-5",
                             bis_skin_checked: "1",
@@ -344,7 +323,23 @@ const AdminDasbboard = (props)=>{
                                         type: "submit",
                                         className: "btn btn-primary mt-4",
                                         children: "Save"
-                                    })
+                                    }),
+                                    closeIcon ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+                                        style: submitBtn,
+                                        className: "success",
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                                children: msg
+                                            }),
+                                            "  ",
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                                onClick: submitCloseIcon,
+                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                                    children: "X"
+                                                })
+                                            })
+                                        ]
+                                    }) : ""
                                 ]
                             })
                         })

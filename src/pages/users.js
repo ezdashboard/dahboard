@@ -106,7 +106,7 @@ import MobileSideBar from './components/MobileSideBar';
    })
   };
   const fetchData = async (page) => {
-    axios.get(`${process.env.API_BASE_URL}users.php?page=${page}&limit=${limitp}`)
+    axios.get(`${process.env.API_BASE_URL}users.php?page=${page}&limit=${limitp}&user=${localStorage.userid}`)
       .then(res => {
           const data = res.data.userData.map((item) => {
             return {

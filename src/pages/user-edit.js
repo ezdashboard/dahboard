@@ -114,7 +114,7 @@ const getUser = (id)=>{
         location : res.data[0]['location'],
         image : res.data[0]['image'],
         password : '',
-        //  userid : localStorage && localStorage.userid ? localStorage.userid : '' 
+        updatedBy : localStorage && localStorage.tokenAuth ? localStorage.tokenAuth : '' 
         })
         if(res.data[0]['mangerId'] && res.data[0]['type']=='user'){
           setShowManager(true)

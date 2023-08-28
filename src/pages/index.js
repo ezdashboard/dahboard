@@ -85,6 +85,7 @@ import Router from 'next/router'
                         localStorage.setItem("email", data.userData[0]['email']);
                         localStorage.setItem("logo", data.userData[0]['logo']);
                         localStorage.setItem("userid", data.userData[0]['userid']);
+                        localStorage.setItem("tokenAuth", data.userData[0]['tokenAuth'].token);
                         localStorage.setItem("image", data.userData[0]['image']); 
                         localStorage.setItem("type", data.userData[0]['type']); 
                         localStorage.setItem("contactno", data.userData[0]['contactno']);

@@ -191,18 +191,15 @@ import { useRouter } from "next/router";
       }
         }, []);
     const [msg, setFormStatus] = useState('')
-
     const [submitBtn, setSubmitBtn] = useState({})
     const inputChangeData =(event)=> {
-    
       const {name, value} = event.target;
       setInputData((valuePre)=>{
      return{
        ...valuePre,
        [name]:value
      }
-    });
-    
+    })
     }
     const submitCloseIcon = ()=>{
       setCloseIcon(false);
@@ -217,7 +214,6 @@ import { useRouter } from "next/router";
       if(inputData && inputData.email){
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         setIsValidEmail(emailRegex.test(inputData.email));
-    
       }
       if(!inputData.name){
         setFormStatus("Name can not be blank.")
@@ -294,72 +290,72 @@ import { useRouter } from "next/router";
       </Head>
       <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">
-      <nav className="side-nav">
-        <Link href="#" className="intro-x flex items-center pl-5 pt-4"><img alt="" src={profileData.logo} /></Link>
-        <div className="side-nav__devider my-6"></div>
-        <ul>
-            <li>
-                <Link href="/dashboard" className={router.pathname == "/dashboard" ? "side-menu side-menu--active" : "side-menu"}>
-                    <div className="side-menu__icon">
+        <nav className="side-nav">
+          <Link href="#" className="intro-x flex items-center pl-5 pt-4"><img alt="" src={profileData.logo} /></Link>
+            <div className="side-nav__devider my-6"></div>
+            <ul>
+                <li>
+                    <Link href="/dashboard" className={router.pathname == "/dashboard" ? "side-menu side-menu--active" : "side-menu"}>
+                        <div className="side-menu__icon">
+                        
+                        <Home size={16}/>
+                        </div>
+                        <div className="side-menu__title">Dashboard</div>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/projectList" className={router.pathname == "/projectList" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
                     
-                    <Home size={16}/>
+                    <BookMarked size={16}/>
                     </div>
-                    <div className="side-menu__title">Dashboard</div>
-                </Link>
-            </li>
-            <li>
-                <Link href="/projectList" className={router.pathname == "/projectList" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                        <div className="side-menu__title">Project details & Reports</div>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/reseller-benefits" className={router.pathname == "/reseller-benefits" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                    
+                    <Sparkles  size={16}/>
+                    </div>
+                        <div className="side-menu__title">Reseller Benefits</div>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/learning-resources" className={router.pathname == "/learning-resources" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                    
+                    <Lightbulb size={16}/>
+                    </div>
+                        <div className="side-menu__title">Learning Resources</div>
+                    </Link>
+                </li>
+                <li className="side-nav__devider my-6">
+                </li>
+            </ul>
+            <ul className="bottom-list">
+                <li>
+                <Link href="/profile" className={router.pathname == "/profile" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
                 
-                <BookMarked size={16}/>
+                <Image  size={16}/>
                 </div>
-                    <div className="side-menu__title">Project details & Reports</div>
+                    <div className="side-menu__title">Profile</div>
                 </Link>
-            </li>
-            <li>
-                <Link href="/reseller-benefits" className={router.pathname == "/reseller-benefits" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
+                </li>
+                {   sideBarAccess.users &&  <li>
+                <Link href="/users" className={router.pathname == "/users" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
                 
-                <Sparkles  size={16}/>
+                <Users size={16}/>
                 </div>
-                    <div className="side-menu__title">Reseller Benefits</div>
+                    <div className="side-menu__title">Users</div>
                 </Link>
-            </li>
-            <li>
-                <Link href="/learning-resources" className={router.pathname == "/learning-resources" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
-                
-                <Lightbulb size={16}/>
+                </li>}
+                <li>
+                <Link href="#" onClick={onLogOut} className="side-menu"><div className="side-menu__icon">
+                <LogOut size={16}/>
                 </div>
-                    <div className="side-menu__title">Learning Resources</div>
+                    <div className="side-menu__title">SignOut</div>
                 </Link>
-            </li>
-            <li className="side-nav__devider my-6">
-            </li>
-        </ul>
-        <ul className="bottom-list">
-            <li>
-            <Link href="/profile" className={router.pathname == "/profile" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
-            
-            <Image  size={16}/>
-            </div>
-                <div className="side-menu__title">Profile</div>
-            </Link>
-            </li>
-            {   sideBarAccess.users &&  <li>
-            <Link href="/users" className={router.pathname == "/users" ? "side-menu side-menu--active" : "side-menu"}><div className="side-menu__icon">
-            
-            <Users size={16}/>
-            </div>
-                <div className="side-menu__title">Users</div>
-            </Link>
-            </li>}
-            <li>
-            <Link href="#" onClick={onLogOut} className="side-menu"><div className="side-menu__icon">
-            <LogOut size={16}/>
-            </div>
-                <div className="side-menu__title">SignOut</div>
-            </Link>
-            </li>
-        </ul>
-      </nav>
+                </li>
+            </ul>
+        </nav>
         <div className="content">
           <div className="top-bar">
               <nav className="-intro-x mr-auto hidden sm:flex">

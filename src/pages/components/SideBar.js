@@ -20,6 +20,7 @@ const SideBar =(props)=>{
     }
     useEffect(() => {
         if(!localStorage.userid || !localStorage.tokenAuth){
+            localStorage.clear();
             Router.push('/');
         }else{
             if(localStorage && localStorage.logo){

@@ -40,6 +40,7 @@ const SideBar = (props)=>{
     };
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
         if (!localStorage.userid || !localStorage.tokenAuth) {
+            localStorage.clear();
             next_router__WEBPACK_IMPORTED_MODULE_3___default().push("/");
         } else {
             if (localStorage && localStorage.logo) {

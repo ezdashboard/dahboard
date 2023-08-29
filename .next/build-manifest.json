@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/71S8OoF-h9cYEKzv91Qyn/_buildManifest.js",
-    "static/71S8OoF-h9cYEKzv91Qyn/_ssgManifest.js"
+    "static/KeHQFkKD4JHJaywg7L02G/_buildManifest.js",
+    "static/KeHQFkKD4JHJaywg7L02G/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -59,7 +59,7 @@
       "static/chunks/main-4dcb7f9b52833aba.js",
       "static/chunks/664-8af8765c6fed5950.js",
       "static/chunks/237-4c22379ba45799a6.js",
-      "static/chunks/pages/addUser-9d11544366a18474.js"
+      "static/chunks/pages/addUser-2850a2e0adba4fa3.js"
     ],
     "/components/AdminDasbboard": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

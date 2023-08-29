@@ -139,9 +139,9 @@ const Learning = ()=>{
             <link rel="dns-prefetch" href="//developers.google.com" />
             <link rel="dns-prefetch" href="//maps.googleapis.com" />
             <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>
-            <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
+            <script src="https://reseller.ezrankings.in/dashboard/js/markerclusterer.js"></script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-            <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
+            <script src="https://reseller.ezrankings.in/dashboard/js/app.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
         </Head>
         <MobileSideBar />
@@ -160,9 +160,9 @@ const Learning = ()=>{
                                 <option value="" select="selected">Select</option>
                                     {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{
                                         return(
-                                            <>
+                                            
                                             <option value ={service.id} key={s}>{service.name}</option>
-                                            </>
+                                           
                                         )
                                     })}
                             </select>
@@ -181,7 +181,7 @@ const Learning = ()=>{
             <div className="intro-y grid grid-cols-12 gap-6 mt-5">
               {learningData && learningData.length > 0 && learningData.map((learn, l)=>{
                   return(
-                      <>
+                      
                       <div className="intro-y col-span-12 md:col-span-6 xl:col-span-4 box learning-res" key={l}>
                           <div className="2xl:h-56 image-fit">
                                   <img alt="" src={learn.image} />
@@ -203,7 +203,7 @@ const Learning = ()=>{
                       </div>
                           </div>
                       </div>                            
-                      </>
+                      
                   )
               })}
             </div>

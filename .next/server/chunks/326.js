@@ -80,7 +80,7 @@ const NewsLetter = (props)=>{
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_3___default()), {
                 children: loading && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
-                    src: "https://reseller.ezrankings.in//dashboard/js/app.js"
+                    src: "https://reseller.ezrankings.in/dashboard/js/app.js"
                 })
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -190,54 +190,52 @@ const NewsLetter = (props)=>{
                                                 id: "important-notes",
                                                 bis_skin_checked: "1",
                                                 children: newsData && newsData.length > 0 && newsData.map((newsI, n)=>{
-                                                    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                                                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                            className: n == 0 ? "p-5 tns-item tns-slide-active" : "p-5 tns-item",
-                                                            id: "important-notes-item" + n,
-                                                            bis_skin_checked: "1",
-                                                            "aria-hidden": "true",
-                                                            tabIndex: "-1",
-                                                            children: [
-                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                                    className: "text-base font-medium truncate",
-                                                                    bis_skin_checked: "1",
-                                                                    children: newsI.title
-                                                                }),
-                                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                                    className: "text-slate-400 mt-1",
-                                                                    bis_skin_checked: "1",
-                                                                    children: [
-                                                                        newsI.time,
-                                                                        " ago"
-                                                                    ]
-                                                                }),
-                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                                    className: "text-slate-500 text-justify mt-1",
-                                                                    bis_skin_checked: "1",
-                                                                    children: newsI.content
-                                                                }),
-                                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                                    className: "font-medium btn-fle mt-5",
-                                                                    children: [
-                                                                        props && props.userType && props.userType && props.userType == "admin" && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                            type: "button",
-                                                                            className: "btn btn-secondary py-1 px-2",
-                                                                            onClick: ()=>{
-                                                                                setModalCssFun(newsI.id);
-                                                                            },
-                                                                            children: "Delete"
-                                                                        }),
-                                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                                                            type: "button",
-                                                                            onClick: ()=>Dismiss(newsI.id),
-                                                                            className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
-                                                                            children: "Dismiss"
-                                                                        })
-                                                                    ]
-                                                                })
-                                                            ]
-                                                        }, n)
-                                                    });
+                                                    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                        className: n == 0 ? "p-5 tns-item tns-slide-active" : "p-5 tns-item",
+                                                        id: "important-notes-item" + n,
+                                                        bis_skin_checked: "1",
+                                                        "aria-hidden": "true",
+                                                        tabIndex: "-1",
+                                                        children: [
+                                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                                                className: "text-base font-medium truncate",
+                                                                bis_skin_checked: "1",
+                                                                children: newsI.title
+                                                            }),
+                                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                                className: "text-slate-400 mt-1",
+                                                                bis_skin_checked: "1",
+                                                                children: [
+                                                                    newsI.time,
+                                                                    " ago"
+                                                                ]
+                                                            }),
+                                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                                                className: "text-slate-500 text-justify mt-1",
+                                                                bis_skin_checked: "1",
+                                                                children: newsI.content
+                                                            }),
+                                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                                className: "font-medium btn-fle mt-5",
+                                                                children: [
+                                                                    props && props.userType && props.userType && props.userType == "admin" && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                                                        type: "button",
+                                                                        className: "btn btn-secondary py-1 px-2",
+                                                                        onClick: ()=>{
+                                                                            setModalCssFun(newsI.id);
+                                                                        },
+                                                                        children: "Delete"
+                                                                    }),
+                                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                                                                        type: "button",
+                                                                        onClick: ()=>Dismiss(newsI.id),
+                                                                        className: "btn btn-outline-secondary py-1 px-2 ml-auto ml-auto",
+                                                                        children: "Dismiss"
+                                                                    })
+                                                                ]
+                                                            })
+                                                        ]
+                                                    }, n);
                                                 })
                                             })
                                         })

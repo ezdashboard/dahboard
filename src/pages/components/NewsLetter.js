@@ -67,7 +67,7 @@ const NewsList = async (page) => {
     return (
         <>
         <Head>
-        {loading && <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>}
+        {loading && <script src="https://reseller.ezrankings.in/dashboard/js/app.js"></script>}
         </Head>
         <div className="col-span-12 md:col-span-6 xl:col-span-12 xl:col-start-1 xl:row-start-1 2xl:col-start-auto 2xl:row-start-auto mt-3" bis_skin_checked="1">
             <div className="intro-x flex items-center h-10" bis_skin_checked="1">
@@ -93,7 +93,7 @@ const NewsList = async (page) => {
                                 <div className="tiny-slider  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal news01" id="important-notes" bis_skin_checked="1">
                                     {newsData && newsData.length > 0 && newsData.map((newsI, n)=>{
                                         return(
-                                            <> 
+                                            
                                                 <div key={n} className={n==0 ? 'p-5 tns-item tns-slide-active' : 'p-5 tns-item'} id={'important-notes-item'+n} bis_skin_checked="1" aria-hidden="true" tabIndex="-1">
                                                     <div className="text-base font-medium truncate" bis_skin_checked="1">{newsI.title}</div>
                                                     <div className="text-slate-400 mt-1" bis_skin_checked="1">{newsI.time} ago</div>
@@ -109,7 +109,7 @@ const NewsList = async (page) => {
                                                         <button type="button" onClick={()=>Dismiss(newsI.id)} className="btn btn-outline-secondary py-1 px-2 ml-auto ml-auto">Dismiss</button>
                                                     </div>
                                                 </div>
-                                            </>
+                                            
                                         )
                                     })}
                                 </div>

@@ -215,9 +215,9 @@ const AddReport = ()=>{
                                 <option value="" select="selected">Select</option>
                                     {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{
                                         return(
-                                            <>
+                                           
                                             <option value ={service.id} key={s}>{service.name}</option>
-                                            </>
+                                            
                                         )
                                     })}
                                 </select>                                
@@ -228,9 +228,9 @@ const AddReport = ()=>{
                                     <option value="" select="selected">Select</option>
                                     {userStoreData && userStoreData.length > 0 && userStoreData.map((usecr, u)=>{
                                         return(
-                                            <>
+                                           
                                             <option value ={usecr.id} key={u}>{usecr.name}</option>
-                                            </>
+                                           
                                         )
                                     })}
                                 </select>

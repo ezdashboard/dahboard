@@ -163,11 +163,10 @@ const getServiceData = async () => {
         <title>Reseller Projects && Reports</title>
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
-        <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
+        <script src="https://reseller.ezrankings.in/dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
-        <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
-        <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
+        <script src="https://reseller.ezrankings.in/dashboard/js/app.js"></script>
       </Head>
       <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">
@@ -229,7 +228,7 @@ const getServiceData = async () => {
                         <tbody>
                {reportData && reportData.length > 0 && reportData.map((report, r)=>{
                 return(
-                  <>
+                 
                           <tr className="intro-x" key={r}>
                             <td>
                               <a href="#" className="font-medium whitespace-nowrap">{report.serviceName}</a>
@@ -275,7 +274,7 @@ const getServiceData = async () => {
                               <a target="_blank" href={report.dwlUrl ? report.dwlUrl.substring(0, 4) == 'http' ? report.dwlUrl : 'https://'+report.dwlUrl : ''} className="font-medium whitespace-nowrap report">Download Report</a>
                             </td>
                           </tr>                  
-                  </>
+                 
                 )
                })}           
 

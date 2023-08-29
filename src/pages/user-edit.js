@@ -249,10 +249,9 @@ useEffect(() => {
       src="https://kit.fontawesome.com/fbadad80a0.js"
       crossOrigin="anonymous"
     ></script>
-      <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
+      <script src="https://reseller.ezrankings.in/dashboard/js/markerclusterer.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-      <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
-      <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
+      <script src="https://reseller.ezrankings.in/dashboard/js/app.js"></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
       <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
      </Head>
@@ -306,10 +305,7 @@ useEffect(() => {
                                 <option value={inputData.mangerId}>{inputData.mangerName ? inputData.mangerName :'Select'}</option>
                                 {managerStoreData && managerStoreData.length > 0 && managerStoreData.map((mang, m)=>{
                                   return(
-                                    <>
                                    <option value={mang.id} key={m}>{mang.name}</option>
-
-                                    </>
                                   )
                                 })}
                             </select>

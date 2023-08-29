@@ -255,10 +255,7 @@ const Adduser=()=>{
                                 <option value={inputData.mangerId}>Select</option>
                                 {managerStoreData && managerStoreData.length > 0 && managerStoreData.map((mang, m)=>{
                                   return(
-                                    <>
                                    <option value={mang.id} key={m}>{mang.name}</option>
-
-                                    </>
                                   )
                                 })}
                             </select>

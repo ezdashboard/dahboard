@@ -291,9 +291,9 @@ const AddResource = ()=>{
                         <option value="" select="selected">Select</option>
                             {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{
                                 return(
-                                    <>
+                                    
                                     <option value ={service.id} key={s}>{service.name}</option>
-                                    </>
+                                   
                                 )
                             })}
                               </select>

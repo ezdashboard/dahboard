@@ -174,9 +174,9 @@ import MobileSideBar from './components/MobileSideBar';
         <title>Reseller User List</title>
         <link rel="dns-prefetch" href="//developers.google.com"/>
         <link rel="dns-prefetch" href="//maps.googleapis.com"/>
-        <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
+        <script src="https://reseller.ezrankings.in/dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
-        {loading && <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>}
+        {loading && <script src="https://reseller.ezrankings.in/dashboard/js/app.js"></script>}
       </Head>
       <MobileSideBar />
       <div className="flex mt-[4.7rem] md:mt-0">

@@ -32,7 +32,7 @@ export default function EditReportDetail  () {
    const [userStoreData, setUserStoreData] = useState([]);
    const getUserData = async (userid) => {
 
-    axios.get(`${process.env.API_BASE_URL}usersD.php?page=${localStorage.tokenAuth}`)
+    axios.get(`${process.env.API_BASE_URL}usersD.php?userid=${localStorage.tokenAuth}`)
       .then(res => {
           const data = res.data.map((item) => {
             return {

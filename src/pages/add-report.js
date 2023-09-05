@@ -122,7 +122,7 @@ const AddReport = ()=>{
     }
     const getUserData = async (userid) => {
 
-        axios.get(`${process.env.API_BASE_URL}usersD.php?userid=${userid}`)
+        axios.get(`${process.env.API_BASE_URL}usersD.php?userid=${localStorage.tokenAuth}`)
           .then(res => {
               const data = res.data.map((item) => {
                 return {

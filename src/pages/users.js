@@ -192,51 +192,53 @@ import MobileSideBar from './components/MobileSideBar';
                 </div>
             </div>
             <div className="grid grid-cols-12 gap-6 mt-5">
-                <div className="intro-y col-span-12 overflow-auto lg:overflow-visible">
-                    <table className="table table-report -mt-2">
-                        <thead>
-                            <tr>
-                                <th className="whitespace-nowrap">NAME</th>
-                                <th className="whitespace-nowrap">EMAILID</th>
-                                <th className="text-center whitespace-nowrap">USER ROLE</th>
-                                <th className="text-center whitespace-nowrap">STATUS</th>
-                                <th className="text-center whitespace-nowrap">ACTIONS</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                          {userStoreData && userStoreData.map((users, u)=>(
-                            <tr className="intro-x" key={u}>
-                              <td className="w-40">
-                                  <div className="flex">
-                                      <div className="w-10 h-10 image-fit zoom-in">
-                                          <Link href="#" className="font-medium whitespace-nowrap">{users.name}</Link> 
-                                          <div className="text-slate-500 text-xs whitespace-nowrap mt-0.5">{users.title}</div>
-                                      </div>
+{loading &&
+            <div className="intro-y col-span-12 overflow-auto lg:overflow-visible">
+                <table className="table table-report -mt-2">
+                    <thead>
+                        <tr>
+                            <th className="whitespace-nowrap">NAME</th>
+                            <th className="whitespace-nowrap">EMAILID</th>
+                            <th className="text-center whitespace-nowrap">USER ROLE</th>
+                            <th className="text-center whitespace-nowrap">STATUS</th>
+                            <th className="text-center whitespace-nowrap">ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      {userStoreData && userStoreData.map((users, u)=>(
+                        <tr className="intro-x" key={u}>
+                          <td className="w-40">
+                              <div className="flex">
+                                  <div className="w-10 h-10 image-fit zoom-in">
+                                      <Link href="#" className="font-medium whitespace-nowrap">{users.name}</Link> 
+                                      <div className="text-slate-500 text-xs whitespace-nowrap mt-0.5">{users.title}</div>
                                   </div>
-                              </td>
-                              <td>
-                                  <Link href="#" className="font-medium whitespace-nowrap">{users.email}</Link> 
-                              </td>
-                              <td className="text-center">{users.type}</td>
-                              <td className="w-40">
-                                  <div className="flex items-center justify-center text-success"> <CheckSquare className="w-4 h-4 mr-2"/> {users.status} </div>
-                              </td>
-                              <td className="table-report__action w-56">
-                                  <div className="flex justify-center items-center">
-                                      {/* <a className="flex items-center mr-3" href="javascript:;"> <i data-lucide="check-square" className="w-4 h-4 mr-1"></i> Edit </a> */}
-                                      <Link className="flex items-center mr-3" href="#" onClick={()=>{
-                                    redirectDetail(users.id, 'edit')
-                                }} ><CheckSquare className="w-4 h-4 mr-1"/> Edit </Link>
-                                      <a className="flex items-center text-danger" onClick={()=>{
-                                        setModalCssFun(users.id)
-                                      }} > <i data-lucide="trash-2" className="w-4 h-4 mr-1"></i> Delete </a>
-                                  </div>
-                              </td>                                    
-                            </tr>
-                          ))}
-                        </tbody>
-                    </table>
-                </div>
+                              </div>
+                          </td>
+                          <td>
+                              <Link href="#" className="font-medium whitespace-nowrap">{users.email}</Link> 
+                          </td>
+                          <td className="text-center">{users.type}</td>
+                          <td className="w-40">
+                              <div className="flex items-center justify-center text-success"> <CheckSquare className="w-4 h-4 mr-2"/> {users.status} </div>
+                          </td>
+                          <td className="table-report__action w-56">
+                              <div className="flex justify-center items-center">
+                                  {/* <a className="flex items-center mr-3" href="javascript:;"> <i data-lucide="check-square" className="w-4 h-4 mr-1"></i> Edit </a> */}
+                                  <Link className="flex items-center mr-3" href="#" onClick={()=>{
+                                redirectDetail(users.id, 'edit')
+                            }} ><CheckSquare className="w-4 h-4 mr-1"/> Edit </Link>
+                                  <a className="flex items-center text-danger" onClick={()=>{
+                                    setModalCssFun(users.id)
+                                  }} > <i data-lucide="trash-2" className="w-4 h-4 mr-1"></i> Delete </a>
+                              </div>
+                          </td>                                    
+                        </tr>
+                      ))}
+                    </tbody>
+                </table>
+            </div>
+                }
 
             { loading && totalPages && totalPages > 1 &&
                 <div className="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
@@ -281,8 +283,6 @@ import MobileSideBar from './components/MobileSideBar';
                   </select> */}
                 </div>
             } 
-
-                            
             { !loading &&
             <div>
               <h1 style={{textAlign:"center",fontSize:"35px",padding:"8rem",marginLeft:"15rem"}}>Loading....</h1>   

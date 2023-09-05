@@ -139,8 +139,6 @@ useEffect(() => {
         <script src="https://reseller.ezrankings.in//dashboard/js/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
         <script src="https://reseller.ezrankings.in//dashboard/js/app.js"></script>
-        <script src="https://reseller.ezrankings.in//dashboard/js/map.js"></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
         <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
       </Head>
       <MobileSideBar />
@@ -151,50 +149,50 @@ useEffect(() => {
             <div className="intro-y flex items-center mt-8">
             </div>
             <div className="grid grid-cols-12 gap-6 mt-5">
-            <ProfileContent profile={profileData} />
-            <div className="col-span-12 lg:col-span-8 xxl:col-span-9">
-                <div className="grid grid-cols-12 gap-6 aaa">
-                    <div className="intro-y box col-span-12 xxl:col-span-6">
-                        <div className="flex items-center px-5 py-5 sm:py-3 border-b border-slate-200/60 dark:border-darkmode-400">
-                            <h2 className="font-medium text-base mr-auto">About Us</h2>
-                        </div>
-                        <div className="p-5">
-                            <div className="relative flex items-center">
-                                <div className="ml-4 mr-auto">
-                                    <p>
-                                    {profileData.about}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="intro-y box lg:mt-5" bis_skin_checked="1">
-                  <div className="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400" bis_skin_checked="1">
-                      <h2 className="font-medium text-base mr-auto">Change Password</h2>
+              <ProfileContent profile={profileData} />
+              <div className="col-span-12 lg:col-span-8 xxl:col-span-9">
+                  <div className="grid grid-cols-12 gap-6 aaa">
+                      <div className="intro-y box col-span-12 xxl:col-span-6">
+                          <div className="flex items-center px-5 py-5 sm:py-3 border-b border-slate-200/60 dark:border-darkmode-400">
+                              <h2 className="font-medium text-base mr-auto">About Us</h2>
+                          </div>
+                          <div className="p-5">
+                              <div className="relative flex items-center">
+                                  <div className="ml-4 mr-auto">
+                                      <p>
+                                      {profileData.about}
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                  <div className="col-md-12">
-                    {closeIcon  ?<span style={submitBtn}>{msg}  <span onClick={submitCloseIcon}><X  size="16" color="#999"/></span></span>: ""}
-                  </div>
-                  <form onSubmit={onSubmit}>
-                    <div className="p-5" bis_skin_checked="1">
-                      <div bis_skin_checked="1">
-                          <label htmlFor="change-password-form-1" className="form-label">Old Password</label>
-                          <input id="change-password-form-1" type="password" className="form-control" name="password" placeholder="Input text"  onChange={inputChangeData} value={inputData.password}/>
-                      </div>
-                      <div className="mt-3" bis_skin_checked="1">
-                          <label htmlFor="change-password-form-2" className="form-label">New Password</label>
-                          <input id="change-password-form-2" type="password" className="form-control" name="new_password" placeholder="Input text" onChange={inputChangeData} value={inputData.new_password}/>
-                      </div>
-                      <div className="mt-3" bis_skin_checked="1">
-                          <label htmlFor="change-password-form-3" className="form-label">Confirm New Password</label>
-                          <input id="change-password-form-3" type="password" className="form-control" name="confirm_password" placeholder="Input text" onChange={inputChangeData} value={inputData.confirm_password}/>
-                      </div>
-                      <button type="submit" className="btn btn-primary mt-4">Change Password</button>
+                  <div className="intro-y box lg:mt-5" bis_skin_checked="1">
+                    <div className="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400" bis_skin_checked="1">
+                        <h2 className="font-medium text-base mr-auto">Change Password</h2>
                     </div>
-                  </form>
-                </div>
-             </div>
+                    <div className="col-md-12">
+                      {closeIcon  ?<span style={submitBtn}>{msg}  <span onClick={submitCloseIcon}><X  size="16" color="#999"/></span></span>: ""}
+                    </div>
+                    <form onSubmit={onSubmit}>
+                      <div className="p-5" bis_skin_checked="1">
+                        <div bis_skin_checked="1">
+                            <label htmlFor="change-password-form-1" className="form-label">Old Password</label>
+                            <input id="change-password-form-1" type="password" className="form-control" name="password" placeholder="Input text"  onChange={inputChangeData} value={inputData.password}/>
+                        </div>
+                        <div className="mt-3" bis_skin_checked="1">
+                            <label htmlFor="change-password-form-2" className="form-label">New Password</label>
+                            <input id="change-password-form-2" type="password" className="form-control" name="new_password" placeholder="Input text" onChange={inputChangeData} value={inputData.new_password}/>
+                        </div>
+                        <div className="mt-3" bis_skin_checked="1">
+                            <label htmlFor="change-password-form-3" className="form-label">Confirm New Password</label>
+                            <input id="change-password-form-3" type="password" className="form-control" name="confirm_password" placeholder="Input text" onChange={inputChangeData} value={inputData.confirm_password}/>
+                        </div>
+                        <button type="submit" className="btn btn-primary mt-4">Change Password</button>
+                      </div>
+                    </form>
+                  </div>
+              </div>
             </div>
         </div>
       </div>

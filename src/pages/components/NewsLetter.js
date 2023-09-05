@@ -119,7 +119,7 @@ const NewsList = async (page) => {
                 </div>
             </div>
         </div>  
-        <div id="delete-confirmation-modal" style={{display:styyyyy}}className={modalCss} tabIndex="-1" aria-hidden="true">
+        <div id="delete-confirmation-modal" style={{display:styyyyy}} className={modalCss} tabIndex="-1" aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-body p-0">

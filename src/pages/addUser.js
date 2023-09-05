@@ -7,15 +7,8 @@ import axios from 'axios';
 import MobileSideBar from './components/MobileSideBar';
 
 const Adduser=()=>{
-    const [selectedFile, setSelectedFile] = useState(null);
     const [showManager, setShowManager] = useState(false)
     const [managerStoreData, setManagerStoreData] = useState([]);
-
-    const handleFileChange = (event) => {
-      setSelectedFile(event.target.files[0]);
-    };
-
-    const [bodyCsss, setBodyCss] = useState('py-5');
     const [inputData, setInputData] = useState({
         companyname : '',
         title : '',
@@ -30,7 +23,6 @@ const Adduser=()=>{
         userid :''
     });
     const [profileData, setProfileData] = useState({
-       
         companyname : '',
         title : '',
         name : '',
@@ -45,8 +37,6 @@ const Adduser=()=>{
         updatedBy : '',
         userid : ''
     });
-
-
     const [closeIcon, setCloseIcon] = useState(false)
     const [isValidEmail, setIsValidEmail] = useState(false)
     useEffect(() => {
@@ -74,7 +64,6 @@ const Adduser=()=>{
       setShowManager(true);
     }else if(name && name=="type" && (!value || value !="user")){
       setShowManager(false);
-
     }
     setInputData((valuePre)=>{
     return{
@@ -146,7 +135,6 @@ const Adduser=()=>{
       }else{
         inputData.userid = profileData && profileData.userid ? profileData.userid : '';
         inputData.updatedBy = profileData && profileData.updatedBy ? profileData.updatedBy : '' 
-
         axios.post(`${process.env.API_BASE_URL}adduser.php`,inputData,{
           headers: {
           'Content-Type': 'multipart/form-data'
@@ -195,9 +183,6 @@ const Adduser=()=>{
           <meta charSet="utf-8" />
           <link href="#" rel="shortcut icon"/>
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
-          <meta name="description" content=""/>
-          <meta name="keywords" content=""/>
-          <meta name="author" content=""/>
           <title>Reseller Add User</title>
           <link rel="dns-prefetch" href="//developers.google.com"/>
           <link rel="dns-prefetch" href="//maps.googleapis.com"/>

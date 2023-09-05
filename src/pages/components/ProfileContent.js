@@ -30,10 +30,10 @@ const ProfileContent = (props) =>{
                 <Link className="flex items-center mt-5" href="#">
                     <FileCheck  className="w-4 h-4 mr-2"/>Title: {props && props.profile && props.profile.title? props.profile.title : ''}
                 </Link>
-                <Link className="flex items-center mt-5" href="#">
+                <Link className="flex items-center mt-5" href={props && props.profile && props.profile.contactno ? 'tel:'+props.profile.contactno : ''}>
                     <Phone className="w-4 h-4 mr-2"/>Phone: {props && props.profile && props.profile.contactno? props.profile.contactno : ''}
                 </Link>
-                <Link className="flex items-center mt-5" href="#">
+                <Link className="flex items-center mt-5" href={props && props.profile && props.profile.email ? 'mailto:'+props.profile.email : ''}>
                     <Mail className="w-4 h-4 mr-2"/>Mail: {props && props.profile && props.profile.email? props.profile.email : ''}
                 </Link>
                 <Link className="flex items-center mt-5" href="#">
@@ -52,7 +52,7 @@ const ProfileContent = (props) =>{
             <Link className="logo-ipload" href="#">
                 <h5>Company Name: {props && props.profile && props.profile.companyname? props.profile.companyname : ''}</h5>
                 <div className="avatar-preview">
-                    <img alt="" className="rounded-full pro-img comp-logo" src={props && props.profile && props.profile.logo? props.profile.logo : 'https://reseller.ezrankings.in//dashboard/images/avtar.png'} />
+                    <img alt="" className="rounded-full pro-img comp-logo" src={props && props.profile && props.profile.logo? props.profile.logo : 'https://reseller.ezrankings.in/dashboard/images/avtar.png'} />
                 </div>
             </Link>
         </div>

@@ -148,7 +148,8 @@ useEffect(() => {
                     </div>
             </div>
             </Link>
-            <Link href="#">
+            {props && props.type && props.type=="admin" &&
+            <Link href="/users">
             <div className="#">
                 <div className="report-box zoom-in card">
                         <div className="box p-5">
@@ -160,7 +161,21 @@ useEffect(() => {
                         </div>
                 </div>
             </div>
-            </Link>
+            </Link>}
+            {props && props.type && props.type=="Manager" &&
+            <Link href="/projectList">
+            <div className="#">
+                <div className="report-box zoom-in card">
+                        <div className="box p-5">
+                            <div className="flex">
+                                <i className="far fa-users"></i>
+                            </div>
+                            <div className="text-3xl font-medium leading-8"><b>{props && props.data && props.data.total_users ? props.data.total_users : '0'}</b></div>
+                            <div className="text-base text-slate-500 mt-1">Total Users</div>
+                        </div>
+                </div>
+            </div>
+            </Link>}
             <Link href="/projectList">
             <div className="#">
                 <div className="report-box zoom-in card">

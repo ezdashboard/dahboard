@@ -22,6 +22,7 @@ import MobileSideBar from './components/MobileSideBar';
   const [pageList, setPageList] = useState([1]);
   const [pageLimitList, setPageLimitList] = useState([5,10,15]);
   const [limitp, setlimitp] =useState(5);
+  const [userStoreData, setUserStoreData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const redirectDetail = (redir, toRedir)=>{
     setLoading(false);
@@ -38,7 +39,8 @@ import MobileSideBar from './components/MobileSideBar';
   }
   const [inputData, setInputData] = useState({
     serviceName : '',
-    service_Status:''
+    service_Status:'',
+    searchUserId:''
 });
 
   const [addBtn, setAddBtn] = useState(false);
@@ -65,8 +67,7 @@ const searchFilterData = () =>{
     if(localStorage.userid && localStorage.userid > 1){
       search = search+ "user="+localStorage.userid + "&";
     }
-    search = search + `ser=${inputData.serviceName}&status=${inputData.service_Status}&limit=${limitp}`;
-
+    search = search + `ser=${inputData.serviceName}&serUser=${inputData.searchUserId}&status=${inputData.service_Status}&limit=${limitp}`;
   axios.get(`${process.env.API_BASE_URL}reports.php${search}`)
     .then(res => {
         const data = res.data.reportsData.map((item) => {
@@ -120,6 +121,30 @@ const getPreviousPageData =()=>{
     setCurrentPage(currentPage-1);
   }
 }
+const getUserData = async (userid) => {
+
+  axios.get(`${process.env.API_BASE_URL}usersD.php?userid=${localStorage.tokenAuth}`)
+    .then(res => {
+        const data = res.data.map((item) => {
+          return {
+            id: item.userid,
+            name: item.name,
+            email: item.email,
+            contactno: item.contactno,
+            companyname: item.companyname,
+            title: item.title,
+            logo: item.logo,
+            type: item.type,
+            status: item.status == '1' ? 'Active' : 'Inactive',
+            image: item.image
+          }
+      }
+    )
+    setUserStoreData(data);
+  })
+  .catch(err => {
+   })
+} 
 const getServiceData = async () => {
   axios.get(`${process.env.API_BASE_URL}services.php`)
     .then(res => {
@@ -149,6 +174,7 @@ const getServiceData = async () => {
     }
     getReportData(currentPage);
     getServiceData();
+    getUserData(localStorage.userid);
 
     }, [currentPage]);
   return (
@@ -199,6 +225,18 @@ const getServiceData = async () => {
                                   <option value="Paused">Pause</option>
                                 </select>
                             </div>
+                            <div className="fil-box">
+                              <select className="form-select" onChange={inputChangeData} name="searchUserId">
+                                  <option value="" select="selected">Users</option>
+                                      {userStoreData && userStoreData.length > 0 && userStoreData.map((userList, u)=>{
+                                          return(
+                                              
+                                              <option value ={userList.id} key={u}>{userList.name}</option>
+                                              
+                                          )
+                                      })}
+                              </select>
+                            </div>                            
                             <button type="button" onClick={searchFilterData}className="btn btn-primary w-32 ml-2">Search</button>
                         </div>
                         {addBtn && 

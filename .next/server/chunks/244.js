@@ -95,7 +95,7 @@ const ProfileContent = (props)=>{
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
                                     className: "flex items-center mt-5",
-                                    href: "#",
+                                    href: props && props.profile && props.profile.contactno ? "tel:" + props.profile.contactno : "",
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Phone, {
                                             className: "w-4 h-4 mr-2"
@@ -106,7 +106,7 @@ const ProfileContent = (props)=>{
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
                                     className: "flex items-center mt-5",
-                                    href: "#",
+                                    href: props && props.profile && props.profile.email ? "mailto:" + props.profile.email : "",
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_2__.Mail, {
                                             className: "w-4 h-4 mr-2"
@@ -174,7 +174,7 @@ const ProfileContent = (props)=>{
                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                             alt: "",
                                             className: "rounded-full pro-img comp-logo",
-                                            src: props && props.profile && props.profile.logo ? props.profile.logo : "https://reseller.ezrankings.in//dashboard/images/avtar.png"
+                                            src: props && props.profile && props.profile.logo ? props.profile.logo : "https://reseller.ezrankings.in/dashboard/images/avtar.png"
                                         })
                                     })
                                 ]

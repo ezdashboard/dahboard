@@ -32,7 +32,7 @@ export default function EditReportDetail  () {
    const [userStoreData, setUserStoreData] = useState([]);
    const getUserData = async (userid) => {
 
-    axios.get(`${process.env.API_BASE_URL}usersD.php?page=${userid}`)
+    axios.get(`${process.env.API_BASE_URL}usersD.php?page=${localStorage.tokenAuth}`)
       .then(res => {
           const data = res.data.map((item) => {
             return {
@@ -255,7 +255,6 @@ useEffect(() => {
       <script src="https://reseller.ezrankings.in/dashboard/js/markerclusterer.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcUcow5QHjitBVOfkTdy44l7jnaoFzW1k&amp;libraries=places"></script>
       <script src="https://reseller.ezrankings.in/dashboard/js/app.js"></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>  
       <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
      </Head>
      <MobileSideBar />
@@ -288,9 +287,7 @@ useEffect(() => {
                         {inputData.serviceName == ReportData.serviceName && <option value={inputData.serviceName}>{inputData.serviceId}</option>}
                           {serviceStoreData && serviceStoreData.length > 0 && serviceStoreData.map((service, s)=>{
                               return(
-                            
                             <option key={s} value={service.id} >{service.name}</option>
-                           
                         )
                     })}
                       </select>                                
@@ -301,9 +298,7 @@ useEffect(() => {
                             {inputData.userName == ReportData.userName && <option value={inputData.userAssign} select="selected">{inputData.userName}</option>}
                             {userStoreData && userStoreData.length > 0 && userStoreData.map((usecr, u)=>{
                                 return(
-                                    
                                     <option value ={usecr.id} key={u}>{usecr.name}</option>
-                                    
                                 )
                             })}
                         </select>

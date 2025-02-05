@@ -264,7 +264,7 @@ useEffect(() => {
         <TopHeader />
         <div className="flex items-center mt-8">
             <h2 className="intro-y text-lg font-medium mr-auto">
-                Add New Report
+                Edit Report
             </h2>
         </div>
         <div className="intro-y box mt-5 add-new-report">
